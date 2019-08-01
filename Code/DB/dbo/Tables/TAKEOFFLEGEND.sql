@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[TAKEOFFLEGEND] (
+    [ID]       BIGINT           IDENTITY (1, 1) NOT NULL,
+    [XPOS]     NUMERIC (30, 10) NULL,
+    [YPOS]     NUMERIC (30, 10) NULL,
+    [ZOOM]     INT              NULL,
+    [ROTANGLE] NUMERIC (30, 10) NULL,
+    [LEGTXT]   NVARCHAR (MAX)   NULL,
+    [FNT]      NVARCHAR (255)   NULL,
+    [FNTCOLOR] NVARCHAR (255)   NULL,
+    [CID]      BIGINT           NULL,
+    [LGDCOUNT] INT              NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FKD327AD753EBE9FEE] FOREIGN KEY ([CID]) REFERENCES [dbo].[TAKEOFFCON] ([ID])
+);
+

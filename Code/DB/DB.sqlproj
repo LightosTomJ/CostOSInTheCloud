@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5ade0985-2d6e-4497-9bec-aff9e08ac390}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DB</RootNamespace>
+    <AssemblyName>DB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DefaultFileStreamFilegroup>BIMCity_Filestream</DefaultFileStreamFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\LAYOUTCPANEL.sql" />
+    <Build Include="dbo\Tables\LICTBL.sql" />
+    <Build Include="dbo\Tables\LOCFACTOR.sql" />
+    <Build Include="dbo\Tables\LOCPROF.sql" />
+    <Build Include="dbo\Tables\MATERIAL.sql" />
+    <Build Include="dbo\Tables\PARAMINPUT.sql" />
+    <Build Include="dbo\Tables\PARAMITEM.sql" />
+    <Build Include="dbo\Tables\PARAMOUTPUT.sql" />
+    <Build Include="dbo\Tables\PARAMRETURN.sql" />
+    <Build Include="dbo\Tables\PRJPROP.sql" />
+    <Build Include="dbo\Tables\BC_CLASSIFICATION.sql" />
+    <Build Include="dbo\Tables\PROJECTACCESS.sql" />
+    <Build Include="dbo\Tables\BC_CLASSITEM.sql" />
+    <Build Include="dbo\Tables\PROJECTEPS.sql" />
+    <Build Include="dbo\Tables\BC_ELEMCLASSITEM.sql" />
+    <Build Include="dbo\Tables\PROJECTINFO.sql" />
+    <Build Include="dbo\Tables\BC_ELEMCONNECTION.sql" />
+    <Build Include="dbo\Tables\PROJECTSPECVAR.sql" />
+    <Build Include="dbo\Tables\BC_ELEMCOVERING.sql" />
+    <Build Include="dbo\Tables\PROJECTTEMPLATE.sql" />
+    <Build Include="dbo\Tables\BC_ELEMENT.sql" />
+    <Build Include="dbo\Tables\PROJECTURL.sql" />
+    <Build Include="dbo\Tables\BC_ELEMENTINFO.sql" />
+    <Build Include="dbo\Tables\PROJECTUSER.sql" />
+    <Build Include="dbo\Tables\BC_ELEMMATERIAL.sql" />
+    <Build Include="dbo\Tables\PROJECTUSERTEMPLATE.sql" />
+    <Build Include="dbo\Tables\BC_ELEMPROP.sql" />
+    <Build Include="dbo\Tables\QUERYRESOURCE.sql" />
+    <Build Include="dbo\Tables\BC_GEOMETRY.sql" />
+    <Build Include="dbo\Tables\QUERYROW.sql" />
+    <Build Include="dbo\Tables\BC_GEOMFILE.sql" />
+    <Build Include="dbo\Tables\QUOTETEMPLATE.sql" />
+    <Build Include="dbo\Tables\RATEBUILDUP.sql" />
+    <Build Include="dbo\Tables\BC_GPUSERVER.sql" />
+    <Build Include="dbo\Tables\RATEBUILDUPCOLS.sql" />
+    <Build Include="dbo\Tables\BC_GROUP.sql" />
+    <Build Include="dbo\Tables\RATEDISTRIB.sql" />
+    <Build Include="dbo\Tables\BC_GROUPELEM.sql" />
+    <Build Include="dbo\Tables\RPDFN.sql" />
+    <Build Include="dbo\Tables\BC_GROUPPROP.sql" />
+    <Build Include="dbo\Tables\SUBCONTRACTOR.sql" />
+    <Build Include="dbo\Tables\BC_MATERIAL.sql" />
+    <Build Include="dbo\Tables\SUPPLIER.sql" />
+    <Build Include="dbo\Tables\BC_MODEL.sql" />
+    <Build Include="dbo\Tables\TAKEOFFAREA.sql" />
+    <Build Include="dbo\Tables\BC_PROJECT.sql" />
+    <Build Include="dbo\Tables\TAKEOFFCON.sql" />
+    <Build Include="dbo\Tables\PRJDBMS.sql" />
+    <Build Include="dbo\Tables\BC_QUANTITY.sql" />
+    <Build Include="dbo\Tables\TAKEOFFLEGEND.sql" />
+    <Build Include="dbo\Tables\GLBPROP.sql" />
+    <Build Include="dbo\Tables\BC_SCENE.sql" />
+    <Build Include="dbo\Tables\TAKEOFFLINE.sql" />
+    <Build Include="dbo\Tables\AD.sql" />
+    <Build Include="dbo\Tables\BC_SPATIALINFO.sql" />
+    <Build Include="dbo\Tables\TAKEOFFPOINT.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY.sql" />
+    <Build Include="dbo\Tables\TAKEOFFTRIANGLE.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_CHILD.sql" />
+    <Build Include="dbo\Tables\TEAMALIAS.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_CONSUMABLE.sql" />
+    <Build Include="dbo\Tables\UNITALIAS.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_EQUIPMENT.sql" />
+    <Build Include="dbo\Tables\USERPROP.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_LABOR.sql" />
+    <Build Include="dbo\Tables\USERSESSIONS.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_MATERIAL.sql" />
+    <Build Include="dbo\Tables\WSCOLIDENT.sql" />
+    <Build Include="dbo\Tables\ASSEMBLY_SUBCONTRACTOR.sql" />
+    <Build Include="dbo\Tables\WSDATAMAPPING.sql" />
+    <Build Include="dbo\Tables\BENCHMARKBOQCOLMAP.sql" />
+    <Build Include="dbo\Tables\WSFILE.sql" />
+    <Build Include="dbo\Tables\BOQITEMMETADATA.sql" />
+    <Build Include="dbo\Tables\WSREVISION.sql" />
+    <Build Include="dbo\Tables\CNTRLOG.sql" />
+    <Build Include="dbo\Tables\XCELLFILE.sql" />
+    <Build Include="dbo\Tables\CNTRLOGITEM.sql" />
+    <Build Include="dbo\Tables\CONCEPTUALS.sql" />
+    <Build Include="dbo\Tables\CONSUMABLE.sql" />
+    <Build Include="dbo\Tables\COUNTRY.sql" />
+    <Build Include="dbo\Tables\CURRENCY.sql" />
+    <Build Include="dbo\Tables\EQUIPMENT.sql" />
+    <Build Include="dbo\Tables\EXTALIAS.sql" />
+    <Build Include="dbo\Tables\EXTDATASOURCE.sql" />
+    <Build Include="dbo\Tables\EXTQUERY.sql" />
+    <Build Include="dbo\Tables\EXTRACODE1.sql" />
+    <Build Include="dbo\Tables\EXTRACODE2.sql" />
+    <Build Include="dbo\Tables\EXTRACODE3.sql" />
+    <Build Include="dbo\Tables\EXTRACODE4.sql" />
+    <Build Include="dbo\Tables\alcAMUsers.sql" />
+    <Build Include="dbo\Tables\EXTRACODE5.sql" />
+    <Build Include="dbo\Tables\alcGroups.sql" />
+    <Build Include="dbo\Tables\EXTRACODE6.sql" />
+    <Build Include="dbo\Tables\EXTRACODE7.sql" />
+    <Build Include="dbo\Tables\alcObjectsInUse.sql" />
+    <Build Include="dbo\Tables\FIELDCUSTOM.sql" />
+    <Build Include="dbo\Tables\alcObjectsStatus.sql" />
+    <Build Include="dbo\Tables\FILTRO.sql" />
+    <Build Include="dbo\Tables\alcSettingCodes.sql" />
+    <Build Include="dbo\Tables\FILTROPROPERTY.sql" />
+    <Build Include="dbo\Tables\alcUL.sql" />
+    <Build Include="dbo\Tables\FLDFN.sql" />
+    <Build Include="dbo\Tables\alcUserGroups.sql" />
+    <Build Include="dbo\Tables\FNCTON.sql" />
+    <Build Include="dbo\Tables\alcUserSettings.sql" />
+    <Build Include="dbo\Tables\FNCTON_ARGUMENT.sql" />
+    <Build Include="dbo\Tables\GEKCODE.sql" />
+    <Build Include="dbo\Tables\GROUPCODE.sql" />
+    <Build Include="dbo\Tables\LABOR.sql" />
+    <Build Include="dbo\Tables\PRINCIPALS.sql" />
+    <Build Include="dbo\Tables\LAYOUTC.sql" />
+    <Build Include="dbo\Tables\ROLES.sql" />
+    <Build Include="Storage\BIMCity_Filestream.sql" />
+    <Build Include="dbo\Functions\unf_remove_non_alphanum_characters.sql" />
+    <Build Include="dbo\Functions\ufn_split_string.sql" />
+    <Build Include="dbo\Stored Procedures\usp_get_project_worksheet_revtree_sql.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_boq_with_expanded_resources.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_boq_with_resources.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_find_boq_item_sql.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_find_boq_item_with_projectvar_sql.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_multi_db_sql.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_multibase_with_layouts.sql" />
+    <Build Include="dbo\Stored Procedures\usp_dyn_multi_db_with_resources_sql.sql" />
+    <Build Include="dbo\Stored Procedures\usp_fixed_list_project_info_view.sql" />
+  </ItemGroup>
+</Project>

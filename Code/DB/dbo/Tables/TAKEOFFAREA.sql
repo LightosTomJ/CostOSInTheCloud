@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[TAKEOFFAREA] (
+    [ID]        BIGINT           IDENTITY (1, 1) NOT NULL,
+    [BLANKFILL] BIT              NULL,
+    [CONLINE]   BIT              NULL,
+    [TENSION]   NUMERIC (30, 10) NULL,
+    [AID]       BIGINT           NULL,
+    [AREACOUNT] INT              NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK1FE6B7F53EBE986C] FOREIGN KEY ([AID]) REFERENCES [dbo].[TAKEOFFCON] ([ID])
+);
+
