@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class TakeOffLine
+    public partial class Takeoffline
     {
-        public TakeOffLine()
+        public Takeoffline()
         {
-            TakeOffPoint = new HashSet<TakeOffPoint>();
+            Takeoffpoint = new HashSet<Takeoffpoint>();
         }
 
         public long Id { get; set; }
@@ -18,7 +18,7 @@ namespace Models
         public long? Lid { get; set; }
         public int? Linescount { get; set; }
 
-        public virtual TakeOffCon L { get; set; }
-        public virtual ICollection<TakeOffPoint> TakeOffPoint { get; set; }
+        public virtual Takeoffcon L { get; set; }
+        public virtual ICollection<Takeoffpoint> Takeoffpoint { get; set; }
     }
 }

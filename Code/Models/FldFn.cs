@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class FldFn
+    public partial class Fldfn
     {
         public long Fldfnid { get; set; }
         public string Name { get; set; }

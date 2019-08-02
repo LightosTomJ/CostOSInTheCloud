@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class ExtraCode1
+    public partial class Extracode1
     {
         public long Groupcodeid { get; set; }
         public DateTime? Lastupdate { get; set; }
@@ -12,7 +12,7 @@ namespace Models
         public string Title { get; set; }
         public string Notes { get; set; }
         public string Editorid { get; set; }
-        public string Unit { get; set; }
         public decimal? Ufact { get; set; }
+        public string Unit { get; set; }
     }
 }

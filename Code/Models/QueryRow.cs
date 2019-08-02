@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class QueryRow
+    public partial class Queryrow
     {
         public long Qrowid { get; set; }
         public string Fname { get; set; }
@@ -13,6 +13,6 @@ namespace Models
         public long? Qresid { get; set; }
         public int? Qrowscount { get; set; }
 
-        public virtual QueryResource Qres { get; set; }
+        public virtual Queryresource Qres { get; set; }
     }
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class LocProf
+    public partial class Locprof
     {
-        public LocProf()
+        public Locprof()
         {
-            LocFactor = new HashSet<LocFactor>();
+            Locfactor = new HashSet<Locfactor>();
         }
 
         public long Functionid { get; set; }
@@ -20,6 +20,6 @@ namespace Models
         public DateTime? Createdate { get; set; }
         public DateTime? Lastupdate { get; set; }
 
-        public virtual ICollection<LocFactor> LocFactor { get; set; }
+        public virtual ICollection<Locfactor> Locfactor { get; set; }
     }
 }

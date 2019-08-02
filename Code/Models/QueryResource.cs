@@ -3,15 +3,18 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class QueryResource
+    public partial class Queryresource
     {
-        public QueryResource()
+        public Queryresource()
         {
-            QueryRow = new HashSet<QueryRow>();
+            Queryrow = new HashSet<Queryrow>();
         }
 
         public long Qresid { get; set; }
+        public int? Exectype { get; set; }
+        public int? Type { get; set; }
         public string Title { get; set; }
+        public string Jsonurl { get; set; }
         public string Restype { get; set; }
         public string Ordfld { get; set; }
         public bool? Ascdng { get; set; }
@@ -45,6 +48,21 @@ namespace Models
         public string Ct08eq { get; set; }
         public string Ct09eq { get; set; }
         public string Ct10eq { get; set; }
+        public string Ct11eq { get; set; }
+        public string Ct12eq { get; set; }
+        public string Ct13eq { get; set; }
+        public string Ct14eq { get; set; }
+        public string Ct15eq { get; set; }
+        public string Ct16eq { get; set; }
+        public string Ct17eq { get; set; }
+        public string Ct18eq { get; set; }
+        public string Ct19eq { get; set; }
+        public string Ct20eq { get; set; }
+        public string Ct21eq { get; set; }
+        public string Ct22eq { get; set; }
+        public string Ct23eq { get; set; }
+        public string Ct24eq { get; set; }
+        public string Ct25eq { get; set; }
         public string Cr01eq { get; set; }
         public string Cr02eq { get; set; }
         public string Cr03eq { get; set; }
@@ -55,14 +73,39 @@ namespace Models
         public string Cr08eq { get; set; }
         public string Cr09eq { get; set; }
         public string Cr10eq { get; set; }
+        public string Cr11eq { get; set; }
+        public string Cr12eq { get; set; }
+        public string Cr13eq { get; set; }
+        public string Cr14eq { get; set; }
+        public string Cr15eq { get; set; }
+        public string Cr16eq { get; set; }
+        public string Cr17eq { get; set; }
+        public string Cr18eq { get; set; }
+        public string Cr19eq { get; set; }
+        public string Cr20eq { get; set; }
         public string Cc01eq { get; set; }
         public string Cc02eq { get; set; }
         public string Cc03eq { get; set; }
         public string Cc04eq { get; set; }
         public string Cc05eq { get; set; }
+        public string Cc06eq { get; set; }
+        public string Cc07eq { get; set; }
+        public string Cc08eq { get; set; }
+        public string Cc09eq { get; set; }
+        public string Cc10eq { get; set; }
+        public string Cc11eq { get; set; }
+        public string Cc12eq { get; set; }
+        public string Cc13eq { get; set; }
+        public string Cc14eq { get; set; }
+        public string Cc15eq { get; set; }
+        public string Cc16eq { get; set; }
+        public string Cc17eq { get; set; }
+        public string Cc18eq { get; set; }
+        public string Cc19eq { get; set; }
+        public string Cc20eq { get; set; }
         public long? Paramoutputid { get; set; }
 
-        public virtual ParamOutput Paramoutput { get; set; }
-        public virtual ICollection<QueryRow> QueryRow { get; set; }
+        public virtual Paramoutput Paramoutput { get; set; }
+        public virtual ICollection<Queryrow> Queryrow { get; set; }
     }
 }

@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class TakeOffArea
+    public partial class Takeoffarea
     {
-        public TakeOffArea()
+        public Takeoffarea()
         {
-            TakeOffPoint = new HashSet<TakeOffPoint>();
-            TakeOffTriangle = new HashSet<TakeOffTriangle>();
+            Takeoffpoint = new HashSet<Takeoffpoint>();
+            Takeofftriangle = new HashSet<Takeofftriangle>();
         }
 
         public long Id { get; set; }
         public bool? Blankfill { get; set; }
-        public long? Aid { get; set; }
-        public int? Areacount { get; set; }
         public bool? Conline { get; set; }
         public decimal? Tension { get; set; }
+        public long? Aid { get; set; }
+        public int? Areacount { get; set; }
 
-        public virtual TakeOffCon A { get; set; }
-        public virtual ICollection<TakeOffPoint> TakeOffPoint { get; set; }
-        public virtual ICollection<TakeOffTriangle> TakeOffTriangle { get; set; }
+        public virtual Takeoffcon A { get; set; }
+        public virtual ICollection<Takeoffpoint> Takeoffpoint { get; set; }
+        public virtual ICollection<Takeofftriangle> Takeofftriangle { get; set; }
     }
 }

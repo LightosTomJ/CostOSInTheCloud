@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class LayoutC
+    public partial class Layoutc
     {
-        public LayoutC()
+        public Layoutc()
         {
-            LayoutCpanel = new HashSet<LayoutCpanel>();
+            Layoutcpanel = new HashSet<Layoutcpanel>();
         }
 
         public long Layoutcid { get; set; }
@@ -17,8 +17,8 @@ namespace Models
         public string Editorid { get; set; }
         public string Selectedgk { get; set; }
         public bool? Pblk { get; set; }
-        public string Type { get; set; }
         public bool? Dflt { get; set; }
+        public string Type { get; set; }
         public string Visibtabs { get; set; }
         public bool? Showtree { get; set; }
         public bool? Spangrp { get; set; }
@@ -59,6 +59,7 @@ namespace Models
         public string Rs1clr { get; set; }
         public string Rs2clr { get; set; }
         public bool? Mltln { get; set; }
+        public int? Zoom { get; set; }
         public bool? Gridon { get; set; }
         public bool? Hgridon { get; set; }
         public bool? F1undl { get; set; }
@@ -81,7 +82,8 @@ namespace Models
         public bool? Csep { get; set; }
         public string Csepclr { get; set; }
         public string Gridclr { get; set; }
+        public string Layoutroles { get; set; }
 
-        public virtual ICollection<LayoutCpanel> LayoutCpanel { get; set; }
+        public virtual ICollection<Layoutcpanel> Layoutcpanel { get; set; }
     }
 }

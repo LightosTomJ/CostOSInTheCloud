@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class LocFactor
+    public partial class Locfactor
     {
         public long Lfid { get; set; }
         public string Parentecode { get; set; }
         public string Editorid { get; set; }
-        public bool? Online { get; set; }
+        public bool? Onln { get; set; }
         public string Codetype { get; set; }
         public string Tocountry { get; set; }
         public string Tostate { get; set; }
@@ -23,8 +23,7 @@ namespace Models
         public string Geopoly { get; set; }
         public long? Fid { get; set; }
         public int? Faccount { get; set; }
-        public bool? Onln { get; set; }
 
-        public virtual LocProf F { get; set; }
+        public virtual Locprof F { get; set; }
     }
 }

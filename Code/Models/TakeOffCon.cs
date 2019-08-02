@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    public partial class TakeOffCon
+    public partial class Takeoffcon
     {
-        public TakeOffCon()
+        public Takeoffcon()
         {
-            TakeOffArea = new HashSet<TakeOffArea>();
-            TakeOffLine = new HashSet<TakeOffLine>();
-            TakeOffPoint = new HashSet<TakeOffPoint>();
+            Takeoffarea = new HashSet<Takeoffarea>();
+            Takeofflegend = new HashSet<Takeofflegend>();
+            Takeoffline = new HashSet<Takeoffline>();
+            Takeoffpoint = new HashSet<Takeoffpoint>();
         }
 
         public long Id { get; set; }
@@ -19,6 +20,7 @@ namespace Models
         public string Grouping { get; set; }
         public string Cndtype { get; set; }
         public int? Patterntype { get; set; }
+        public int? Shapetype { get; set; }
         public bool? Elevation { get; set; }
         public int? Samples { get; set; }
         public decimal? Height { get; set; }
@@ -40,11 +42,11 @@ namespace Models
         public decimal? Qty2 { get; set; }
         public decimal? Qty3 { get; set; }
         public long? Projectinfoid { get; set; }
-        public int? Shapetype { get; set; }
 
-        public virtual ProjectInfo Projectinfo { get; set; }
-        public virtual ICollection<TakeOffArea> TakeOffArea { get; set; }
-        public virtual ICollection<TakeOffLine> TakeOffLine { get; set; }
-        public virtual ICollection<TakeOffPoint> TakeOffPoint { get; set; }
+        public virtual Projectinfo Projectinfo { get; set; }
+        public virtual ICollection<Takeoffarea> Takeoffarea { get; set; }
+        public virtual ICollection<Takeofflegend> Takeofflegend { get; set; }
+        public virtual ICollection<Takeoffline> Takeoffline { get; set; }
+        public virtual ICollection<Takeoffpoint> Takeoffpoint { get; set; }
     }
 }

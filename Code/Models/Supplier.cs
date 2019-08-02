@@ -27,10 +27,9 @@ namespace Models
         public string Editorid { get; set; }
         public string Stateprovince { get; set; }
         public string Country { get; set; }
-        public long? Databaseid { get; set; }
-        public long? Databasecreationdate { get; set; }
         public string Createuser { get; set; }
         public DateTime? Createdate { get; set; }
+        public string Rescode { get; set; }
         public DateTime? Lastupdate { get; set; }
         public string Title { get; set; }
         public string Geoloc { get; set; }

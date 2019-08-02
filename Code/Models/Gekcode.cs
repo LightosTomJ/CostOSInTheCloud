@@ -12,7 +12,7 @@ namespace Models
         public string Title { get; set; }
         public string Notes { get; set; }
         public string Editorid { get; set; }
-        public string Unit { get; set; }
         public decimal? Ufact { get; set; }
+        public string Unit { get; set; }
     }
 }

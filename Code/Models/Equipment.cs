@@ -8,8 +8,6 @@ namespace Models
         public Equipment()
         {
             AssemblyEquipment = new HashSet<AssemblyEquipment>();
-            BoQitemEquipment = new HashSet<BoQitemEquipment>();
-            EquHistory = new HashSet<EquHistory>();
         }
 
         public long Equipmentid { get; set; }
@@ -28,14 +26,17 @@ namespace Models
         public decimal? Depreciationrate { get; set; }
         public decimal? Fuelconsumption { get; set; }
         public string Currency { get; set; }
-        public long? Databaseid { get; set; }
-        public long? Databasecreationdate { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
         public decimal? Totalrate { get; set; }
         public string Notes { get; set; }
         public string Editorid { get; set; }
         public string Createuser { get; set; }
         public DateTime? Createdate { get; set; }
+        public string Rescode { get; set; }
         public DateTime? Lastupdate { get; set; }
+        public string Accrights { get; set; }
+        public string Keyw { get; set; }
         public string Title { get; set; }
         public int? DeprecationCalcMethod { get; set; }
         public decimal? InitAquasitionPrice { get; set; }
@@ -44,6 +45,16 @@ namespace Models
         public decimal? DepreciationYears { get; set; }
         public decimal? OccupationHoursPerMonth { get; set; }
         public decimal? OccupationalFactor { get; set; }
+        public bool? Virtual { get; set; }
+        public bool? Predicted { get; set; }
+        public bool? Conceptual { get; set; }
+        public int? Tchtype { get; set; }
+        public decimal? Tval { get; set; }
+        public string Tunit { get; set; }
+        public int? Tcolor { get; set; }
+        public int? Tregtype { get; set; }
+        public string Trids { get; set; }
+        public DateTime? Trdate { get; set; }
         public string Extracode1 { get; set; }
         public string Extracode2 { get; set; }
         public string Extracode3 { get; set; }
@@ -54,23 +65,8 @@ namespace Models
         public string Extracode8 { get; set; }
         public string Extracode9 { get; set; }
         public string Extracode10 { get; set; }
-        public bool? Virtual { get; set; }
-        public bool? Predicted { get; set; }
-        public int? Tchtype { get; set; }
-        public decimal? Tval { get; set; }
-        public string Tunit { get; set; }
-        public int? Tcolor { get; set; }
-        public int? Tregtype { get; set; }
-        public string Trids { get; set; }
-        public DateTime? Trdate { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
-        public string Accrights { get; set; }
-        public string Keyw { get; set; }
-        public bool? Conceptual { get; set; }
+        public int? Overtype { get; set; }
 
         public virtual ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
-        public virtual ICollection<BoQitemEquipment> BoQitemEquipment { get; set; }
-        public virtual ICollection<EquHistory> EquHistory { get; set; }
     }
 }

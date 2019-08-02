@@ -7,7 +7,7 @@ namespace Models
     {
         public Rpdfn()
         {
-            FldFn = new HashSet<FldFn>();
+            Fldfn = new HashSet<Fldfn>();
         }
 
         public long Rpdfnid { get; set; }
@@ -22,7 +22,11 @@ namespace Models
         public string Rgrp { get; set; }
         public bool? Rpblk { get; set; }
         public bool? Rusrrep { get; set; }
+        public bool? Mltusrrpt { get; set; }
+        public string Reporttype { get; set; }
+        public string Rjsurl { get; set; }
+        public string Reportroles { get; set; }
 
-        public virtual ICollection<FldFn> FldFn { get; set; }
+        public virtual ICollection<Fldfn> Fldfn { get; set; }
     }
 }
