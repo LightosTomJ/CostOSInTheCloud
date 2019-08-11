@@ -10,14 +10,14 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceWithAssignmentsTable = nomitech.common.@base.ResourceWithAssignmentsTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ImperialToMetric = nomitech.common.util.ImperialToMetric;
-	using StringUtils = nomitech.common.util.StringUtils;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceWithAssignmentsTable = Desktop.common.nomitech.common.@base.ResourceWithAssignmentsTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ImperialToMetric = Desktop.common.nomitech.common.util.ImperialToMetric;
+	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;
 
 
 	/// <summary>
@@ -186,7 +186,7 @@ namespace Models.local
 
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ParamItemTable obj = new ParamItemTable();
 
@@ -242,7 +242,7 @@ namespace Models.local
 
 		public virtual object conversionClone(bool metric, bool demo)
 		{
-			ParamItemTable obj = (ParamItemTable)clone();
+			ParamItemTable obj = (ParamItemTable)Clone();
 			if (metric)
 			{ // make a recalculation here:
 				obj.SampleRate = ImperialToMetric.getRate(unit, sampleRate);
@@ -1306,7 +1306,7 @@ namespace Models.local
 		}
 		public virtual ParamItemTable copy(bool deepCopyBoqs)
 		{
-			ParamItemTable pItemTable = (ParamItemTable)clone();
+			ParamItemTable pItemTable = (ParamItemTable)Clone();
 
 			pItemTable.InputSet = new HashSet<ParamItemInputTable>();
 			pItemTable.OutputSet = new HashSet<ParamItemOutputTable>();
@@ -1357,7 +1357,7 @@ namespace Models.local
 
 			foreach (ParamItemConditionTable conTable in ConditionSet)
 			{
-				pItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.clone());
+				pItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.Clone());
 			}
 
 			return pItemTable;
@@ -1410,7 +1410,7 @@ namespace Models.local
 
 			foreach (ParamItemConditionTable conTable in ConditionSet)
 			{
-				pItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.clone());
+				pItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.Clone());
 			}
 
 			return pItemTable;
@@ -1798,7 +1798,7 @@ namespace Models.local
 
 			ParamItemTable newParamItem = assTable;
 			newParamItem.ParamitemId = null;
-			long? id = (long?)session.save(newParamItem.clone());
+			long? id = (long?)session.save(newParamItem.Clone());
 
 			ParamItemTable paramItemTable = (ParamItemTable)session.load(typeof(ParamItemTable), id);
 
@@ -1808,7 +1808,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					ParamItemInputTable inputTable = (ParamItemInputTable)iter.Current;
-					id = (long?)session.save(inputTable.clone());
+					id = (long?)session.save(inputTable.Clone());
 					inputTable = (ParamItemInputTable)session.load(typeof(ParamItemInputTable),id);
 					if (paramItemTable.InputSet == null)
 					{
@@ -1837,7 +1837,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					ParamItemOutputTable outputTable = (ParamItemOutputTable)iter.Current;
-					id = (long?)session.save(outputTable.clone());
+					id = (long?)session.save(outputTable.Clone());
 					ParamItemOutputTable dbOutputTable = (ParamItemOutputTable)session.load(typeof(ParamItemOutputTable),id);
 
 					if (outputTable.ConceptualSet != null)
@@ -1845,7 +1845,7 @@ namespace Models.local
 						dbOutputTable.ConceptualSet = new HashSet<object>();
 						foreach (ParamItemConceptualResourceTable resTable in outputTable.ConceptualSet)
 						{
-							id = (long?)session.save(resTable.clone());
+							id = (long?)session.save(resTable.Clone());
 							resTable = (ParamItemConceptualResourceTable)session.load(typeof(ParamItemConceptualResourceTable),id);
 							if (DatabaseDBUtil.LocalCommunication)
 							{
@@ -1866,7 +1866,7 @@ namespace Models.local
 						dbOutputTable.QueryResourceSet = new HashSet<object>();
 						foreach (ParamItemQueryResourceTable sourceTable in outputTable.QueryResourceSet)
 						{
-							id = (long?)session.save(DatabaseDBUtil.LocalCommunication?sourceTable.clone():sourceTable);
+							id = (long?)session.save(DatabaseDBUtil.LocalCommunication?sourceTable.Clone():sourceTable);
 							ParamItemQueryResourceTable resTable = (ParamItemQueryResourceTable)session.load(typeof(ParamItemQueryResourceTable),id);
 							if (DatabaseDBUtil.LocalCommunication)
 							{

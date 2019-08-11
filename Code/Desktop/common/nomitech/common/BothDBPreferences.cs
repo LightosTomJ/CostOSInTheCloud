@@ -1,7 +1,7 @@
 ﻿namespace Desktop.common.nomitech.common
 {
-    using EquipmentTable = Desktop.common.nomitech.common.db.local.EquipmentTable;
-    using BigDecimalFixed = Desktop.common.nomitech.common.db.types.BigDecimalFixed;
+    using EquipmentTable = Models.local.EquipmentTable;
+    using BigDecimalFixed = Models.types.BigDecimalFixed;
 
     public class BothDBPreferences : Properties
     {

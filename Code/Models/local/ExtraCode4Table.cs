@@ -3,8 +3,8 @@
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using GroupCode = nomitech.common.@base.GroupCode;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -76,7 +76,7 @@ namespace Models.local
 	//		return true;
 	//	}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ExtraCode4Table obj = new ExtraCode4Table();
 

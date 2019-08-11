@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Desktop.common.nomitech.common;
+using System;
+
+using BaseCache = Desktop.common.nomitech.common.@base.BaseCache;
+using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 
 namespace Models.cache
 {
 
-	using BaseCache = nomitech.common.@base.BaseCache;
-	using GroupCode = nomitech.common.@base.GroupCode;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
 
 	[Serializable]
 	public class LocationCache : BaseCache
@@ -111,7 +113,7 @@ namespace Models.cache
 				return title;
 			}
 
-			public virtual object clone()
+			public virtual object Clone()
 			{
 				return new LocationGroupCode(outerInstance, code);
 			}

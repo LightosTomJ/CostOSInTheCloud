@@ -8,8 +8,8 @@
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using BaseTableList = nomitech.common.@base.BaseTableList;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using BaseTableList = Desktop.common.nomitech.common.@base.BaseTableList;
 
 	/// <summary>
 	/// @author george
@@ -56,7 +56,7 @@ namespace Models.local
 				MaterialTable[] copy = new MaterialTable[_o_items.Length];
 				for (int i = 0; i < _o_items.Length; i++)
 				{
-				   copy[i] = (MaterialTable)_o_items[i].clone();
+				   copy[i] = (MaterialTable)_o_items[i].Clone();
 				}
     
 				return copy;

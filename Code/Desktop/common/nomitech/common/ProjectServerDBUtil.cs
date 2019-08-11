@@ -6,10 +6,10 @@ namespace Desktop.common.nomitech.common
 {
 	using ProjectGroupCodesProvider = Desktop.common.nomitech.common.@base.ProjectGroupCodesProvider;
 	using ProjectGroupCodesProviderFactory = Desktop.common.nomitech.common.@base.ProjectGroupCodesProviderFactory;
-	using ParamItemCache = Desktop.common.nomitech.common.db.cache.ParamItemCache;
-	using WBS2Cache = Desktop.common.nomitech.common.db.cache.WBS2Cache;
-	using WBSCache = Desktop.common.nomitech.common.db.cache.WBSCache;
-	using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
+	using ParamItemCache = Models.cache.ParamItemCache;
+	using WBS2Cache = Models.cache.WBS2Cache;
+	using WBSCache = Models.cache.WBSCache;
+	using ProjectUrlTable = Models.local.ProjectUrlTable;
 	using AddOnUtil = Desktop.common.nomitech.common.util.AddOnUtil;
 	using CryptUtil = Desktop.common.nomitech.common.util.CryptUtil;
 	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;

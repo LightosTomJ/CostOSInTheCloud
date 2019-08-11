@@ -1,6 +1,6 @@
 ﻿namespace Models.local
 {
-	using BaseEntity = nomitech.common.@base.BaseEntity;
+	using BaseEntity = Desktop.common.nomitech.common.@base.BaseEntity;
 
 
 	//#RXP_START

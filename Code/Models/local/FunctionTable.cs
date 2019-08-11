@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -344,7 +344,7 @@ namespace Models.local
 			}
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			FunctionTable fTable = new FunctionTable();
 
@@ -376,7 +376,7 @@ namespace Models.local
 
 		public virtual FunctionTable copyWithVariables(bool resetIds)
 		{
-			FunctionTable fTable = (FunctionTable)clone();
+			FunctionTable fTable = (FunctionTable)Clone();
 
 			if (resetIds)
 			{

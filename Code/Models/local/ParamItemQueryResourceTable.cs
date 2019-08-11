@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -1702,7 +1702,7 @@ namespace Models.local
 			}
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ParamItemQueryResourceTable obj = new ParamItemQueryResourceTable();
 			obj.Id = Id;
@@ -1714,7 +1714,7 @@ namespace Models.local
 
 		public virtual ParamItemQueryResourceTable copy()
 		{
-			ParamItemQueryResourceTable obj = (ParamItemQueryResourceTable) clone();
+			ParamItemQueryResourceTable obj = (ParamItemQueryResourceTable) Clone();
 
 			if (QueryRowList != null)
 			{

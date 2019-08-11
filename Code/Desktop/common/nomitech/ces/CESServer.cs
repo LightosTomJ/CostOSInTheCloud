@@ -20,8 +20,8 @@ namespace Desktop.common.nomitech.ces
     using Roles = Desktop.common.nomitech.common.auth.Roles;
     using RolesData = Desktop.common.nomitech.common.auth.RolesData;
     using RolesHome = Desktop.common.nomitech.common.auth.RolesHome;
-    using ProjectDbmsTable = Desktop.common.nomitech.common.db.local.ProjectDbmsTable;
-    using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
+    using ProjectDbmsTable = Models.local.ProjectDbmsTable;
+    using ProjectUrlTable = Models.local.ProjectUrlTable;
     using License = Desktop.common.nomitech.common.license.License;
     using LicenseManager = Desktop.common.nomitech.common.license.LicenseManager;
     using LicenseRowItem = Desktop.common.nomitech.common.license.LicenseRowItem;

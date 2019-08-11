@@ -12,26 +12,26 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceHistoryTable = nomitech.common.@base.ResourceHistoryTable;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using ResourceWithAssignmentsTable = nomitech.common.@base.ResourceWithAssignmentsTable;
-	using LayoutTable = nomitech.common.db.layout.LayoutTable;
-	using BoqItemAssemblyTable = nomitech.common.db.project.BoqItemAssemblyTable;
-	using BoqItemConsumableTable = nomitech.common.db.project.BoqItemConsumableTable;
-	using BoqItemEquipmentTable = nomitech.common.db.project.BoqItemEquipmentTable;
-	using BoqItemLaborTable = nomitech.common.db.project.BoqItemLaborTable;
-	using BoqItemMaterialTable = nomitech.common.db.project.BoqItemMaterialTable;
-	using BoqItemSubcontractorTable = nomitech.common.db.project.BoqItemSubcontractorTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using MaterialHistoryTable = nomitech.common.db.project.MaterialHistoryTable;
-	using BigDecimalFixed = nomitech.common.db.types.BigDecimalFixed;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using ImperialToMetric = nomitech.common.util.ImperialToMetric;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceHistoryTable = Desktop.common.nomitech.common.@base.ResourceHistoryTable;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using ResourceWithAssignmentsTable = Desktop.common.nomitech.common.@base.ResourceWithAssignmentsTable;
+	using LayoutTable = Desktop.common.nomitech.common.db.layout.LayoutTable;
+	using BoqItemAssemblyTable = Desktop.common.nomitech.common.db.project.BoqItemAssemblyTable;
+	using BoqItemConsumableTable = Desktop.common.nomitech.common.db.project.BoqItemConsumableTable;
+	using BoqItemEquipmentTable = Desktop.common.nomitech.common.db.project.BoqItemEquipmentTable;
+	using BoqItemLaborTable = Desktop.common.nomitech.common.db.project.BoqItemLaborTable;
+	using BoqItemMaterialTable = Desktop.common.nomitech.common.db.project.BoqItemMaterialTable;
+	using BoqItemSubcontractorTable = Desktop.common.nomitech.common.db.project.BoqItemSubcontractorTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using MaterialHistoryTable = Desktop.common.nomitech.common.db.project.MaterialHistoryTable;
+	using BigDecimalFixed = Desktop.common.nomitech.common.db.types.BigDecimalFixed;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using ImperialToMetric = Desktop.common.nomitech.common.util.ImperialToMetric;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -710,7 +710,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					AssemblyAssemblyTable cur = (AssemblyAssemblyTable) iter.Current;
-					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.clone(false, false);
+					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.Clone(false, false);
 					AssemblyTable childTable = (AssemblyTable) cur.ChildTable.deepCopy(removeIds);
 					if (removeIds)
 					{
@@ -733,7 +733,7 @@ namespace Models.local
 				{
 					AssemblyLaborTable cur = (AssemblyLaborTable) iter.Current;
 					AssemblyLaborTable table = (AssemblyLaborTable) cur.clone(false, false);
-					LaborTable laborTable = (LaborTable) cur.LaborTable.clone();
+					LaborTable laborTable = (LaborTable) cur.LaborTable.Clone();
 					if (removeIds)
 					{
 						laborTable.LaborId = null;
@@ -755,7 +755,7 @@ namespace Models.local
 				{
 					AssemblyConsumableTable cur = (AssemblyConsumableTable) iter.Current;
 					AssemblyConsumableTable table = (AssemblyConsumableTable) cur.clone(false);
-					ConsumableTable consumableTable = (ConsumableTable) cur.ConsumableTable.clone();
+					ConsumableTable consumableTable = (ConsumableTable) cur.ConsumableTable.Clone();
 					if (removeIds)
 					{
 						consumableTable.ConsumableId = null;
@@ -777,7 +777,7 @@ namespace Models.local
 				{
 					AssemblySubcontractorTable cur = (AssemblySubcontractorTable) iter.Current;
 					AssemblySubcontractorTable table = (AssemblySubcontractorTable) cur.clone(false);
-					SubcontractorTable subcontractorTable = (SubcontractorTable) cur.SubcontractorTable.clone();
+					SubcontractorTable subcontractorTable = (SubcontractorTable) cur.SubcontractorTable.Clone();
 					if (removeIds)
 					{
 						subcontractorTable.SubcontractorId = null;
@@ -800,7 +800,7 @@ namespace Models.local
 				{
 					AssemblyEquipmentTable cur = (AssemblyEquipmentTable) iter.Current;
 					AssemblyEquipmentTable table = (AssemblyEquipmentTable) cur.clone(false);
-					EquipmentTable equipmentTable = (EquipmentTable) cur.EquipmentTable.clone();
+					EquipmentTable equipmentTable = (EquipmentTable) cur.EquipmentTable.Clone();
 					if (removeIds)
 					{
 						equipmentTable.EquipmentId = null;
@@ -826,7 +826,7 @@ namespace Models.local
 					MaterialTable materialTable = null;
 					if (removeIds)
 					{
-						materialTable = (MaterialTable) cur.MaterialTable.clone();
+						materialTable = (MaterialTable) cur.MaterialTable.Clone();
 						materialTable.MaterialId = null;
 						materialTable.DatabaseCreationDate = null;
 						materialTable.DatabaseId = null;
@@ -858,7 +858,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					AssemblyAssemblyTable cur = (AssemblyAssemblyTable) iter.Current;
-					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.clone(false, false);
+					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.Clone(false, false);
 					AssemblyTable assemblyTable = (AssemblyTable) cur.ChildTable.deepRoundCopy();
 					if (removeIds)
 					{
@@ -882,7 +882,7 @@ namespace Models.local
 				{
 					AssemblyLaborTable cur = (AssemblyLaborTable) iter.Current;
 					AssemblyLaborTable table = (AssemblyLaborTable) cur.clone(false, false);
-					LaborTable laborTable = (LaborTable) cur.LaborTable.clone();
+					LaborTable laborTable = (LaborTable) cur.LaborTable.Clone();
 					if (removeIds)
 					{
 						laborTable.LaborId = null;
@@ -906,7 +906,7 @@ namespace Models.local
 				{
 					AssemblyConsumableTable cur = (AssemblyConsumableTable) iter.Current;
 					AssemblyConsumableTable table = (AssemblyConsumableTable) cur.clone(false);
-					ConsumableTable consumableTable = (ConsumableTable) cur.ConsumableTable.clone();
+					ConsumableTable consumableTable = (ConsumableTable) cur.ConsumableTable.Clone();
 					if (removeIds)
 					{
 						consumableTable.ConsumableId = null;
@@ -930,7 +930,7 @@ namespace Models.local
 				{
 					AssemblySubcontractorTable cur = (AssemblySubcontractorTable) iter.Current;
 					AssemblySubcontractorTable table = (AssemblySubcontractorTable) cur.clone(false);
-					SubcontractorTable subcontractorTable = (SubcontractorTable) cur.SubcontractorTable.clone();
+					SubcontractorTable subcontractorTable = (SubcontractorTable) cur.SubcontractorTable.Clone();
 					if (removeIds)
 					{
 						subcontractorTable.SubcontractorId = null;
@@ -954,7 +954,7 @@ namespace Models.local
 				{
 					AssemblyEquipmentTable cur = (AssemblyEquipmentTable) iter.Current;
 					AssemblyEquipmentTable table = (AssemblyEquipmentTable) cur.clone(false);
-					EquipmentTable equipmentTable = (EquipmentTable) cur.EquipmentTable.clone();
+					EquipmentTable equipmentTable = (EquipmentTable) cur.EquipmentTable.Clone();
 					if (removeIds)
 					{
 						equipmentTable.EquipmentId = null;
@@ -981,7 +981,7 @@ namespace Models.local
 					MaterialTable materialTable = null;
 					if (removeIds)
 					{
-						materialTable = (MaterialTable) cur.MaterialTable.clone();
+						materialTable = (MaterialTable) cur.MaterialTable.Clone();
 						materialTable.MaterialId = null;
 						materialTable.DatabaseCreationDate = null;
 						materialTable.DatabaseId = null;
@@ -1012,7 +1012,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					AssemblyAssemblyTable cur = (AssemblyAssemblyTable) iter.Current;
-					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.clone(false, false);
+					AssemblyAssemblyTable table = (AssemblyAssemblyTable) cur.Clone(false, false);
 					AssemblyTable assemblyTable = (AssemblyTable) cur.ChildTable.conversionClone(metric, demo);
 					table.ChildTable = assemblyTable;
 					obj.assemblyChildSet.Add(table);
@@ -3008,14 +3008,14 @@ namespace Models.local
 				}
 				else
 				{
-					laborTable = (LaborTable) laborTable.clone();
+					laborTable = (LaborTable) laborTable.Clone();
 					laborTable.EditorId = DatabaseDBUtil.Properties.UserId;
 					laborTable.Project = project;
 					laborTable.DatabaseId = null;
 					laborTable.BuildUpRate = null;
 					laborTable.DatabaseCreationDate = null;
 				}
-				long? id = (long?) session.save(laborTable.clone());
+				long? id = (long?) session.save(laborTable.Clone());
 				if (!inResourceDatabase)
 				{
 					dbLaborTable = (LaborTable) session.load(typeof(LaborTable), id);
@@ -3121,14 +3121,14 @@ namespace Models.local
 				}
 				else
 				{
-					consumableTable = (ConsumableTable) consumableTable.clone();
+					consumableTable = (ConsumableTable) consumableTable.Clone();
 					consumableTable.EditorId = DatabaseDBUtil.Properties.UserId;
 					consumableTable.Project = project;
 					consumableTable.DatabaseId = null;
 					consumableTable.DatabaseCreationDate = null;
 					consumableTable.BuildUpRate = null;
 				}
-				long? id = (long?) session.save(consumableTable.clone());
+				long? id = (long?) session.save(consumableTable.Clone());
 				if (!inResourceDatabase)
 				{
 					dbConsumableTable = (ConsumableTable) session.load(typeof(ConsumableTable), id);
@@ -3234,13 +3234,13 @@ namespace Models.local
 				}
 				else
 				{
-					equipmentTable = (EquipmentTable) equipmentTable.clone();
+					equipmentTable = (EquipmentTable) equipmentTable.Clone();
 					equipmentTable.EditorId = DatabaseDBUtil.Properties.UserId;
 					equipmentTable.DatabaseId = null;
 					equipmentTable.DatabaseCreationDate = null;
 					equipmentTable.BuildUpRate = null;
 				}
-				long? id = (long?) session.save(equipmentTable.clone());
+				long? id = (long?) session.save(equipmentTable.Clone());
 				if (!inResourceDatabase)
 				{
 					dbEquipmentTable = (EquipmentTable) session.load(typeof(EquipmentTable), id);
@@ -3343,14 +3343,14 @@ namespace Models.local
 				}
 				else
 				{
-					subcontractorTable = (SubcontractorTable) subcontractorTable.clone();
+					subcontractorTable = (SubcontractorTable) subcontractorTable.Clone();
 					subcontractorTable.EditorId = DatabaseDBUtil.Properties.UserId;
 					subcontractorTable.Project = project;
 					subcontractorTable.DatabaseId = null;
 					subcontractorTable.DatabaseCreationDate = null;
 					subcontractorTable.BuildUpRate = null;
 				}
-				long? id = (long?) session.save(subcontractorTable.clone());
+				long? id = (long?) session.save(subcontractorTable.Clone());
 				if (!inResourceDatabase)
 				{
 					dbSubcontractorTable = (SubcontractorTable) session.load(typeof(SubcontractorTable), id);
@@ -3454,14 +3454,14 @@ namespace Models.local
 				}
 				else
 				{
-					materialTable = (MaterialTable) materialTable.clone();
+					materialTable = (MaterialTable) materialTable.Clone();
 					materialTable.EditorId = DatabaseDBUtil.Properties.UserId;
 					materialTable.Project = project;
 					materialTable.DatabaseId = null;
 					materialTable.DatabaseCreationDate = null;
 					materialTable.BuildUpRate = null;
 				}
-				long? id = (long?) session.save(materialTable.clone());
+				long? id = (long?) session.save(materialTable.Clone());
 				if (!inResourceDatabase)
 				{
 					dbMaterialTable = (MaterialTable) session.load(typeof(MaterialTable), id);
@@ -3619,7 +3619,7 @@ namespace Models.local
 			while (iter.MoveNext())
 			{
 				AssemblyAssemblyTable newAssemblyAssembly = (AssemblyAssemblyTable) iter.Current;
-				long? id = (long?) session.save(newAssemblyAssembly.clone(false, false));
+				long? id = (long?) session.save(newAssemblyAssembly.Clone(false, false));
 				AssemblyAssemblyTable curAssemblyAssembly = (AssemblyAssemblyTable) session.load(typeof(AssemblyAssemblyTable), id);
 
 				AssemblyTable childTable = getFromDatabase(session, newAssemblyAssembly.ChildTable, newAssemblyTable.Project, projectId, inResourceDatabase);
@@ -4241,7 +4241,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					AssemblyAssemblyTable originalAssemblyChild = (AssemblyAssemblyTable) iter.Current;
-					AssemblyAssemblyTable assemblyChildToSave = (AssemblyAssemblyTable) originalAssemblyChild.clone(false);
+					AssemblyAssemblyTable assemblyChildToSave = (AssemblyAssemblyTable) originalAssemblyChild.Clone(false);
 					assemblyChildToSave.LastUpdate = today;
 					assemblyChildToSave.ParentTable = assemblyTosave;
 					assemblyChildToSave.ChildTable = originalAssemblyChild.ChildTable;
@@ -4370,7 +4370,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					AssemblyAssemblyTable relOriginalAssemblyChild = (AssemblyAssemblyTable) iter.Current;
-					AssemblyAssemblyTable relAssemblyChildToSave = (AssemblyAssemblyTable) relOriginalAssemblyChild.clone(false);
+					AssemblyAssemblyTable relAssemblyChildToSave = (AssemblyAssemblyTable) relOriginalAssemblyChild.Clone(false);
 					AssemblyTable assemblyChildToSave = clonedAssembliesMap[relOriginalAssemblyChild.ChildTable.Id];
 					if (assemblyChildToSave == null)
 					{
@@ -4392,7 +4392,7 @@ namespace Models.local
 					EquipmentTable childToSave = clonedEquipmentMap[relOriginalChild.EquipmentTable.Id];
 					if (childToSave == null)
 					{
-						childToSave = (EquipmentTable) relOriginalChild.EquipmentTable.clone();
+						childToSave = (EquipmentTable) relOriginalChild.EquipmentTable.Clone();
 						childToSave.CreateDate = today;
 						childToSave.LastUpdate = today;
 						childToSave.EditorId = user;
@@ -4416,7 +4416,7 @@ namespace Models.local
 					MaterialTable childToSave = clonedMaterialMap[relOriginalChild.MaterialTable.Id];
 					if (childToSave == null)
 					{
-						childToSave = (MaterialTable) relOriginalChild.MaterialTable.clone();
+						childToSave = (MaterialTable) relOriginalChild.MaterialTable.Clone();
 						childToSave.CreateDate = today;
 						childToSave.LastUpdate = today;
 						childToSave.EditorId = user;
@@ -4440,7 +4440,7 @@ namespace Models.local
 					LaborTable childToSave = clonedlaborMap[relOriginalChild.LaborTable.Id];
 					if (childToSave == null)
 					{
-						childToSave = (LaborTable) relOriginalChild.LaborTable.clone();
+						childToSave = (LaborTable) relOriginalChild.LaborTable.Clone();
 						childToSave.CreateDate = today;
 						childToSave.LastUpdate = today;
 						childToSave.EditorId = user;
@@ -4464,7 +4464,7 @@ namespace Models.local
 					ConsumableTable childToSave = clonedConsumableMap[relOriginalChild.ConsumableTable.Id];
 					if (childToSave == null)
 					{
-						childToSave = (ConsumableTable) relOriginalChild.ConsumableTable.clone();
+						childToSave = (ConsumableTable) relOriginalChild.ConsumableTable.Clone();
 						childToSave.CreateDate = today;
 						childToSave.LastUpdate = today;
 						childToSave.EditorId = user;
@@ -4488,7 +4488,7 @@ namespace Models.local
 					SubcontractorTable childToSave = clonedSubcontractorMap[relOriginalChild.SubcontractorTable.Id];
 					if (childToSave == null)
 					{
-						childToSave = (SubcontractorTable) relOriginalChild.SubcontractorTable.clone();
+						childToSave = (SubcontractorTable) relOriginalChild.SubcontractorTable.Clone();
 						childToSave.CreateDate = today;
 						childToSave.LastUpdate = today;
 						childToSave.EditorId = user;
@@ -4942,7 +4942,7 @@ namespace Models.local
 			while (iter1.MoveNext())
 			{
 				AssemblyEquipmentTable assEquipment = iter1.Current;
-				EquipmentTable equipmentTable = (EquipmentTable) assEquipment.EquipmentTable.clone();
+				EquipmentTable equipmentTable = (EquipmentTable) assEquipment.EquipmentTable.Clone();
 				BoqItemEquipmentTable boqEquipmentTable = new BoqItemEquipmentTable();
 
 				boqEquipmentTable.Factor1 = assEquipment.Factor1;
@@ -4987,7 +4987,7 @@ namespace Models.local
 			while (iter2.MoveNext())
 			{
 				AssemblySubcontractorTable assSubcontractor = iter2.Current;
-				SubcontractorTable subcontractorTable = (SubcontractorTable) assSubcontractor.SubcontractorTable.clone();
+				SubcontractorTable subcontractorTable = (SubcontractorTable) assSubcontractor.SubcontractorTable.Clone();
 				BoqItemSubcontractorTable boqSubcontractorTable = new BoqItemSubcontractorTable();
 
 				boqSubcontractorTable.Factor1 = assSubcontractor.Factor1;
@@ -5031,7 +5031,7 @@ namespace Models.local
 			while (iter3.MoveNext())
 			{
 				AssemblyLaborTable assLabor = iter3.Current;
-				LaborTable laborTable = (LaborTable) assLabor.LaborTable.clone();
+				LaborTable laborTable = (LaborTable) assLabor.LaborTable.Clone();
 				BoqItemLaborTable boqLaborTable = new BoqItemLaborTable();
 
 				boqLaborTable.Factor1 = assLabor.Factor1;
@@ -5126,7 +5126,7 @@ namespace Models.local
 			while (iter5.MoveNext())
 			{
 				AssemblyConsumableTable assConsumable = iter5.Current;
-				ConsumableTable consumableTable = (ConsumableTable) assConsumable.ConsumableTable.clone();
+				ConsumableTable consumableTable = (ConsumableTable) assConsumable.ConsumableTable.Clone();
 				BoqItemConsumableTable boqConsumableTable = new BoqItemConsumableTable();
 
 				boqConsumableTable.Factor1 = assConsumable.Factor1;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
 	//#RXP_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -679,7 +679,7 @@ namespace Models.local
 			}
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			TakeoffConditionTable obj = new TakeoffConditionTable();
 
@@ -717,7 +717,7 @@ namespace Models.local
 
 		public virtual object copy(bool cyclic)
 		{
-			TakeoffConditionTable obj = (TakeoffConditionTable) clone();
+			TakeoffConditionTable obj = (TakeoffConditionTable) Clone();
 
 			obj.LinesList = new List<TakeoffLineTable>();
 			obj.AreaList = new List<TakeoffAreaTable>();

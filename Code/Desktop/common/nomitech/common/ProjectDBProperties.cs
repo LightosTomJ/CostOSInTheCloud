@@ -5,8 +5,8 @@ using System.IO;
 
 namespace Desktop.common.nomitech.common
 {
-	using ProjectPropertyTable = Desktop.common.nomitech.common.db.local.ProjectPropertyTable;
-	using ProjectUserPropertyTable = Desktop.common.nomitech.common.db.project.ProjectUserPropertyTable;
+	using ProjectPropertyTable = Models.local.ProjectPropertyTable;
+	using ProjectUserPropertyTable = Models.proj.ProjectUserPropertyTable;
 	using AddOnUtil = Desktop.common.nomitech.common.util.AddOnUtil;
 	using IPToCountryUtil = Desktop.common.nomitech.common.util.IPToCountryUtil;
 	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;

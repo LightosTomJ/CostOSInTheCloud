@@ -8,7 +8,7 @@ namespace Desktop.common.nomitech.common.@base
 	  string Title {get;set;}
 
 
-	  object clone();
+	  object Clone();
 
 	  string ToString();
 

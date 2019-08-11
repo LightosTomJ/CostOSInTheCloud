@@ -3,7 +3,7 @@
 namespace Models.local
 {
 
-	using BaseEntity = nomitech.common.@base.BaseEntity;
+	using BaseEntity = Desktop.common.nomitech.common.@base.BaseEntity;
 	//#RXP_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -338,7 +338,7 @@ namespace Models.local
 
 			if (LocalizationProfileTable != null)
 			{
-				factTable.LocalizationProfileTable = (LocalizationProfileTable)LocalizationProfileTable.clone();
+				factTable.LocalizationProfileTable = (LocalizationProfileTable)LocalizationProfileTable.Clone();
 			}
 
 			return factTable;

@@ -168,7 +168,7 @@ namespace Desktop.common.nomitech.common.@base
 		}
 		else
 		{
-		  baseTableItem.baseTable = (BaseTable)this.baseTable.clone();
+		  baseTableItem.baseTable = (BaseTable)this.baseTable.Clone();
 		}
 		baseTableItem.online = this.online;
 		baseTableItem.resourceType = this.resourceType;

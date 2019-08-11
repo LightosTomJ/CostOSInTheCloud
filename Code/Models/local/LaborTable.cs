@@ -11,19 +11,19 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using PredictionTable = nomitech.common.@base.PredictionTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceHistoryTable = nomitech.common.@base.ResourceHistoryTable;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using BoqItemLaborTable = nomitech.common.db.project.BoqItemLaborTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using LaborHistoryTable = nomitech.common.db.project.LaborHistoryTable;
-	using BigDecimalFixed = nomitech.common.db.types.BigDecimalFixed;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using PredictionTable = Desktop.common.nomitech.common.@base.PredictionTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceHistoryTable = Desktop.common.nomitech.common.@base.ResourceHistoryTable;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using BoqItemLaborTable = Desktop.common.nomitech.common.db.project.BoqItemLaborTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using LaborHistoryTable = Desktop.common.nomitech.common.db.project.LaborHistoryTable;
+	using BigDecimalFixed = Desktop.common.nomitech.common.db.types.BigDecimalFixed;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -225,7 +225,7 @@ namespace Models.local
 
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			LaborTable obj = new LaborTable();
 
@@ -289,7 +289,7 @@ namespace Models.local
 		// For online databases only:
 		public virtual object conversionClone(bool metric, bool demo)
 		{
-			LaborTable obj = (LaborTable)clone();
+			LaborTable obj = (LaborTable)Clone();
 			if (demo)
 			{
 				obj.IKA = BigDecimalMath.ZERO;
@@ -301,7 +301,7 @@ namespace Models.local
 
 		public virtual LaborTable copyToAssembly()
 		{
-			LaborTable obj = (LaborTable)clone();
+			LaborTable obj = (LaborTable)Clone();
 
 			ISet<AssemblyLaborTable> assLaborSet = new HashSet<AssemblyLaborTable>();
 			IEnumerator<AssemblyLaborTable> iter = this.AssemblyLaborSet.GetEnumerator();
@@ -1253,7 +1253,7 @@ namespace Models.local
 			boqTable.BoqItemMaterialSet = new HashSet<object>();
 			boqTable.BoqItemConsumableSet = new HashSet<object>();
 
-			LaborTable laborTable = (LaborTable)clone();
+			LaborTable laborTable = (LaborTable)Clone();
 			BoqItemLaborTable boqLaborTable = new BoqItemLaborTable();
 
 			boqLaborTable.Factor1 = BigDecimalMath.ONE;
@@ -1305,7 +1305,7 @@ namespace Models.local
 			assemblyTable.AssemblyMaterialSet = new HashSet<object>();
 			assemblyTable.AssemblyConsumableSet = new HashSet<object>();
 
-			LaborTable laborTable = (LaborTable)clone();
+			LaborTable laborTable = (LaborTable)Clone();
 			laborTable.ResourceHistorySet = ResourceHistorySet;
 			laborTable.recalculate();
 

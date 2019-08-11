@@ -8,8 +8,8 @@
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using BaseTableList = nomitech.common.@base.BaseTableList;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using BaseTableList = Desktop.common.nomitech.common.@base.BaseTableList;
 
 	/// <summary>
 	/// @author george

@@ -6,18 +6,18 @@ namespace Models.local
 {
 
 
-	using PredictionTable = nomitech.common.@base.PredictionTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceHistoryTable = nomitech.common.@base.ResourceHistoryTable;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using BoqItemEquipmentTable = nomitech.common.db.project.BoqItemEquipmentTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using EquipmentHistoryTable = nomitech.common.db.project.EquipmentHistoryTable;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using PredictionTable = Desktop.common.nomitech.common.@base.PredictionTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceHistoryTable = Desktop.common.nomitech.common.@base.ResourceHistoryTable;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using BoqItemEquipmentTable = Desktop.common.nomitech.common.db.project.BoqItemEquipmentTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using EquipmentHistoryTable = Desktop.common.nomitech.common.db.project.EquipmentHistoryTable;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -227,7 +227,7 @@ namespace Models.local
 			return null;
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			EquipmentTable obj = new EquipmentTable();
 
@@ -307,7 +307,7 @@ namespace Models.local
 		// For online databases only:
 		public virtual object conversionClone(bool metric, bool demo)
 		{
-			EquipmentTable obj = (EquipmentTable) clone();
+			EquipmentTable obj = (EquipmentTable) Clone();
 
 			if (demo)
 			{
@@ -326,7 +326,7 @@ namespace Models.local
 
 		public virtual EquipmentTable copyToAssembly()
 		{
-			EquipmentTable obj = (EquipmentTable) clone();
+			EquipmentTable obj = (EquipmentTable) Clone();
 
 			ISet<AssemblyEquipmentTable> assEquipmentSet = new HashSet<AssemblyEquipmentTable>();
 			IEnumerator<AssemblyEquipmentTable> iter = this.AssemblyEquipmentSet.GetEnumerator();
@@ -1472,7 +1472,7 @@ namespace Models.local
 			boqTable.BoqItemMaterialSet = new HashSet<object>();
 			boqTable.BoqItemConsumableSet = new HashSet<object>();
 
-			EquipmentTable equipmentTable = (EquipmentTable) clone();
+			EquipmentTable equipmentTable = (EquipmentTable) Clone();
 			BoqItemEquipmentTable boqEquipmentTable = new BoqItemEquipmentTable();
 
 			boqEquipmentTable.Factor1 = BigDecimalMath.ONE;
@@ -1527,7 +1527,7 @@ namespace Models.local
 			assemblyTable.AssemblyMaterialSet = new HashSet<object>();
 			assemblyTable.AssemblyConsumableSet = new HashSet<object>();
 
-			EquipmentTable equipmentTable = (EquipmentTable) clone();
+			EquipmentTable equipmentTable = (EquipmentTable) Clone();
 			equipmentTable.ResourceHistorySet = ResourceHistorySet;
 			equipmentTable.recalculate();
 

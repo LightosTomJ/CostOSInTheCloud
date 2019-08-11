@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using DatabaseTable = nomitech.common.@base.DatabaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using DatabaseTable = Desktop.common.nomitech.common.@base.DatabaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -113,7 +113,7 @@ namespace Models.local
 
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ParamItemInputTable obj = new ParamItemInputTable();
 
@@ -177,7 +177,7 @@ namespace Models.local
 
 		public virtual object copyWithConditions()
 		{
-			ParamItemInputTable paramItemTable = (ParamItemInputTable)clone();
+			ParamItemInputTable paramItemTable = (ParamItemInputTable)Clone();
 
 			if (ConditionSet != null)
 			{
@@ -185,7 +185,7 @@ namespace Models.local
 
 				foreach (ParamItemConditionTable conTable in ConditionSet)
 				{
-					paramItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.clone());
+					paramItemTable.ConditionSet.Add((ParamItemConditionTable) conTable.Clone());
 				}
 			}
 
@@ -194,11 +194,11 @@ namespace Models.local
 
 		public virtual object copyWithParamItem()
 		{
-			ParamItemInputTable inputTable = (ParamItemInputTable)clone();
+			ParamItemInputTable inputTable = (ParamItemInputTable)Clone();
 
 			if (ParamItemTable != null)
 			{
-				inputTable.ParamItemTable = (ParamItemTable) ParamItemTable.clone();
+				inputTable.ParamItemTable = (ParamItemTable) ParamItemTable.Clone();
 			}
 
 			return inputTable;

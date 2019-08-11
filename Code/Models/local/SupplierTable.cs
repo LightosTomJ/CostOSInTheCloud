@@ -10,9 +10,9 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceWithAssignmentsTable = nomitech.common.@base.ResourceWithAssignmentsTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceWithAssignmentsTable = Desktop.common.nomitech.common.@base.ResourceWithAssignmentsTable;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -262,7 +262,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					MaterialTable curMat = (MaterialTable)iter.Current;
-					obj.materialSet.Add((MaterialTable)curMat.clone());
+					obj.materialSet.Add((MaterialTable)curMat.Clone());
 				}
 			}
 

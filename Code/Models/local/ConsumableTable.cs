@@ -11,19 +11,19 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using PredictionTable = nomitech.common.@base.PredictionTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceHistoryTable = nomitech.common.@base.ResourceHistoryTable;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using BoqItemConsumableTable = nomitech.common.db.project.BoqItemConsumableTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using ConsumableHistoryTable = nomitech.common.db.project.ConsumableHistoryTable;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using ImperialToMetric = nomitech.common.util.ImperialToMetric;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using PredictionTable = Desktop.common.nomitech.common.@base.PredictionTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceHistoryTable = Desktop.common.nomitech.common.@base.ResourceHistoryTable;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using BoqItemConsumableTable = Desktop.common.nomitech.common.db.project.BoqItemConsumableTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using ConsumableHistoryTable = Desktop.common.nomitech.common.db.project.ConsumableHistoryTable;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using ImperialToMetric = Desktop.common.nomitech.common.util.ImperialToMetric;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -188,7 +188,7 @@ namespace Models.local
 			return null;
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ConsumableTable obj = new ConsumableTable();
 
@@ -244,7 +244,7 @@ namespace Models.local
 		// For online databases only:
 		public virtual object conversionClone(bool metric, bool demo)
 		{
-			ConsumableTable obj = (ConsumableTable)clone();
+			ConsumableTable obj = (ConsumableTable)Clone();
 
 			if (metric)
 			{
@@ -261,7 +261,7 @@ namespace Models.local
 
 		public virtual ConsumableTable copyToAssembly()
 		{
-			ConsumableTable obj = (ConsumableTable)clone();
+			ConsumableTable obj = (ConsumableTable)Clone();
 
 			ISet<AssemblyConsumableTable> assConsumableSet = new HashSet<AssemblyConsumableTable>();
 			IEnumerator<AssemblyConsumableTable> iter = this.AssemblyConsumableSet.GetEnumerator();
@@ -1128,7 +1128,7 @@ namespace Models.local
 			boqTable.BoqItemMaterialSet = new HashSet<object>();
 			boqTable.BoqItemConsumableSet = new HashSet<object>();
 
-			ConsumableTable consumableTable = (ConsumableTable)clone();
+			ConsumableTable consumableTable = (ConsumableTable)Clone();
 			BoqItemConsumableTable boqConsumableTable = new BoqItemConsumableTable();
 
 			boqConsumableTable.Factor1 = BigDecimalMath.ONE;

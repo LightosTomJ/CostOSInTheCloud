@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace Models.cache
 {
 
-	using BaseCache = nomitech.common.@base.BaseCache;
-	using GroupCode = nomitech.common.@base.GroupCode;
-	using GroupCodesWithResource = nomitech.common.@base.GroupCodesWithResource;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ParamItemTable = nomitech.common.db.local.ParamItemTable;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
+	using BaseCache = Desktop.common.nomitech.common.@base.BaseCache;
+	using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+	using GroupCodesWithResource = Desktop.common.nomitech.common.@base.GroupCodesWithResource;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ParamItemTable = Desktop.common.nomitech.common.db.local.ParamItemTable;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 
 	using Session = org.hibernate.Session;
 
@@ -290,7 +290,7 @@ namespace Models.cache
 				return codeAndTitle;
 			}
 
-			public virtual object clone()
+			public virtual object Clone()
 			{
 				ParamItemGroupCode p = new ParamItemGroupCode(outerInstance, codeAndTitle);
 				p.codeAndTitle = codeAndTitle;

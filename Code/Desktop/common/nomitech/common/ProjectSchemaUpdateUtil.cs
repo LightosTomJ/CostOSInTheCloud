@@ -3,11 +3,11 @@ using System.Text;
 
 namespace Desktop.common.nomitech.common
 {
-	using ProjectWBS2Table = Desktop.common.nomitech.common.db.local.ProjectWBS2Table;
-	using ProjectWBSTable = Desktop.common.nomitech.common.db.local.ProjectWBSTable;
-	using BoqItemConditionTable = Desktop.common.nomitech.common.db.project.BoqItemConditionTable;
-	using BoqItemEquipmentTable = Desktop.common.nomitech.common.db.project.BoqItemEquipmentTable;
-	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using ProjectWBS2Table = Models.local.ProjectWBS2Table;
+	using ProjectWBSTable = Models.local.ProjectWBSTable;
+	using BoqItemConditionTable = Models.proj.BoqItemConditionTable;
+	using BoqItemEquipmentTable = Models.proj.BoqItemEquipmentTable;
+	using BoqItemTable = Models.proj.BoqItemTable;
 	using BoqItemDefaultFormulas = Desktop.common.nomitech.common.expr.boqitem.BoqItemDefaultFormulas;
 	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 	using IPToCountryUtil = Desktop.common.nomitech.common.util.IPToCountryUtil;

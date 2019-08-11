@@ -5,18 +5,18 @@ namespace Models.local
 {
 
 
-	using PredictionTable = nomitech.common.@base.PredictionTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceHistoryTable = nomitech.common.@base.ResourceHistoryTable;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using BoqItemSubcontractorTable = nomitech.common.db.project.BoqItemSubcontractorTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using ImperialToMetric = nomitech.common.util.ImperialToMetric;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using PredictionTable = Desktop.common.nomitech.common.@base.PredictionTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceHistoryTable = Desktop.common.nomitech.common.@base.ResourceHistoryTable;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using BoqItemSubcontractorTable = Desktop.common.nomitech.common.db.project.BoqItemSubcontractorTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using ImperialToMetric = Desktop.common.nomitech.common.util.ImperialToMetric;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -253,7 +253,7 @@ namespace Models.local
 			return null;
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			SubcontractorTable obj = new SubcontractorTable();
 
@@ -324,7 +324,7 @@ namespace Models.local
 		// For online databases only:
 		public virtual object conversionClone(bool metric, bool demo)
 		{
-			SubcontractorTable obj = (SubcontractorTable)clone();
+			SubcontractorTable obj = (SubcontractorTable)Clone();
 			if (metric)
 			{
 				obj.IKA = ImperialToMetric.getRate(unit, IKA_Conflict);
@@ -345,7 +345,7 @@ namespace Models.local
 
 		public virtual SubcontractorTable copyToAssembly()
 		{
-			SubcontractorTable obj = (SubcontractorTable)clone();
+			SubcontractorTable obj = (SubcontractorTable)Clone();
 
 			ISet<AssemblySubcontractorTable> assSubcontractorSet = new HashSet<AssemblySubcontractorTable>();
 			IEnumerator<AssemblySubcontractorTable> iter = this.AssemblySubcontractorSet.GetEnumerator();
@@ -1433,7 +1433,7 @@ namespace Models.local
 			boqTable.BoqItemMaterialSet = new HashSet<object>();
 			boqTable.BoqItemConsumableSet = new HashSet<object>();
 
-			SubcontractorTable subcontractorTable = (SubcontractorTable)clone();
+			SubcontractorTable subcontractorTable = (SubcontractorTable)Clone();
 			BoqItemSubcontractorTable boqSubcontractorTable = new BoqItemSubcontractorTable();
 
 			boqSubcontractorTable.Factor1 = BigDecimalMath.ONE;

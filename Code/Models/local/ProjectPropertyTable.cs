@@ -1,7 +1,7 @@
 ﻿namespace Models.local
 {
-	using BaseEntity = nomitech.common.@base.BaseEntity;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using BaseEntity = Desktop.common.nomitech.common.@base.BaseEntity;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	/// <summary>
 	/// @author: George Hatzisymeon

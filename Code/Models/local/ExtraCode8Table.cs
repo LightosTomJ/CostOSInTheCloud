@@ -1,29 +1,23 @@
 ﻿using System;
 
+using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+
 namespace Models.local
 {
-
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using GroupCode = nomitech.common.@base.GroupCode;
-
-	using DocumentId = org.hibernate.search.annotations.DocumentId;
-	using Field = org.hibernate.search.annotations.Field;
-	using Indexed = org.hibernate.search.annotations.Indexed;
-	using Store = org.hibernate.search.annotations.Store;
-
-	//#RXP_START
-	//#RXL_START
-	/// <summary>
-	/// @author: George Hatzisymeon
-	/// 
-	/// @hibernate.class table="EXTRACODE8"
-	/// @hibernate.cache usage="nonstrict-read-write"
-	/// </summary>
-	//#RXL_END
-	//#RXP_END
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Indexed public class ExtraCode8Table implements nomitech.common.base.GroupCode, java.awt.datatransfer.Transferable, java.io.Serializable, nomitech.common.base.BaseTable
-	[Serializable]
+    //#RXP_START
+    //#RXL_START
+    /// <summary>
+    /// @author: George Hatzisymeon
+    /// 
+    /// @hibernate.class table="EXTRACODE8"
+    /// @hibernate.cache usage="nonstrict-read-write"
+    /// </summary>
+    //#RXL_END
+    //#RXP_END
+    //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+    //ORIGINAL LINE: @Indexed public class ExtraCode8Table implements nomitech.common.base.GroupCode, java.awt.datatransfer.Transferable, java.io.Serializable, nomitech.common.base.BaseTable
+    [Serializable]
 	public class ExtraCode8Table : GroupCode, Transferable, BaseTable
 	{
 
@@ -79,7 +73,7 @@ namespace Models.local
 	//		return true;
 	//	}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ExtraCode8Table obj = new ExtraCode8Table();
 

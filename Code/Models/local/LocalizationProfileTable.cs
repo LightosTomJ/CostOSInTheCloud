@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
 	//#RXP_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -43,7 +43,7 @@ namespace Models.local
 			}
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			LocalizationProfileTable table = new LocalizationProfileTable();
 
@@ -61,7 +61,7 @@ namespace Models.local
 
 		public virtual object copy()
 		{
-			LocalizationProfileTable table = (LocalizationProfileTable) clone();
+			LocalizationProfileTable table = (LocalizationProfileTable) Clone();
 
 			table.Factors = new List<LocalizationFactorTable>();
 

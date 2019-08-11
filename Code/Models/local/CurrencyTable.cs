@@ -8,7 +8,7 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using Currency = nomitech.common.currency.Currency;
+	using Currency = Desktop.common.nomitech.common.currency.Currency;
 
 	//#RXP_START
 	/// <summary>

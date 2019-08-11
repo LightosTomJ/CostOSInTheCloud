@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Desktop.common.nomitech.common
 {
 	using GroupCodesProvider = Desktop.common.nomitech.common.@base.GroupCodesProvider;
-	using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
+	using ProjectUrlTable = Models.local.ProjectUrlTable;
 	using AddOnUtil = Desktop.common.nomitech.common.util.AddOnUtil;
 	using CryptUtil = Desktop.common.nomitech.common.util.CryptUtil;
 	using Session = org.hibernate.Session;

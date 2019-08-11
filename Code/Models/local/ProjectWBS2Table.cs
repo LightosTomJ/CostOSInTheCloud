@@ -3,10 +3,10 @@
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using GroupCode = nomitech.common.@base.GroupCode;
-	using ItemCode = nomitech.common.@base.ItemCode;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+	using ItemCode = Desktop.common.nomitech.common.@base.ItemCode;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -92,7 +92,7 @@ namespace Models.local
 	//		return true;
 	//	}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ProjectWBS2Table obj = new ProjectWBS2Table();
 

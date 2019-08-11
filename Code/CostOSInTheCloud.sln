@@ -57,9 +57,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "proj", "Models\proj\proj.cs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{96CA6516-6D16-4086-B136-90BBF6C0A447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "Desktop\common\common.csproj", "{87EB3DDB-2344-4F7C-9477-2FEDDF7607AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common", "Desktop\common\common.csproj", "{87EB3DDB-2344-4F7C-9477-2FEDDF7607AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "costos", "Desktop\costos\costos.csproj", "{E442465D-BD73-4C83-98BE-04B76014F70F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "costos", "Desktop\costos\costos.csproj", "{E442465D-BD73-4C83-98BE-04B76014F70F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D60426DA-839D-418D-89E7-C5B1B58B8975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,10 @@ Global
 		{E442465D-BD73-4C83-98BE-04B76014F70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E442465D-BD73-4C83-98BE-04B76014F70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E442465D-BD73-4C83-98BE-04B76014F70F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

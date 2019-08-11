@@ -53,7 +53,7 @@ namespace Models.local
 				ExtraCode10Table[] copy = new ExtraCode10Table[_o_items.Length];
 				for (int i = 0; i < _o_items.Length; i++)
 				{
-				   copy[i] = (ExtraCode10Table)_o_items[i].clone();
+				   copy[i] = (ExtraCode10Table)_o_items[i].Clone();
 				}
     
 				return copy;

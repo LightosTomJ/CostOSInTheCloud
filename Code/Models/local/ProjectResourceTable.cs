@@ -8,23 +8,23 @@ namespace Models.local
 	using ExprDouble = org.boris.expr.ExprDouble;
 	using Indexed = org.hibernate.search.annotations.Indexed;
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using LayoutTable = nomitech.common.db.layout.LayoutTable;
-	using BoqItemConsumableTable = nomitech.common.db.project.BoqItemConsumableTable;
-	using BoqItemEquipmentTable = nomitech.common.db.project.BoqItemEquipmentTable;
-	using BoqItemLaborTable = nomitech.common.db.project.BoqItemLaborTable;
-	using BoqItemMaterialTable = nomitech.common.db.project.BoqItemMaterialTable;
-	using BoqItemSubcontractorTable = nomitech.common.db.project.BoqItemSubcontractorTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using ExprAbstractEvaluationContext = nomitech.common.expr.ExprAbstractEvaluationContext;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BoqItemEvaluationContext = nomitech.common.expr.boqitem.BoqItemEvaluationContext;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using ExchangeRateUtil = nomitech.common.util.ExchangeRateUtil;
-	using StringUtils = nomitech.common.util.StringUtils;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using LayoutTable = Desktop.common.nomitech.common.db.layout.LayoutTable;
+	using BoqItemConsumableTable = Desktop.common.nomitech.common.db.project.BoqItemConsumableTable;
+	using BoqItemEquipmentTable = Desktop.common.nomitech.common.db.project.BoqItemEquipmentTable;
+	using BoqItemLaborTable = Desktop.common.nomitech.common.db.project.BoqItemLaborTable;
+	using BoqItemMaterialTable = Desktop.common.nomitech.common.db.project.BoqItemMaterialTable;
+	using BoqItemSubcontractorTable = Desktop.common.nomitech.common.db.project.BoqItemSubcontractorTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using ExprAbstractEvaluationContext = Desktop.common.nomitech.common.expr.ExprAbstractEvaluationContext;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BoqItemEvaluationContext = Desktop.common.nomitech.common.expr.boqitem.BoqItemEvaluationContext;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using ExchangeRateUtil = Desktop.common.nomitech.common.util.ExchangeRateUtil;
+	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 
 	//#RXL_START
 	/// <summary>
@@ -154,7 +154,7 @@ namespace Models.local
 		private decimal customPercentRate19;
 		private decimal customPercentRate20;
 
-		public override object clone()
+		public override object Clone()
 		{
 			ProjectResourceTable obj = new ProjectResourceTable();
 

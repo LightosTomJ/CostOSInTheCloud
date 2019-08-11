@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ConditionTable = nomitech.common.db.project.ConditionTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ConditionTable = Desktop.common.nomitech.common.db.project.ConditionTable;
 
 	/// <summary>
 	/// @hibernate.class table="FNCTON_ARGUMENT"
@@ -331,7 +331,7 @@ namespace Models.local
 			FunctionArgumentTable arg = (FunctionArgumentTable) clone();
 			if (FunctionTable != null)
 			{
-				arg.FunctionTable = (FunctionTable) FunctionTable.clone();
+				arg.FunctionTable = (FunctionTable) FunctionTable.Clone();
 			}
 			return arg;
 		}

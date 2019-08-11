@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using DatabaseTable = nomitech.common.@base.DatabaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using DatabaseTable = Desktop.common.nomitech.common.@base.DatabaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -71,7 +71,7 @@ namespace Models.local
 			}
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ParamItemOutputTable pItemTable = new ParamItemOutputTable();
 
@@ -97,14 +97,14 @@ namespace Models.local
 
 		public virtual object copy()
 		{
-			ParamItemOutputTable pItemTable = (ParamItemOutputTable) clone();
+			ParamItemOutputTable pItemTable = (ParamItemOutputTable) Clone();
 
 			if (ConceptualSet != null)
 			{
 				pItemTable.ConceptualSet = new HashSet<ParamItemConceptualResourceTable>();
 				foreach (ParamItemConceptualResourceTable table in ConceptualSet)
 				{
-					pItemTable.ConceptualSet.Add((ParamItemConceptualResourceTable) table.clone());
+					pItemTable.ConceptualSet.Add((ParamItemConceptualResourceTable) table.Clone());
 				}
 			}
 			if (QueryResourceSet != null)
@@ -125,7 +125,7 @@ namespace Models.local
 
 			if (ParamItemTable != null)
 			{
-				pItemTable.ParamItemTable = (ParamItemTable) paramItemTable.clone();
+				pItemTable.ParamItemTable = (ParamItemTable) paramItemTable.Clone();
 			}
 			return pItemTable;
 		}

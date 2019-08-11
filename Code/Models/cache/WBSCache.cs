@@ -5,11 +5,11 @@ namespace Models.cache
 {
 
 
-	using BaseCache = nomitech.common.@base.BaseCache;
-	using GroupCode = nomitech.common.@base.GroupCode;
-	using ProjectInfoTable = nomitech.common.db.local.ProjectInfoTable;
-	using ProjectWBSTable = nomitech.common.db.local.ProjectWBSTable;
-	using CodeUtils = nomitech.common.util.CodeUtils;
+	using BaseCache = Desktop.common.nomitech.common.@base.BaseCache;
+	using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+	using ProjectInfoTable = Desktop.common.nomitech.common.db.local.ProjectInfoTable;
+	using ProjectWBSTable = Desktop.common.nomitech.common.db.local.ProjectWBSTable;
+	using CodeUtils = Desktop.common.nomitech.common.util.CodeUtils;
 
 	using Session = org.hibernate.Session;
 

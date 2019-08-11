@@ -3,7 +3,7 @@
 namespace Models.local
 {
 
-	using BaseEntity = nomitech.common.@base.BaseEntity;
+	using BaseEntity = Desktop.common.nomitech.common.@base.BaseEntity;
 	//#RXP_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -125,7 +125,7 @@ namespace Models.local
 
 			if (ProjectInfoTable != null)
 			{
-				userTable.ProjectInfoTable = (ProjectInfoTable)ProjectInfoTable.clone();
+				userTable.ProjectInfoTable = (ProjectInfoTable)ProjectInfoTable.Clone();
 			}
 
 			return userTable;

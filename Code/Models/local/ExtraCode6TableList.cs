@@ -8,8 +8,8 @@
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using BaseTableList = nomitech.common.@base.BaseTableList;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using BaseTableList = Desktop.common.nomitech.common.@base.BaseTableList;
 
 	/// <summary>
 	/// @author george
@@ -56,7 +56,7 @@ namespace Models.local
 				ExtraCode6Table[] copy = new ExtraCode6Table[_o_items.Length];
 				for (int i = 0; i < _o_items.Length; i++)
 				{
-				   copy[i] = (ExtraCode6Table)_o_items[i].clone();
+				   copy[i] = (ExtraCode6Table)_o_items[i].Clone();
 				}
     
 				return copy;

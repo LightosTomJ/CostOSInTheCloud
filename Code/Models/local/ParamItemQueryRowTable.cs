@@ -3,7 +3,7 @@
 namespace Models.local
 {
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
 
 	/// <summary>
 	/// @author: George Hatzisymeon

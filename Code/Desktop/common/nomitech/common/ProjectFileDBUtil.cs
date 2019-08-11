@@ -6,11 +6,11 @@ using System.IO;
 namespace Desktop.common.nomitech.common
 {
 	using ProjectGroupCodesProviderFactory = Desktop.common.nomitech.common.@base.ProjectGroupCodesProviderFactory;
-	using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
-	using CostOSString256Type = Desktop.common.nomitech.common.db.types.CostOSString256Type;
-	using CostOSTextType = Desktop.common.nomitech.common.db.types.CostOSTextType;
-	using GroupCodeType = Desktop.common.nomitech.common.db.types.GroupCodeType;
-	using UnitAliasType = Desktop.common.nomitech.common.db.types.UnitAliasType;
+	using ProjectUrlTable = Models.local.ProjectUrlTable;
+	using CostOSString256Type = Models.types.CostOSString256Type;
+	using CostOSTextType = Models.types.CostOSTextType;
+	using GroupCodeType = Models.types.GroupCodeType;
+	using UnitAliasType = Models.types.UnitAliasType;
 	using ProgressCallback = Desktop.common.nomitech.common.util.ProgressCallback;
 	using ZipUtil = Desktop.common.nomitech.common.util.ZipUtil;
 	using HibernateException = org.hibernate.HibernateException;

@@ -3,11 +3,11 @@
 namespace Models.local
 {
 
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using ResourceTable = nomitech.common.@base.ResourceTable;
-	using ResourceToAssignmentTable = nomitech.common.@base.ResourceToAssignmentTable;
-	using ResourceWithAssignmentsTable = nomitech.common.@base.ResourceWithAssignmentsTable;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
+	using ResourceToAssignmentTable = Desktop.common.nomitech.common.@base.ResourceToAssignmentTable;
+	using ResourceWithAssignmentsTable = Desktop.common.nomitech.common.@base.ResourceWithAssignmentsTable;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -100,7 +100,7 @@ namespace Models.local
 
 			if (ConsumableTable != null && cloneConsumable)
 			{
-				obj.ConsumableTable = (ConsumableTable) ConsumableTable.clone();
+				obj.ConsumableTable = (ConsumableTable) ConsumableTable.Clone();
 			}
 
 			return obj;

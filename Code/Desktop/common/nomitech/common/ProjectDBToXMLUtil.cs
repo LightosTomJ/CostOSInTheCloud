@@ -9,12 +9,12 @@ namespace Desktop.common.nomitech.common
 	using SqlTimestampConverter = com.thoughtworks.xstream.converters.extended.SqlTimestampConverter;
 	using BaseTableList = Desktop.common.nomitech.common.@base.BaseTableList;
 	using ResourceTable = Desktop.common.nomitech.common.@base.ResourceTable;
-	using LayoutTable = Desktop.common.nomitech.common.db.layout.LayoutTable;
-	using ExternalDatasourceTable = Desktop.common.nomitech.common.db.local.ExternalDatasourceTable;
-	using FunctionTable = Desktop.common.nomitech.common.db.local.FunctionTable;
-	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
-	using ProjectTemplateTable = Desktop.common.nomitech.common.db.project.ProjectTemplateTable;
-	using WorksheetRevisionTable = Desktop.common.nomitech.common.db.project.WorksheetRevisionTable;
+	using LayoutTable = Models.layout.LayoutTable;
+	using ExternalDatasourceTable = Models.local.ExternalDatasourceTable;
+	using FunctionTable = Models.local.FunctionTable;
+	using BoqItemTable = Models.proj.BoqItemTable;
+	using ProjectTemplateTable = Models.proj.ProjectTemplateTable;
+	using WorksheetRevisionTable = Models.proj.WorksheetRevisionTable;
 	using Session = org.hibernate.Session;
 	using Transaction = org.hibernate.Transaction;
 

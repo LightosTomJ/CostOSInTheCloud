@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using GroupCode = nomitech.common.@base.GroupCode;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
+	using GroupCode = Desktop.common.nomitech.common.@base.GroupCode;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 
 	using DocumentId = org.hibernate.search.annotations.DocumentId;
 	using Field = org.hibernate.search.annotations.Field;
@@ -54,7 +54,7 @@ namespace Models.local
 				//setEditorId(DatabaseDBUtil.getProperties().getUserId());
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ProjectEPSTable obj = new ProjectEPSTable();
 
@@ -214,7 +214,7 @@ namespace Models.local
 
 		public virtual ProjectEPSTable copyWithProjects()
 		{
-			ProjectEPSTable epsTable = (ProjectEPSTable)clone();
+			ProjectEPSTable epsTable = (ProjectEPSTable)Clone();
 
 			ISet<ProjectInfoTable> set = Projects;
 			if (set != null)
@@ -223,7 +223,7 @@ namespace Models.local
 				set = new HashSet<ProjectInfoTable>();
 				while (iter.MoveNext())
 				{
-					set.Add((ProjectInfoTable) iter.Current.clone());
+					set.Add((ProjectInfoTable) iter.Current.Clone());
 				}
 				epsTable.Projects = set;
 			}

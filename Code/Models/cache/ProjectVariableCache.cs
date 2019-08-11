@@ -6,7 +6,7 @@ namespace Models.cache
 
 	using Session = org.hibernate.Session;
 
-	using ProjectVariableTable = nomitech.common.db.project.ProjectVariableTable;
+	using ProjectVariableTable = Desktop.common.nomitech.common.db.project.ProjectVariableTable;
 
 	public class ProjectVariableCache
 	{

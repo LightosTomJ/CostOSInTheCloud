@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Desktop.common.nomitech.common
 {
 	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
-	using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
+	using ProjectUrlTable = Models.local.ProjectUrlTable;
 	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;
 	using CallbackException = org.hibernate.CallbackException;
 	using EmptyInterceptor = org.hibernate.EmptyInterceptor;

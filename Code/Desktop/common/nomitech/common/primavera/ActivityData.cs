@@ -217,7 +217,7 @@ namespace Desktop.common.nomitech.common.primavera
 	  }
 
 
-	  public virtual object clone()
+	  public virtual object Clone()
 	  {
 		  return null;
 	  }

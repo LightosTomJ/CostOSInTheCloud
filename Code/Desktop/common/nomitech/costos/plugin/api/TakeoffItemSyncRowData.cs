@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Desktop.common.nomitech.costos.plugin.api.
+namespace Desktop.common.nomitech.costos.plugin.api
 {
 
 	public class TakeoffItemSyncRowData

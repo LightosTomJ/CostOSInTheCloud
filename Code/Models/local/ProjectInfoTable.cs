@@ -9,9 +9,9 @@ namespace Models.local
 	using Indexed = org.hibernate.search.annotations.Indexed;
 	using Store = org.hibernate.search.annotations.Store;
 
-	using DatabaseTable = nomitech.common.@base.DatabaseTable;
-	using BigDecimalFixed = nomitech.common.db.types.BigDecimalFixed;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
+	using DatabaseTable = Desktop.common.nomitech.common.@base.DatabaseTable;
+	using BigDecimalFixed = Desktop.common.nomitech.common.db.types.BigDecimalFixed;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
 
 	//#RXP_START
 	/// <summary>
@@ -259,7 +259,7 @@ namespace Models.local
 	//		return true;
 	//	}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ProjectInfoTable obj = new ProjectInfoTable();
 
@@ -390,7 +390,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					ProjectWBSTable curWBS = (ProjectWBSTable)iter.Current;
-					obj.wbsSet.Add((ProjectWBSTable)curWBS.clone());
+					obj.wbsSet.Add((ProjectWBSTable)curWBS.Clone());
 				}
 			}
 			if (Wbs2Set != null)
@@ -400,7 +400,7 @@ namespace Models.local
 				while (iter.MoveNext())
 				{
 					ProjectWBS2Table curWBS = (ProjectWBS2Table)iter.Current;
-					obj.wbs2Set.Add((ProjectWBS2Table)curWBS.clone());
+					obj.wbs2Set.Add((ProjectWBS2Table)curWBS.Clone());
 				}
 			}
 			if (UrlSet != null)
@@ -429,7 +429,7 @@ namespace Models.local
 
 		public virtual ProjectInfoTable copyWithAssignments()
 		{
-			ProjectInfoTable obj = (ProjectInfoTable)clone();
+			ProjectInfoTable obj = (ProjectInfoTable)Clone();
 
 			if (UrlSet != null)
 			{
@@ -457,11 +457,11 @@ namespace Models.local
 
 		public virtual ProjectInfoTable copyWithEPS()
 		{
-			ProjectInfoTable obj = (ProjectInfoTable)clone();
+			ProjectInfoTable obj = (ProjectInfoTable)Clone();
 
 			if (ProjectEPSTable != null)
 			{
-				obj.ProjectEPSTable = (ProjectEPSTable) projectEPSTable.clone();
+				obj.ProjectEPSTable = (ProjectEPSTable) projectEPSTable.Clone();
 			}
 
 			return obj;

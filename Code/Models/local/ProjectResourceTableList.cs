@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using BaseTableList = nomitech.common.@base.BaseTableList;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using BaseTableList = Desktop.common.nomitech.common.@base.BaseTableList;
 
 	[Serializable]
 	public class ProjectResourceTableList : Transferable, BaseTableList
@@ -53,7 +53,7 @@ namespace Models.local
     
 				for (int i = 0; i < _o_items.Length; i++)
 				{
-				   copy[i] = (ProjectResourceTable)_o_items[i].clone();
+				   copy[i] = (ProjectResourceTable)_o_items[i].Clone();
 				}
     
 				return copy;

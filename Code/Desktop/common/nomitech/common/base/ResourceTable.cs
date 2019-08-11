@@ -16,7 +16,7 @@ namespace Desktop.common.nomitech.common.@base
 
 	  public const int OT_OSTRAKON = 3;
 
-	  public virtual object clone()
+	  public virtual object Clone()
 	  {
 		  return null;
 	  }

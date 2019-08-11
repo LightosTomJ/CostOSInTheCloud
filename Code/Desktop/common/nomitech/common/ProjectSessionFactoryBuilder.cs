@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace Desktop.common.nomitech.common
 {
 	using GroupCodesProvider = Desktop.common.nomitech.common.@base.GroupCodesProvider;
-	using ProjectUrlTable = Desktop.common.nomitech.common.db.local.ProjectUrlTable;
-	using ProjectNamingStrategy = Desktop.common.nomitech.common.db.ns.ProjectNamingStrategy;
-	using CostOSString256Type = Desktop.common.nomitech.common.db.types.CostOSString256Type;
-	using CostOSTextType = Desktop.common.nomitech.common.db.types.CostOSTextType;
-	using GroupCodeType = Desktop.common.nomitech.common.db.types.GroupCodeType;
-	using NotNullStringType = Desktop.common.nomitech.common.db.types.NotNullStringType;
-	using NotNullTextType = Desktop.common.nomitech.common.db.types.NotNullTextType;
-	using UnitAliasType = Desktop.common.nomitech.common.db.types.UnitAliasType;
+	using ProjectUrlTable = Models.local.ProjectUrlTable;
+	using ProjectNamingStrategy = Models.ns.ProjectNamingStrategy;
+	using CostOSString256Type = Models.types.CostOSString256Type;
+	using CostOSTextType = Models.types.CostOSTextType;
+	using GroupCodeType = Models.types.GroupCodeType;
+	using NotNullStringType = Models.types.NotNullStringType;
+	using NotNullTextType = Models.types.NotNullTextType;
+	using UnitAliasType = Models.types.UnitAliasType;
 	using AddOnUtil = Desktop.common.nomitech.common.util.AddOnUtil;
 	using CryptUtil = Desktop.common.nomitech.common.util.CryptUtil;
 	using StringUtils = Desktop.common.nomitech.common.util.StringUtils;

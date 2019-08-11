@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseEntity = nomitech.common.@base.BaseEntity;
+	using BaseEntity = Desktop.common.nomitech.common.@base.BaseEntity;
 	//#RXP_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -754,7 +754,7 @@ namespace Models.local
 
 			if (ProjectInfoTable != null)
 			{
-				urlTable.ProjectInfoTable = (ProjectInfoTable)ProjectInfoTable.clone();
+				urlTable.ProjectInfoTable = (ProjectInfoTable)ProjectInfoTable.Clone();
 			}
 
 			return urlTable;

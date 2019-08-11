@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace Models.local
 {
 
-	using BaseTable = nomitech.common.@base.BaseTable;
-	using ProjectIdEntity = nomitech.common.@base.ProjectIdEntity;
-	using BoqItemConditionTable = nomitech.common.db.project.BoqItemConditionTable;
-	using BoqItemTable = nomitech.common.db.project.BoqItemTable;
-	using ConditionTable = nomitech.common.db.project.ConditionTable;
-	using BlankResourceInitializer = nomitech.common.expr.boqitem.BlankResourceInitializer;
-	using BigDecimalMath = nomitech.common.util.BigDecimalMath;
-	using Unit1ToUnit2Util = nomitech.common.util.Unit1ToUnit2Util;
+	using BaseTable = Desktop.common.nomitech.common.@base.BaseTable;
+	using ProjectIdEntity = Desktop.common.nomitech.common.@base.ProjectIdEntity;
+	using BoqItemConditionTable = Desktop.common.nomitech.common.db.project.BoqItemConditionTable;
+	using BoqItemTable = Desktop.common.nomitech.common.db.project.BoqItemTable;
+	using ConditionTable = Desktop.common.nomitech.common.db.project.ConditionTable;
+	using BlankResourceInitializer = Desktop.common.nomitech.common.expr.boqitem.BlankResourceInitializer;
+	using BigDecimalMath = Desktop.common.nomitech.common.util.BigDecimalMath;
+	using Unit1ToUnit2Util = Desktop.common.nomitech.common.util.Unit1ToUnit2Util;
 	//#RXL_START
 	/// <summary>
 	/// @author: George Hatzisymeon
@@ -81,7 +81,7 @@ namespace Models.local
 
 		}
 
-		public virtual object clone()
+		public virtual object Clone()
 		{
 			ParamItemConditionTable conditionTable = new ParamItemConditionTable();
 
