@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="nomitech\costos\" />
+    <Folder Include="org\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\cache\cache.csproj" />
+    <ProjectReference Include="..\..\Models\config\config.csproj" />
+    <ProjectReference Include="..\..\Models\dialect\dialect.csproj" />
+    <ProjectReference Include="..\..\Models\layout\layout.csproj" />
+    <ProjectReference Include="..\..\Models\local\local.csproj" />
+    <ProjectReference Include="..\..\Models\ns\ns.csproj" />
+    <ProjectReference Include="..\..\Models\project1\project1.csproj" />
+    <ProjectReference Include="..\..\Models\proj\proj.csproj" />
+    <ProjectReference Include="..\..\Models\report\report.csproj" />
+    <ProjectReference Include="..\..\Models\results\results.csproj" />
+    <ProjectReference Include="..\..\Models\types\types.csproj" />
+    <ProjectReference Include="..\..\Models\utils\utils.csproj" />
+    <ProjectReference Include="..\..\Models\util\util.csproj" />
+    <ProjectReference Include="..\..\Models\view\view.csproj" />
+  </ItemGroup>
+
+</Project>
