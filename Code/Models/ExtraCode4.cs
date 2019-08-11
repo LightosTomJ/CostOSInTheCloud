@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Models
+namespace Models.project1
 {
     public partial class Extracode4
     {

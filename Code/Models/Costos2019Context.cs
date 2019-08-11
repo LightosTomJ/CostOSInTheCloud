@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Models
+namespace Models.project1
 {
     public partial class Costos2019Context : DbContext
     {
