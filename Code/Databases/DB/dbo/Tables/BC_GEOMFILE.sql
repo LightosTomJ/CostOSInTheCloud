@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [dbo].[BC_GEOMFILE] (
     [ID]                 BIGINT                     IDENTITY (1, 1) NOT NULL,
-    [FDATA]              VARBINARY (MAX) FILESTREAM NULL,
+    --[FDATA]              VARBINARY (MAX) FILESTREAM NULL,
+	[FDATA]              VARBINARY (MAX)			NULL,
     [FNAME]              NVARCHAR (256)             NULL,
     [FTYPE]              INT                        NULL,
     [FGUID]              UNIQUEIDENTIFIER           ROWGUIDCOL NOT NULL,
@@ -13,5 +14,5 @@
     PRIMARY KEY CLUSTERED ([ID] ASC),
     CONSTRAINT [FKF44224F64160E6D4] FOREIGN KEY ([MODEL_ID]) REFERENCES [dbo].[BC_MODEL] ([ID]),
     UNIQUE NONCLUSTERED ([FGUID] ASC)
-) FILESTREAM_ON [BIMCity_Filestream];
+) --FILESTREAM_ON [BIMCity_Filestream];
 

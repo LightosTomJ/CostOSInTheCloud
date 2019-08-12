@@ -1,3 +1,3 @@
-﻿ALTER DATABASE [$(DatabaseName)]
-    ADD FILEGROUP [BIMCity_Filestream] CONTAINS FILESTREAM;
+﻿--ALTER DATABASE [$(DatabaseName)]
+--    ADD FILEGROUP [BIMCity_Filestream] CONTAINS FILESTREAM;
 

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project1", "Models\project1\project1.csproj", "{D0A317D2-4A3B-42B2-AAAC-40270A27918F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project1", "Model\project1\project1.csproj", "{D0A317D2-4A3B-42B2-AAAC-40270A27918F}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB", "Databases\DB\DB.sqlproj", "{5ADE0985-2D6E-4497-9BEC-AFF9E08AC390}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "project", "Databases\DB\project.sqlproj", "{5ADE0985-2D6E-4497-9BEC-AFF9E08AC390}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projects", "AzureFunctions\Project\Projects.csproj", "{473DA1FA-186E-4A3B-A3B5-DD4B0D24FF25}"
 EndProject
@@ -25,35 +25,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{A7A9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{7F8A33C2-55AA-498F-8DB1-D6C7F5E1B5CA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{EDF9FE31-143D-48D7-A036-EC35CD2FD589}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{EDF9FE31-143D-48D7-A036-EC35CD2FD589}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cache", "Models\cache\cache.csproj", "{7B07D628-3FE1-4BEB-90F5-97C586A463CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cache", "Model\cache\cache.csproj", "{7B07D628-3FE1-4BEB-90F5-97C586A463CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "config", "Models\config\config.csproj", "{16180E1C-D7C9-4D1A-8A5D-F2AF0399D792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "config", "Model\config\config.csproj", "{16180E1C-D7C9-4D1A-8A5D-F2AF0399D792}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dialect", "Models\dialect\dialect.csproj", "{FF1D8D5E-8142-4E37-9D6E-C3F557EEB715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dialect", "Model\dialect\dialect.csproj", "{FF1D8D5E-8142-4E37-9D6E-C3F557EEB715}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "layout", "Models\layout\layout.csproj", "{2FFAA8FE-EDC6-4477-8D1A-E85DCF5137A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "layout", "Model\layout\layout.csproj", "{2FFAA8FE-EDC6-4477-8D1A-E85DCF5137A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "local", "Models\local\local.csproj", "{BE87A5A8-0F3A-46B8-BD46-978B04AC15BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "local", "Model\local\local.csproj", "{BE87A5A8-0F3A-46B8-BD46-978B04AC15BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ns", "Models\ns\ns.csproj", "{16AE6C58-5593-4B34-99C3-B4AD415EAE29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ns", "Model\ns\ns.csproj", "{16AE6C58-5593-4B34-99C3-B4AD415EAE29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "report", "Models\report\report.csproj", "{3CF678B2-C36A-4594-B363-6B96B58A18BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "report", "Model\report\report.csproj", "{3CF678B2-C36A-4594-B363-6B96B58A18BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "results", "Models\results\results.csproj", "{A1975E37-1644-40B5-8D57-633E04BE040A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "results", "Model\results\results.csproj", "{A1975E37-1644-40B5-8D57-633E04BE040A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "types", "Models\types\types.csproj", "{3F6C4C7C-D759-44EE-95CF-E3F7D7B01D4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "types", "Model\types\types.csproj", "{3F6C4C7C-D759-44EE-95CF-E3F7D7B01D4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "utils", "Models\utils\utils.csproj", "{853FD4C1-163C-4B03-9086-CFCF1D9EAAC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "utils", "Model\utils\utils.csproj", "{853FD4C1-163C-4B03-9086-CFCF1D9EAAC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "util", "Models\util\util.csproj", "{50D4A73D-5489-4DDD-BC9A-7A04AEEBF4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "util", "Model\util\util.csproj", "{50D4A73D-5489-4DDD-BC9A-7A04AEEBF4A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "view", "Models\view\view.csproj", "{1B78D537-596D-42AE-9E68-26896B84444E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "view", "Model\view\view.csproj", "{1B78D537-596D-42AE-9E68-26896B84444E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{62E032B8-18D9-4069-B09A-E911E59FE5E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "proj", "Models\proj\proj.csproj", "{EB7CFB05-D586-452F-9143-C24B0233EDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "proj", "Model\proj\proj.csproj", "{EB7CFB05-D586-452F-9143-C24B0233EDAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{96CA6516-6D16-4086-B136-90BBF6C0A447}"
 EndProject
@@ -61,7 +61,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common", "Desktop\common\co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "costos", "Desktop\costos\costos.csproj", "{E442465D-BD73-4C83-98BE-04B76014F70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D60426DA-839D-418D-89E7-C5B1B58B8975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D60426DA-839D-418D-89E7-C5B1B58B8975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{F440C795-2A44-434F-AA3D-CEBAC502AA33}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ns", "ns\ns.sqlproj", "{10166BBE-2298-4840-BA9E-F1673B7BB82A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +175,16 @@ Global
 		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60426DA-839D-418D-89E7-C5B1B58B8975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F440C795-2A44-434F-AA3D-CEBAC502AA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F440C795-2A44-434F-AA3D-CEBAC502AA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F440C795-2A44-434F-AA3D-CEBAC502AA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F440C795-2A44-434F-AA3D-CEBAC502AA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +212,7 @@ Global
 		{EB7CFB05-D586-452F-9143-C24B0233EDAC} = {EDF9FE31-143D-48D7-A036-EC35CD2FD589}
 		{87EB3DDB-2344-4F7C-9477-2FEDDF7607AF} = {96CA6516-6D16-4086-B136-90BBF6C0A447}
 		{E442465D-BD73-4C83-98BE-04B76014F70F} = {96CA6516-6D16-4086-B136-90BBF6C0A447}
+		{10166BBE-2298-4840-BA9E-F1673B7BB82A} = {7F8A33C2-55AA-498F-8DB1-D6C7F5E1B5CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFF5940E-194D-4852-B440-9F3CC09CBAE5}
