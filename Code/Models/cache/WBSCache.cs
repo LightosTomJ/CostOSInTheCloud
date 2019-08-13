@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.cache
 {
-    public class WBS2Cache
+    public class WBSCache
     {
         public const string TABLE_NAME = "ProjectWBSTable";
 
@@ -15,7 +15,7 @@ namespace Models.cache
         public string o_codingSystem = "DOTTED_GC_STYLE";
         //public ProjectDBUtil o_prjDbUtil { get; set; }
 
-        public WBS2Cache()
+        public WBSCache()
         { }
 
         //public WBSCache(ProjectDBUtil prjDBUtil)

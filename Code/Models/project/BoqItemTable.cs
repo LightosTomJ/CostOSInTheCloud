@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Models.project
 {
@@ -47,7 +45,7 @@ namespace Models.project
         public const string s_COMPLETED_STATUS = "enum.boqstatus.completed";
         public const string s_UNDERREVIEW_STATUS = "enum.boqstatus.underreview";
 
-        public BoQItemTable()
+        public BoqItemTable()
         { }
     }
 }

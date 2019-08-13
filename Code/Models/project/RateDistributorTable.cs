@@ -3,7 +3,7 @@
 namespace Models.project
 {
     [Serializable]
-    public class RateDistributorTable : ProjectIdEntity
+    public class RateDistributorTable //: ProjectIdEntity
     {
 
         public const int BOQ_DISTRIBUTION = 0;

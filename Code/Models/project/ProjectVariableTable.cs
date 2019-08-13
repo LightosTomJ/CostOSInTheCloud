@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Model.local;
+using System;
 
 namespace Models.project
 {
     [Serializable]
-    public class ProjectVariableTable : ProjectIdEntity
+    public class ProjectVariableTable //: ProjectIdEntity
     {
 
         public const string SHEET_CELL = "datatype.sheetcell";

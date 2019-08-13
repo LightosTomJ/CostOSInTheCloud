@@ -2,6 +2,44 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Tom James</Authors>
+    <Company>Nomitech</Company>
+    <Description>Data access object models for all CostOS database classes</Description>
+    <Product>Nomitech.CostOS.Models</Product>
+    <Copyright>Nomitech</Copyright>
+    <PackageId>Nomitech.CostOS.Models</PackageId>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>NuGet Temporary License.txt</PackageLicenseFile>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>NuGet of DAO for CostOS necessary for decoupling C# solution</PackageReleaseNotes>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\bin\Release\Nomitech.CostOS.Models.xml</DocumentationFile>
+    <OutputPath>bin\Release\NetCore3\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\NuGet Temporary License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
