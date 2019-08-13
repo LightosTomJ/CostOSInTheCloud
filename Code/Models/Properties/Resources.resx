@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CostOS_VI_Grey__128px_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CostOS VI-Grey (128px).png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CostOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CostOS.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="NuGet_Temporary_License" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NuGet Temporary License.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

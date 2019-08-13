@@ -9,10 +9,13 @@
     <Product>Nomitech.CostOS.Models</Product>
     <Copyright>Nomitech</Copyright>
     <PackageId>Nomitech.CostOS.Models</PackageId>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>NuGet Temporary License.txt</PackageLicenseFile>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>NuGet of DAO for CostOS necessary for decoupling C# solution</PackageReleaseNotes>
+    <PackageIconUrl>https://github.com/LightosTomJ/CostOSInTheCloud/blob/master/Code/Models/Resources/CostOS%20VI-Grey%20(128px).png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/LightosTomJ/CostOSInTheCloud</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

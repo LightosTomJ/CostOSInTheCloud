@@ -63,9 +63,9 @@ namespace Models.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] CostOS_VI_Grey__128px_ {
+        internal static byte[] CostOS {
             get {
-                object obj = ResourceManager.GetObject("CostOS_VI_Grey__128px_", resourceCulture);
+                object obj = ResourceManager.GetObject("CostOS", resourceCulture);
                 return ((byte[])(obj));
             }
         }
