@@ -1,45 +1,43 @@
 ﻿using Model.local;
+using Model.result.Interfaces;
+using Modelsresults.DAO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Models.result
 {
     [Serializable]
-    public class SupplierPartialResult
+    public class SupplierPartialResult : SupplierPartial, IPartialResult
     {
-        public const string PartialResult_Fields = "";
-        //public const string PartialResult_Fields = "";
-
-        public int? resultSize { get; set; }
-        public int? partialSize { get; set; }
-        public int? partialStart { get; set; }
-        public int? pageSize { get; set; }
-        public string sortByField { get; set; }
-        public bool asceding { get; set; }
-        public string query { get; set; }
-        public string queryType { get; set; }
-        public double seconds { get; set; }
-
-        public IList<SupplierTable> partialResult { get; set; }
-
+        //List<SupplierTable> Results { get; set; }
+        IList<SupplierTable> Results = new List<SupplierTable>();
         public SupplierPartialResult()
         {
-            partialResult = new List<SupplierTable>();
             // We need this constructor to initialize the webservice
         }
 
-        public SupplierPartialResult(int? resultSize, int? partialSize, int? partialStart, string sortByField, bool asceding, string query, string queryType, double seconds, int? pageSize, IList<SupplierTable> partialResult) : base()
+        public SupplierPartialResult(int? resultSize, int? partialSize, int? partialStart,
+                                      string sortByField, bool ascending, string query, string queryType,
+                                      decimal seconds, int? pageSize, IList<SupplierTable> partialResult)
         {
-            this.resultSize = resultSize;
-            this.partialSize = partialSize;
-            this.partialStart = partialStart;
-            this.sortByField = sortByField;
-            this.asceding = asceding;
-            this.query = query;
-            this.queryType = queryType;
-            this.partialResult = partialResult;
-            this.seconds = seconds;
-            this.pageSize = pageSize;
+            this.ResultSize = resultSize;
+            this.PartialSize = partialSize;
+            this.PartialStart = partialStart;
+            this.SortByField = sortByField;
+            this.Ascending = ascending;
+            this.Query = query;
+            this.QueryType = queryType;
+            Results = partialResult;
+            this.Seconds = seconds;
+            this.PageSize = pageSize;
         }
+
+        public List<SupplierTable> GetResults()
+        {
+            return (List<SupplierTable>)Results;
+        }
+
+        IList IPartialResult.Result => throw new NotImplementedException();
     }
 }

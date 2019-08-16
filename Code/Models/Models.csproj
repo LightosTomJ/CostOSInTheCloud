@@ -13,9 +13,15 @@
     <PackageLicenseFile>NuGet Temporary License.txt</PackageLicenseFile>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>NuGet of DAO for CostOS necessary for decoupling C# solution</PackageReleaseNotes>
-    <PackageIconUrl>https://github.com/LightosTomJ/CostOSInTheCloud/blob/master/Code/Models/Resources/CostOS%20VI-Grey%20(128px).png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/LightosTomJ/CostOSInTheCloud/blob/master/Code/Models/Resources/CostOS.ico</PackageIconUrl>
     <RepositoryUrl>https://github.com/LightosTomJ/CostOSInTheCloud</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -43,6 +49,15 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="results\Extensions\" />
   </ItemGroup>
 
 </Project>

@@ -27,7 +27,7 @@ namespace Model.local
         public string jsonUrl { get; set; }
         public string resourceType { get; set; }
         public string orderField { get; set; }
-        public bool? asceding { get; set; }
+        public bool? ascending { get; set; }
         public bool? singleSelection { get; set; }
         public string titleEquation { get; set; }
         public string estimatedQuantityEquation { get; set; }

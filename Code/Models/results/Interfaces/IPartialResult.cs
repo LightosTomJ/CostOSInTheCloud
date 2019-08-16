@@ -1,25 +1,19 @@
 ﻿using System.Collections;
 
-namespace Interfaces.result
+namespace Model.result.Interfaces
 {
-    public interface PartialResult
+    public interface IPartialResult
     {
         int? ResultSize { get; set; }
         int? PartialSize { get; set; }
         int? PartialStart { get; set; }
         string SortByField { get; set; }
-        bool Asceding { get; set; }
+        bool Ascending { get; set; }
         string Query { get; set; }
         string QueryType { get; set; }
-        double Seconds { get; set; }
+        decimal Seconds { get; set; }
         int? PageSize { get; set; }
 
         IList Result { get; }
-    }
-
-    public static class PartialResult_Fields
-    {
-        public const string SEARCH_QUERY = "SEARCH";
-        public const string FILTER_QUERY = "FILTER";
     }
 }
