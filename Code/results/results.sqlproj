@@ -57,4 +57,15 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="AssemblyPartial.sql" />
+    <Build Include="SupplierPartial.sql" />
+    <Build Include="SubcontractorPartial.sql" />
+    <Build Include="ParamItemPartial.sql" />
+    <Build Include="MaterialPartial.sql" />
+    <Build Include="LaborPartial.sql" />
+    <Build Include="Partial.sql" />
+    <Build Include="EquipmentPartial.sql" />
+    <Build Include="ConsumablePartial.sql" />
+  </ItemGroup>
 </Project>
