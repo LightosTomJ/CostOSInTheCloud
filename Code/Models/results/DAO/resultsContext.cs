@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Models.results.DAO;
+using System;
 
-namespace Modelsresults.DAO
+namespace Models.results.DAO
 {
     public partial class resultsContext : DbContext
     {

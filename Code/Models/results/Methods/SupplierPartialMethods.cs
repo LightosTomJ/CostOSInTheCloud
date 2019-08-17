@@ -1,11 +1,11 @@
 ﻿using Model.local;
 using Model.result.Interfaces;
-using Modelsresults.DAO;
+using Models.results.DAO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Model.result
+namespace Model.results.Methods
 {
 	[Serializable]
 	public class SupplierPartialMethods //: SupplierPartial, IPartialResult

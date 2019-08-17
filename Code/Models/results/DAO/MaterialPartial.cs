@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Modelsresults.DAO
+namespace Models.results.DAO
 {
     public partial class MaterialPartial
     {

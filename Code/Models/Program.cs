@@ -9,7 +9,6 @@ namespace Models
         public static void Main(string[] args)
         {
             result.SupplierPartialResult r = new result.SupplierPartialResult();
-            r
         }
     }
 
