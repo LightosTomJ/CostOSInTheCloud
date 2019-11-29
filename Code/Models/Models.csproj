@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Tom James</Authors>
     <Company>Nomitech</Company>
     <Description>Data access object models for all CostOS database classes</Description>
@@ -18,7 +18,7 @@
     <RepositoryType>GitHub</RepositoryType>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
@@ -28,6 +28,45 @@
     <DocumentationFile>C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\bin\Release\Nomitech.CostOS.Models.xml</DocumentationFile>
     <OutputPath>bin\Release\NetCore3\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="cache\**" />
+    <Compile Remove="config\**" />
+    <Compile Remove="dialect\**" />
+    <Compile Remove="layout\**" />
+    <Compile Remove="ns\**" />
+    <Compile Remove="project\**" />
+    <Compile Remove="report\**" />
+    <Compile Remove="results\**" />
+    <Compile Remove="types\**" />
+    <Compile Remove="utils\**" />
+    <Compile Remove="util\**" />
+    <Compile Remove="view\**" />
+    <EmbeddedResource Remove="cache\**" />
+    <EmbeddedResource Remove="config\**" />
+    <EmbeddedResource Remove="dialect\**" />
+    <EmbeddedResource Remove="layout\**" />
+    <EmbeddedResource Remove="ns\**" />
+    <EmbeddedResource Remove="project\**" />
+    <EmbeddedResource Remove="report\**" />
+    <EmbeddedResource Remove="results\**" />
+    <EmbeddedResource Remove="types\**" />
+    <EmbeddedResource Remove="utils\**" />
+    <EmbeddedResource Remove="util\**" />
+    <EmbeddedResource Remove="view\**" />
+    <None Remove="cache\**" />
+    <None Remove="config\**" />
+    <None Remove="dialect\**" />
+    <None Remove="layout\**" />
+    <None Remove="ns\**" />
+    <None Remove="project\**" />
+    <None Remove="report\**" />
+    <None Remove="results\**" />
+    <None Remove="types\**" />
+    <None Remove="utils\**" />
+    <None Remove="util\**" />
+    <None Remove="view\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -45,19 +84,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\NuGet Temporary License.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="results\Extensions\" />
+    <Folder Include="local\Extensions\" />
+    <Folder Include="local\Interfaces\" />
   </ItemGroup>
 
 </Project>

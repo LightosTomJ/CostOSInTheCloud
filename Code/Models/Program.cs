@@ -8,7 +8,7 @@ namespace Models
     {
         public static void Main(string[] args)
         {
-            result.SupplierPartialResult r = new result.SupplierPartialResult();
+            //result.SupplierPartialResult r = new result.SupplierPartialResult();
         }
     }
 
