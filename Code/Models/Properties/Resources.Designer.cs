@@ -85,7 +85,7 @@ namespace Models.Properties {
         ///
         ///&quot;Licensor&quot; shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
         ///
-        ///&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that contr [rest of string was truncated]&quot;;.
+        ///&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that contr [rest of string was truncated>&quot;;.
         /// </summary>
         internal static string NuGet_Temporary_License {
             get {

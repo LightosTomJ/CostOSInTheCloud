@@ -1,0 +1,123 @@
+
+namespace Models.local
+{
+	public class Projectinfo : BaseClass.Projectinfo//, Interfaces.IProjectinfo
+	{
+		public Projectinfo Clone()
+		{
+			Projectinfo c = new Projectinfo();
+			c.Projectinfoid = Projectinfoid;
+			c.Lastupdate = Lastupdate;
+			c.Epscode = Epscode;
+			c.Description = Description;
+			c.Currency = Currency;
+			c.Primavera = Primavera;
+			c.Locfac = Locfac;
+			c.Locprof = Locprof;
+			c.Selfac = Selfac;
+			c.Bimtakeoff = Bimtakeoff;
+			c.Ostakeoff = Ostakeoff;
+			c.Storagetype = Storagetype;
+			c.Codestyle = Codestyle;
+			c.Code = Code;
+			c.Title = Title;
+			c.Editorid = Editorid;
+			c.Totalcost = Totalcost;
+			c.Offeredprice = Offeredprice;
+			c.Status = Status;
+			c.Location = Location;
+			c.Unit = Unit;
+			c.Country = Country;
+			c.Client = Client;
+			c.Basement = Basement;
+			c.Mainsite = Mainsite;
+			c.Unitcost = Unitcost;
+			c.State = State;
+			c.Prjtype = Prjtype;
+			c.Prjsubcat = Prjsubcat;
+			c.Contractor = Contractor;
+			c.Geoloc = Geoloc;
+			c.Floors = Floors;
+			c.Duration = Duration;
+			c.Clientbudget = Clientbudget;
+			c.Subdate = Subdate;
+			c.Defrev = Defrev;
+			c.Cusepsrate1 = Cusepsrate1;
+			c.Cusepsrate2 = Cusepsrate2;
+			c.Cusepsrate3 = Cusepsrate3;
+			c.Cusepsrate4 = Cusepsrate4;
+			c.Cusepsrate5 = Cusepsrate5;
+			c.Cusepsrate6 = Cusepsrate6;
+			c.Cusepsrate7 = Cusepsrate7;
+			c.Cusepsrate8 = Cusepsrate8;
+			c.Cusepsrate9 = Cusepsrate9;
+			c.Cusepsrate10 = Cusepsrate10;
+			c.Cusepstext1 = Cusepstext1;
+			c.Cusepstext2 = Cusepstext2;
+			c.Cusepstext3 = Cusepstext3;
+			c.Cusepstext4 = Cusepstext4;
+			c.Cusepstext5 = Cusepstext5;
+			c.Cusepstext6 = Cusepstext6;
+			c.Cusepstext7 = Cusepstext7;
+			c.Cusepstext8 = Cusepstext8;
+			c.Cusepstext9 = Cusepstext9;
+			c.Cusepstext10 = Cusepstext10;
+			c.Cusepstext11 = Cusepstext11;
+			c.Cusepstext12 = Cusepstext12;
+			c.Cusepstext13 = Cusepstext13;
+			c.Cusepstext14 = Cusepstext14;
+			c.Cusepstext15 = Cusepstext15;
+			c.Cusepstext16 = Cusepstext16;
+			c.Cusepstext17 = Cusepstext17;
+			c.Cusepstext18 = Cusepstext18;
+			c.Cusepstext19 = Cusepstext19;
+			c.Cusepstext20 = Cusepstext20;
+			c.Cuscumrate1 = Cuscumrate1;
+			c.Cuscumrate2 = Cuscumrate2;
+			c.Cuscumrate3 = Cuscumrate3;
+			c.Cuscumrate4 = Cuscumrate4;
+			c.Cuscumrate5 = Cuscumrate5;
+			c.Cuscumrate6 = Cuscumrate6;
+			c.Cuscumrate7 = Cuscumrate7;
+			c.Cuscumrate8 = Cuscumrate8;
+			c.Cuscumrate9 = Cuscumrate9;
+			c.Cuscumrate10 = Cuscumrate10;
+			c.Cuscumrate11 = Cuscumrate11;
+			c.Cuscumrate12 = Cuscumrate12;
+			c.Cuscumrate13 = Cuscumrate13;
+			c.Cuscumrate14 = Cuscumrate14;
+			c.Cuscumrate15 = Cuscumrate15;
+			c.Cuscumrate16 = Cuscumrate16;
+			c.Cuscumrate17 = Cuscumrate17;
+			c.Cuscumrate18 = Cuscumrate18;
+			c.Cuscumrate19 = Cuscumrate19;
+			c.Cuscumrate20 = Cuscumrate20;
+			c.Cusepsdate1 = Cusepsdate1;
+			c.Cusepsdate2 = Cusepsdate2;
+			c.Cusepsdate3 = Cusepsdate3;
+			c.Cusepsdate4 = Cusepsdate4;
+			c.Cusepsdate5 = Cusepsdate5;
+			c.Cusepsdate6 = Cusepsdate6;
+			c.Cusepsdate7 = Cusepsdate7;
+			c.Cusepsdate8 = Cusepsdate8;
+			c.Cusepsdate9 = Cusepsdate9;
+			c.Cusepsdate10 = Cusepsdate10;
+			c.Equcost = Equcost;
+			c.Subcost = Subcost;
+			c.Labcost = Labcost;
+			c.Matcost = Matcost;
+			c.Concost = Concost;
+			c.Manhours = Manhours;
+			c.Equhours = Equhours;
+			c.Projectepsid = Projectepsid;
+			c.Creatorid = Creatorid;
+			c.Createdate = Createdate;
+			c.Projecteps = Projecteps;
+			c.Projecturl = Projecturl;
+			c.Projectuser = Projectuser;
+			c.Takeoffcon = Takeoffcon;
+
+			return c;
+		}
+	}
+}

@@ -16,6 +16,7 @@ namespace CodeGenerator
             {
                 //Clear previous files
                 List<string> outputPaths = new List<string>();
+                outputPaths.Add(@"C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\local");
                 outputPaths.Add(@"C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\local\Extensions");
                 outputPaths.Add(@"C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\local\Interfaces");
                 DeleteFiles(outputPaths);
@@ -35,8 +36,9 @@ namespace CodeGenerator
                 }
 
                 AddExtenionClass(lTypes, outputPaths);
-                //AddInterfaceClass(type);
-                //AddStandardMethods(type);
+                AddInterfaceClass(lTypes, outputPaths);
+                AddInheritsClass(lTypes, outputPaths);
+                //AddStandardMethods(lTypes, outputPaths);
             }
             catch (Exception ae)
             { string strError = ae.Message.ToString(); }
@@ -50,6 +52,8 @@ namespace CodeGenerator
                 List<cType> vars = new List<cType>();
                 foreach(var v in t.GetProperties())
                 {
+                    if (t.Name == "Assembly" && v.Name == "AssemblyChildAssembly")
+                    { }
                     cType c = new cType();
                     c.Name = v.Name.ToString();
                     c.Optional = IsNullable(v);
@@ -69,10 +73,6 @@ namespace CodeGenerator
             try
             {
                 string s = "";
-                //foreach(string p in paths)
-                //{
-                //    s = p.Substring(p.LastIndexOf("\\") + 1, p.Length - p.LastIndexOf("\\") - 1);
-                //}
                 s = paths.First(p => p.Substring(p.LastIndexOf("\\") + 1, p.Length - p.LastIndexOf("\\") - 1) == "Extensions");
                 foreach (var d in dTypes)
                 {
@@ -92,21 +92,66 @@ namespace CodeGenerator
             { string strError = ae.Message.ToString(); }
         }
 
-        private static void AddInterfaceClass(Dictionary<string, List<cType>> dTypes)
+        private static void AddInterfaceClass(Dictionary<string, List<cType>> dTypes, List<string> paths)
         {
             try
             {
-                string extPath = @"C:\GitHub\Repos\LightosTomJ\CostOSInTheCloud\Code\Models\local\Interfaces";
-                DirectoryInfo diExt = new DirectoryInfo(extPath);
-                if (diExt.GetFiles().ToList().Count > 0) diExt.GetFiles().ToList().ForEach(f => f.Delete());
+                string s = "";
+                s = paths.First(p => p.Substring(p.LastIndexOf("\\") + 1, p.Length - p.LastIndexOf("\\") - 1) == "Interfaces");
                 foreach (var d in dTypes)
                 {
-                    using (StreamWriter sw = new StreamWriter(extPath + "\\" + d.Key.ToString() + ".cs"))
+                    using (StreamWriter sw = new StreamWriter(s + "\\I" + d.Key.ToString() + ".cs"))
                     {
-                        foreach (var a in d.Value)
+                        sw.WriteLine("");
+                        sw.WriteLine("namespace Models.local.Interfaces");
+                        sw.WriteLine("{");
+                        sw.WriteLine("\tpublic interface I" + d.Key);
+                        sw.WriteLine("\t{");
+                        foreach (var c in d.Value)
                         {
-
+                            sw.WriteLine(string.Concat("\t\t", c.Variable, c.Optional,
+                                            " ", c.Name, " { get; set; }"));
                         }
+                        sw.WriteLine("\t\t");
+                        sw.WriteLine(string.Concat("\t\t", d.Key, " Clone();"));
+                        sw.WriteLine("\t}");
+                        sw.WriteLine("}");
+                        sw.Close();
+                    }
+                }
+            }
+            catch (Exception ae)
+            { string strError = ae.Message.ToString(); }
+        }
+
+        private static void AddInheritsClass(Dictionary<string, List<cType>> dTypes, List<string> paths)
+        {
+            try
+            {
+                string s = "";
+                s = paths.First(p => (p.Substring(p.LastIndexOf("\\") + 1, p.Length - p.LastIndexOf("\\") - 1) != "Interfaces") &&
+                                     (p.Substring(p.LastIndexOf("\\") + 1, p.Length - p.LastIndexOf("\\") - 1) != "Extensions"));
+                foreach (var d in dTypes)
+                {
+                    using (StreamWriter sw = new StreamWriter(s + "\\" + d.Key.ToString() + ".cs"))
+                    {
+                        sw.WriteLine("");
+                        sw.WriteLine("namespace Models.local");
+                        sw.WriteLine("{");
+                        sw.WriteLine(string.Concat("\tpublic class ", d.Key, " : BaseClass.", d.Key, ", Interfaces.I", d.Key));
+                        sw.WriteLine("\t{");
+                        sw.WriteLine(string.Concat("\t\tpublic ", d.Key, " Clone()"));
+                        sw.WriteLine(string.Concat("\t\t{"));
+                        sw.WriteLine(string.Concat("\t\t\t", d.Key, " c = new ", d.Key, "();"));
+                        foreach (var c in d.Value)
+                        {
+                            sw.WriteLine(string.Concat("\t\t\tc.", c.Name, " = ", c.Name, ";"));
+                        }
+                        sw.WriteLine("");
+                        sw.WriteLine("\t\t\treturn c;");
+                        sw.WriteLine("\t\t}");
+                        sw.WriteLine("\t}");
+                        sw.WriteLine("}");
                         sw.Close();
                     }
                 }
@@ -137,6 +182,11 @@ namespace CodeGenerator
                 if (pi.PropertyType.ToString().Contains("System.Nullable"))
                 {
                     return ConvertSystemTypes(pi.PropertyType.GetProperties()[1]);
+                }
+                else if (pi.PropertyType.Name.ToString() == "ICollection`1")
+                {
+                    return string.Concat(pi.PropertyType.FullName.Substring(0, pi.PropertyType.FullName.IndexOf("`")),
+                        "<", pi.PropertyType.GenericTypeArguments[0].Name, ">");
                 }
                 else
                 {
@@ -271,6 +321,7 @@ namespace CodeGenerator
             catch (Exception ae)
             { string strError = ae.Message.ToString(); }
         }
+
         private static void DeleteFiles(List<string> paths)
         {
             try
