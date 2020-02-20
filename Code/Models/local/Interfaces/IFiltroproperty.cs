@@ -10,7 +10,7 @@ namespace Models.local.Interfaces
 		string Restriction { get; set; }
 		long? Filtroid { get; set; }
 		int? Filtropropertiescount { get; set; }
-		Models.local.BaseClass.Filtro Filtro { get; set; }
+		BaseClass.Filtro Filtro { get; set; }
 		
 		Filtroproperty Clone();
 	}

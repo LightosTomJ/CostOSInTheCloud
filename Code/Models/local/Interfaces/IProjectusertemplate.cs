@@ -1,3 +1,4 @@
+using System;
 
 namespace Models.local.Interfaces
 {
@@ -24,9 +25,9 @@ namespace Models.local.Interfaces
 		bool? Varsadmin { get; set; }
 		bool? Varsviewer { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Editorid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		
 		Projectusertemplate Clone();
 	}

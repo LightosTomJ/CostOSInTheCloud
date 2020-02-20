@@ -9,7 +9,7 @@ namespace Models.local.Interfaces
 		string Fpath { get; set; }
 		long? Rpdfnid { get; set; }
 		int? Rpdfnfildefcount { get; set; }
-		Models.local.BaseClass.Rpdfn Rpdfn { get; set; }
+		BaseClass.Rpdfn Rpdfn { get; set; }
 		
 		Fldfn Clone();
 	}

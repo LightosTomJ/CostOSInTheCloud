@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -10,9 +12,9 @@ namespace Models.local.Interfaces
 		bool? Supstate { get; set; }
 		string Editorid { get; set; }
 		string Createuserid { get; set; }
-		System.DateTime? Createdate { get; set; }
-		System.DateTime? Lastupdate { get; set; }
-		System.Collections.Generic.ICollection<Locfactor> Locfactor { get; set; }
+		DateTime? Createdate { get; set; }
+		DateTime? Lastupdate { get; set; }
+		//ICollection<Locfactor> Locfactor { get; set; }
 		
 		Locprof Clone();
 	}

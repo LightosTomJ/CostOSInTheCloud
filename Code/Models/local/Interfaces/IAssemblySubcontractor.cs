@@ -1,10 +1,12 @@
+using System;
+
 
 namespace Models.local.Interfaces
 {
 	public interface IAssemblySubcontractor
 	{
 		long Assemblysubcontractorid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		decimal? Frate { get; set; }
 		decimal? Fikarate { get; set; }
 		decimal? Factor1 { get; set; }
@@ -22,8 +24,8 @@ namespace Models.local.Interfaces
 		string PvVars { get; set; }
 		long? Subcontractorid { get; set; }
 		long? Assemblyid { get; set; }
-		Models.local.BaseClass.Assembly Assembly { get; set; }
-		Models.local.BaseClass.Subcontractor Subcontractor { get; set; }
+		BaseClass.Assembly Assembly { get; set; }
+		BaseClass.Subcontractor Subcontractor { get; set; }
 		
 		AssemblySubcontractor Clone();
 	}

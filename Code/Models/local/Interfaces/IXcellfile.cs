@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -8,7 +9,7 @@ namespace Models.local.Interfaces
 		int? Sheet { get; set; }
 		int? Cellx { get; set; }
 		int? Celly { get; set; }
-		System.Collections.Generic.ICollection<Projecttemplate> Projecttemplate { get; set; }
+		//ICollection<Projecttemplate> Projecttemplate { get; set; }
 		
 		Xcellfile Clone();
 	}

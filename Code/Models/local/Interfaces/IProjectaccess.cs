@@ -10,7 +10,7 @@ namespace Models.local.Interfaces
 		bool? Alupd { get; set; }
 		bool? Alrem { get; set; }
 		long? Puid { get; set; }
-		Models.local.BaseClass.Projectuser Pu { get; set; }
+		BaseClass.Projectuser Pu { get; set; }
 		
 		Projectaccess Clone();
 	}

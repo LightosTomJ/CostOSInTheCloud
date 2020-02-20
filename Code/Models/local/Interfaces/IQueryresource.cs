@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -97,8 +98,8 @@ namespace Models.local.Interfaces
 		string Cc19eq { get; set; }
 		string Cc20eq { get; set; }
 		long? Paramoutputid { get; set; }
-		Models.local.BaseClass.Paramoutput Paramoutput { get; set; }
-		System.Collections.Generic.ICollection<Queryrow> Queryrow { get; set; }
+		BaseClass.Paramoutput Paramoutput { get; set; }
+		//ICollection<Queryrow> Queryrow { get; set; }
 		
 		Queryresource Clone();
 	}

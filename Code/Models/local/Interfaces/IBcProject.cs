@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -10,9 +11,9 @@ namespace Models.local.Interfaces
 		bool? Deleted { get; set; }
 		string Name { get; set; }
 		long? ParentId { get; set; }
-		Models.local.BaseClass.BcProject Parent { get; set; }
-		System.Collections.Generic.ICollection<BcModel> BcModel { get; set; }
-		System.Collections.Generic.ICollection<BcProject> InverseParent { get; set; }
+		BaseClass.BcProject Parent { get; set; }
+		//ICollection<BcModel> BcModel { get; set; }
+		//ICollection<BcProject> InverseParent { get; set; }
 		
 		BcProject Clone();
 	}

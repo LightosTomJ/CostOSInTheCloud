@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -36,7 +37,7 @@ namespace Models.local.Interfaces
 		string Extracode8 { get; set; }
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
-		System.Collections.Generic.ICollection<Material> Material { get; set; }
+		//ICollection<Material> Material { get; set; }
 		
 		Supplier Clone();
 	}

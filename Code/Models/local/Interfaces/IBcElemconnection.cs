@@ -11,9 +11,9 @@ namespace Models.local.Interfaces
 		long? ModelId { get; set; }
 		long? RelatedelemId { get; set; }
 		long? RelatingelemId { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
-		Models.local.BaseClass.BcElement Relatedelem { get; set; }
-		Models.local.BaseClass.BcElement Relatingelem { get; set; }
+		BaseClass.BcModel Model { get; set; }
+		BaseClass.BcElement Relatedelem { get; set; }
+		BaseClass.BcElement Relatingelem { get; set; }
 		
 		BcElemconnection Clone();
 	}

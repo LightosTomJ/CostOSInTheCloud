@@ -1,10 +1,11 @@
+using System;
 
 namespace Models.local.Interfaces
 {
 	public interface IGroupcode
 	{
 		long Groupcodeid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Description { get; set; }
 		string Groupcode1 { get; set; }
 		string Title { get; set; }

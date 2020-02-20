@@ -19,7 +19,7 @@ namespace Models.local.Interfaces
 		bool? Isnumber { get; set; }
 		bool? Mandatory { get; set; }
 		string Pushfield { get; set; }
-		Models.local.BaseClass.Projecttemplate Template { get; set; }
+		BaseClass.Projecttemplate Template { get; set; }
 		
 		Projectspecvar Clone();
 	}

@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -19,7 +20,7 @@ namespace Models.local.Interfaces
 		string Reporttype { get; set; }
 		string Rjsurl { get; set; }
 		string Reportroles { get; set; }
-		System.Collections.Generic.ICollection<Fldfn> Fldfn { get; set; }
+		//ICollection<Fldfn> Fldfn { get; set; }
 		
 		Rpdfn Clone();
 	}

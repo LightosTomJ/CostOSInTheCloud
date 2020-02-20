@@ -1,10 +1,11 @@
+using System;
 
 namespace Models.local.Interfaces
 {
 	public interface ICntrlog
 	{
 		long Id { get; set; }
-		System.DateTime? Logdate { get; set; }
+		DateTime? Logdate { get; set; }
 		string Editorid { get; set; }
 		string Description { get; set; }
 		string Src { get; set; }

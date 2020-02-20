@@ -20,7 +20,7 @@ namespace Models.local.Interfaces
 		int? Cellx { get; set; }
 		int? Celly { get; set; }
 		decimal? Stovalnum { get; set; }
-		Models.local.BaseClass.Projecttemplate Template { get; set; }
+		BaseClass.Projecttemplate Template { get; set; }
 		
 		Ratedistrib Clone();
 	}

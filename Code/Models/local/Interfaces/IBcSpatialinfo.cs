@@ -12,8 +12,8 @@ namespace Models.local.Interfaces
 		double? MinZ { get; set; }
 		long? ElementId { get; set; }
 		long? ModelId { get; set; }
-		Models.local.BaseClass.BcElement Element { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
+		BaseClass.BcElement Element { get; set; }
+		BaseClass.BcModel Model { get; set; }
 		
 		BcSpatialinfo Clone();
 	}

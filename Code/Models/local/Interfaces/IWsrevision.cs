@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -12,8 +13,8 @@ namespace Models.local.Interfaces
 		string Description { get; set; }
 		bool? Pblk { get; set; }
 		long? Mappingid { get; set; }
-		Models.local.BaseClass.Wsdatamapping Mapping { get; set; }
-		System.Collections.Generic.ICollection<Wsfile> Wsfile { get; set; }
+		BaseClass.Wsdatamapping Mapping { get; set; }
+		//ICollection<Wsfile> Wsfile { get; set; }
 		
 		Wsrevision Clone();
 	}

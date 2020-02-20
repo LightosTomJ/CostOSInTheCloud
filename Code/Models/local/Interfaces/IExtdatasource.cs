@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -12,10 +14,10 @@ namespace Models.local.Interfaces
 		string Jdbcuser { get; set; }
 		string Jdbcpsw { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Editorid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
-		System.Collections.Generic.ICollection<Extquery> Extquery { get; set; }
+		DateTime? Lastupdate { get; set; }
+		//ICollection<Extquery> Extquery { get; set; }
 		
 		Extdatasource Clone();
 	}

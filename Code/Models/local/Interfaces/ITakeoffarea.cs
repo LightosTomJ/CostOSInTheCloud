@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -9,9 +10,9 @@ namespace Models.local.Interfaces
 		decimal? Tension { get; set; }
 		long? Aid { get; set; }
 		int? Areacount { get; set; }
-		Models.local.BaseClass.Takeoffcon A { get; set; }
-		System.Collections.Generic.ICollection<Takeoffpoint> Takeoffpoint { get; set; }
-		System.Collections.Generic.ICollection<Takeofftriangle> Takeofftriangle { get; set; }
+		BaseClass.Takeoffcon A { get; set; }
+		//ICollection<Takeoffpoint> Takeoffpoint { get; set; }
+		//ICollection<Takeofftriangle> Takeofftriangle { get; set; }
 		
 		Takeoffarea Clone();
 	}

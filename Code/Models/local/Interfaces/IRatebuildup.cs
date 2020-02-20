@@ -28,7 +28,7 @@ namespace Models.local.Interfaces
 		decimal? Rate12 { get; set; }
 		decimal? Rate13 { get; set; }
 		decimal? Rate14 { get; set; }
-		Models.local.BaseClass.Projecttemplate Template { get; set; }
+		BaseClass.Projecttemplate Template { get; set; }
 		
 		Ratebuildup Clone();
 	}

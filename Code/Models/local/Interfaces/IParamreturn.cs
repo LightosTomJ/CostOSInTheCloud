@@ -6,7 +6,7 @@ namespace Models.local.Interfaces
 		long Paramreturnid { get; set; }
 		string Reteq { get; set; }
 		long? Paramitemid { get; set; }
-		Models.local.BaseClass.Paramitem Paramitem { get; set; }
+		BaseClass.Paramitem Paramitem { get; set; }
 		
 		Paramreturn Clone();
 	}

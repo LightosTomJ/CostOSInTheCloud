@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -24,7 +26,7 @@ namespace Models.local.Interfaces
 		string Gekcode { get; set; }
 		string Editorid { get; set; }
 		string Notes { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Extracode1 { get; set; }
 		string Extracode2 { get; set; }
 		string Extracode3 { get; set; }
@@ -42,10 +44,10 @@ namespace Models.local.Interfaces
 		string Snum { get; set; }
 		string Prttype { get; set; }
 		string Createuserid { get; set; }
-		System.DateTime? Createdate { get; set; }
-		System.Collections.Generic.ICollection<Paraminput> Paraminput { get; set; }
-		System.Collections.Generic.ICollection<Paramoutput> Paramoutput { get; set; }
-		System.Collections.Generic.ICollection<Paramreturn> Paramreturn { get; set; }
+		DateTime? Createdate { get; set; }
+		//ICollection<Paraminput> Paraminput { get; set; }
+		//ICollection<Paramoutput> Paramoutput { get; set; }
+		//ICollection<Paramreturn> Paramreturn { get; set; }
 		
 		Paramitem Clone();
 	}

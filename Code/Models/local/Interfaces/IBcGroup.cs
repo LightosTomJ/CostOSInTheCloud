@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -10,11 +11,11 @@ namespace Models.local.Interfaces
 		string Type { get; set; }
 		long? ModelId { get; set; }
 		long? ParentId { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
+		BaseClass.BcModel Model { get; set; }
 		Models.local.BaseClass.BcGroup Parent { get; set; }
-		System.Collections.Generic.ICollection<BcGroupelem> BcGroupelem { get; set; }
-		System.Collections.Generic.ICollection<BcGroupprop> BcGroupprop { get; set; }
-		System.Collections.Generic.ICollection<BcGroup> InverseParent { get; set; }
+		//ICollection<BcGroupelem> BcGroupelem { get; set; }
+		//ICollection<BcGroupprop> BcGroupprop { get; set; }
+		//ICollection<BcGroup> InverseParent { get; set; }
 		
 		BcGroup Clone();
 	}

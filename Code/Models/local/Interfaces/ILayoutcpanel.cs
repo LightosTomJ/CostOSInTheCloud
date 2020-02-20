@@ -27,7 +27,7 @@ namespace Models.local.Interfaces
 		bool? Filters { get; set; }
 		bool? Xtralvl { get; set; }
 		int? Layoutcpanelcount { get; set; }
-		Models.local.BaseClass.Layoutc Layoutc { get; set; }
+		BaseClass.Layoutc Layoutc { get; set; }
 		
 		Layoutcpanel Clone();
 	}

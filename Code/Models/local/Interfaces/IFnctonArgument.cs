@@ -18,7 +18,7 @@ namespace Models.local.Interfaces
 		string Defval { get; set; }
 		string Grouping { get; set; }
 		int? Varscount { get; set; }
-		Models.local.BaseClass.Fncton F { get; set; }
+		BaseClass.Fncton F { get; set; }
 		
 		FnctonArgument Clone();
 	}

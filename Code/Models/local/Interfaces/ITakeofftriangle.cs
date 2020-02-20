@@ -15,7 +15,7 @@ namespace Models.local.Interfaces
 		decimal? Zpos3 { get; set; }
 		long? Tid { get; set; }
 		int? Triacount { get; set; }
-		Models.local.BaseClass.Takeoffarea T { get; set; }
+		BaseClass.Takeoffarea T { get; set; }
 		
 		Takeofftriangle Clone();
 	}

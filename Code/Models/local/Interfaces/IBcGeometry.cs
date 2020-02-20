@@ -9,9 +9,9 @@ namespace Models.local.Interfaces
 		long? ElementId { get; set; }
 		long? GeomfileId { get; set; }
 		long? ModelId { get; set; }
-		Models.local.BaseClass.BcElement Element { get; set; }
-		Models.local.BaseClass.BcGeomfile Geomfile { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
+		BaseClass.BcElement Element { get; set; }
+		BaseClass.BcGeomfile Geomfile { get; set; }
+		BaseClass.BcModel Model { get; set; }
 		
 		BcGeometry Clone();
 	}

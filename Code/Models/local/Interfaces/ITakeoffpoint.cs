@@ -13,9 +13,9 @@ namespace Models.local.Interfaces
 		int? Polycount { get; set; }
 		int? Pointcount { get; set; }
 		int? Elevcount { get; set; }
-		Models.local.BaseClass.Takeoffcon C { get; set; }
-		Models.local.BaseClass.Takeoffarea P { get; set; }
-		Models.local.BaseClass.Takeoffline S { get; set; }
+		BaseClass.Takeoffcon C { get; set; }
+		BaseClass.Takeoffarea P { get; set; }
+		BaseClass.Takeoffline S { get; set; }
 		
 		Takeoffpoint Clone();
 	}

@@ -1,10 +1,11 @@
+using System;
 
 namespace Models.local.Interfaces
 {
 	public interface IAssemblyEquipment
 	{
 		long Assemblyequipmentid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		decimal? Frate { get; set; }
 		decimal? Fdeprate { get; set; }
 		decimal? Energyprice { get; set; }
@@ -26,8 +27,8 @@ namespace Models.local.Interfaces
 		string PvVars { get; set; }
 		long? Equipmentid { get; set; }
 		long? Assemblyid { get; set; }
-		Models.local.BaseClass.Assembly Assembly { get; set; }
-		Models.local.BaseClass.Equipment Equipment { get; set; }
+		BaseClass.Assembly Assembly { get; set; }
+		BaseClass.Equipment Equipment { get; set; }
 		
 		AssemblyEquipment Clone();
 	}

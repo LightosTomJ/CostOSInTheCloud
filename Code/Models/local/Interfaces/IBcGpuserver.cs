@@ -1,3 +1,4 @@
+using System;
 
 namespace Models.local.Interfaces
 {
@@ -11,7 +12,7 @@ namespace Models.local.Interfaces
 		int? CurSessions { get; set; }
 		string Dedicated { get; set; }
 		string Hostname { get; set; }
-		System.DateTime? LastUpdate { get; set; }
+		DateTime? LastUpdate { get; set; }
 		int? Maxsessions { get; set; }
 		string Name { get; set; }
 		bool? Onln { get; set; }

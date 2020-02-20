@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -25,9 +27,9 @@ namespace Models.local.Interfaces
 		string Notes { get; set; }
 		string Editorid { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Rescode { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Accrights { get; set; }
 		string Keyw { get; set; }
 		string Title { get; set; }
@@ -47,7 +49,7 @@ namespace Models.local.Interfaces
 		int? Tcolor { get; set; }
 		int? Tregtype { get; set; }
 		string Trids { get; set; }
-		System.DateTime? Trdate { get; set; }
+		DateTime? Trdate { get; set; }
 		string Extracode1 { get; set; }
 		string Extracode2 { get; set; }
 		string Extracode3 { get; set; }
@@ -59,7 +61,7 @@ namespace Models.local.Interfaces
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
 		int? Overtype { get; set; }
-		System.Collections.Generic.ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
+		//ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
 		
 		Equipment Clone();
 	}

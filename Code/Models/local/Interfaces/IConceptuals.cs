@@ -1,3 +1,5 @@
+using System;
+
 
 namespace Models.local.Interfaces
 {
@@ -60,7 +62,7 @@ namespace Models.local.Interfaces
 		decimal? Rel3 { get; set; }
 		decimal? Rel4 { get; set; }
 		decimal? Rel5 { get; set; }
-		System.DateTime? Refdate { get; set; }
+		DateTime? Refdate { get; set; }
 		string Ct01eq { get; set; }
 		string Ct02eq { get; set; }
 		string Ct03eq { get; set; }
@@ -127,7 +129,7 @@ namespace Models.local.Interfaces
 		string Cc19eq { get; set; }
 		string Cc20eq { get; set; }
 		long? Paramoutputid { get; set; }
-		Models.local.BaseClass.Paramoutput Paramoutput { get; set; }
+		BaseClass.Paramoutput Paramoutput { get; set; }
 		
 		Conceptuals Clone();
 	}

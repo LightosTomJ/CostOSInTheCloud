@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -32,11 +33,11 @@ namespace Models.local.Interfaces
 		decimal? Qty2 { get; set; }
 		decimal? Qty3 { get; set; }
 		long? Projectinfoid { get; set; }
-		Models.local.BaseClass.Projectinfo Projectinfo { get; set; }
-		System.Collections.Generic.ICollection<Takeoffarea> Takeoffarea { get; set; }
-		System.Collections.Generic.ICollection<Takeofflegend> Takeofflegend { get; set; }
-		System.Collections.Generic.ICollection<Takeoffline> Takeoffline { get; set; }
-		System.Collections.Generic.ICollection<Takeoffpoint> Takeoffpoint { get; set; }
+		BaseClass.Projectinfo Projectinfo { get; set; }
+		//ICollection<Takeoffarea> Takeoffarea { get; set; }
+		//ICollection<Takeofflegend> Takeofflegend { get; set; }
+		//ICollection<Takeoffline> Takeoffline { get; set; }
+		//ICollection<Takeoffpoint> Takeoffpoint { get; set; }
 		
 		Takeoffcon Clone();
 	}

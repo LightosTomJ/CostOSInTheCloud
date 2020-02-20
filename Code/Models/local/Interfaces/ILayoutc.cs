@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -5,7 +7,7 @@ namespace Models.local.Interfaces
 	{
 		long Layoutcid { get; set; }
 		string Name { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Creatorid { get; set; }
 		string Editorid { get; set; }
 		string Selectedgk { get; set; }
@@ -76,7 +78,7 @@ namespace Models.local.Interfaces
 		string Csepclr { get; set; }
 		string Gridclr { get; set; }
 		string Layoutroles { get; set; }
-		System.Collections.Generic.ICollection<Layoutcpanel> Layoutcpanel { get; set; }
+		//ICollection<Layoutcpanel> Layoutcpanel { get; set; }
 		
 		Layoutc Clone();
 	}

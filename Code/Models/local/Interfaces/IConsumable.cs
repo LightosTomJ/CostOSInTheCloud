@@ -1,12 +1,14 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
 	public interface IConsumable
 	{
 		long Consumableid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Rescode { get; set; }
 		int? Overtype { get; set; }
 		string Description { get; set; }
@@ -33,7 +35,7 @@ namespace Models.local.Interfaces
 		int? Tcolor { get; set; }
 		int? Tregtype { get; set; }
 		string Trids { get; set; }
-		System.DateTime? Trdate { get; set; }
+		DateTime? Trdate { get; set; }
 		string Extracode1 { get; set; }
 		string Extracode2 { get; set; }
 		string Extracode3 { get; set; }
@@ -44,7 +46,7 @@ namespace Models.local.Interfaces
 		string Extracode8 { get; set; }
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
-		System.Collections.Generic.ICollection<AssemblyConsumable> AssemblyConsumable { get; set; }
+		//ICollection<AssemblyConsumable> AssemblyConsumable { get; set; }
 		
 		Consumable Clone();
 	}

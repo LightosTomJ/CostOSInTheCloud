@@ -1,11 +1,12 @@
-using System.Collections.Generic;
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
 	public interface IAssembly
 	{
 		long Assemblyid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		bool? Virtual { get; set; }
 		bool? Virtualequ { get; set; }
 		bool? Virtualsub { get; set; }
@@ -41,7 +42,7 @@ namespace Models.local.Interfaces
 		decimal? Qty { get; set; }
 		string Accuracy { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Bimtype { get; set; }
 		string Bimmaterial { get; set; }
 		string Country { get; set; }
@@ -110,18 +111,14 @@ namespace Models.local.Interfaces
 		decimal? Puex5factor { get; set; }
 		decimal? Puex6factor { get; set; }
 		decimal? Puex7factor { get; set; }
-        ICollection<IAssemblyChild> AssemblyChildAssembly  { get; set; }
-		System.Collections.Generic.ICollection<AssemblyChild> AssemblyChildChild { get; set; }
-		System.Collections.Generic.ICollection<AssemblyConsumable> AssemblyConsumable { get; set; }
-		System.Collections.Generic.ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
-		System.Collections.Generic.ICollection<AssemblyLabor> AssemblyLabor { get; set; }
-		System.Collections.Generic.ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
-		System.Collections.Generic.ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
+        //ICollection<AssemblyChild> AssemblyChildAssembly  { get; set; }
+		//ICollection<AssemblyChild> AssemblyChildChild { get; set; }
+		//ICollection<AssemblyConsumable> AssemblyConsumable { get; set; }
+		//ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
+		//ICollection<AssemblyLabor> AssemblyLabor { get; set; }
+		//ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
+		//ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
 		
 		Assembly Clone();
 	}
-    //public interface IAssemblyChild<T> where T : IAssemblyChild
-    //{
-    //    List<T> AssemblyChild { get; set; }
-    //}
 }

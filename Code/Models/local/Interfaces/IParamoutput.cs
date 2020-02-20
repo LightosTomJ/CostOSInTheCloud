@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -18,9 +19,9 @@ namespace Models.local.Interfaces
 		int? Sortorder { get; set; }
 		string Loopvar { get; set; }
 		long? Paramitemid { get; set; }
-		Models.local.BaseClass.Paramitem Paramitem { get; set; }
-		System.Collections.Generic.ICollection<Conceptuals> Conceptuals { get; set; }
-		System.Collections.Generic.ICollection<Queryresource> Queryresource { get; set; }
+		BaseClass.Paramitem Paramitem { get; set; }
+		//ICollection<Conceptuals> Conceptuals { get; set; }
+		//ICollection<Queryresource> Queryresource { get; set; }
 		
 		Paramoutput Clone();
 	}

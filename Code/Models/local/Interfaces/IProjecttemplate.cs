@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -8,8 +10,8 @@ namespace Models.local.Interfaces
 		string Title { get; set; }
 		string Editorid { get; set; }
 		string Userid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
-		System.DateTime? Createdate { get; set; }
+		DateTime? Lastupdate { get; set; }
+		DateTime? Createdate { get; set; }
 		string Createuser { get; set; }
 		long? Databaseid { get; set; }
 		long? Dbcreatedate { get; set; }
@@ -18,11 +20,11 @@ namespace Models.local.Interfaces
 		bool? Hasdistributors { get; set; }
 		bool? Allowviewers { get; set; }
 		string Description { get; set; }
-		Models.local.BaseClass.Xcellfile Template { get; set; }
-		System.Collections.Generic.ICollection<Projectspecvar> Projectspecvar { get; set; }
-		System.Collections.Generic.ICollection<Ratebuildup> Ratebuildup { get; set; }
-		System.Collections.Generic.ICollection<Ratebuildupcols> Ratebuildupcols { get; set; }
-		System.Collections.Generic.ICollection<Ratedistrib> Ratedistrib { get; set; }
+		BaseClass.Xcellfile Template { get; set; }
+		//ICollection<Projectspecvar> Projectspecvar { get; set; }
+		//ICollection<Ratebuildup> Ratebuildup { get; set; }
+		//ICollection<Ratebuildupcols> Ratebuildupcols { get; set; }
+		//ICollection<Ratedistrib> Ratedistrib { get; set; }
 		
 		Projecttemplate Clone();
 	}

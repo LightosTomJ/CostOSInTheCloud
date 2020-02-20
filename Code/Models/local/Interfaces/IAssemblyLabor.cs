@@ -1,10 +1,11 @@
+using System;
 
 namespace Models.local.Interfaces
 {
 	public interface IAssemblyLabor
 	{
 		long Assemblylaborid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		decimal? Frate { get; set; }
 		decimal? Fikarate { get; set; }
 		decimal? Factor1 { get; set; }
@@ -23,8 +24,8 @@ namespace Models.local.Interfaces
 		string PvVars { get; set; }
 		long? Laborid { get; set; }
 		long? Assemblyid { get; set; }
-		Models.local.BaseClass.Assembly Assembly { get; set; }
-		Models.local.BaseClass.Labor Labor { get; set; }
+		BaseClass.Assembly Assembly { get; set; }
+		BaseClass.Labor Labor { get; set; }
 		
 		AssemblyLabor Clone();
 	}

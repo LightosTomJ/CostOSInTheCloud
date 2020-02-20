@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -11,7 +12,7 @@ namespace Models.local.Interfaces
 		string Huser { get; set; }
 		string Hpass { get; set; }
 		string Dbname { get; set; }
-		System.Collections.Generic.ICollection<Projecturl> Projecturl { get; set; }
+		//ICollection<Projecturl> Projecturl { get; set; }
 		
 		Prjdbms Clone();
 	}

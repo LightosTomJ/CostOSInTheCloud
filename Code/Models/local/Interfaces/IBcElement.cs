@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -15,22 +16,22 @@ namespace Models.local.Interfaces
 		long? ContainedbyId { get; set; }
 		long? ModelId { get; set; }
 		long? ParentId { get; set; }
-		Models.local.BaseClass.BcElement Containedby { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
-		Models.local.BaseClass.BcElement Parent { get; set; }
-		System.Collections.Generic.ICollection<BcElemclassitem> BcElemclassitem { get; set; }
-		System.Collections.Generic.ICollection<BcElemconnection> BcElemconnectionRelatedelem { get; set; }
-		System.Collections.Generic.ICollection<BcElemconnection> BcElemconnectionRelatingelem { get; set; }
-		System.Collections.Generic.ICollection<BcElemcovering> BcElemcoveringCoverelem { get; set; }
-		System.Collections.Generic.ICollection<BcElemcovering> BcElemcoveringRelatingelem { get; set; }
-		System.Collections.Generic.ICollection<BcElementinfo> BcElementinfo { get; set; }
-		System.Collections.Generic.ICollection<BcElemprop> BcElemprop { get; set; }
-		System.Collections.Generic.ICollection<BcGeometry> BcGeometry { get; set; }
-		System.Collections.Generic.ICollection<BcGroupelem> BcGroupelem { get; set; }
-		System.Collections.Generic.ICollection<BcQuantity> BcQuantity { get; set; }
-		System.Collections.Generic.ICollection<BcSpatialinfo> BcSpatialinfo { get; set; }
-		System.Collections.Generic.ICollection<BcElement> InverseContainedby { get; set; }
-		System.Collections.Generic.ICollection<BcElement> InverseParent { get; set; }
+		BaseClass.BcElement Containedby { get; set; }
+		BaseClass.BcModel Model { get; set; }
+		BaseClass.BcElement Parent { get; set; }
+		//ICollection<BcElemclassitem> BcElemclassitem { get; set; }
+		//ICollection<BcElemconnection> BcElemconnectionRelatedelem { get; set; }
+		//ICollection<BcElemconnection> BcElemconnectionRelatingelem { get; set; }
+		//ICollection<BcElemcovering> BcElemcoveringCoverelem { get; set; }
+		//ICollection<BcElemcovering> BcElemcoveringRelatingelem { get; set; }
+		//ICollection<BcElementinfo> BcElementinfo { get; set; }
+		//ICollection<BcElemprop> BcElemprop { get; set; }
+		//ICollection<BcGeometry> BcGeometry { get; set; }
+		//ICollection<BcGroupelem> BcGroupelem { get; set; }
+		//ICollection<BcQuantity> BcQuantity { get; set; }
+		//ICollection<BcSpatialinfo> BcSpatialinfo { get; set; }
+		//ICollection<BcElement> InverseContainedby { get; set; }
+		//ICollection<BcElement> InverseParent { get; set; }
 		
 		BcElement Clone();
 	}

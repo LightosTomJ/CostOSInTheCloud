@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -8,9 +10,9 @@ namespace Models.local.Interfaces
 		string Title { get; set; }
 		string Editorid { get; set; }
 		string Description { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		long? Parentid { get; set; }
-		System.Collections.Generic.ICollection<Projectinfo> Projectinfo { get; set; }
+		//ICollection<Projectinfo> Projectinfo { get; set; }
 		
 		Projecteps Clone();
 	}

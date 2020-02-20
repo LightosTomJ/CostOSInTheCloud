@@ -85,7 +85,7 @@ namespace Models.local.Interfaces
 		decimal? Coldefval12 { get; set; }
 		decimal? Coldefval13 { get; set; }
 		decimal? Coldefval14 { get; set; }
-		Models.local.BaseClass.Projecttemplate Template { get; set; }
+		BaseClass.Projecttemplate Template { get; set; }
 		
 		Ratebuildupcols Clone();
 	}

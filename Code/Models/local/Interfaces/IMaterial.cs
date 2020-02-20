@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -14,7 +16,7 @@ namespace Models.local.Interfaces
 		int? Tcolor { get; set; }
 		int? Tregtype { get; set; }
 		string Trids { get; set; }
-		System.DateTime? Trdate { get; set; }
+		DateTime? Trdate { get; set; }
 		bool? Conceptual { get; set; }
 		string Bimmaterial { get; set; }
 		string Bimtype { get; set; }
@@ -77,8 +79,8 @@ namespace Models.local.Interfaces
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
 		int? Overtype { get; set; }
-		Models.local.BaseClass.Supplier Supplier { get; set; }
-		System.Collections.Generic.ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
+		BaseClass.Supplier Supplier { get; set; }
+		//ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
 		
 		Material Clone();
 	}

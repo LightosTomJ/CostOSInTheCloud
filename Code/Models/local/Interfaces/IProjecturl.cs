@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -22,8 +24,8 @@ namespace Models.local.Interfaces
 		string Name { get; set; }
 		string Rvson { get; set; }
 		string Creuserid { get; set; }
-		System.DateTime? Createdate { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Createdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		int? Underreview { get; set; }
 		int? Pending { get; set; }
 		int? Approved { get; set; }
@@ -37,9 +39,9 @@ namespace Models.local.Interfaces
 		string Description { get; set; }
 		long? Projectinfoid { get; set; }
 		long? Projectdbmsid { get; set; }
-		Models.local.BaseClass.Prjdbms Projectdbms { get; set; }
-		Models.local.BaseClass.Projectinfo Projectinfo { get; set; }
-		System.Collections.Generic.ICollection<Prjprop> Prjprop { get; set; }
+		BaseClass.Prjdbms Projectdbms { get; set; }
+		BaseClass.Projectinfo Projectinfo { get; set; }
+		//ICollection<Prjprop> Prjprop { get; set; }
 		
 		Projecturl Clone();
 	}

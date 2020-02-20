@@ -1,3 +1,5 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -21,7 +23,7 @@ namespace Models.local.Interfaces
 		int? Tcolor { get; set; }
 		int? Tregtype { get; set; }
 		string Trids { get; set; }
-		System.DateTime? Trdate { get; set; }
+		DateTime? Trdate { get; set; }
 		string Contactperson { get; set; }
 		string Phonenumber { get; set; }
 		string Mobilenumber { get; set; }
@@ -34,8 +36,8 @@ namespace Models.local.Interfaces
 		string Stateprovince { get; set; }
 		string Country { get; set; }
 		string Createuser { get; set; }
-		System.DateTime? Createdate { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Createdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Accrights { get; set; }
 		string Keyw { get; set; }
 		string Rescode { get; set; }
@@ -52,7 +54,7 @@ namespace Models.local.Interfaces
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
 		int? Overtype { get; set; }
-		System.Collections.Generic.ICollection<AssemblyLabor> AssemblyLabor { get; set; }
+		//ICollection<AssemblyLabor> AssemblyLabor { get; set; }
 		
 		Labor Clone();
 	}

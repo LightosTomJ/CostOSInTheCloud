@@ -11,7 +11,7 @@ namespace Models.local.Interfaces
 		string Datamapping { get; set; }
 		bool? Isquerycolumnid { get; set; }
 		long? Queryid { get; set; }
-		Models.local.BaseClass.Extquery Query { get; set; }
+		BaseClass.Extquery Query { get; set; }
 		
 		Extalias Clone();
 	}

@@ -1,7 +1,7 @@
 
 namespace Models.local
 {
-	public class Assembly : BaseClass.Assembly//, Interfaces.IAssembly
+	public class Assembly : BaseClass.Assembly, Interfaces.IAssembly
 	{
 		public Assembly Clone()
 		{

@@ -13,7 +13,7 @@ namespace Models.local.Interfaces
 		string Fntcolor { get; set; }
 		long? Cid { get; set; }
 		int? Lgdcount { get; set; }
-		Models.local.BaseClass.Takeoffcon C { get; set; }
+		BaseClass.Takeoffcon C { get; set; }
 		
 		Takeofflegend Clone();
 	}

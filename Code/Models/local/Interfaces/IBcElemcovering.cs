@@ -8,9 +8,9 @@ namespace Models.local.Interfaces
 		long? CoverelemId { get; set; }
 		long? ModelId { get; set; }
 		long? RelatingelemId { get; set; }
-		Models.local.BaseClass.BcElement Coverelem { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
-		Models.local.BaseClass.BcElement Relatingelem { get; set; }
+		BcElement Coverelem { get; set; }
+		BcModel Model { get; set; }
+		BcElement Relatingelem { get; set; }
 		
 		BcElemcovering Clone();
 	}

@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -9,9 +10,9 @@ namespace Models.local.Interfaces
 		string Type { get; set; }
 		long? ElementId { get; set; }
 		long? ModelId { get; set; }
-		Models.local.BaseClass.BcElement Element { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
-		System.Collections.Generic.ICollection<BcElemmaterial> BcElemmaterial { get; set; }
+		BaseClass.BcElement Element { get; set; }
+		BaseClass.BcModel Model { get; set; }
+		//ICollection<BcElemmaterial> BcElemmaterial { get; set; }
 		
 		BcElementinfo Clone();
 	}

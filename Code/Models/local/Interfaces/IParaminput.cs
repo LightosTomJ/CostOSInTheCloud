@@ -26,7 +26,7 @@ namespace Models.local.Interfaces
 		string Unit { get; set; }
 		string Stoval { get; set; }
 		long? Paramitemid { get; set; }
-		Models.local.BaseClass.Paramitem Paramitem { get; set; }
+		BaseClass.Paramitem Paramitem { get; set; }
 		
 		Paraminput Clone();
 	}

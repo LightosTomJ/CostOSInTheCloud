@@ -12,8 +12,8 @@ namespace Models.local.Interfaces
 		string Txtval { get; set; }
 		long? GroupId { get; set; }
 		long? ModelId { get; set; }
-		Models.local.BaseClass.BcGroup Group { get; set; }
-		Models.local.BaseClass.BcModel Model { get; set; }
+		BaseClass.BcGroup Group { get; set; }
+		BaseClass.BcModel Model { get; set; }
 		
 		BcGroupprop Clone();
 	}

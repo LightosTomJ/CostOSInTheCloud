@@ -12,7 +12,7 @@ namespace Models.local.Interfaces
 		long? Filerevid { get; set; }
 		string Actsheets { get; set; }
 		bool? Tcmfile { get; set; }
-		Models.local.BaseClass.Wsrevision Filerev { get; set; }
+		BaseClass.Wsrevision Filerev { get; set; }
 		
 		Wsfile Clone();
 	}

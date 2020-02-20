@@ -69,121 +69,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="local\Interfaces\IAd.cs" />
-    <Compile Remove="local\Interfaces\IAlcAmusers.cs" />
-    <Compile Remove="local\Interfaces\IAlcGroups.cs" />
-    <Compile Remove="local\Interfaces\IAlcObjectsInUse.cs" />
-    <Compile Remove="local\Interfaces\IAlcObjectsStatus.cs" />
-    <Compile Remove="local\Interfaces\IAlcSettingCodes.cs" />
-    <Compile Remove="local\Interfaces\IAlcUl.cs" />
-    <Compile Remove="local\Interfaces\IAlcUserGroups.cs" />
-    <Compile Remove="local\Interfaces\IAlcUserSettings.cs" />
-    <Compile Remove="local\Interfaces\IAssembly.cs" />
-    <Compile Remove="local\Interfaces\IAssemblyChild.cs" />
-    <Compile Remove="local\Interfaces\IAssemblyConsumable.cs" />
-    <Compile Remove="local\Interfaces\IAssemblyEquipment.cs" />
-    <Compile Remove="local\Interfaces\IAssemblyLabor.cs" />
-    <Compile Remove="local\Interfaces\IAssemblyMaterial.cs" />
-    <Compile Remove="local\Interfaces\IAssemblySubcontractor.cs" />
-    <Compile Remove="local\Interfaces\IBcClassification.cs" />
-    <Compile Remove="local\Interfaces\IBcClassitem.cs" />
-    <Compile Remove="local\Interfaces\IBcElemclassitem.cs" />
-    <Compile Remove="local\Interfaces\IBcElemconnection.cs" />
-    <Compile Remove="local\Interfaces\IBcElemcovering.cs" />
-    <Compile Remove="local\Interfaces\IBcElement.cs" />
-    <Compile Remove="local\Interfaces\IBcElementinfo.cs" />
-    <Compile Remove="local\Interfaces\IBcElemmaterial.cs" />
-    <Compile Remove="local\Interfaces\IBcElemprop.cs" />
-    <Compile Remove="local\Interfaces\IBcGeometry.cs" />
-    <Compile Remove="local\Interfaces\IBcGeomfile.cs" />
-    <Compile Remove="local\Interfaces\IBcGpuserver.cs" />
-    <Compile Remove="local\Interfaces\IBcGroup.cs" />
-    <Compile Remove="local\Interfaces\IBcGroupelem.cs" />
-    <Compile Remove="local\Interfaces\IBcGroupprop.cs" />
-    <Compile Remove="local\Interfaces\IBcMaterial.cs" />
-    <Compile Remove="local\Interfaces\IBcModel.cs" />
-    <Compile Remove="local\Interfaces\IBcProject.cs" />
-    <Compile Remove="local\Interfaces\IBcQuantity.cs" />
-    <Compile Remove="local\Interfaces\IBcScene.cs" />
-    <Compile Remove="local\Interfaces\IBcSpatialinfo.cs" />
-    <Compile Remove="local\Interfaces\IBenchmarkboqcolmap.cs" />
-    <Compile Remove="local\Interfaces\IBoqitemmetadata.cs" />
-    <Compile Remove="local\Interfaces\ICntrlog.cs" />
-    <Compile Remove="local\Interfaces\ICntrlogitem.cs" />
-    <Compile Remove="local\Interfaces\IConceptuals.cs" />
-    <Compile Remove="local\Interfaces\IConsumable.cs" />
-    <Compile Remove="local\Interfaces\ICountry.cs" />
-    <Compile Remove="local\Interfaces\ICurrency.cs" />
-    <Compile Remove="local\Interfaces\IEquipment.cs" />
-    <Compile Remove="local\Interfaces\IExtalias.cs" />
-    <Compile Remove="local\Interfaces\IExtdatasource.cs" />
-    <Compile Remove="local\Interfaces\IExtquery.cs" />
-    <Compile Remove="local\Interfaces\IExtracode1.cs" />
-    <Compile Remove="local\Interfaces\IExtracode2.cs" />
-    <Compile Remove="local\Interfaces\IExtracode3.cs" />
-    <Compile Remove="local\Interfaces\IExtracode4.cs" />
-    <Compile Remove="local\Interfaces\IExtracode5.cs" />
-    <Compile Remove="local\Interfaces\IExtracode6.cs" />
-    <Compile Remove="local\Interfaces\IExtracode7.cs" />
-    <Compile Remove="local\Interfaces\IFieldcustom.cs" />
-    <Compile Remove="local\Interfaces\IFiltro.cs" />
-    <Compile Remove="local\Interfaces\IFiltroproperty.cs" />
-    <Compile Remove="local\Interfaces\IFldfn.cs" />
-    <Compile Remove="local\Interfaces\IFncton.cs" />
-    <Compile Remove="local\Interfaces\IFnctonArgument.cs" />
-    <Compile Remove="local\Interfaces\IGekcode.cs" />
-    <Compile Remove="local\Interfaces\IGlbprop.cs" />
-    <Compile Remove="local\Interfaces\IGroupcode.cs" />
-    <Compile Remove="local\Interfaces\ILabor.cs" />
-    <Compile Remove="local\Interfaces\ILayoutc.cs" />
-    <Compile Remove="local\Interfaces\ILayoutcpanel.cs" />
-    <Compile Remove="local\Interfaces\ILictbl.cs" />
-    <Compile Remove="local\Interfaces\ILocfactor.cs" />
-    <Compile Remove="local\Interfaces\ILocprof.cs" />
-    <Compile Remove="local\Interfaces\IMaterial.cs" />
-    <Compile Remove="local\Interfaces\IParaminput.cs" />
-    <Compile Remove="local\Interfaces\IParamitem.cs" />
-    <Compile Remove="local\Interfaces\IParamoutput.cs" />
-    <Compile Remove="local\Interfaces\IParamreturn.cs" />
-    <Compile Remove="local\Interfaces\IPrincipals.cs" />
-    <Compile Remove="local\Interfaces\IPrjdbms.cs" />
-    <Compile Remove="local\Interfaces\IPrjprop.cs" />
-    <Compile Remove="local\Interfaces\IProjectaccess.cs" />
-    <Compile Remove="local\Interfaces\IProjecteps.cs" />
-    <Compile Remove="local\Interfaces\IProjectinfo.cs" />
-    <Compile Remove="local\Interfaces\IProjectspecvar.cs" />
-    <Compile Remove="local\Interfaces\IProjecttemplate.cs" />
-    <Compile Remove="local\Interfaces\IProjecturl.cs" />
-    <Compile Remove="local\Interfaces\IProjectuser.cs" />
-    <Compile Remove="local\Interfaces\IProjectusertemplate.cs" />
-    <Compile Remove="local\Interfaces\IQueryresource.cs" />
-    <Compile Remove="local\Interfaces\IQueryrow.cs" />
-    <Compile Remove="local\Interfaces\IQuotetemplate.cs" />
-    <Compile Remove="local\Interfaces\IRatebuildup.cs" />
-    <Compile Remove="local\Interfaces\IRatebuildupcols.cs" />
-    <Compile Remove="local\Interfaces\IRatedistrib.cs" />
-    <Compile Remove="local\Interfaces\IRoles.cs" />
-    <Compile Remove="local\Interfaces\IRpdfn.cs" />
-    <Compile Remove="local\Interfaces\ISubcontractor.cs" />
-    <Compile Remove="local\Interfaces\ISupplier.cs" />
-    <Compile Remove="local\Interfaces\ITakeoffarea.cs" />
-    <Compile Remove="local\Interfaces\ITakeoffcon.cs" />
-    <Compile Remove="local\Interfaces\ITakeofflegend.cs" />
-    <Compile Remove="local\Interfaces\ITakeoffline.cs" />
-    <Compile Remove="local\Interfaces\ITakeoffpoint.cs" />
-    <Compile Remove="local\Interfaces\ITakeofftriangle.cs" />
-    <Compile Remove="local\Interfaces\ITeamalias.cs" />
-    <Compile Remove="local\Interfaces\IUnitalias.cs" />
-    <Compile Remove="local\Interfaces\IUserprop.cs" />
-    <Compile Remove="local\Interfaces\IUsersessions.cs" />
-    <Compile Remove="local\Interfaces\IWscolident.cs" />
-    <Compile Remove="local\Interfaces\IWsdatamapping.cs" />
-    <Compile Remove="local\Interfaces\IWsfile.cs" />
-    <Compile Remove="local\Interfaces\IWsrevision.cs" />
-    <Compile Remove="local\Interfaces\IXcellfile.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -205,7 +90,6 @@
 
   <ItemGroup>
     <Folder Include="local\Extensions\" />
-    <Folder Include="local\Interfaces\" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ namespace Models.local.Interfaces
 		string Pkey { get; set; }
 		string Pval { get; set; }
 		long? Projecturlid { get; set; }
-		Models.local.BaseClass.Projecturl Projecturl { get; set; }
+		BaseClass.Projecturl Projecturl { get; set; }
 		
 		Prjprop Clone();
 	}

@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -59,7 +60,7 @@ namespace Models.local.Interfaces
 		string Extracode9 { get; set; }
 		string Extracode10 { get; set; }
 		int? Overtype { get; set; }
-		System.Collections.Generic.ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
+		//ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
 		
 		Subcontractor Clone();
 	}

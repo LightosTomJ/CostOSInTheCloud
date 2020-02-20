@@ -16,7 +16,7 @@ namespace Models.local.Interfaces
 		int? Fldtype { get; set; }
 		string Fieldmap { get; set; }
 		long? Mappingid { get; set; }
-		Models.local.BaseClass.Wsdatamapping Mapping { get; set; }
+		BaseClass.Wsdatamapping Mapping { get; set; }
 		
 		Wscolident Clone();
 	}

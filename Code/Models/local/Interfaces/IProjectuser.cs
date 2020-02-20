@@ -1,3 +1,4 @@
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -26,8 +27,8 @@ namespace Models.local.Interfaces
 		bool? Varsadmin { get; set; }
 		bool? Varsviewer { get; set; }
 		long? Projectinfoid { get; set; }
-		Models.local.BaseClass.Projectinfo Projectinfo { get; set; }
-		System.Collections.Generic.ICollection<Projectaccess> Projectaccess { get; set; }
+		BaseClass.Projectinfo Projectinfo { get; set; }
+		//ICollection<Projectaccess> Projectaccess { get; set; }
 		
 		Projectuser Clone();
 	}

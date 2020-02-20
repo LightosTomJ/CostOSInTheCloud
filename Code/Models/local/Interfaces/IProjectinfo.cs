@@ -1,10 +1,12 @@
+using System;
+//using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
 	public interface IProjectinfo
 	{
 		long Projectinfoid { get; set; }
-		System.DateTime? Lastupdate { get; set; }
+		DateTime? Lastupdate { get; set; }
 		string Epscode { get; set; }
 		string Description { get; set; }
 		string Currency { get; set; }
@@ -37,7 +39,7 @@ namespace Models.local.Interfaces
 		int? Floors { get; set; }
 		int? Duration { get; set; }
 		decimal? Clientbudget { get; set; }
-		System.DateTime? Subdate { get; set; }
+		DateTime? Subdate { get; set; }
 		string Defrev { get; set; }
 		decimal? Cusepsrate1 { get; set; }
 		decimal? Cusepsrate2 { get; set; }
@@ -89,16 +91,16 @@ namespace Models.local.Interfaces
 		decimal? Cuscumrate18 { get; set; }
 		decimal? Cuscumrate19 { get; set; }
 		decimal? Cuscumrate20 { get; set; }
-		System.DateTime? Cusepsdate1 { get; set; }
-		System.DateTime? Cusepsdate2 { get; set; }
-		System.DateTime? Cusepsdate3 { get; set; }
-		System.DateTime? Cusepsdate4 { get; set; }
-		System.DateTime? Cusepsdate5 { get; set; }
-		System.DateTime? Cusepsdate6 { get; set; }
-		System.DateTime? Cusepsdate7 { get; set; }
-		System.DateTime? Cusepsdate8 { get; set; }
-		System.DateTime? Cusepsdate9 { get; set; }
-		System.DateTime? Cusepsdate10 { get; set; }
+		DateTime? Cusepsdate1 { get; set; }
+		DateTime? Cusepsdate2 { get; set; }
+		DateTime? Cusepsdate3 { get; set; }
+		DateTime? Cusepsdate4 { get; set; }
+		DateTime? Cusepsdate5 { get; set; }
+		DateTime? Cusepsdate6 { get; set; }
+		DateTime? Cusepsdate7 { get; set; }
+		DateTime? Cusepsdate8 { get; set; }
+		DateTime? Cusepsdate9 { get; set; }
+		DateTime? Cusepsdate10 { get; set; }
 		decimal? Equcost { get; set; }
 		decimal? Subcost { get; set; }
 		decimal? Labcost { get; set; }
@@ -108,11 +110,11 @@ namespace Models.local.Interfaces
 		decimal? Equhours { get; set; }
 		long? Projectepsid { get; set; }
 		string Creatorid { get; set; }
-		System.DateTime? Createdate { get; set; }
-		Models.local.BaseClass.Projecteps Projecteps { get; set; }
-		System.Collections.Generic.ICollection<Projecturl> Projecturl { get; set; }
-		System.Collections.Generic.ICollection<Projectuser> Projectuser { get; set; }
-		System.Collections.Generic.ICollection<Takeoffcon> Takeoffcon { get; set; }
+		DateTime? Createdate { get; set; }
+		BaseClass.Projecteps Projecteps { get; set; }
+		//ICollection<Projecturl> Projecturl { get; set; }
+		//ICollection<Projectuser> Projectuser { get; set; }
+		//ICollection<Takeoffcon> Takeoffcon { get; set; }
 		
 		Projectinfo Clone();
 	}

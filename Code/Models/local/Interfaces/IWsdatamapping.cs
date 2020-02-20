@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace Models.local.Interfaces
 {
@@ -11,8 +12,8 @@ namespace Models.local.Interfaces
 		bool? Commentdetect { get; set; }
 		bool? Treedetect { get; set; }
 		string Tableprefer { get; set; }
-		System.Collections.Generic.ICollection<Wscolident> Wscolident { get; set; }
-		System.Collections.Generic.ICollection<Wsrevision> Wsrevision { get; set; }
+		//ICollection<Wscolident> Wscolident { get; set; }
+		//ICollection<Wsrevision> Wsrevision { get; set; }
 		
 		Wsdatamapping Clone();
 	}

@@ -21,7 +21,7 @@ namespace Models.local.Interfaces
 		string Geopoly { get; set; }
 		long? Fid { get; set; }
 		int? Faccount { get; set; }
-		Models.local.BaseClass.Locprof F { get; set; }
+		BaseClass.Locprof F { get; set; }
 		
 		Locfactor Clone();
 	}
