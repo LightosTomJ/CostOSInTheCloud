@@ -6,11 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.2.0-preview1.20073.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Models\Models.csproj" />
     <ProjectReference Include="..\Client\ClientBlazor.Client.csproj" />
-    <ProjectReference Include="..\Shared\ClientBlazor.Shared.csproj" />
   </ItemGroup>
 
 </Project>
