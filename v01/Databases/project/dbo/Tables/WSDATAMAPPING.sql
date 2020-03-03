@@ -1,0 +1,21 @@
+﻿CREATE TABLE [dbo].[WSDATAMAPPING] (
+    [ID]            BIGINT          IDENTITY (1, 1) NOT NULL,
+    [XCELLFILE]     VARBINARY (MAX) NULL,
+    [TITLE]         NVARCHAR (255)  NULL,
+    [CELLDTINGN]    NVARCHAR (MAX)  NULL,
+    [GROUPCOL]      INT             NULL,
+    [TREEMAPPING]   NVARCHAR (MAX)  NULL,
+    [COMMENTDETECT] BIT             NULL,
+    [TREEDETECT]    BIT             NULL,
+    [TABLEPREFER]   NVARCHAR (MAX)  NULL,
+    [PRJID]         BIGINT          NULL,
+    [REF__ID]       BIGINT          NULL,
+    [KEEPITEMS]     BIT             NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_PRJID]
+    ON [dbo].[WSDATAMAPPING]([PRJID] ASC);
+

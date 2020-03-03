@@ -1,0 +1,19 @@
+﻿CREATE TABLE [dbo].[BC_MODEL] (
+    [ID]            BIGINT         IDENTITY (1, 1) NOT NULL,
+    [APPNAME]       NVARCHAR (256) NULL,
+    [DEFREV]        BIT            NULL,
+    [FAILCAUSE]     NVARCHAR (256) NULL,
+    [FPATH]         NVARCHAR (256) NULL,
+    [GLOBALID]      NVARCHAR (255) NULL,
+    [NAME]          NVARCHAR (256) NULL,
+    [OFFSETX]       FLOAT (53)     NULL,
+    [OFFSETY]       FLOAT (53)     NULL,
+    [OFFSETZ]       FLOAT (53)     NULL,
+    [REV]           NVARCHAR (256) NULL,
+    [STATUS]        TINYINT        NULL,
+    [VERTEX_FACTOR] FLOAT (53)     NULL,
+    [PROJECT_ID]    BIGINT         NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK46CD798B161BBF74] FOREIGN KEY ([PROJECT_ID]) REFERENCES [dbo].[BC_PROJECT] ([ID])
+);
+
