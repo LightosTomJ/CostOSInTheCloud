@@ -17,7 +17,8 @@ namespace Desktop.common.nomitech.ces
     using GroupCodeTable = Models.local.GroupCodeTable;
     using LaborTable = Models.local.LaborTable;
     using MaterialTable = Models.local.MaterialTable;
-    using ParamItemTable = Models.local.ParamItemTable;org	using ProjectInfoTable = Models.local.ProjectInfoTable;
+    using ParamItemTable = Models.local.ParamItemTable;
+    using ProjectInfoTable = Models.local.ProjectInfoTable;
     using ProjectWBSTable = Models.local.ProjectWBSTable;
     using SubcontractorTable = Models.local.SubcontractorTable;
     using SupplierTable = Models.local.SupplierTable;

@@ -1,0 +1,51 @@
+﻿CREATE TABLE [dbo].[CNDON] (
+    [CONDITIONID] BIGINT           IDENTITY (1, 1) NOT NULL,
+    [DESCRIPTION] NVARCHAR (MAX)   NULL,
+    [TITLE]       NVARCHAR (MAX)   NULL,
+    [OPERAND]     TINYINT          NULL,
+    [QTY1]        NUMERIC (30, 10) NULL,
+    [QTY2]        NUMERIC (30, 10) NULL,
+    [QTY3]        NUMERIC (30, 10) NULL,
+    [QTYF]        NUMERIC (30, 10) NULL,
+    [UNIT1]       NVARCHAR (255)   NULL,
+    [UNIT2]       NVARCHAR (255)   NULL,
+    [UNIT3]       NVARCHAR (255)   NULL,
+    [UNITF]       NVARCHAR (255)   NULL,
+    [DBNAME]      NVARCHAR (255)   NULL,
+    [USERNAME]    NVARCHAR (255)   NULL,
+    [PASSWORD]    NVARCHAR (255)   NULL,
+    [HOST]        NVARCHAR (255)   NULL,
+    [BIDNO]       INT              NULL,
+    [CNDNO]       INT              NULL,
+    [CNDTYPE]     NVARCHAR (255)   NULL,
+    [CNDID]       INT              NULL,
+    [GLOBALID]    NVARCHAR (255)   NULL,
+    [PICKTYPE]    INT              NULL,
+    [PICKDATA]    NVARCHAR (MAX)   NULL,
+    [TAKEOFFTYPE] NVARCHAR (255)   NULL,
+    [BUILDING]    NVARCHAR (255)   NULL,
+    [STOREY]      NVARCHAR (255)   NULL,
+    [LOCATION]    NVARCHAR (255)   NULL,
+    [LAYER]       NVARCHAR (255)   NULL,
+    [QTY1NAME]    NVARCHAR (255)   NULL,
+    [QTY2NAME]    NVARCHAR (255)   NULL,
+    [QTY3NAME]    NVARCHAR (255)   NULL,
+    [QTYFNAME]    NVARCHAR (255)   NULL,
+    [FORMULA1]    NVARCHAR (255)   NULL,
+    [FORMULA2]    NVARCHAR (255)   NULL,
+    [FORMULA3]    NVARCHAR (255)   NULL,
+    [FORMULAF]    NVARCHAR (MAX)   NULL,
+    [BIMTYPE]     NVARCHAR (255)   NULL,
+    [BIMMATERIAL] NVARCHAR (MAX)   NULL,
+    [FCTSTATE]    NVARCHAR (MAX)   NULL,
+    [VIRT]        BIT              NULL,
+    [PRJID]       BIGINT           NULL,
+    [REF__ID]     BIGINT           NULL,
+    PRIMARY KEY CLUSTERED ([CONDITIONID] ASC)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_PRJID]
+    ON [dbo].[CNDON]([PRJID] ASC);
+
