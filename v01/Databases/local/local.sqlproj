@@ -62,6 +62,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Data" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\EXTDATASOURCE.sql" />
@@ -171,9 +172,9 @@
     <Build Include="dbo\Tables\WSFILE.sql" />
     <Build Include="dbo\Tables\CONSUMABLE.sql" />
     <Build Include="dbo\Tables\WSREVISION.sql" />
-    <Build Include="dbo\Tables\COUNTRY.sql" />
+    <Build Include="dbo\Tables\Country.sql" />
     <Build Include="dbo\Tables\XCELLFILE.sql" />
-    <Build Include="dbo\Tables\CURRENCY.sql" />
+    <Build Include="dbo\Tables\Currency.sql" />
     <Build Include="dbo\Tables\EQUIPMENT.sql" />
     <Build Include="dbo\Tables\EXTALIAS.sql" />
     <Build Include="dbo\Functions\unf_remove_non_alphanum_characters.sql" />
@@ -187,5 +188,8 @@
     <Build Include="dbo\Stored Procedures\usp_dyn_multibase_with_layouts.sql" />
     <Build Include="dbo\Stored Procedures\usp_fixed_list_project_info_view.sql" />
     <Build Include="dbo\Stored Procedures\usp_get_project_worksheet_revtree_sql.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\Data\Data.PostDeployment.sql" />
   </ItemGroup>
 </Project>
