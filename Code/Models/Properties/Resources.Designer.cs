@@ -69,28 +69,5 @@ namespace Models.Properties {
                 return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ?Nomitech License
-        ///
-        ///Version 2.0, January 2019
-        ///
-        ///https://www.nomitech.eu/
-        ///
-        ///TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
-        ///
-        ///1. Definitions.
-        ///
-        ///&quot;License&quot; shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
-        ///
-        ///&quot;Licensor&quot; shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
-        ///
-        ///&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that contr [rest of string was truncated>&quot;;.
-        /// </summary>
-        internal static string NuGet_Temporary_License {
-            get {
-                return ResourceManager.GetString("NuGet_Temporary_License", resourceCulture);
-            }
-        }
     }
 }
