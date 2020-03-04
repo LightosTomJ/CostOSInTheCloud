@@ -1,0 +1,61 @@
+﻿@page "/countries"
+@inherits CountriesBase
+
+@using Model.DB.Cache
+
+<h3>Countries</h3>
+
+@if (countries == null)
+{
+    <span>Loading</span>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Iso</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in countries)
+            {
+                <tr>
+                    <td>@country.Name</td>
+                    <td>@country.CreatedDate</td>
+                    <td>@country.Iso</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@*<RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="4"\
+                AllowSorting="true" Data="@countries" TItem="Country" ColumnWidth="200px">
+        <Columns>
+            <RadzenGridColumn TItem="Country" Property="CountryID" Title="Country Id" />
+            <RadzenGridColumn TItem="Country" Property="Name" Title="Name" />
+            <RadzenGridColumn TItem="Country" Property="Iso3" Title="ISO Code" />
+            <RadzenGridColumn TItem="Country" Property="Phonecode" Title="Phone Code" />
+        </Columns>
+    </RadzenGrid>*@
+
+@code {
+
+    List<Country> countries = new List<Country>();
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            countries = await listCountries();
+        }
+        catch (Exception ae)
+        {
+            string strError = ae.Message.ToString();
+        }
+        return;
+    }
+}
