@@ -2,6 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Nomitech.CostOS.Models</PackageId>
+    <Authors>Tom James</Authors>
+    <Company>Nomitech</Company>
+    <Product>Nomitech.CostOS.Models</Product>
+    <Description>Data access object models for all CostOS database classes</Description>
+    <Copyright>Nomitech</Copyright>
+    <PackageLicenseFile>NuGet Temporary License.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/LightosTomJ/CostOSInTheCloud</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/LightosTomJ/CostOSInTheCloud</RepositoryUrl>
+    <PackageReleaseNotes>NuGet of DAO for CostOS necessary for decoupling C# solution</PackageReleaseNotes>
+    <PackageTags>Nomitech CostOS Estimating Web-Service</PackageTags>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.0.4</Version>
+    <PackageIcon>CostOS VI-Grey (GitHub).png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +33,32 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\CostOS VI-Grey (GitHub).png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\NuGet Temporary License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
