@@ -1,3 +1,4 @@
+using ClientBlazor.Shared.Cache;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -19,6 +20,10 @@ namespace ClientBlazor.Server
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
                     new[] { "application/octet-stream" });
             });
+
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
+            services.AddSingleton<CountryController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,13 +39,14 @@ namespace ClientBlazor.Server
 
             app.UseStaticFiles();
             app.UseClientSideBlazorFiles<Client.Program>();
-
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapFallbackToClientSideBlazor<Client.Program>("index.html");
+                
             });
         }
     }
