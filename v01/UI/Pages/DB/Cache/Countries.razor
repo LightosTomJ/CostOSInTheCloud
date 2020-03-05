@@ -1,0 +1,51 @@
+﻿@page "/countries"
+@inherits CountriesBase
+
+@using Models.DB.Cache
+
+<h3>Countries</h3>
+
+@if (countries == null)
+{
+    <span>Loading</span>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Iso</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in countries)
+            {
+                <tr>
+                    <td>@country.Name</td>
+                    <td>@country.CreatedDate</td>
+                    <td>@country.Iso</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    List<Country> countries = new List<Country>();
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            countries = await listCountries();
+        }
+        catch (Exception ae)
+        {
+            string strError = ae.Message.ToString();
+        }
+        return;
+    }
+}

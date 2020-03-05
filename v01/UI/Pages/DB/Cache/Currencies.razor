@@ -1,0 +1,36 @@
+﻿@page "/currencies"
+@inherits CurrenciesBase
+
+@using Models.DB.Cache
+
+<h3>Currencies</h3>
+
+@if (currencies == null)
+{
+    <span>Loading</span>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Code</th>
+                <th>Currency</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var currency in currencies)
+            {
+                <tr>
+                    <td>@currency.Country.Name</td>
+                    <td>@currency.AlphabeticCode</td>
+                    <td>@currency.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {}

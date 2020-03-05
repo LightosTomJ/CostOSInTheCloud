@@ -1,0 +1,56 @@
+﻿@page "/rates"
+
+@inherits RatesBase
+
+@using Models.DTO.Cache;
+
+<h3>Rates</h3>
+@if (@rates == null)
+{
+    <span>Loading</span>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Currency</th>
+                <th>Date</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in rates)
+            {
+                @foreach (var cur in company.currencies)
+                {
+                    @if (company.rates.Count(q => q.Count(r => r.CurrencyId == cur.CurrencyId) > 0) > 0)
+                    {
+                        @foreach (var r in company.rates.Select(q => q.FirstOrDefault(r => r.CurrencyId == cur.CurrencyId)).ToList())
+                        {
+                            <tr>
+                                <td>@company.country.Name</td>
+                                <td>@cur.Name</td>
+                                <td>@r.Date</td>
+                                <td>@r.Rate</td>
+                            </tr>
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+    @*<RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@rates" TItem="ForExHistory" ColumnWidth="200px">
+            <Columns>
+                <RadzenGridColumn TItem="ForExHistory" Property="country.Name" Title="Country" />
+                <RadzenGridColumn TItem="ForExHistory" Property="currency.Name" Title="Currency" />
+                <RadzenGridColumn TItem="ForExHistory" Property="rates.Date" Title="Date" />
+                <RadzenGridColumn TItem="ForExHistory" Property="rates.Rate" Title="Index to USD" />
+            </Columns>
+        </RadzenGrid>*@
+}
+
+@code {}

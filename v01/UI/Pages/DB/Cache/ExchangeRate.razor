@@ -1,0 +1,25 @@
+﻿@page  "/exchangerates"
+
+@inherits ExchangeRateBase
+
+@using Models.DB.Cache
+
+<h3>Exchange Rate</h3>
+
+@if (@rates == null)
+{
+    <span>Loading</span>
+}
+else
+{
+    <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@rates" TItem="Models.DB.Cache.ExchangeRate" ColumnWidth="200px">
+        <Columns>
+            <RadzenGridColumn TItem="Models.DB.Cache.ExchangeRate" Property="CurrencyId" Title="Currency Id" />
+            <RadzenGridColumn TItem="Models.DB.Cache.ExchangeRate" Property="Date" Title="Date" />
+            <RadzenGridColumn TItem="Models.DB.Cache.ExchangeRate" Property="Rate" Title="Index to USD" />
+        </Columns>
+    </RadzenGrid>
+}
+
+@code {}
