@@ -11,6 +11,11 @@ Post-Deployment Script Template
 */
 
 
-:r .\Country.sql
-:r .\Currency.sql
-:r .\ExchangeRate.sql
+:r ..\..\Data\Country.sql
+:r ..\..\Data\Currency.sql
+:r ..\..\Data\ExchangeRate.sql
+:r ..\..\Data\MaterialGenre.sql
+:r ..\..\Data\MaterialCategory.sql
+:r ..\..\Data\Material.sql
+:r ..\..\Data\MaterialIndexRate.sql
+:r ..\..\Data\Inflation.sql

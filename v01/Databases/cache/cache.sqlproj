@@ -60,14 +60,34 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Deploy" />
     <Folder Include="dbo\Data" />
+    <Folder Include="dbo\Deploy\Local" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\ExchangeRate.sql" />
     <Build Include="dbo\Tables\Currency.sql" />
     <Build Include="dbo\Tables\Country.sql" />
+    <Build Include="dbo\Tables\MaterialCategory.sql" />
+    <Build Include="dbo\Tables\Material.sql" />
+    <Build Include="dbo\Tables\MaterialIndexRate.sql" />
+    <Build Include="dbo\Tables\MaterialIndexFeed.sql" />
+    <Build Include="dbo\Tables\MaterialGenre.sql" />
+    <None Include="dbo\Data\MaterialGenre.sql" />
+    <Build Include="dbo\Tables\Inflation.sql" />
+    <Build Include="dbo\Tables\OtherIndicesCategory.sql" />
+    <Build Include="dbo\Tables\OtherIndicies.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="dbo\Data\Script.PostDeployment.sql" />
+    <PostDeploy Include="dbo\Deploy\Local\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\Data\Currency.sql" />
+    <None Include="dbo\Data\ExchangeRate.sql" />
+    <None Include="dbo\Data\Country.sql" />
+    <None Include="dbo\Data\MaterialCategory.sql" />
+    <None Include="dbo\Data\MaterialIndexRate.sql" />
+    <None Include="dbo\Data\Material.sql" />
+    <None Include="dbo\Data\Inflation.sql" />
   </ItemGroup>
 </Project>
