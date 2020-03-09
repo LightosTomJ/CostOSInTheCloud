@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[OtherIndicesCategory]
+﻿CREATE TABLE [dbo].[OtherIndiceCategory]
 (
 	[OtherIndiceCategoryId]		SMALLINT		NOT NULL,
 	[Name]						NVARCHAR(MAX)	NOT NULL,

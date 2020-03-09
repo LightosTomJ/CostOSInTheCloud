@@ -68,14 +68,14 @@
     <Build Include="dbo\Tables\ExchangeRate.sql" />
     <Build Include="dbo\Tables\Currency.sql" />
     <Build Include="dbo\Tables\Country.sql" />
-    <Build Include="dbo\Tables\MaterialCategory.sql" />
-    <Build Include="dbo\Tables\Material.sql" />
+    <Build Include="dbo\Tables\MaterialIndiceCategory.sql" />
+    <Build Include="dbo\Tables\MaterialIndice.sql" />
     <Build Include="dbo\Tables\MaterialIndexRate.sql" />
     <Build Include="dbo\Tables\MaterialIndexFeed.sql" />
-    <Build Include="dbo\Tables\MaterialGenre.sql" />
+    <Build Include="dbo\Tables\MaterialIndiceGenre.sql" />
     <None Include="dbo\Data\MaterialGenre.sql" />
     <Build Include="dbo\Tables\Inflation.sql" />
-    <Build Include="dbo\Tables\OtherIndicesCategory.sql" />
+    <Build Include="dbo\Tables\OtherIndiceCategory.sql" />
     <Build Include="dbo\Tables\OtherIndicies.sql" />
   </ItemGroup>
   <ItemGroup>

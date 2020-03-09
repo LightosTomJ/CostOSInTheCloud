@@ -7,5 +7,5 @@
 	[CreatedDate]				DATE				NOT NULL,
 
     CONSTRAINT [PK_MaterialIndexRate] PRIMARY KEY CLUSTERED ([MaterialIndexRateId] ASC),
-	CONSTRAINT [FK_MaterialIndexRate_MaterialCategory] FOREIGN KEY ([MaterialCategoryId]) REFERENCES [MaterialCategory]([MaterialCategoryId]),
+	CONSTRAINT [FK_MaterialIndexRate_MaterialCategory] FOREIGN KEY ([MaterialCategoryId]) REFERENCES [MaterialIndiceCategory]([MaterialIndiceCategoryId]),
 )
