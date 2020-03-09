@@ -1,0 +1,17 @@
+﻿CREATE TABLE [dbo].[Inflation]
+(
+	[InflationId]		INT				NOT NULL,
+	[Indicator]			NVARCHAR(7)		NOT NULL,
+	[Measure]			NVARCHAR(7)		NOT NULL,
+	[Index]				DECIMAL(10,6)	NOT NULL,
+	[Date]				DATE			NOT NULL,
+	[CreatedDate]		DATE			NOT NULL,
+	[CountryId]			SMALLINT		NOT NULL
+
+CONSTRAINT [PK_Inflation] PRIMARY KEY CLUSTERED 
+(
+	[InflationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+	CONSTRAINT [FK_Inflation_Country] FOREIGN KEY ([CountryId]) REFERENCES [Country]([CountryId])
+) ON [PRIMARY]
+
