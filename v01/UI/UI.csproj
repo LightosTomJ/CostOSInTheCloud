@@ -15,4 +15,9 @@
     <ProjectReference Include="..\REST\REST.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\DB\Config\" />
+    <Folder Include="Pages\DTO\Config\" />
+  </ItemGroup>
+
 </Project>
