@@ -1,15 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
+@inject NavigationManager NavigationManager
+
 <div class="sidebar">
     <NavMenu />
 </div>
 
 <div class="main">
     <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <i class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
+        <a style="padding-left:5px;" href='#'><i class="fas fa-id-badge fa-2x"></i></a>
     </div>
 
     <div class="content px-4">
         @Body
     </div>
 </div>
+
+@code {
+    private void OpenAccessSettingsPage()
+    {
+        NavigationManager.NavigateTo("accessroles");
+    }
+}
