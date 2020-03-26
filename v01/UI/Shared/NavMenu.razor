@@ -1,8 +1,7 @@
 ﻿@inherits NavMenuBase
 
-<div class="top-row pl-4 navbar navbar-dark">
-    <img src="https://github.com/LightosTomJ/CostOSInTheCloud/blob/master/v01/UI/Resources/CostOS_Black.png" />
-    @*<a class="navbar-brand" href="">CostOS Cloud Estimating</a>*@
+<div>
+    <img style="max-width: 100%; max-height: 100%;" src="https://raw.githubusercontent.com/LightosTomJ/CostOSInTheCloud/master/v01/UI/Resources/CostOS_Black.png?token=AMSN573M45Q2HMG7SM3RMFC6PERKU"/>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +9,7 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
-        <li class="nav-item px-3">
+        @*<li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
@@ -19,7 +18,7 @@
             <NavLink class="nav-link" href="counter">
                 <span class="oi oi-plus" aria-hidden="true"></span> Counter
             </NavLink>
-        </li>
+        </li>*@
         <li class="nav-item px-3">
             <RadzenTree Expand="@LogExpand" Change="@LogChange" Style="width: 100%; color: white">
                 <NavLink class="nav-link" href="projects">

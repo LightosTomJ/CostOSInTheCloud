@@ -1,47 +1,38 @@
-﻿@page "/accessroles"
+﻿@using Radzen;
 
 @inherits AccessRolesBase
 
-<h3>Access & Roles</h3>
-
-@if (@roles == null)
-{
-    <span>Loading</span>
-}
-else
-{
-    <RadzenTree Expand="@LogExpand" Change="@LogChange" Style="width: 100%">
-        <RadzenTreeItem Text="Areas">
-            <RadzenTreeItem Text="Projects">
-                <NavLink class="nav-link" href="">
-                    <div class="table-responsive">
-                        <table class="table-striped">
-                            <thead>
+<RadzenTree Expand="@LogExpand" Change="@LogChange" Style="width: 100%">
+    @foreach (string sGroup in GetRoles())
+    {
+    <RadzenTreeItem Text="@sGroup" Expanded="true">
+        <NavLink class="nav-link" href="">
+                <div class="table-responsive">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Feature</th>
+                                <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Can View</th>
+                                <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Can Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Models.DTO.Config.AccessRoles a in roles.Where(r => r.Group == sGroup).ToList())
+                            {
                                 <tr>
-                                    <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Feature</th>
-                                    <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Can View</th>
-                                    <th style="padding-right: 10px; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">Can Edit</th>
+                                    <td style="vertical-align: middle; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; width: 200px">@a.Name</td>
+                                    <td style="vertical-align: middle; text-align: center; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
+                                        <MatSlideToggle TValue="bool" ValueChanged="(() => Toggle(a.CanView))"></MatSlideToggle>
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: center; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
+                                        <MatSlideToggle TValue="bool" ValueChanged="(() => Toggle(a.CanEdit))"></MatSlideToggle>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (Models.DTO.Config.AccessRoles a in roles)
-                                {
-                                    <tr>
-                                        <td style="vertical-align: middle; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">@a.Name</td>
-                                        <td style="vertical-align: middle; text-align: center; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
-                                            <MatSlideToggle TValue="bool" ValueChanged="(() => Toggle(a.CanView))"></MatSlideToggle>
-                                        </td>
-                                        <td style="vertical-align: middle; text-align: center; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
-                                            <MatSlideToggle TValue="bool" ValueChanged="(() => Toggle(a.CanEdit))"></MatSlideToggle>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </NavLink>
-            </RadzenTreeItem>
-        </RadzenTreeItem>
-    </RadzenTree>
-
-}
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </NavLink>
+    </RadzenTreeItem>
+    }
+</RadzenTree>

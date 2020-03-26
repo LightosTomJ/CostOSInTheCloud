@@ -1,0 +1,34 @@
+﻿@page "/settings"
+
+@inherits SettingsBase
+
+<h3>Settings</h3>
+
+@if (@activeTabIndex < 0)
+{
+    <span>Loading</span>
+}
+else
+{
+    <DxTabs @bind-ActiveTabIndex="@ActiveTabIndex">
+        <DxTab Text="Access & Roles"></DxTab>
+        <DxTab Text="Subscription"></DxTab>
+        <DxTab Text="User Info"></DxTab>
+    </DxTabs>
+    <div class="card dxbs-border-top-0 dxbs-border-radius-top-0">
+        <div class="card-body">
+            @switch (ActiveTabIndex)
+            {
+                case 0:
+                    <AccessRoles></AccessRoles>
+                    break;
+                case 1:
+                    <Pricing></Pricing>
+                    break;
+                case 2:
+                    <UserInfo></UserInfo>
+                    break;
+            }
+        </div>
+    </div>
+}

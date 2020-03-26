@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevExpress.Blazor;
+//using DevExpress.Blazor.DocumentMetadata;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,7 @@ namespace UI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddDevExpressBlazor();
             //services.AddSingleton<Controllers.DB.Cache.CountryController>();
         }
 
@@ -46,7 +49,7 @@ namespace UI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

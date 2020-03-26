@@ -8,8 +8,8 @@
 
 <div class="main">
     <div class="top-row px-4">
-        <i class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
-        <a style="padding-left:5px;" href='#'><i class="fas fa-id-badge fa-2x"></i></a>
+        <i style="cursor: pointer" class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
+        @*<a style="padding-left:5px;" href='#'><i class="fas fa-id-badge fa-2x"></i></a>*@
     </div>
 
     <div class="content px-4">
@@ -20,6 +20,6 @@
 @code {
     private void OpenAccessSettingsPage()
     {
-        NavigationManager.NavigateTo("accessroles");
+        NavigationManager.NavigateTo("settings");
     }
 }

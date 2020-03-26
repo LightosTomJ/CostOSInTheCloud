@@ -1,0 +1,59 @@
+﻿
+@inherits UserInfoBase
+
+@if (user == null)
+{
+    <span>Loading</span>
+}
+else
+{
+    <h3>UserInfo: @user.FirstName @user.Surname</h3>
+
+    <table class="table-striped">
+        <tbody style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
+            <tr>
+                <td>Email Address</td>
+                <td>@user.Email</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>@user.Title</td>
+            </tr>
+            <tr>
+                <td>First name</td>
+                <td>@user.FirstName</td>
+            </tr>
+            <tr>
+                <td>Middle names</td>
+                <td>@user.MiddleNames</td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>@user.Surname</td>
+            </tr>
+            <tr>
+                <td>Phone number</td>
+                <td>@user.PhoneNumber</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <DxComboBox Data="@genders"
+                                TextFieldName="Type"
+                                @bind-SelectedItem="@selectedGender">
+                    </DxComboBox>
+                </td>
+            </tr>
+            <tr>
+                <td>Is a trial</td>
+                <td>@user.IsTrial </td>
+            </tr>
+            <tr>
+                <td>Is Multi-factor authentication (MFA) enabled?</td>
+                <td>@user.TwoFactorEnabled</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+}
