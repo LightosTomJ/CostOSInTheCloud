@@ -60,6 +60,9 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Data" />
+    <Folder Include="dbo\Deploy" />
+    <Folder Include="dbo\Deploy\Local" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
@@ -70,5 +73,14 @@
     <Build Include="dbo\Tables\AspNetUsers.sql" />
     <Build Include="dbo\Tables\Genders.sql" />
     <Build Include="dbo\Tables\Companies.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <None Include="dbo\Data\Users.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\Deploy\Local\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\Data\Companies.sql" />
+    <None Include="dbo\Data\Genders.sql" />
   </ItemGroup>
 </Project>
