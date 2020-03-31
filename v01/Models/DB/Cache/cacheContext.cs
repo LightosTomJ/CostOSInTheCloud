@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Cache
 {
-    public partial class cacheContext : DbContext
+    public partial class CacheContext : DbContext
     {
-        public cacheContext()
+        public CacheContext()
         {
         }
 
-        public cacheContext(DbContextOptions<cacheContext> options)
+        public CacheContext(DbContextOptions<CacheContext> options)
             : base(options)
         {
         }

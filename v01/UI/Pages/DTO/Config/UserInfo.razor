@@ -7,10 +7,10 @@
 }
 else
 {
-    <h3>UserInfo: @user.FirstName @user.Surname</h3>
+    <h3>@user.FirstName @user.Surname Information</h3>
 
-    <table class="table-striped">
-        <tbody style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
+    <table class="table-striped"  cellpadding="10">
+        <tbody>
             <tr>
                 <td>Email Address</td>
                 <td>@user.Email</td>
@@ -40,20 +40,42 @@ else
                 <td>
                     <DxComboBox Data="@genders"
                                 TextFieldName="Type"
-                                @bind-SelectedItem="@selectedGender">
+                                @bind-SelectedItem="@SelectedGender">
                     </DxComboBox>
                 </td>
             </tr>
             <tr>
-                <td>Is a trial</td>
-                <td>@user.IsTrial </td>
+                <td>Subcription type</td>
+                @if (@user.IsTrial == true)
+                {
+                    <td>
+                        <button type="button" class="btn btn-info btn-sm">Upgrade from Trial</button>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <button type="button" class="btn btn-info btn-sm">Manage Subscripton</button>
+                    </td>
+                }
             </tr>
             <tr>
-                <td>Is Multi-factor authentication (MFA) enabled?</td>
-                <td>@user.TwoFactorEnabled</td>
+                <td>Multi-factor authentication (MFA) enabled?</td>
+                @if (@user.TwoFactorEnabled == true)
+                {
+                    <td>
+                        <button type="button" class="btn btn-outline-danger btn-sm">Disable</button>
+                    </td>
+
+                }
+                else
+                {
+                    <td>
+                        <button type="button" class="btn btn-outline-success btn-sm">Enable</button>
+                    </td>
+                }
             </tr>
         </tbody>
     </table>
-
 
 }

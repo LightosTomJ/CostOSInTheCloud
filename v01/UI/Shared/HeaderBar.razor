@@ -1,0 +1,142 @@
+﻿
+@inject NavigationManager NavigationManager
+
+    <header>
+        <style>
+            header {
+                background-color: black;
+                color: white;
+            }
+
+            .toolbar {
+                display: inline;
+                padding: 0;
+                margin: 0;
+            }
+
+                .toolbar ul {
+                    display: table-row;
+                    vertical-align: middle;
+                }
+
+                    .toolbar ul li {
+                        display: table-cell;
+                        height: auto;
+                        list-style-type: none;
+                        vertical-align: middle;
+                    }
+
+                    .toolbar ul img {
+                        max-width: 50%; 
+                        max-height: 50%;
+                    }
+
+                    .toolbar ul li a {
+                        display: table-cell;
+                        vertical-align: middle;
+                        height: auto;
+                        border: solid 1px black;
+                        padding: 1px 16px;
+                    }
+
+                        .toolbar ul li a:hover {
+                            background-color: dimgray;
+                            text-decoration: none;
+                        }
+
+                    .toolbar ul li i {
+                        display: table-cell;
+                        vertical-align: middle;
+                        height: auto;
+                        border: none;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                    }
+
+                    .toolbar ul li button {
+                        display: table-cell;
+                        vertical-align: middle;
+                        border: solid 1px black;
+                        padding-right: 10px;
+                        margin-top: 5px;
+                    }
+
+            .button {
+                display: inline-block;
+                background-color: cadetblue;
+                border-radius: 4px;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 16px;
+                padding: 5px;
+                width: 100px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                color: white;
+            }
+
+            .button:hover {
+                background-color: teal;
+            }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+                .button:hover span:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+                .fa-cog:hover {
+                    transform: rotate(15deg);
+                }
+        </style>
+
+        <div class="toolbar">
+            <ul>
+                <li>
+                    <img src="https://user-images.githubusercontent.com/52748031/77803865-15a7ed00-7076-11ea-916c-10980d6ef58c.png" />
+                </li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="toolbar" style="float: right; margin-top: 5px;">
+            <ul>
+                <li>
+                    <i style="cursor: pointer; transition: transform 0.25s;" class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
+                </li>
+                <li style="border: none;">
+                    <button class="button" style="vertical-align: middle"><span>Login </span></button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+@code {
+    private void OpenAccessSettingsPage()
+    {
+        NavigationManager.NavigateTo("settings");
+    }
+}

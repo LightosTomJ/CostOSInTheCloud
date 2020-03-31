@@ -16,7 +16,7 @@ namespace UI.Pages.DB.Cache
         {
             try
             {
-                ExchangeRateController rateC = new ExchangeRateController(new cacheContext());
+                ExchangeRateController rateC = new ExchangeRateController(new CacheContext());
                 rates = await rateC.AllExchangeRates();
 
             }

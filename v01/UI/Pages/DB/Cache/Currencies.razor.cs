@@ -16,7 +16,7 @@ namespace UI.Pages.DB.Cache
         {
             try
             {
-                cacheContext cacheC = new cacheContext();
+                CacheContext cacheC = new CacheContext();
                 //Get currencies
                 CurrencyController cc = new CurrencyController(cacheC);
                 currencies = await cc.GetCurrencies();

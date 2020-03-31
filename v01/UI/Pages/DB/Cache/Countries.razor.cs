@@ -13,7 +13,7 @@ namespace UI.Pages.DB.Cache
         public async Task<List<Country>> listCountries()
         {
             List<Country> countries = new List<Country>();
-            CountryController cc = new CountryController(new cacheContext());
+            CountryController cc = new CountryController(new CacheContext());
             countries = await cc.GetCountries();
             return countries;
         }

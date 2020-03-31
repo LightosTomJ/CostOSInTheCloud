@@ -15,13 +15,13 @@ namespace UI.Pages.DTO.Config
         protected List<Genders> genders = null;
         protected Companies company = null;
         protected AspNetUsers user = null;
-        protected Genders selectedGender  {
+        protected Genders SelectedGender  {
             get => user.Gender;
             set
             {
-                selectedGender = value;
+                SelectedGender = value;
                 InvokeAsync(StateHasChanged);
-                user.Gender = selectedGender;
+                user.Gender = SelectedGender;
             } 
         }
 

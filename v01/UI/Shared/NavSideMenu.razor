@@ -1,0 +1,79 @@
+﻿
+@inject NavigationManager NavigationManager
+
+    <style>
+        #r {
+        }
+
+        #c1 {
+            background-color: red;
+            text-align: center;
+            width: 50%;
+            padding: 5px;
+        }
+
+            #c1:hover {
+                background-color: pink;
+                
+            }
+
+        #c2 {
+            background-color: red;
+            opacity: 0;
+            padding: 5px;
+        }
+
+            #c2:hover {
+                opacity: 1;
+            }
+
+        /*#projects {
+            background-color: red;
+        }
+
+            #projects:hover {
+                background-color: lightcoral;
+            }
+
+        .fa-industry {
+            color: white;
+        }*/
+
+        #ProjectSpan {
+            /*border-radius: 0 5px 5px 0;
+            color: white;
+            display: inline;
+            font-size: 20px;
+            left: -80px;
+            padding: 15px;
+            position: absolute;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100px;*/
+            width: 0px;
+        }
+
+            #ProjectSpan:hover {
+                /*left: 0;*/
+                width: 100px;
+            }
+    </style>
+
+    <div class="row" id="r">
+        <div class="column" id="c1">
+            @*<NavLink class="nav-link" href="projects">*@
+            <i class="fas fa-industry" href="projects"></i>
+            @*</NavLink>*@
+        </div>
+        <div class="column" id="c2">
+            Projects
+            @*<a href="#" id="projects">Projects</a>*@
+        </div>
+    </div>
+
+@code {
+    private void OpenAccessSettingsPage()
+    {
+        NavigationManager.NavigateTo("settings");
+    }
+}

@@ -11,9 +11,9 @@ namespace API.Controllers.DB.Cache
     [ApiController]
     public class CurrencyController : ControllerBase
     {
-        private readonly cacheContext _context;
+        private readonly CacheContext _context;
 
-        public CurrencyController(cacheContext context)
+        public CurrencyController(CacheContext context)
         {
             _context = context;
         }

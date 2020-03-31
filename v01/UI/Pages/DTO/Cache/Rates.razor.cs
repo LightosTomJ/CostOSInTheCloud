@@ -20,7 +20,7 @@ namespace UI.Pages.DTO.Cache
         {
             try
             {
-                cacheContext cacheC = new cacheContext();
+                CacheContext cacheC = new CacheContext();
                 List<Task> tasks = new List<Task>();
                 CountryController countC = new CountryController(cacheC);
                 CurrencyController currC = new CurrencyController(cacheC);
@@ -40,15 +40,19 @@ namespace UI.Pages.DTO.Cache
                 List<ForExHistory> lForX = new List<ForExHistory>();
                 foreach (Country c in countries)
                 {
-                    ForExHistory fx = new ForExHistory();
-                    fx.country = c;
-                    fx.currencies = new List<Currency>();
+                    ForExHistory fx = new ForExHistory
+                    {
+                        country = c,
+                        currencies = new List<Currency>()
+                    };
                     fx.currencies.AddRange(currencies.Where(s => s.Country == c).ToList());
                     foreach (Currency cu in fx.currencies)
                     {
                         List<ExchangeRate> lEx = exchangerates.Where(ex => ex.Currency == cu).ToList();
-                        fx.rates = new List<List<ExchangeRate>>();
-                        fx.rates.Add(lEx);
+                        fx.rates = new List<List<ExchangeRate>>
+                        {
+                            lEx
+                        };
                     }
                     lForX.Add(fx);
                 }

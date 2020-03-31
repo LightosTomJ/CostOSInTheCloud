@@ -23,7 +23,7 @@ namespace UI.Pages.DB
 
         protected void LogExpand(TreeExpandEventArgs args)
         {
-            Log("Expand", $"Text: {entries[(int)args.Value].ToString()}");
+            Log("Expand", $"Text: {entries[(int)args.Value]}");
         }
 
         protected override void OnInitialized()

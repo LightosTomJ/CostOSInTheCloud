@@ -8,9 +8,14 @@
     <Content Remove="Pages\DTO\Config\FragmentTemp.razor" />
     <Content Remove="Pages\DTO\Config\Roles.cshtml" />
     <Content Remove="Pages\DTO\Config\Subscription.razor" />
+    <Content Remove="wwwroot\css\site - Copy.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazorise" Version="0.8.8.4" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.8.8.4" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.8.8.4" />
+    <PackageReference Include="Blazorise.Sidebar" Version="0.8.8.4" />
     <PackageReference Include="DevExpress.Blazor" Version="19.2.4" />
     <PackageReference Include="MatBlazor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="0.7.0" />
@@ -20,7 +25,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Radzen.Blazor" Version="2.4.1" />
+    <PackageReference Include="Radzen.Blazor" Version="2.4.4" />
     <PackageReference Include="System.Resources.Extensions" Version="4.7.0" />
   </ItemGroup>
 

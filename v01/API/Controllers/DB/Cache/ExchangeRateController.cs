@@ -12,9 +12,9 @@ namespace API.Controllers.DB.Cache
     [ApiController]
     public class ExchangeRateController : ControllerBase
     {
-        private readonly cacheContext _context;
+        private readonly CacheContext _context;
 
-        public ExchangeRateController(cacheContext context)
+        public ExchangeRateController(CacheContext context)
         {
             _context = context;
         }

@@ -11,9 +11,9 @@ namespace API.Controllers.DB.Cache
     [ApiController]
     public class CountryController : ControllerBase
     {
-        private readonly cacheContext _context;
+        private readonly CacheContext _context;
 
-        public CountryController(cacheContext context)
+        public CountryController(CacheContext context)
         {
             _context = context;
         }

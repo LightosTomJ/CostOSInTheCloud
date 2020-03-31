@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 using DevExpress.Blazor;
 //using DevExpress.Blazor.DocumentMetadata;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +33,10 @@ namespace UI
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddDevExpressBlazor();
+            services.AddBlazorise(options => 
+            {
+                 options.ChangeTextOnKeyPress = true;
+            }).AddBootstrapProviders().AddFontAwesomeIcons();
             //services.AddSingleton<Controllers.DB.Cache.CountryController>();
         }
 
