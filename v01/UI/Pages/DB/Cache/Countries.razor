@@ -11,22 +11,49 @@
 }
 else
 {
+    <style>
+        th {
+            border-top: solid;
+            border-top-color: white;
+            /*text-align: center;*/
+        }
 
-    <table class="table">
+        .tdLocal {
+            padding-bottom: 2px;
+            padding-top: 2px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+            .local:hover {
+                background-color: beige;
+            }
+
+            .local:nth-child(even) {
+                background-color: lightgray;
+            }
+
+            .local:nth-child(odd) {
+                background-color: white;
+                color: darkgray;
+            }
+    </style>
+
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Date</th>
                 <th>Iso</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var country in countries)
             {
-                <tr>
-                    <td>@country.Name</td>
-                    <td>@country.CreatedDate</td>
-                    <td>@country.Iso</td>
+                <tr class="local">
+                    <td class="tdLocal">@country.Name</td>
+                    <td class="tdLocal" style="width: 50px">@country.Iso</td>
+                    <td class="tdLocal" style="width: 150px">@country.CreatedDate.Value.ToString("MMM-yyyy")</td>
                 </tr>
             }
         </tbody>

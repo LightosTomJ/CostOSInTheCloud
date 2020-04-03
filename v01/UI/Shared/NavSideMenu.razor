@@ -1,73 +1,394 @@
 ﻿
+@inherits NavSideMenuBase
 @inject NavigationManager NavigationManager
 
     <style>
-        #r {
+
+        .row {
+            margin: 5px;
+            vertical-align: middle;
         }
 
-        #c1 {
-            background-color: red;
-            text-align: center;
-            width: 50%;
-            padding: 5px;
+        #r i {
+            color: white;
         }
 
-            #c1:hover {
-                background-color: pink;
-                
-            }
-
-        #c2 {
-            background-color: red;
-            opacity: 0;
-            padding: 5px;
+        .imgInvert {
+            filter: invert(1);
+            width: 16px;
+            height: 16px;
         }
 
-            #c2:hover {
+        #proj {
+            height: 40px;
+        }
+
+            #proj:hover .column {
+                background-color: rgb(184, 161, 161);
                 opacity: 1;
+                color: white;
             }
 
-        /*#projects {
-            background-color: red;
+        #projects {
+            background-color: rgb(209, 137, 137);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
         }
 
-            #projects:hover {
-                background-color: lightcoral;
-            }
-
-        .fa-industry {
-            color: white;
-        }*/
-
-        #ProjectSpan {
-            /*border-radius: 0 5px 5px 0;
-            color: white;
-            display: inline;
-            font-size: 20px;
-            left: -80px;
-            padding: 15px;
-            position: absolute;
-            text-decoration: none;
-            transition: 0.3s;
-            width: 100px;*/
-            width: 0px;
+        #projectSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
         }
 
-            #ProjectSpan:hover {
-                /*left: 0;*/
-                width: 100px;
+            #projectSpan a {
+                color: white;
             }
+
+        #assem {
+            height: 40px;
+        }
+
+            #assem:hover .column {
+                background-color: rgb(201, 145, 145);
+                opacity: 1;
+                color: white;
+            }
+
+        #assemblies {
+            background-color: rgb(209, 173, 137);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #assembliesSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #assembliesSpan a {
+                color: white;
+            }
+
+        #linei {
+            height: 40px;
+        }
+
+            #linei:hover .column {
+                background-color: rgb(181, 181, 159);
+                opacity: 1;
+                color: white;
+            }
+
+        #lineitem {
+            background-color: rgb(209, 209, 137);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #lineitemSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #lineitemSpan a {
+                color: white;
+            }
+
+        #lab {
+            height: 40px;
+        }
+
+            #lab:hover .column {
+                background-color: rgb(171, 181, 159);
+                opacity: 1;
+                color: white;
+            }
+
+        #labour {
+            background-color: rgb(173, 209, 137);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #labourSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #labourSpan a {
+                color: white;
+            }
+
+        #pla {
+            height: 40px;
+        }
+
+            #pla:hover .column {
+                background-color: rgb(159, 181, 159);
+                opacity: 1;
+                color: white;
+            }
+
+        #plant {
+            background-color: rgb(137, 209, 137);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #plantSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #plantSpan a {
+                color: white;
+            }
+
+        #mat {
+            height: 40px;
+        }
+
+            #mat:hover .column {
+                background-color: rgb(159, 181, 170);
+                opacity: 1;
+                color: white;
+            }
+
+        #material {
+            background-color: rgb(137, 209, 173);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #materialSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #materialSpan a {
+                color: white;
+            }
+
+        #consum {
+            height: 40px;
+        }
+
+            #consum:hover .column {
+                background-color: rgb(159, 170, 181);
+                opacity: 1;
+                color: white;
+            }
+
+        #consumable {
+            background-color: rgb(137, 173, 209);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+
+        #consumableSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #consumableSpan a {
+                color: white;
+            }
+
+        #subcon {
+            height: 40px;
+        }
+
+            #subcon:hover .column {
+                background-color: rgb(159, 159, 181);
+                opacity: 1;
+                color: white;
+            }
+
+        #subcontractor {
+            background-color: rgb(137, 137, 209);
+            align-content: center;
+            padding-top: 7px;
+            width: 60px;
+        }
+
+        #subcontractorSpan {
+            opacity: 0;
+            align-content: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+
+            #subcontractorSpan a {
+                color: white;
+            }
+
+        #escal {
+            height: 40px;
+        }
+            #escal:hover {
+                width: 400px;
+            }
+
+                #escal:hover .column {
+                    background-color: rgb(170, 159, 181);
+                    opacity: 1;
+                    color: white;
+                }
+
+        #escalation {
+            background-color: rgb(173, 137, 209);
+            align-content: center;
+            padding-top: 10px;
+            width: 60px;
+        }
+            #escalation:hover {
+                text-align: center;
+                width: 60px;
+            }
+
+        #escalationSpan {
+            opacity: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        .nav-link a, .nav-link i, .nav-link span {
+            color: white;
+        }
     </style>
 
-    <div class="row" id="r">
-        <div class="column" id="c1">
-            @*<NavLink class="nav-link" href="projects">*@
+    <div class="row" id="proj">
+        <div class="column" id="projects">
             <i class="fas fa-industry" href="projects"></i>
-            @*</NavLink>*@
         </div>
-        <div class="column" id="c2">
-            Projects
-            @*<a href="#" id="projects">Projects</a>*@
+        <div class="column" id="projectSpan">
+            <a href="#">Projects</a>
+        </div>
+    </div>
+    <div class="row" id="assem">
+        <div class="column" id="assemblies">
+            <i class="fas fa-brain"></i> <i class="fas fa-stream"></i>
+        </div>
+        <div class="column" id="assembliesSpan">
+            <a href="assemblies">Assemblies</a>
+    </div>
+    </div>
+    <div class="row" id="linei">
+        <div class="column" id="lineitem">
+            <i class="fas fa-database"></i> <i class="fas fa-stream"></i>
+        </div>
+        <div class="column" id="lineitemSpan">
+            <a href="lineitems">Line Items</a>
+    </div>
+    </div>
+    <div class="row" id="lab">
+        <div class="column" id="labour">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/782/782899.png" data-src="https://image.flaticon.com/icons/png/128/782/782899.png" srcset="https://image.flaticon.com/icons/svg/782/782899.svg 4x">
+        </div>
+        <div class="column" id="labourSpan">
+            <a href="labour">Labour</a>
+    </div>
+    </div>
+    <div class="row" id="pla">
+        <div class="column" id="plant">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/596/596541.png" data-src="https://image.flaticon.com/icons/png/128/596/596541.png" srcset="https://image.flaticon.com/icons/svg/596/596541.svg 4x">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/1659/1659287.png" data-src="https://image.flaticon.com/icons/png/128/1659/1659287.png" srcset="https://image.flaticon.com/icons/svg/1659/1659287.svg 4x">
+        </div>
+        <div class="column" id="plantSpan">
+            <a href="plant">Plant</a>
+    </div>
+    </div>
+    <div class="row" id="mat">
+        <div class="column" id="material">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/1657/1657876.png" data-src="https://image.flaticon.com/icons/png/128/1657/1657876.png" srcset="https://image.flaticon.com/icons/svg/1657/1657876.svg 4x">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/605/605813.png" data-src="https://image.flaticon.com/icons/png/128/605/605813.png" srcset="https://image.flaticon.com/icons/svg/605/605813.svg 4x">
+        </div>
+        <div class="column" id="materialSpan">
+            <a href="materials">Materials</a>
+    </div>
+    </div>
+    <div class="row" id="consum">
+        <div class="column" id="consumable">
+            <i class="fas fa-tools"></i>
+        </div>
+        <div class="column" id="consumableSpan">
+            <a href="consumables">Consumables</a>
+    </div>
+    </div>
+    <div class="row" id="subcon">
+        <div class="column" id="subcontractor">
+            <img class="imgInvert" src="https://image.flaticon.com/icons/png/128/2630/2630800.png" data-src="https://image.flaticon.com/icons/png/128/2630/2630800.png" srcset="https://www.flaticon.com/premium-icon/icons/svg/2630/2630800.svg 4x">
+        </div>
+        <div class="column" id="subcontractorSpan">
+            <a href="subcontractor">Subcontractor</a>
+    </div>
+    </div>
+    <div class="row" id="escal">
+        <div class="column" id="escalation">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="column" id="escalationSpan">
+            <RadzenTree Expand="@LogExpand" Change="@LogChange">
+                <RadzenTreeItem Text="Escalation">
+                    <NavLink class="nav-link" href="countries">
+                        <i class="fas fa-globe-europe"></i>
+                        <span>Countries</span>
+                    </NavLink>
+                    <NavLink class="nav-link" href="currencies">
+                        <i class="fas fa-euro-sign"></i> <i class="fas fa-yen-sign"></i> <i class="fas fa-dollar-sign"></i>
+                        <span>Currencies</span>
+                    </NavLink>
+                    <NavLink class="nav-link" href="exchangerates">
+                        <i class="fas fa-dollar-sign"></i> <i class="fas fa-chart-line"></i>
+                        <span>Exchange Rate</span>
+                    </NavLink>
+                    <RadzenTreeItem Text="Other Rates">
+                        <NavLink class="nav-link" href="gdp">
+                            <i class="fas fa-chart-line"></i>
+                            <span>GDP</span>
+                        </NavLink>
+                        <NavLink class="nav-link" href="interest">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Interest</span>
+                        </NavLink>
+                        <NavLink class="nav-link" href="government">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Government</span>
+                        </NavLink>
+                    </RadzenTreeItem>
+                </RadzenTreeItem>
+            </RadzenTree>
         </div>
     </div>
 
