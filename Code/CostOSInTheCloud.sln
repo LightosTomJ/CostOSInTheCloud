@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project1", "Model\project1\project1.csproj", "{D0A317D2-4A3B-42B2-AAAC-40270A27918F}"
 EndProject
@@ -20,8 +20,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rate", "AzureFunctions\Rate\Rate.csproj", "{2BA227E4-3569-4F75-9B44-82317CC00A87}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "UnitTests\Tests\Tests.csproj", "{D1579AA9-DCB2-47E6-992B-D5DD2F04E5AE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{A7A92082-F9AE-4C65-B281-3D68138B2E06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{7F8A33C2-55AA-498F-8DB1-D6C7F5E1B5CA}"
 EndProject
@@ -131,10 +129,6 @@ Global
 		{D1579AA9-DCB2-47E6-992B-D5DD2F04E5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1579AA9-DCB2-47E6-992B-D5DD2F04E5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1579AA9-DCB2-47E6-992B-D5DD2F04E5AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7A92082-F9AE-4C65-B281-3D68138B2E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7A92082-F9AE-4C65-B281-3D68138B2E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7A92082-F9AE-4C65-B281-3D68138B2E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7A92082-F9AE-4C65-B281-3D68138B2E06}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B07D628-3FE1-4BEB-90F5-97C586A463CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B07D628-3FE1-4BEB-90F5-97C586A463CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B07D628-3FE1-4BEB-90F5-97C586A463CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
