@@ -1,5 +1,6 @@
 ﻿
 @inject NavigationManager NavigationManager
+@inherits BarBase
 
     <header>
         <style>
@@ -42,6 +43,9 @@
                         .toolbar ul li a:hover {
                             background-color: dimgray;
                             text-decoration: none;
+                            color: white;
+                            text-decoration: underline;
+                            transition: 0.1s;
                         }
 
                     .toolbar ul li i {
@@ -116,27 +120,27 @@
                 <li>
                     <img src="https://user-images.githubusercontent.com/52748031/77803865-15a7ed00-7076-11ea-916c-10980d6ef58c.png" />
                 </li>
-                <li><a href="#">Training</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="training">Training</a></li>
+                <li><a href="jobs">Jobs</a></li>
+                <li><a href="pricing">Pricing</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
-        </div>
-        <div class="toolbar" style="float: right; margin-top: 5px;">
-            <ul>
-                <li>
-                    <i style="cursor: pointer; transition: transform 0.25s;" class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
-                </li>
-                <li style="border: none;">
-                    <button class="button" style="vertical-align: middle"><span>Login </span></button>
-                </li>
-            </ul>
-        </div>
-    </header>
+                </div>
+                <div class="toolbar" style="float: right; margin-top: 5px;">
+                    <ul>
+                        <li>
+                            <i style="cursor: pointer; transition: transform 0.25s;" class="fas fa-cog fa-2x" @onclick="OpenAccessSettingsPage"></i>
+                        </li>
+                        <li style="border: none;">
+                            <button class="button" style="vertical-align: middle"><span>Login </span></button>
+                        </li>
+                    </ul>
+                </div>
+            </header>
 
-@code {
-    private void OpenAccessSettingsPage()
-    {
-        NavigationManager.NavigateTo("settings");
-    }
-}
+        @code {
+            private void OpenAccessSettingsPage()
+            {
+                NavigationManager.NavigateTo("settings");
+            }
+        }
