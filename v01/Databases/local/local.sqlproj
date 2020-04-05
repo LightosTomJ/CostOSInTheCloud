@@ -63,6 +63,8 @@
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="dbo\Data" />
+    <Folder Include="dbo\Deploy" />
+    <Folder Include="dbo\Deploy\Local" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\EXTDATASOURCE.sql" />
@@ -190,6 +192,12 @@
     <Build Include="dbo\Stored Procedures\usp_get_project_worksheet_revtree_sql.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="dbo\Data\Data.PostDeployment.sql" />
+    <PostDeploy Include="dbo\Deploy\Local\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\Data\Materials.sql" />
+    <None Include="dbo\Data\Labor.sql" />
+    <None Include="dbo\Data\Equipment.sql" />
+    <None Include="dbo\Data\Subcontractor.sql" />
   </ItemGroup>
 </Project>
