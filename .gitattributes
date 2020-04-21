@@ -4,6 +4,12 @@
 * text=auto
 
 ###############################################################################
+# Added by Tom James to change display programming language
+###############################################################################
+*.cs linguist-detectable=true
+*.TSQL linguist-detectable=false
+
+###############################################################################
 # Set default behavior for command prompt diff.
 #
 # This is need for earlier builds of msysgit that does not have it on by
