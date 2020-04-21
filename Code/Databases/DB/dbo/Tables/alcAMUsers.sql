@@ -1,9 +1,0 @@
-﻿CREATE TABLE [dbo].[alcAMUsers] (
-    [UserGID]  UNIQUEIDENTIFIER NOT NULL,
-    [UserId]   NVARCHAR (256)   NOT NULL,
-    [Name]     NVARCHAR (50)    NULL,
-    [Password] NVARCHAR (50)    NULL,
-    CONSTRAINT [alcAMUsers_I00] PRIMARY KEY CLUSTERED ([UserGID] ASC),
-    CONSTRAINT [alcAMUsers_I01] UNIQUE NONCLUSTERED ([UserId] ASC)
-);
-

@@ -1,7 +1,0 @@
-﻿CREATE TABLE [dbo].[alcSettingCodes] (
-    [Id]   UNIQUEIDENTIFIER NOT NULL,
-    [Code] NVARCHAR (250)   NOT NULL,
-    CONSTRAINT [alcSettingCodes_I00] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [alcSettingCodes_I01] UNIQUE NONCLUSTERED ([Code] ASC)
-);
-
