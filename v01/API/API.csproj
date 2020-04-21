@@ -19,5 +19,9 @@
     <ProjectReference Include="..\REST\REST.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\DB\Local\" />
+  </ItemGroup>
+
 
 </Project>
