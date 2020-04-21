@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UI.Pages.DB.Local
 {
-    public class Labor : ComponentBase
+    public class LaborBase : ComponentBase
     {
         protected IList<Models.DB.Local.Material> materials = null;
 

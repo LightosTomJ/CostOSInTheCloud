@@ -10,8 +10,7 @@ namespace UI.Pages.DB.Config
 {
     public class AspNetUsersBase : ComponentBase
     {
-        protected IList<AspNetUsers>
-            roles = null;
+        protected IList<AspNetUsers> roles = null;
 
         protected override async Task OnInitializedAsync()
         {
