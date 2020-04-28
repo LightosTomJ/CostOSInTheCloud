@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Report
 {
-    public partial class reportContext : DbContext
+    public partial class ReportContext : DbContext
     {
-        public reportContext()
+        public ReportContext()
         {
         }
 
-        public reportContext(DbContextOptions<reportContext> options)
+        public ReportContext(DbContextOptions<ReportContext> options)
             : base(options)
         {
         }

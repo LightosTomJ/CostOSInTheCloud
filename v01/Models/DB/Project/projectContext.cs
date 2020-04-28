@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Project
 {
-    public partial class projectContext : DbContext
+    public partial class ProjectContext : DbContext
     {
-        public projectContext()
+        public ProjectContext()
         {
         }
 
-        public projectContext(DbContextOptions<projectContext> options)
+        public ProjectContext(DbContextOptions<ProjectContext> options)
             : base(options)
         {
         }

@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Local
 {
-    public partial class localContext : DbContext
+    public partial class LocalContext : DbContext
     {
-        public localContext()
+        public LocalContext()
         {
         }
 
-        public localContext(DbContextOptions<localContext> options)
+        public LocalContext(DbContextOptions<LocalContext> options)
             : base(options)
         {
         }

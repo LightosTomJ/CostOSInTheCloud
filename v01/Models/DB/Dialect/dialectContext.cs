@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Dialect
 {
-    public partial class dialectContext : DbContext
+    public partial class DialectContext : DbContext
     {
-        public dialectContext()
+        public DialectContext()
         {
         }
 
-        public dialectContext(DbContextOptions<dialectContext> options)
+        public DialectContext(DbContextOptions<DialectContext> options)
             : base(options)
         {
         }

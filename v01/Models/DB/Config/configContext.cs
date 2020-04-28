@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Config
 {
-    public partial class configContext : DbContext
+    public partial class ConfigContext : DbContext
     {
-        public configContext()
+        public ConfigContext()
         {
         }
 
-        public configContext(DbContextOptions<configContext> options)
+        public ConfigContext(DbContextOptions<ConfigContext> options)
             : base(options)
         {
         }

@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.NS
 {
-    public partial class nsContext : DbContext
+    public partial class NsContext : DbContext
     {
-        public nsContext()
+        public NsContext()
         {
         }
 
-        public nsContext(DbContextOptions<nsContext> options)
+        public NsContext(DbContextOptions<NsContext> options)
             : base(options)
         {
         }

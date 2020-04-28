@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Layout
 {
-    public partial class layoutContext : DbContext
+    public partial class LayoutContext : DbContext
     {
-        public layoutContext()
+        public LayoutContext()
         {
         }
 
-        public layoutContext(DbContextOptions<layoutContext> options)
+        public LayoutContext(DbContextOptions<LayoutContext> options)
             : base(options)
         {
         }
