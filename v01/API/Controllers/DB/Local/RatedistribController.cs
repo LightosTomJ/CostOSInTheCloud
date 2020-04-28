@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class RatedistribController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public RatedistribController(localContext context)
+        public RatedistribController(LocalContext context)
         {
             _context = context;
         }

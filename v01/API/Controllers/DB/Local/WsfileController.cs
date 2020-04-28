@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class WsfileController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public WsfileController(localContext context)
+        public WsfileController(LocalContext context)
         {
             _context = context;
         }

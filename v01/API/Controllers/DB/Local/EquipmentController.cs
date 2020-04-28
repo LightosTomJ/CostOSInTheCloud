@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class EquipmentController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public EquipmentController(localContext context)
+        public EquipmentController(LocalContext context)
         {
             _context = context;
         }

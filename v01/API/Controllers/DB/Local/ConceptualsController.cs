@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ConceptualsController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ConceptualsController(localContext context)
+        public ConceptualsController(LocalContext context)
         {
             _context = context;
         }

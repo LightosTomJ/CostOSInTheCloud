@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class FnctonArgumentController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public FnctonArgumentController(localContext context)
+        public FnctonArgumentController(LocalContext context)
         {
             _context = context;
         }

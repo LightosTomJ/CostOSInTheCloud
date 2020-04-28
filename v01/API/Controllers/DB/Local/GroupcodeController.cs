@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class GroupcodeController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public GroupcodeController(localContext context)
+        public GroupcodeController(LocalContext context)
         {
             _context = context;
         }

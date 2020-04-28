@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class Extracode3Controller : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public Extracode3Controller(localContext context)
+        public Extracode3Controller(LocalContext context)
         {
             _context = context;
         }

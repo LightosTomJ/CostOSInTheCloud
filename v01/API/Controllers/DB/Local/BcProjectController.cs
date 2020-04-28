@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcProjectController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcProjectController(localContext context)
+        public BcProjectController(LocalContext context)
         {
             _context = context;
         }

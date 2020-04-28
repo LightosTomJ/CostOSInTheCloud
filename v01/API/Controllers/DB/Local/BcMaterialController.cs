@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcMaterialController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcMaterialController(localContext context)
+        public BcMaterialController(LocalContext context)
         {
             _context = context;
         }

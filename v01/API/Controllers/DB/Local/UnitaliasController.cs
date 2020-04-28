@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class UnitaliasController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public UnitaliasController(localContext context)
+        public UnitaliasController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AlcObjectsStatusController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AlcObjectsStatusController(localContext context)
+        public AlcObjectsStatusController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcClassitemController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcClassitemController(localContext context)
+        public BcClassitemController(LocalContext context)
         {
             _context = context;
         }

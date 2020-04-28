@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class WsrevisionController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public WsrevisionController(localContext context)
+        public WsrevisionController(LocalContext context)
         {
             _context = context;
         }

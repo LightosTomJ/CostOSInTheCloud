@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcGeometryController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcGeometryController(localContext context)
+        public BcGeometryController(LocalContext context)
         {
             _context = context;
         }

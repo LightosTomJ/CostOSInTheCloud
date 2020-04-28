@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class RpdfnController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public RpdfnController(localContext context)
+        public RpdfnController(LocalContext context)
         {
             _context = context;
         }

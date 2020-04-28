@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcGeomfileController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcGeomfileController(localContext context)
+        public BcGeomfileController(LocalContext context)
         {
             _context = context;
         }

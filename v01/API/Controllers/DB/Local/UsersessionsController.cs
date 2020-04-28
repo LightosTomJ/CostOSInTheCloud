@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class UsersessionsController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public UsersessionsController(localContext context)
+        public UsersessionsController(LocalContext context)
         {
             _context = context;
         }

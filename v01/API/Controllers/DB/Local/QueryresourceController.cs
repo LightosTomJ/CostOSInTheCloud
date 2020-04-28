@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class QueryresourceController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public QueryresourceController(localContext context)
+        public QueryresourceController(LocalContext context)
         {
             _context = context;
         }

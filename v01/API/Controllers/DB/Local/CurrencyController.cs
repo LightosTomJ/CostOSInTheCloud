@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class CurrencyController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public CurrencyController(localContext context)
+        public CurrencyController(LocalContext context)
         {
             _context = context;
         }

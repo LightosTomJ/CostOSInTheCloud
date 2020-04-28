@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Config
     [ApiController]
     public class GendersController : ControllerBase
     {
-        private readonly configContext _context;
+        private readonly ConfigContext _context;
 
-        public GendersController(configContext context)
+        public GendersController(ConfigContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class TeamaliasController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public TeamaliasController(localContext context)
+        public TeamaliasController(LocalContext context)
         {
             _context = context;
         }

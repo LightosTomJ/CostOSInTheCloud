@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class LayoutcpanelController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public LayoutcpanelController(localContext context)
+        public LayoutcpanelController(LocalContext context)
         {
             _context = context;
         }

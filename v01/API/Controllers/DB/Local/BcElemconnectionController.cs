@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcElemconnectionController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcElemconnectionController(localContext context)
+        public BcElemconnectionController(LocalContext context)
         {
             _context = context;
         }

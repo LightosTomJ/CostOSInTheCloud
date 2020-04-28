@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcQuantityController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcQuantityController(localContext context)
+        public BcQuantityController(LocalContext context)
         {
             _context = context;
         }

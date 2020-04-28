@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AssemblyEquipmentController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AssemblyEquipmentController(localContext context)
+        public AssemblyEquipmentController(LocalContext context)
         {
             _context = context;
         }

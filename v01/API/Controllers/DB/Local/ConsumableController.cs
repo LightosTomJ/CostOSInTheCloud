@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ConsumableController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ConsumableController(localContext context)
+        public ConsumableController(LocalContext context)
         {
             _context = context;
         }

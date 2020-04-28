@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Config
     [ApiController]
     public class AspNetRoleClaimsController : ControllerBase
     {
-        private readonly configContext _context;
+        private readonly ConfigContext _context;
 
-        public AspNetRoleClaimsController(configContext context)
+        public AspNetRoleClaimsController(ConfigContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AdController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AdController(localContext context)
+        public AdController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class QuotetemplateController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public QuotetemplateController(localContext context)
+        public QuotetemplateController(LocalContext context)
         {
             _context = context;
         }

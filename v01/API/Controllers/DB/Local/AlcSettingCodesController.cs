@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AlcSettingCodesController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AlcSettingCodesController(localContext context)
+        public AlcSettingCodesController(LocalContext context)
         {
             _context = context;
         }

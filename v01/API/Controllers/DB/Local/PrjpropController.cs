@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class PrjpropController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public PrjpropController(localContext context)
+        public PrjpropController(LocalContext context)
         {
             _context = context;
         }

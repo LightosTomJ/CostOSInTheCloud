@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcElementinfoController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcElementinfoController(localContext context)
+        public BcElementinfoController(LocalContext context)
         {
             _context = context;
         }

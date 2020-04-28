@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class CountryController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public CountryController(localContext context)
+        public CountryController(LocalContext context)
         {
             _context = context;
         }

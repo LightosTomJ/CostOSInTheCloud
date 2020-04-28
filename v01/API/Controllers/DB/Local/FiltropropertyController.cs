@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class FiltropropertyController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public FiltropropertyController(localContext context)
+        public FiltropropertyController(LocalContext context)
         {
             _context = context;
         }

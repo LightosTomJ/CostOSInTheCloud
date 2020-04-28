@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class WscolidentController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public WscolidentController(localContext context)
+        public WscolidentController(LocalContext context)
         {
             _context = context;
         }

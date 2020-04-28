@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ProjectepsController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ProjectepsController(localContext context)
+        public ProjectepsController(LocalContext context)
         {
             _context = context;
         }

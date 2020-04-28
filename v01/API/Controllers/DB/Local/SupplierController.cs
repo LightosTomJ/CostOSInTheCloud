@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class SupplierController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public SupplierController(localContext context)
+        public SupplierController(LocalContext context)
         {
             _context = context;
         }

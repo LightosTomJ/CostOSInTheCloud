@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BoqitemmetadataController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BoqitemmetadataController(localContext context)
+        public BoqitemmetadataController(LocalContext context)
         {
             _context = context;
         }

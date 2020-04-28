@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AlcUserGroupsController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AlcUserGroupsController(localContext context)
+        public AlcUserGroupsController(LocalContext context)
         {
             _context = context;
         }

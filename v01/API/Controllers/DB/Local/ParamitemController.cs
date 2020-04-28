@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ParamitemController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ParamitemController(localContext context)
+        public ParamitemController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BenchmarkboqcolmapController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BenchmarkboqcolmapController(localContext context)
+        public BenchmarkboqcolmapController(LocalContext context)
         {
             _context = context;
         }

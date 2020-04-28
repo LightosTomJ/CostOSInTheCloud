@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class FieldcustomController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public FieldcustomController(localContext context)
+        public FieldcustomController(LocalContext context)
         {
             _context = context;
         }

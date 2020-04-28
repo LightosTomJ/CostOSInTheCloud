@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcClassificationController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcClassificationController(localContext context)
+        public BcClassificationController(LocalContext context)
         {
             _context = context;
         }

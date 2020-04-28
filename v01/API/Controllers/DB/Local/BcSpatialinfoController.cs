@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcSpatialinfoController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcSpatialinfoController(localContext context)
+        public BcSpatialinfoController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class BcGpuserverController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public BcGpuserverController(localContext context)
+        public BcGpuserverController(LocalContext context)
         {
             _context = context;
         }

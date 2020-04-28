@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class TakeoffconController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public TakeoffconController(localContext context)
+        public TakeoffconController(LocalContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ProjectspecvarController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ProjectspecvarController(localContext context)
+        public ProjectspecvarController(LocalContext context)
         {
             _context = context;
         }

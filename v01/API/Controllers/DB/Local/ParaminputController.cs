@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ParaminputController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ParaminputController(localContext context)
+        public ParaminputController(LocalContext context)
         {
             _context = context;
         }

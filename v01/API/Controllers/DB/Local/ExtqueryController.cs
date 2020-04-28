@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ExtqueryController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ExtqueryController(localContext context)
+        public ExtqueryController(LocalContext context)
         {
             _context = context;
         }

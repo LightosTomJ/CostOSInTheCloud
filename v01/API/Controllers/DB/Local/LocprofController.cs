@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class LocprofController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public LocprofController(localContext context)
+        public LocprofController(LocalContext context)
         {
             _context = context;
         }

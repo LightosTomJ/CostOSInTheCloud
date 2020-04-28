@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AssemblyChildController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AssemblyChildController(localContext context)
+        public AssemblyChildController(LocalContext context)
         {
             _context = context;
         }

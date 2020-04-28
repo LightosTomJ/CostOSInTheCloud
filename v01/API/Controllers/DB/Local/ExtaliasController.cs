@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class ExtaliasController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public ExtaliasController(localContext context)
+        public ExtaliasController(LocalContext context)
         {
             _context = context;
         }

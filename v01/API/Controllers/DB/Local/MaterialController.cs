@@ -13,46 +13,54 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class MaterialController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public MaterialController(localContext context)
+        public MaterialController(LocalContext context)
         {
             _context = context;
         }
 
-        // GET: api/Material
+        // GET: api/Materials
         [HttpGet]
-        public async Task<IList<Material>> GetMaterial()
+        public async Task<ActionResult<IList<Material>>> GetMaterials()
+        //public ActionResult<IList<Material>> GetMaterials()
         {
-            return await _context.Material.ToListAsync();
+            ActionResult<IList<Material>> mats = new List<Material>();
+            try
+            {
+                mats = await _context.Material.ToListAsync();
+            }
+            catch (Exception ae)
+            { }
+            return mats;
         }
 
-        // GET: api/Material/5
+        // GET: api/Materials/5
         [HttpGet("{id}")]
-        public async Task<Material> GetMaterial(long id)
+        public async Task<ActionResult<Material>> GetMaterials(string id)
         {
-            var material = await _context.Material.FindAsync(id);
+            var roles = await _context.Material.FindAsync(id);
 
-            if (material == null)
+            if (roles == null)
             {
-                return null;
+                return NotFound();
             }
 
-            return material;
+            return roles;
         }
 
-        // PUT: api/Material/5
+        // PUT: api/Materials/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMaterial(long id, Material material)
+        public async Task<IActionResult> PutMaterials(long id, Material materials)
         {
-            if (id != material.Materialid)
+            if (id != materials.Materialid)
             {
                 return BadRequest();
             }
 
-            _context.Entry(material).State = EntityState.Modified;
+            _context.Entry(materials).State = EntityState.Modified;
 
             try
             {
@@ -60,9 +68,9 @@ namespace API.Controllers.DB.Local
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MaterialExists(id))
+                if (!MaterialsExists(id))
                 {
-                    return null;
+                    return NotFound();
                 }
                 else
                 {
@@ -73,35 +81,49 @@ namespace API.Controllers.DB.Local
             return NoContent();
         }
 
-        // POST: api/Material
+        // POST: api/Materials
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<Material> PostMaterial(Material material)
+        public async Task<ActionResult<Material>> PostMaterials(Material materials)
         {
-            _context.Material.Add(material);
-            await _context.SaveChangesAsync();
-
-            return material;
-        }
-
-        // DELETE: api/Material/5
-        [HttpDelete("{id}")]
-        public async Task<Material> DeleteMaterial(long id)
-        {
-            var material = await _context.Material.FindAsync(id);
-            if (material == null)
+            _context.Material.Add(materials);
+            try
             {
-                return null;
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (MaterialsExists(materials.Materialid))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
-            _context.Material.Remove(material);
-            await _context.SaveChangesAsync();
-
-            return material;
+            return CreatedAtAction("GetMaterials", new { id = materials.Materialid }, materials);
         }
 
-        private bool MaterialExists(long id)
+        // DELETE: api/Materials/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Material>> DeleteMaterials(string id)
+        {
+            var roles = await _context.Material.FindAsync(id);
+            if (roles == null)
+            {
+                return NotFound();
+            }
+
+            _context.Material.Remove(roles);
+            await _context.SaveChangesAsync();
+
+            return roles;
+        }
+
+        private bool MaterialsExists(long id)
         {
             return _context.Material.Any(e => e.Materialid == id);
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class CntrlogController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public CntrlogController(localContext context)
+        public CntrlogController(LocalContext context)
         {
             _context = context;
         }

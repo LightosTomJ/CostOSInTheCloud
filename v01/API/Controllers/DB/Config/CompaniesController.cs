@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Config
     [ApiController]
     public class CompaniesController : ControllerBase
     {
-        private readonly configContext _context;
+        private readonly ConfigContext _context;
 
-        public CompaniesController(configContext context)
+        public CompaniesController(ConfigContext context)
         {
             _context = context;
         }

@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class GekcodeController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public GekcodeController(localContext context)
+        public GekcodeController(LocalContext context)
         {
             _context = context;
         }

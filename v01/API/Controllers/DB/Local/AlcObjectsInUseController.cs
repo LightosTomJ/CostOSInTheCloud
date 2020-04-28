@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class AlcObjectsInUseController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public AlcObjectsInUseController(localContext context)
+        public AlcObjectsInUseController(LocalContext context)
         {
             _context = context;
         }

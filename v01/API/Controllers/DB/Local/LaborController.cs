@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class LaborController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public LaborController(localContext context)
+        public LaborController(LocalContext context)
         {
             _context = context;
         }

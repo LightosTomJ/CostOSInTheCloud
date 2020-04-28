@@ -13,9 +13,9 @@ namespace API.Controllers.DB.Local
     [ApiController]
     public class RatebuildupController : ControllerBase
     {
-        private readonly localContext _context;
+        private readonly LocalContext _context;
 
-        public RatebuildupController(localContext context)
+        public RatebuildupController(LocalContext context)
         {
             _context = context;
         }
