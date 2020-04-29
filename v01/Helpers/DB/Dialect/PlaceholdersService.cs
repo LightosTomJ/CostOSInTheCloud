@@ -35,7 +35,6 @@ namespace Helper.DB.Dialect
 
 		public async Task<IList<Models.DB.Dialect.Placeholder>> GetAllPlaceholders()
 		{
-			IList<Models.DB.Dialect.Placeholder> Placeholders = new List<Models.DB.Dialect.Placeholder>();
 			try
 			{
 				if (dialectContext == null) dialectContext = new DialectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Dialect
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePlaceholder(long id, Models.DB.Dialect.Placeholder placeholder)
+		public async Task<bool> UpdatePlaceholder(Models.DB.Dialect.Placeholder placeholder)
 		{
 			try
 			{

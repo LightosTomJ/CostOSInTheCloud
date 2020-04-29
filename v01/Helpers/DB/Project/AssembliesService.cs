@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Assembly>> GetAllAssemblies()
 		{
-			IList<Models.DB.Project.Assembly> Assemblies = new List<Models.DB.Project.Assembly>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssembly(long id, Models.DB.Project.Assembly assembly)
+		public async Task<bool> UpdateAssembly(Models.DB.Project.Assembly assembly)
 		{
 			try
 			{

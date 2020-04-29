@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.MaterialPartial>> GetAllMaterialPartials()
 		{
-			IList<Models.DB.Results.MaterialPartial> MaterialPartials = new List<Models.DB.Results.MaterialPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateMaterialPartial(long id, Models.DB.Results.MaterialPartial materialPartial)
+		public async Task<bool> UpdateMaterialPartial(Models.DB.Results.MaterialPartial materialPartial)
 		{
 			try
 			{

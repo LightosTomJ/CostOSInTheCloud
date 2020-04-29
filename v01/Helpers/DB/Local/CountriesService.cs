@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Country>> GetAllCountries()
 		{
-			IList<Models.DB.Local.Country> Countries = new List<Models.DB.Local.Country>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCountry(long id, Models.DB.Local.Country country)
+		public async Task<bool> UpdateCountry(Models.DB.Local.Country country)
 		{
 			try
 			{

@@ -22,14 +22,14 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projecturl
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projecturl>>> GetProjecturl()
+        public async Task<ActionResult<IEnumerable<ProjectURL>>> GetProjecturl()
         {
             return await _context.Projecturl.ToListAsync();
         }
 
         // GET: api/Projecturl/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projecturl>> GetProjecturl(long id)
+        public async Task<ActionResult<ProjectURL>> GetProjecturl(long id)
         {
             var projecturl = await _context.Projecturl.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjecturl(long id, Projecturl projecturl)
+        public async Task<IActionResult> PutProjecturl(long id, ProjectURL projecturl)
         {
             if (id != projecturl.Projecturlid)
             {
@@ -77,7 +77,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projecturl>> PostProjecturl(Projecturl projecturl)
+        public async Task<ActionResult<ProjectURL>> PostProjecturl(ProjectURL projecturl)
         {
             _context.Projecturl.Add(projecturl);
             await _context.SaveChangesAsync();
@@ -87,7 +87,7 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projecturl/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projecturl>> DeleteProjecturl(long id)
+        public async Task<ActionResult<ProjectURL>> DeleteProjecturl(long id)
         {
             var projecturl = await _context.Projecturl.FindAsync(id);
             if (projecturl == null)

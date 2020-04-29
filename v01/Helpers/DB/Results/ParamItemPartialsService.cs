@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.ParamItemPartial>> GetAllParamItemPartials()
 		{
-			IList<Models.DB.Results.ParamItemPartial> ParamItemPartials = new List<Models.DB.Results.ParamItemPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamItemPartial(long id, Models.DB.Results.ParamItemPartial paramItemPartial)
+		public async Task<bool> UpdateParamItemPartial(Models.DB.Results.ParamItemPartial paramItemPartial)
 		{
 			try
 			{

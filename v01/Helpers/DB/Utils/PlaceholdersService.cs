@@ -35,7 +35,6 @@ namespace Helper.DB.Utils
 
 		public async Task<IList<Models.DB.Utils.Placeholder>> GetAllPlaceholders()
 		{
-			IList<Models.DB.Utils.Placeholder> Placeholders = new List<Models.DB.Utils.Placeholder>();
 			try
 			{
 				if (utilsContext == null) utilsContext = new UtilsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Utils
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePlaceholder(long id, Models.DB.Utils.Placeholder placeholder)
+		public async Task<bool> UpdatePlaceholder(Models.DB.Utils.Placeholder placeholder)
 		{
 			try
 			{

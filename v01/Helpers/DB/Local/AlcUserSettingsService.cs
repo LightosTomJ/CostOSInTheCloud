@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcUserSettings>> GetAllAlcUserSettings()
 		{
-			IList<Models.DB.Local.AlcUserSettings> AlcUserSettings = new List<Models.DB.Local.AlcUserSettings>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcUserSettings(long id, Models.DB.Local.AlcUserSettings alcUserSettings)
+		public async Task<bool> UpdateAlcUserSettings(Models.DB.Local.AlcUserSettings alcUserSettings)
 		{
 			try
 			{

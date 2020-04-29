@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.Partial>> GetAllPartials()
 		{
-			IList<Models.DB.Results.Partial> Partials = new List<Models.DB.Results.Partial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePartial(long id, Models.DB.Results.Partial partial)
+		public async Task<bool> UpdatePartial(Models.DB.Results.Partial partial)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.LaborPartial>> GetAllLaborPartials()
 		{
-			IList<Models.DB.Results.LaborPartial> LaborPartials = new List<Models.DB.Results.LaborPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLaborPartial(long id, Models.DB.Results.LaborPartial laborPartial)
+		public async Task<bool> UpdateLaborPartial(Models.DB.Results.LaborPartial laborPartial)
 		{
 			try
 			{

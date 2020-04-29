@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemLabor>> GetAllBoqItemLabors()
 		{
-			IList<Models.DB.Project.BoqItemLabor> BoqItemLabors = new List<Models.DB.Project.BoqItemLabor>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemLabor(long id, Models.DB.Project.BoqItemLabor boqItemLabor)
+		public async Task<bool> UpdateBoqItemLabor(Models.DB.Project.BoqItemLabor boqItemLabor)
 		{
 			try
 			{

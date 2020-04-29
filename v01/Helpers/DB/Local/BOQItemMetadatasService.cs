@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BOQItemMetadata>> GetAllBOQItemMetadatas()
 		{
-			IList<Models.DB.Local.BOQItemMetadata> BOQItemMetadatas = new List<Models.DB.Local.BOQItemMetadata>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBOQItemMetadata(long id, Models.DB.Local.BOQItemMetadata bOQItemMetadata)
+		public async Task<bool> UpdateBOQItemMetadata(Models.DB.Local.BOQItemMetadata bOQItemMetadata)
 		{
 			try
 			{

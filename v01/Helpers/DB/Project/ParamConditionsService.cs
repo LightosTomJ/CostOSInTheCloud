@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.ParamCondition>> GetAllParamConditions()
 		{
-			IList<Models.DB.Project.ParamCondition> ParamConditions = new List<Models.DB.Project.ParamCondition>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return "";
 		}
 
-		public async Task<bool> UpdateParamCondition(long id, Models.DB.Project.ParamCondition paramCondition)
+		public async Task<bool> UpdateParamCondition(Models.DB.Project.ParamCondition paramCondition)
 		{
 			try
 			{

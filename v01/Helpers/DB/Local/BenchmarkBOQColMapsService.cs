@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BenchmarkBOQColMap>> GetAllBenchmarkBOQColMaps()
 		{
-			IList<Models.DB.Local.BenchmarkBOQColMap> BenchmarkBOQColMaps = new List<Models.DB.Local.BenchmarkBOQColMap>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBenchmarkBOQColMap(long id, Models.DB.Local.BenchmarkBOQColMap benchmarkBOQColMap)
+		public async Task<bool> UpdateBenchmarkBOQColMap(Models.DB.Local.BenchmarkBOQColMap benchmarkBOQColMap)
 		{
 			try
 			{

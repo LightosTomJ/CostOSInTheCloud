@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ParamInput>> GetAllParamInputs()
 		{
-			IList<Models.DB.Local.ParamInput> ParamInputs = new List<Models.DB.Local.ParamInput>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamInput(long id, Models.DB.Local.ParamInput paramInput)
+		public async Task<bool> UpdateParamInput(Models.DB.Local.ParamInput paramInput)
 		{
 			try
 			{

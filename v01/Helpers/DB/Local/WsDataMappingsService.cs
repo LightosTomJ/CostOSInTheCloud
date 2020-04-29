@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.WsDataMapping>> GetAllWsDataMappings()
 		{
-			IList<Models.DB.Local.WsDataMapping> WsDataMappings = new List<Models.DB.Local.WsDataMapping>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsDataMapping(long id, Models.DB.Local.WsDataMapping wsDataMapping)
+		public async Task<bool> UpdateWsDataMapping(Models.DB.Local.WsDataMapping wsDataMapping)
 		{
 			try
 			{

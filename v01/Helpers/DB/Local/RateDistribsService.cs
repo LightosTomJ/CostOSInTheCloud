@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.RateDistrib>> GetAllRateDistribs()
 		{
-			IList<Models.DB.Local.RateDistrib> RateDistribs = new List<Models.DB.Local.RateDistrib>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRateDistrib(long id, Models.DB.Local.RateDistrib rateDistrib)
+		public async Task<bool> UpdateRateDistrib(Models.DB.Local.RateDistrib rateDistrib)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.ParamItem>> GetAllParamItems()
 		{
-			IList<Models.DB.Project.ParamItem> ParamItems = new List<Models.DB.Project.ParamItem>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamItem(long id, Models.DB.Project.ParamItem paramItem)
+		public async Task<bool> UpdateParamItem(Models.DB.Project.ParamItem paramItem)
 		{
 			try
 			{

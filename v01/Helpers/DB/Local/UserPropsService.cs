@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.UserProp>> GetAllUserProps()
 		{
-			IList<Models.DB.Local.UserProp> UserProps = new List<Models.DB.Local.UserProp>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateUserProp(long id, Models.DB.Local.UserProp userProp)
+		public async Task<bool> UpdateUserProp(Models.DB.Local.UserProp userProp)
 		{
 			try
 			{

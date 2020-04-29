@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcProject>> GetAllBcProjects()
 		{
-			IList<Models.DB.Local.BcProject> BcProjects = new List<Models.DB.Local.BcProject>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcProject(long id, Models.DB.Local.BcProject bcProject)
+		public async Task<bool> UpdateBcProject(Models.DB.Local.BcProject bcProject)
 		{
 			try
 			{

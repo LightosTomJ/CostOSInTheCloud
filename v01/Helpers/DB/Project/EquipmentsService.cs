@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Equipment>> GetAllEquipments()
 		{
-			IList<Models.DB.Project.Equipment> Equipments = new List<Models.DB.Project.Equipment>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateEquipment(long id, Models.DB.Project.Equipment equipment)
+		public async Task<bool> UpdateEquipment(Models.DB.Project.Equipment equipment)
 		{
 			try
 			{

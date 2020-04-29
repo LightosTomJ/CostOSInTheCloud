@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemSubcontractor>> GetAllBoqItemSubcontractors()
 		{
-			IList<Models.DB.Project.BoqItemSubcontractor> BoqItemSubcontractors = new List<Models.DB.Project.BoqItemSubcontractor>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemSubcontractor(long id, Models.DB.Project.BoqItemSubcontractor boqItemSubcontractor)
+		public async Task<bool> UpdateBoqItemSubcontractor(Models.DB.Project.BoqItemSubcontractor boqItemSubcontractor)
 		{
 			try
 			{

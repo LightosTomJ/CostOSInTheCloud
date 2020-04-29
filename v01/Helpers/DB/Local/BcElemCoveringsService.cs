@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcElemCovering>> GetAllBcElemCoverings()
 		{
-			IList<Models.DB.Local.BcElemCovering> BcElemCoverings = new List<Models.DB.Local.BcElemCovering>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcElemCovering(long id, Models.DB.Local.BcElemCovering bcElemCovering)
+		public async Task<bool> UpdateBcElemCovering(Models.DB.Local.BcElemCovering bcElemCovering)
 		{
 			try
 			{

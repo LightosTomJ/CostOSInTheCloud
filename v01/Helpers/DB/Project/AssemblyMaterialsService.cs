@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.AssemblyMaterial>> GetAllAssemblyMaterials()
 		{
-			IList<Models.DB.Project.AssemblyMaterial> AssemblyMaterials = new List<Models.DB.Project.AssemblyMaterial>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyMaterial(long id, Models.DB.Project.AssemblyMaterial assemblyMaterial)
+		public async Task<bool> UpdateAssemblyMaterial(Models.DB.Project.AssemblyMaterial assemblyMaterial)
 		{
 			try
 			{

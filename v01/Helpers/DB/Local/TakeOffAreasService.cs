@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TakeOffArea>> GetAllTakeOffAreas()
 		{
-			IList<Models.DB.Local.TakeOffArea> TakeOffAreas = new List<Models.DB.Local.TakeOffArea>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTakeOffArea(long id, Models.DB.Local.TakeOffArea takeOffArea)
+		public async Task<bool> UpdateTakeOffArea(Models.DB.Local.TakeOffArea takeOffArea)
 		{
 			try
 			{

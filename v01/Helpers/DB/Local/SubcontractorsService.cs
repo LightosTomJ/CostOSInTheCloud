@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Subcontractor>> GetAllSubcontractors()
 		{
-			IList<Models.DB.Local.Subcontractor> Subcontractors = new List<Models.DB.Local.Subcontractor>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateSubcontractor(long id, Models.DB.Local.Subcontractor subcontractor)
+		public async Task<bool> UpdateSubcontractor(Models.DB.Local.Subcontractor subcontractor)
 		{
 			try
 			{

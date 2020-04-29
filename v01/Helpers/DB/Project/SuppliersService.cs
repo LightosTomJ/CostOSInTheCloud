@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Supplier>> GetAllSuppliers()
 		{
-			IList<Models.DB.Project.Supplier> Suppliers = new List<Models.DB.Project.Supplier>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateSupplier(long id, Models.DB.Project.Supplier supplier)
+		public async Task<bool> UpdateSupplier(Models.DB.Project.Supplier supplier)
 		{
 			try
 			{

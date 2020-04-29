@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.WsRevision>> GetAllWsRevisions()
 		{
-			IList<Models.DB.Project.WsRevision> WsRevisions = new List<Models.DB.Project.WsRevision>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsRevision(long id, Models.DB.Project.WsRevision wsRevision)
+		public async Task<bool> UpdateWsRevision(Models.DB.Project.WsRevision wsRevision)
 		{
 			try
 			{

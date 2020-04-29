@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Extracode1>> GetAllExtracode1s()
 		{
-			IList<Models.DB.Local.Extracode1> Extracode1s = new List<Models.DB.Local.Extracode1>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExtracode1(long id, Models.DB.Local.Extracode1 extracode1)
+		public async Task<bool> UpdateExtracode1(Models.DB.Local.Extracode1 extracode1)
 		{
 			try
 			{

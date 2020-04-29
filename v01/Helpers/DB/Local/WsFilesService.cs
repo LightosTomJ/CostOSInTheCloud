@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.WsFile>> GetAllWsFiles()
 		{
-			IList<Models.DB.Local.WsFile> WsFiles = new List<Models.DB.Local.WsFile>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsFile(long id, Models.DB.Local.WsFile wsFile)
+		public async Task<bool> UpdateWsFile(Models.DB.Local.WsFile wsFile)
 		{
 			try
 			{

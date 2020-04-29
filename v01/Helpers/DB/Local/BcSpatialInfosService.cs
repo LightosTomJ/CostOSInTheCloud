@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcSpatialInfo>> GetAllBcSpatialInfos()
 		{
-			IList<Models.DB.Local.BcSpatialInfo> BcSpatialInfos = new List<Models.DB.Local.BcSpatialInfo>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcSpatialInfo(long id, Models.DB.Local.BcSpatialInfo bcSpatialInfo)
+		public async Task<bool> UpdateBcSpatialInfo(Models.DB.Local.BcSpatialInfo bcSpatialInfo)
 		{
 			try
 			{

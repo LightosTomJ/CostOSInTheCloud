@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.WsFile>> GetAllWsFiles()
 		{
-			IList<Models.DB.Project.WsFile> WsFiles = new List<Models.DB.Project.WsFile>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsFile(long id, Models.DB.Project.WsFile wsFile)
+		public async Task<bool> UpdateWsFile(Models.DB.Project.WsFile wsFile)
 		{
 			try
 			{

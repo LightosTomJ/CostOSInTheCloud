@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.FnctonArgument>> GetAllFnctonArguments()
 		{
-			IList<Models.DB.Local.FnctonArgument> FnctonArguments = new List<Models.DB.Local.FnctonArgument>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateFnctonArgument(long id, Models.DB.Local.FnctonArgument fnctonArgument)
+		public async Task<bool> UpdateFnctonArgument(Models.DB.Local.FnctonArgument fnctonArgument)
 		{
 			try
 			{

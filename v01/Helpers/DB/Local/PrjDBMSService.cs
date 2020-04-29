@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.PrjDBMS>> GetAllPrjDBMS()
 		{
-			IList<Models.DB.Local.PrjDBMS> PrjDBMS = new List<Models.DB.Local.PrjDBMS>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePrjDBMS(long id, Models.DB.Local.PrjDBMS prjDBMS)
+		public async Task<bool> UpdatePrjDBMS(Models.DB.Local.PrjDBMS prjDBMS)
 		{
 			try
 			{

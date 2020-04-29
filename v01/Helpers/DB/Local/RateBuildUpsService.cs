@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.RateBuildUp>> GetAllRateBuildUps()
 		{
-			IList<Models.DB.Local.RateBuildUp> RateBuildUps = new List<Models.DB.Local.RateBuildUp>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRateBuildUp(long id, Models.DB.Local.RateBuildUp rateBuildUp)
+		public async Task<bool> UpdateRateBuildUp(Models.DB.Local.RateBuildUp rateBuildUp)
 		{
 			try
 			{

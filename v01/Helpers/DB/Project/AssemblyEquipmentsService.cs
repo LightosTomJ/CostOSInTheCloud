@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.AssemblyEquipment>> GetAllAssemblyEquipments()
 		{
-			IList<Models.DB.Project.AssemblyEquipment> AssemblyEquipments = new List<Models.DB.Project.AssemblyEquipment>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyEquipment(long id, Models.DB.Project.AssemblyEquipment assemblyEquipment)
+		public async Task<bool> UpdateAssemblyEquipment(Models.DB.Project.AssemblyEquipment assemblyEquipment)
 		{
 			try
 			{

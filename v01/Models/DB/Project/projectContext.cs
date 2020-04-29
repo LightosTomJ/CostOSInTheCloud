@@ -63,7 +63,7 @@ namespace Models.DB.Project
         public virtual DbSet<Paramreturn> Paramreturn { get; set; }
         public virtual DbSet<PrjProp> PrjProp { get; set; }
         public virtual DbSet<PrjUserProp> PrjUserProp { get; set; }
-        public virtual DbSet<Projectspecvar> Projectspecvar { get; set; }
+        public virtual DbSet<ProjectSpecVar> Projectspecvar { get; set; }
         public virtual DbSet<ProjectTemplate> ProjectTemplate { get; set; }
         public virtual DbSet<ProjectWBS> ProjectWBS { get; set; }
         public virtual DbSet<ProjectWBS2> ProjectWBS2 { get; set; }
@@ -5711,7 +5711,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.RefId).HasColumnName("REF__ID");
             });
 
-            modelBuilder.Entity<Projectspecvar>(entity =>
+            modelBuilder.Entity<ProjectSpecVar>(entity =>
             {
                 entity.ToTable("PROJECTSPECVAR");
 

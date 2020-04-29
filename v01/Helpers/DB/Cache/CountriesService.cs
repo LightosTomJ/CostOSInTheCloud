@@ -70,7 +70,7 @@ namespace Helper.DB.Cache
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCountry(long id, Models.DB.Cache.Country country)
+		public async Task<bool> UpdateCountry(Models.DB.Cache.Country country)
 		{
 			try
 			{

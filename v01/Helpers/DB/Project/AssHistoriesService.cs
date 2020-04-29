@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.AssHistory>> GetAllAssHistories()
 		{
-			IList<Models.DB.Project.AssHistory> AssHistories = new List<Models.DB.Project.AssHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssHistory(long id, Models.DB.Project.AssHistory assHistory)
+		public async Task<bool> UpdateAssHistory(Models.DB.Project.AssHistory assHistory)
 		{
 			try
 			{

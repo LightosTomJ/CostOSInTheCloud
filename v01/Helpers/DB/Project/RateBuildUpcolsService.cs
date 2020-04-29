@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.RateBuildUpCols>> GetAllRateBuildUpCols()
 		{
-			IList<Models.DB.Project.RateBuildUpCols> RateBuildUpCols = new List<Models.DB.Project.RateBuildUpCols>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRateBuildUpCols(long id, Models.DB.Project.RateBuildUpCols rateBuildUpcols)
+		public async Task<bool> UpdateRateBuildUpCols(Models.DB.Project.RateBuildUpCols rateBuildUpcols)
 		{
 			try
 			{

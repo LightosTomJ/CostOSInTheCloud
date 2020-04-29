@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Labor>> GetAllLabors()
 		{
-			IList<Models.DB.Project.Labor> Labors = new List<Models.DB.Project.Labor>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLabor(long id, Models.DB.Project.Labor labor)
+		public async Task<bool> UpdateLabor(Models.DB.Project.Labor labor)
 		{
 			try
 			{

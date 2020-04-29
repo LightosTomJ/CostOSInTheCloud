@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.GlbProp>> GetAllGlbProps()
 		{
-			IList<Models.DB.Local.GlbProp> GlbProps = new List<Models.DB.Local.GlbProp>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateGlbProp(long id, Models.DB.Local.GlbProp glbProp)
+		public async Task<bool> UpdateGlbProp(Models.DB.Local.GlbProp glbProp)
 		{
 			try
 			{

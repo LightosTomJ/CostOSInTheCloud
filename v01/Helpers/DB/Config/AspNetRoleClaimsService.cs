@@ -35,7 +35,6 @@ namespace Helper.DB.Config
 
 		public async Task<IList<Models.DB.Config.AspNetRoleClaims>> GetAllAspNetRoleClaims()
 		{
-			IList<Models.DB.Config.AspNetRoleClaims> AspNetRoleClaims = new List<Models.DB.Config.AspNetRoleClaims>();
 			try
 			{
 				if (configContext == null) configContext = new ConfigContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Config
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAspNetRoleClaims(long id, Models.DB.Config.AspNetRoleClaims aspNetRoleClaims)
+		public async Task<bool> UpdateAspNetRoleClaims(Models.DB.Config.AspNetRoleClaims aspNetRoleClaims)
 		{
 			try
 			{

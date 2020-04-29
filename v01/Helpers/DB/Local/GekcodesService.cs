@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Gekcode>> GetAllGekcodes()
 		{
-			IList<Models.DB.Local.Gekcode> Gekcodes = new List<Models.DB.Local.Gekcode>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateGekcode(long id, Models.DB.Local.Gekcode gekcode)
+		public async Task<bool> UpdateGekcode(Models.DB.Local.Gekcode gekcode)
 		{
 			try
 			{

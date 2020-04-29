@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Conceptuals>> GetAllConceptuals()
 		{
-			IList<Models.DB.Project.Conceptuals> Conceptuals = new List<Models.DB.Project.Conceptuals>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateConceptuals(long id, Models.DB.Project.Conceptuals conceptuals)
+		public async Task<bool> UpdateConceptuals(Models.DB.Project.Conceptuals conceptuals)
 		{
 			try
 			{

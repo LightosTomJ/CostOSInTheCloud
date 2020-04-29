@@ -35,7 +35,6 @@ namespace Helper.DB.Config
 
 		public async Task<IList<Models.DB.Config.AspNetUserClaims>> GetAllAspNetUserClaims()
 		{
-			IList<Models.DB.Config.AspNetUserClaims> AspNetUserClaims = new List<Models.DB.Config.AspNetUserClaims>();
 			try
 			{
 				if (configContext == null) configContext = new ConfigContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Config
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAspNetUserClaims(long id, Models.DB.Config.AspNetUserClaims aspNetUserClaims)
+		public async Task<bool> UpdateAspNetUserClaims(Models.DB.Config.AspNetUserClaims aspNetUserClaims)
 		{
 			try
 			{

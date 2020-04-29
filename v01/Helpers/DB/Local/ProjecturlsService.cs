@@ -33,13 +33,12 @@ namespace Helper.DB.Local
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Local.Projecturl>> GetAllProjecturls()
+		public async Task<IList<Models.DB.Local.ProjectURL>> GetAllProjecturls()
 		{
-			IList<Models.DB.Local.Projecturl> Projecturls = new List<Models.DB.Local.Projecturl>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.Projecturl> projecturls = await localContext.Projecturl.ToListAsync();
+				IList<Models.DB.Local.ProjectURL> projecturls = await localContext.Projecturl.ToListAsync();
 				return projecturls;
 			}
 			catch (Exception ae)
@@ -49,13 +48,13 @@ namespace Helper.DB.Local
 			}
 			return null;
 		}
-		public async Task<long> CreateProjecturl(List<Models.DB.Local.Projecturl> Projecturls)
+		public async Task<long> CreateProjecturl(List<Models.DB.Local.ProjectURL> Projecturls)
 		{
 			long returnid = -1;
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				foreach (Models.DB.Local.Projecturl projecturl in Projecturls)
+				foreach (Models.DB.Local.ProjectURL projecturl in Projecturls)
 				{
 					localContext.Projecturl.Add(projecturl);
 					await localContext.SaveChangesAsync();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjecturl(long id, Models.DB.Local.Projecturl projecturl)
+		public async Task<bool> UpdateProjecturl(Models.DB.Local.ProjectURL projecturl)
 		{
 			try
 			{
@@ -91,7 +90,7 @@ namespace Helper.DB.Local
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				Models.DB.Local.Projecturl projecturl = localContext.Projecturl.First(p => p.Projecturlid == projecturlId);
+				Models.DB.Local.ProjectURL projecturl = localContext.Projecturl.First(p => p.Projecturlid == projecturlId);
 				localContext.Projecturl.Remove(projecturl);
 				await localContext.SaveChangesAsync();
 				return true;

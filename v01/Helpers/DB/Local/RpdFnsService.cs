@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.RpdFn>> GetAllRpdFns()
 		{
-			IList<Models.DB.Local.RpdFn> RpdFns = new List<Models.DB.Local.RpdFn>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRpdFn(long id, Models.DB.Local.RpdFn rpdFn)
+		public async Task<bool> UpdateRpdFn(Models.DB.Local.RpdFn rpdFn)
 		{
 			try
 			{

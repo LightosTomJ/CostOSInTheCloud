@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Currency>> GetAllCurrencies()
 		{
-			IList<Models.DB.Local.Currency> Currencies = new List<Models.DB.Local.Currency>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCurrency(long id, Models.DB.Local.Currency currency)
+		public async Task<bool> UpdateCurrency(Models.DB.Local.Currency currency)
 		{
 			try
 			{

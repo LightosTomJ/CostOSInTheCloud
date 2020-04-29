@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcGPUServer>> GetAllBcGPUServers()
 		{
-			IList<Models.DB.Local.BcGPUServer> BcGPUServers = new List<Models.DB.Local.BcGPUServer>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcGPUServer(long id, Models.DB.Local.BcGPUServer bcGPUServer)
+		public async Task<bool> UpdateBcGPUServer(Models.DB.Local.BcGPUServer bcGPUServer)
 		{
 			try
 			{

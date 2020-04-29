@@ -35,7 +35,6 @@ namespace Helper.DB.Layout
 
 		public async Task<IList<Models.DB.Layout.Placeholder>> GetAllPlaceholders()
 		{
-			IList<Models.DB.Layout.Placeholder> Placeholders = new List<Models.DB.Layout.Placeholder>();
 			try
 			{
 				if (layoutContext == null) layoutContext = new LayoutContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Layout
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePlaceholder(long id, Models.DB.Layout.Placeholder placeholder)
+		public async Task<bool> UpdatePlaceholder(Models.DB.Layout.Placeholder placeholder)
 		{
 			try
 			{

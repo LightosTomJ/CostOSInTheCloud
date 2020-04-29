@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Paramreturn>> GetAllParamreturns()
 		{
-			IList<Models.DB.Project.Paramreturn> Paramreturns = new List<Models.DB.Project.Paramreturn>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamreturn(long id, Models.DB.Project.Paramreturn paramreturn)
+		public async Task<bool> UpdateParamreturn(Models.DB.Project.Paramreturn paramreturn)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemCondition>> GetAllBoqItemConditions()
 		{
-			IList<Models.DB.Project.BoqItemCondition> BoqItemConditions = new List<Models.DB.Project.BoqItemCondition>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemCondition(long id, Models.DB.Project.BoqItemCondition boqItemCondition)
+		public async Task<bool> UpdateBoqItemCondition(Models.DB.Project.BoqItemCondition boqItemCondition)
 		{
 			try
 			{

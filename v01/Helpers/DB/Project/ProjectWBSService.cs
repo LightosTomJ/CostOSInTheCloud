@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.ProjectWBS>> GetAllProjectWBS()
 		{
-			IList<Models.DB.Project.ProjectWBS> ProjectWBS = new List<Models.DB.Project.ProjectWBS>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectWBS(long id, Models.DB.Project.ProjectWBS projectWBS)
+		public async Task<bool> UpdateProjectWBS(Models.DB.Project.ProjectWBS projectWBS)
 		{
 			try
 			{

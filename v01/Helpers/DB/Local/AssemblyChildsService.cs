@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AssemblyChild>> GetAllAssemblyChilds()
 		{
-			IList<Models.DB.Local.AssemblyChild> AssemblyChilds = new List<Models.DB.Local.AssemblyChild>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyChild(long id, Models.DB.Local.AssemblyChild assemblyChild)
+		public async Task<bool> UpdateAssemblyChild(Models.DB.Local.AssemblyChild assemblyChild)
 		{
 			try
 			{

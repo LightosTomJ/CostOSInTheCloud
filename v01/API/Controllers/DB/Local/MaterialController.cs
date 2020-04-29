@@ -17,10 +17,10 @@ namespace API.Controllers.DB.Local
     public class MaterialController : Controller
     {
         //Get relevant services
-        Helper.DB.Local.MaterialsService materialService = new Helper.DB.Local.MaterialsService(new LocalContext());
+        private readonly Helper.DB.Local.MaterialsService materialService = new Helper.DB.Local.MaterialsService(new LocalContext());
 
         //Get local context
-        private LocalContext _context = new LocalContext();
+        private readonly LocalContext _context = new LocalContext();
 
         // GET: api/Materials
         [HttpGet]
@@ -66,7 +66,7 @@ namespace API.Controllers.DB.Local
 
             _context.Entry(materials).State = EntityState.Modified;
 
-            if (await materialService.UpdateMaterial(id, materials) == false)
+            if (await materialService.UpdateMaterial(materials) == false)
             {
                 return NotFound();
             }

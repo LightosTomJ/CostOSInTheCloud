@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AssemblyEquipment>> GetAllAssemblyEquipments()
 		{
-			IList<Models.DB.Local.AssemblyEquipment> AssemblyEquipments = new List<Models.DB.Local.AssemblyEquipment>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyEquipment(long id, Models.DB.Local.AssemblyEquipment assemblyEquipment)
+		public async Task<bool> UpdateAssemblyEquipment(Models.DB.Local.AssemblyEquipment assemblyEquipment)
 		{
 			try
 			{

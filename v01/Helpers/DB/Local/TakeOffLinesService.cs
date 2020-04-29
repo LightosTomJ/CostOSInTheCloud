@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TakeOffLine>> GetAllTakeOffLines()
 		{
-			IList<Models.DB.Local.TakeOffLine> TakeOffLines = new List<Models.DB.Local.TakeOffLine>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTakeOffLine(long id, Models.DB.Local.TakeOffLine takeOffLine)
+		public async Task<bool> UpdateTakeOffLine(Models.DB.Local.TakeOffLine takeOffLine)
 		{
 			try
 			{

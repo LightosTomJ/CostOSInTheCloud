@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.SupplierPartial>> GetAllSupplierPartials()
 		{
-			IList<Models.DB.Results.SupplierPartial> SupplierPartials = new List<Models.DB.Results.SupplierPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateSupplierPartial(long id, Models.DB.Results.SupplierPartial supplierPartial)
+		public async Task<bool> UpdateSupplierPartial(Models.DB.Results.SupplierPartial supplierPartial)
 		{
 			try
 			{

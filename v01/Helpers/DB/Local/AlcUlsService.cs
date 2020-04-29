@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcUl>> GetAllAlcUls()
 		{
-			IList<Models.DB.Local.AlcUl> AlcUls = new List<Models.DB.Local.AlcUl>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcUl(long id, Models.DB.Local.AlcUl alcUl)
+		public async Task<bool> UpdateAlcUl(Models.DB.Local.AlcUl alcUl)
 		{
 			try
 			{

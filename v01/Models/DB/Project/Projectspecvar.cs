@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Projectspecvar
+    public partial class ProjectSpecVar
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }

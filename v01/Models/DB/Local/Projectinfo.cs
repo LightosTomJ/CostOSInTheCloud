@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public ProjectInfo()
         {
-            Projecturl = new HashSet<Projecturl>();
+            Projecturl = new HashSet<ProjectURL>();
             Projectuser = new HashSet<ProjectUser>();
             Takeoffcon = new HashSet<TakeOffCon>();
         }
@@ -120,7 +120,7 @@ namespace Models.DB.Local
         public DateTime? Createdate { get; set; }
 
         public virtual ProjectEPS Projecteps { get; set; }
-        public virtual ICollection<Projecturl> Projecturl { get; set; }
+        public virtual ICollection<ProjectURL> Projecturl { get; set; }
         public virtual ICollection<ProjectUser> Projectuser { get; set; }
         public virtual ICollection<TakeOffCon> Takeoffcon { get; set; }
     }

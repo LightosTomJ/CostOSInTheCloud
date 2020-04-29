@@ -35,7 +35,6 @@ namespace Helper.DB.Cache
 
 		public async Task<IList<Models.DB.Cache.ExchangeRate>> GetAllExchangeRates()
 		{
-			IList<Models.DB.Cache.ExchangeRate> ExchangeRates = new List<Models.DB.Cache.ExchangeRate>();
 			try
 			{
 				if (cacheContext == null) cacheContext = new CacheContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Cache
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExchangeRate(long id, Models.DB.Cache.ExchangeRate exchangeRate)
+		public async Task<bool> UpdateExchangeRate(Models.DB.Cache.ExchangeRate exchangeRate)
 		{
 			try
 			{

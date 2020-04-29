@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.UserSessions>> GetAllUserSessions()
 		{
-			IList<Models.DB.Local.UserSessions> UserSessions = new List<Models.DB.Local.UserSessions>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateUserSessions(long id, Models.DB.Local.UserSessions userSessions)
+		public async Task<bool> UpdateUserSessions(Models.DB.Local.UserSessions userSessions)
 		{
 			try
 			{

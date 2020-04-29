@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.FldFn>> GetAllFldFns()
 		{
-			IList<Models.DB.Local.FldFn> FldFns = new List<Models.DB.Local.FldFn>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateFldFn(long id, Models.DB.Local.FldFn fldFn)
+		public async Task<bool> UpdateFldFn(Models.DB.Local.FldFn fldFn)
 		{
 			try
 			{

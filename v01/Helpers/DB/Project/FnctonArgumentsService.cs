@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.FnctonArgument>> GetAllFnctonArguments()
 		{
-			IList<Models.DB.Project.FnctonArgument> FnctonArguments = new List<Models.DB.Project.FnctonArgument>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateFnctonArgument(long id, Models.DB.Project.FnctonArgument fnctonArgument)
+		public async Task<bool> UpdateFnctonArgument(Models.DB.Project.FnctonArgument fnctonArgument)
 		{
 			try
 			{

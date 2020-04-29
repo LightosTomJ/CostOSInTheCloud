@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.SubHistory>> GetAllSubHistories()
 		{
-			IList<Models.DB.Project.SubHistory> SubHistories = new List<Models.DB.Project.SubHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateSubHistory(long id, Models.DB.Project.SubHistory subHistory)
+		public async Task<bool> UpdateSubHistory(Models.DB.Project.SubHistory subHistory)
 		{
 			try
 			{

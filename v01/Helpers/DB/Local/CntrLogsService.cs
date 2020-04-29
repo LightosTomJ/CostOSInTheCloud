@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.CntrLog>> GetAllCntrLogs()
 		{
-			IList<Models.DB.Local.CntrLog> CntrLogs = new List<Models.DB.Local.CntrLog>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCntrLog(long id, Models.DB.Local.CntrLog cntrLog)
+		public async Task<bool> UpdateCntrLog(Models.DB.Local.CntrLog cntrLog)
 		{
 			try
 			{

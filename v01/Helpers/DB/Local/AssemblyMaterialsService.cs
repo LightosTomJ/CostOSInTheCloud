@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AssemblyMaterial>> GetAllAssemblyMaterials()
 		{
-			IList<Models.DB.Local.AssemblyMaterial> AssemblyMaterials = new List<Models.DB.Local.AssemblyMaterial>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyMaterial(long id, Models.DB.Local.AssemblyMaterial assemblyMaterial)
+		public async Task<bool> UpdateAssemblyMaterial(Models.DB.Local.AssemblyMaterial assemblyMaterial)
 		{
 			try
 			{

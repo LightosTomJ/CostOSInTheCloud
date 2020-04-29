@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemMetadata>> GetAllBoqItemMetadatas()
 		{
-			IList<Models.DB.Project.BoqItemMetadata> BoqItemMetadatas = new List<Models.DB.Project.BoqItemMetadata>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemMetadata(long id, Models.DB.Project.BoqItemMetadata boqItemMetadata)
+		public async Task<bool> UpdateBoqItemMetadata(Models.DB.Project.BoqItemMetadata boqItemMetadata)
 		{
 			try
 			{

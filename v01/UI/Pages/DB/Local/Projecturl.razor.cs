@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ProjecturlBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Projecturl> projecturl = null;
+        protected IList<Models.DB.Local.ProjectURL> projecturl = null;
 
         protected override async Task OnInitializedAsync()
         {

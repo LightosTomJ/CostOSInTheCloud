@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.QueryResource>> GetAllQueryResources()
 		{
-			IList<Models.DB.Local.QueryResource> QueryResources = new List<Models.DB.Local.QueryResource>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQueryResource(long id, Models.DB.Local.QueryResource queryResource)
+		public async Task<bool> UpdateQueryResource(Models.DB.Local.QueryResource queryResource)
 		{
 			try
 			{

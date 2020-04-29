@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Quote>> GetAllQuotes()
 		{
-			IList<Models.DB.Project.Quote> Quotes = new List<Models.DB.Project.Quote>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQuote(long id, Models.DB.Project.Quote quote)
+		public async Task<bool> UpdateQuote(Models.DB.Project.Quote quote)
 		{
 			try
 			{

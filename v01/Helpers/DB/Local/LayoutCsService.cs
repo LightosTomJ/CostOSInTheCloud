@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.LayoutC>> GetAllLayoutCs()
 		{
-			IList<Models.DB.Local.LayoutC> LayoutCs = new List<Models.DB.Local.LayoutC>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLayoutC(long id, Models.DB.Local.LayoutC layoutC)
+		public async Task<bool> UpdateLayoutC(Models.DB.Local.LayoutC layoutC)
 		{
 			try
 			{

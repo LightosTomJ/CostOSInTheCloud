@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projecturl
+    public partial class ProjectURL
     {
-        public Projecturl()
+        public ProjectURL()
         {
             Prjprop = new HashSet<PrjProp>();
         }

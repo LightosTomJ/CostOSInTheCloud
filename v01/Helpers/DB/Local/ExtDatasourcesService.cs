@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ExtDatasource>> GetAllExtDatasources()
 		{
-			IList<Models.DB.Local.ExtDatasource> ExtDatasources = new List<Models.DB.Local.ExtDatasource>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExtDatasource(long id, Models.DB.Local.ExtDatasource extDatasource)
+		public async Task<bool> UpdateExtDatasource(Models.DB.Local.ExtDatasource extDatasource)
 		{
 			try
 			{

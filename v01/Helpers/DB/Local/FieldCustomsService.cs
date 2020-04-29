@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.FieldCustom>> GetAllFieldCustoms()
 		{
-			IList<Models.DB.Local.FieldCustom> FieldCustoms = new List<Models.DB.Local.FieldCustom>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateFieldCustom(long id, Models.DB.Local.FieldCustom fieldCustom)
+		public async Task<bool> UpdateFieldCustom(Models.DB.Local.FieldCustom fieldCustom)
 		{
 			try
 			{

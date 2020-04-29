@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Cndon>> GetAllCndons()
 		{
-			IList<Models.DB.Project.Cndon> Cndons = new List<Models.DB.Project.Cndon>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCndon(long id, Models.DB.Project.Cndon cndon)
+		public async Task<bool> UpdateCndon(Models.DB.Project.Cndon cndon)
 		{
 			try
 			{

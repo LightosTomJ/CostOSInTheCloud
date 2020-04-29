@@ -35,7 +35,6 @@ namespace Helper.DB.Config
 
 		public async Task<IList<Models.DB.Config.AspNetUserLogins>> GetAllAspNetUserLogins()
 		{
-			IList<Models.DB.Config.AspNetUserLogins> AspNetUserLogins = new List<Models.DB.Config.AspNetUserLogins>();
 			try
 			{
 				if (configContext == null) configContext = new ConfigContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Config
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAspNetUserLogins(long id, Models.DB.Config.AspNetUserLogins aspNetUserLogins)
+		public async Task<bool> UpdateAspNetUserLogins(Models.DB.Config.AspNetUserLogins aspNetUserLogins)
 		{
 			try
 			{

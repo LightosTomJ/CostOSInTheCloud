@@ -35,7 +35,6 @@ namespace Helper.DB.Report
 
 		public async Task<IList<Models.DB.Report.Placeholder>> GetAllPlaceholders()
 		{
-			IList<Models.DB.Report.Placeholder> Placeholders = new List<Models.DB.Report.Placeholder>();
 			try
 			{
 				if (reportContext == null) reportContext = new ReportContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Report
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePlaceholder(long id, Models.DB.Report.Placeholder placeholder)
+		public async Task<bool> UpdatePlaceholder(Models.DB.Report.Placeholder placeholder)
 		{
 			try
 			{

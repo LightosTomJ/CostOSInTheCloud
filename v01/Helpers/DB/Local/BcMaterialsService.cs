@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcMaterial>> GetAllBcMaterials()
 		{
-			IList<Models.DB.Local.BcMaterial> BcMaterials = new List<Models.DB.Local.BcMaterial>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcMaterial(long id, Models.DB.Local.BcMaterial bcMaterial)
+		public async Task<bool> UpdateBcMaterial(Models.DB.Local.BcMaterial bcMaterial)
 		{
 			try
 			{

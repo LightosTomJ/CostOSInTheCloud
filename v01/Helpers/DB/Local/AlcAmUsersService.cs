@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcAmUsers>> GetAllAlcAmUsers()
 		{
-			IList<Models.DB.Local.AlcAmUsers> AlcAmUsers = new List<Models.DB.Local.AlcAmUsers>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return "";
 		}
 
-		public async Task<bool> UpdateAlcAmUsers(long id, Models.DB.Local.AlcAmUsers alcAmUsers)
+		public async Task<bool> UpdateAlcAmUsers(Models.DB.Local.AlcAmUsers alcAmUsers)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.PrjProp>> GetAllPrjProps()
 		{
-			IList<Models.DB.Local.PrjProp> PrjProps = new List<Models.DB.Local.PrjProp>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePrjProp(long id, Models.DB.Local.PrjProp prjProp)
+		public async Task<bool> UpdatePrjProp(Models.DB.Local.PrjProp prjProp)
 		{
 			try
 			{

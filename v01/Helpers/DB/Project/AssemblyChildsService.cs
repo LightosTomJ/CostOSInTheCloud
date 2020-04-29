@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.AssemblyChild>> GetAllAssemblyChilds()
 		{
-			IList<Models.DB.Project.AssemblyChild> AssemblyChilds = new List<Models.DB.Project.AssemblyChild>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyChild(long id, Models.DB.Project.AssemblyChild assemblyChild)
+		public async Task<bool> UpdateAssemblyChild(Models.DB.Project.AssemblyChild assemblyChild)
 		{
 			try
 			{

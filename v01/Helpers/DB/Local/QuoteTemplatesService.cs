@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.QuoteTemplate>> GetAllQuoteTemplates()
 		{
-			IList<Models.DB.Local.QuoteTemplate> QuoteTemplates = new List<Models.DB.Local.QuoteTemplate>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQuoteTemplate(long id, Models.DB.Local.QuoteTemplate quoteTemplate)
+		public async Task<bool> UpdateQuoteTemplate(Models.DB.Local.QuoteTemplate quoteTemplate)
 		{
 			try
 			{

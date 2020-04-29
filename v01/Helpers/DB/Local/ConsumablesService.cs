@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Consumable>> GetAllConsumables()
 		{
-			IList<Models.DB.Local.Consumable> Consumables = new List<Models.DB.Local.Consumable>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateConsumable(long id, Models.DB.Local.Consumable consumable)
+		public async Task<bool> UpdateConsumable(Models.DB.Local.Consumable consumable)
 		{
 			try
 			{

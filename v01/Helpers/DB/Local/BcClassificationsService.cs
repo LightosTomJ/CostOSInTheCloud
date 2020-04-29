@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcClassification>> GetAllBcClassifications()
 		{
-			IList<Models.DB.Local.BcClassification> BcClassifications = new List<Models.DB.Local.BcClassification>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcClassification(long id, Models.DB.Local.BcClassification bcClassification)
+		public async Task<bool> UpdateBcClassification(Models.DB.Local.BcClassification bcClassification)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcGeomFile>> GetAllBcGeomFiles()
 		{
-			IList<Models.DB.Local.BcGeomFile> BcGeomFiles = new List<Models.DB.Local.BcGeomFile>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcGeomFile(long id, Models.DB.Local.BcGeomFile bcGeomFile)
+		public async Task<bool> UpdateBcGeomFile(Models.DB.Local.BcGeomFile bcGeomFile)
 		{
 			try
 			{

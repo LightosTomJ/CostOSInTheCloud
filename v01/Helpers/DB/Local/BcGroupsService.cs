@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcGroup>> GetAllBcGroups()
 		{
-			IList<Models.DB.Local.BcGroup> BcGroups = new List<Models.DB.Local.BcGroup>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcGroup(long id, Models.DB.Local.BcGroup bcGroup)
+		public async Task<bool> UpdateBcGroup(Models.DB.Local.BcGroup bcGroup)
 		{
 			try
 			{

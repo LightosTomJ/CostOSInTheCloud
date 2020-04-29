@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectInfo>> GetAllProjectInfos()
 		{
-			IList<Models.DB.Local.ProjectInfo> ProjectInfos = new List<Models.DB.Local.ProjectInfo>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectInfo(long id, Models.DB.Local.ProjectInfo projectInfo)
+		public async Task<bool> UpdateProjectInfo(Models.DB.Local.ProjectInfo projectInfo)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Labor>> GetAllLaborers()
 		{
-			IList<Models.DB.Local.Labor> Labors = new List<Models.DB.Local.Labor>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLabor(long id, Models.DB.Local.Labor labor)
+		public async Task<bool> UpdateLabor(Models.DB.Local.Labor labor)
 		{
 			try
 			{

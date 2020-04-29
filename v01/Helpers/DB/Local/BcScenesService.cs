@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcScene>> GetAllBcScenes()
 		{
-			IList<Models.DB.Local.BcScene> BcScenes = new List<Models.DB.Local.BcScene>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcScene(long id, Models.DB.Local.BcScene bcScene)
+		public async Task<bool> UpdateBcScene(Models.DB.Local.BcScene bcScene)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TakeOffPoint>> GetAllTakeOffPoints()
 		{
-			IList<Models.DB.Local.TakeOffPoint> TakeOffPoints = new List<Models.DB.Local.TakeOffPoint>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTakeOffPoint(long id, Models.DB.Local.TakeOffPoint takeOffPoint)
+		public async Task<bool> UpdateTakeOffPoint(Models.DB.Local.TakeOffPoint takeOffPoint)
 		{
 			try
 			{

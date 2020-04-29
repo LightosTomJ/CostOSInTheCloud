@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcObjectsInUse>> GetAllAlcObjectsInUses()
 		{
-			IList<Models.DB.Local.AlcObjectsInUse> AlcObjectsInUses = new List<Models.DB.Local.AlcObjectsInUse>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcObjectsInUse(long id, Models.DB.Local.AlcObjectsInUse alcObjectsInUse)
+		public async Task<bool> UpdateAlcObjectsInUse(Models.DB.Local.AlcObjectsInUse alcObjectsInUse)
 		{
 			try
 			{

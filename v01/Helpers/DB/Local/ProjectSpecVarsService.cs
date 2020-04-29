@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectSpecVar>> GetAllProjectSpecVars()
 		{
-			IList<Models.DB.Local.ProjectSpecVar> ProjectSpecVars = new List<Models.DB.Local.ProjectSpecVar>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectSpecVar(long id, Models.DB.Local.ProjectSpecVar projectSpecVar)
+		public async Task<bool> UpdateProjectSpecVar(Models.DB.Local.ProjectSpecVar projectSpecVar)
 		{
 			try
 			{

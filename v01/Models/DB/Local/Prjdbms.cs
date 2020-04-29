@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public PrjDBMS()
         {
-            Projecturl = new HashSet<Projecturl>();
+            Projecturl = new HashSet<ProjectURL>();
         }
 
         public long Id { get; set; }
@@ -19,6 +19,6 @@ namespace Models.DB.Local
         public string Hpass { get; set; }
         public string Dbname { get; set; }
 
-        public virtual ICollection<Projecturl> Projecturl { get; set; }
+        public virtual ICollection<ProjectURL> Projecturl { get; set; }
     }
 }

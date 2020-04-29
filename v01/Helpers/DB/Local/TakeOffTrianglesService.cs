@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TakeOffTriangle>> GetAllTakeOffTriangles()
 		{
-			IList<Models.DB.Local.TakeOffTriangle> TakeOffTriangles = new List<Models.DB.Local.TakeOffTriangle>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTakeOffTriangle(long id, Models.DB.Local.TakeOffTriangle takeOffTriangle)
+		public async Task<bool> UpdateTakeOffTriangle(Models.DB.Local.TakeOffTriangle takeOffTriangle)
 		{
 			try
 			{

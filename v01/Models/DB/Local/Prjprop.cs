@@ -10,6 +10,6 @@ namespace Models.DB.Local
         public string Pval { get; set; }
         public long? Projecturlid { get; set; }
 
-        public virtual Projecturl Projecturl { get; set; }
+        public virtual ProjectURL Projecturl { get; set; }
     }
 }

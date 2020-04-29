@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectUser>> GetAllProjectUsers()
 		{
-			IList<Models.DB.Local.ProjectUser> ProjectUsers = new List<Models.DB.Local.ProjectUser>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectUser(long id, Models.DB.Local.ProjectUser projectUser)
+		public async Task<bool> UpdateProjectUser(Models.DB.Local.ProjectUser projectUser)
 		{
 			try
 			{

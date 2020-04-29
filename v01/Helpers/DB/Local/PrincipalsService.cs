@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Principals>> GetAllPrincipals()
 		{
-			IList<Models.DB.Local.Principals> Principals = new List<Models.DB.Local.Principals>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePrincipals(long id, Models.DB.Local.Principals principals)
+		public async Task<bool> UpdatePrincipals(Models.DB.Local.Principals principals)
 		{
 			try
 			{

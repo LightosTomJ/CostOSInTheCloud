@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.WsRevision>> GetAllWsRevisions()
 		{
-			IList<Models.DB.Local.WsRevision> WsRevisions = new List<Models.DB.Local.WsRevision>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsRevision(long id, Models.DB.Local.WsRevision wsRevision)
+		public async Task<bool> UpdateWsRevision(Models.DB.Local.WsRevision wsRevision)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemAssembly>> GetAllBoqItemAssemblies()
 		{
-			IList<Models.DB.Project.BoqItemAssembly> BoqItemAssemblies = new List<Models.DB.Project.BoqItemAssembly>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemAssembly(long id, Models.DB.Project.BoqItemAssembly boqItemAssembly)
+		public async Task<bool> UpdateBoqItemAssembly(Models.DB.Project.BoqItemAssembly boqItemAssembly)
 		{
 			try
 			{

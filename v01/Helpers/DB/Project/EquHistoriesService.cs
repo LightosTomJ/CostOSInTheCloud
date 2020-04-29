@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.EquHistory>> GetAllEquHistories()
 		{
-			IList<Models.DB.Project.EquHistory> EquHistories = new List<Models.DB.Project.EquHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateEquHistory(long id, Models.DB.Project.EquHistory equHistory)
+		public async Task<bool> UpdateEquHistory(Models.DB.Project.EquHistory equHistory)
 		{
 			try
 			{

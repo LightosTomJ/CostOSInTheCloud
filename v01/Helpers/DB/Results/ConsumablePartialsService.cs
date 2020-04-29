@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.ConsumablePartial>> GetAllConsumablePartials()
 		{
-			IList<Models.DB.Results.ConsumablePartial> ConsumablePartials = new List<Models.DB.Results.ConsumablePartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateConsumablePartial(long id, Models.DB.Results.ConsumablePartial consumablePartial)
+		public async Task<bool> UpdateConsumablePartial(Models.DB.Results.ConsumablePartial consumablePartial)
 		{
 			try
 			{

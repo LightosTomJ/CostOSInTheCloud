@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.PrjUserProp>> GetAllPrjUserProps()
 		{
-			IList<Models.DB.Project.PrjUserProp> PrjUserProps = new List<Models.DB.Project.PrjUserProp>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePrjUserProp(long id, Models.DB.Project.PrjUserProp prjUserProp)
+		public async Task<bool> UpdatePrjUserProp(Models.DB.Project.PrjUserProp prjUserProp)
 		{
 			try
 			{

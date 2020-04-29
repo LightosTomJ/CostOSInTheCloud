@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.WsColident>> GetAllWscolidents()
 		{
-			IList<Models.DB.Local.WsColident> Wscolidents = new List<Models.DB.Local.WsColident>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWscolident(long id, Models.DB.Local.WsColident wscolident)
+		public async Task<bool> UpdateWscolident(Models.DB.Local.WsColident wscolident)
 		{
 			try
 			{

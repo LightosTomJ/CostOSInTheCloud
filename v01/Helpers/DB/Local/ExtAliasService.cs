@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ExtAlias>> GetAllExtAlias()
 		{
-			IList<Models.DB.Local.ExtAlias> ExtAlias = new List<Models.DB.Local.ExtAlias>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExtAlias(long id, Models.DB.Local.ExtAlias extAlias)
+		public async Task<bool> UpdateExtAlias(Models.DB.Local.ExtAlias extAlias)
 		{
 			try
 			{

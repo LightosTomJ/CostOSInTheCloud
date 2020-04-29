@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.LabHistory>> GetAllLabHistories()
 		{
-			IList<Models.DB.Project.LabHistory> LabHistories = new List<Models.DB.Project.LabHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLabHistory(long id, Models.DB.Project.LabHistory labHistory)
+		public async Task<bool> UpdateLabHistory(Models.DB.Project.LabHistory labHistory)
 		{
 			try
 			{

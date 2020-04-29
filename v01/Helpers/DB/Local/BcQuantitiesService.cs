@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcQuantity>> GetAllBcQuantities()
 		{
-			IList<Models.DB.Local.BcQuantity> BcQuantities = new List<Models.DB.Local.BcQuantity>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcQuantity(long id, Models.DB.Local.BcQuantity bcQuantity)
+		public async Task<bool> UpdateBcQuantity(Models.DB.Local.BcQuantity bcQuantity)
 		{
 			try
 			{

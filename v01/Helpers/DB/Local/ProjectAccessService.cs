@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectAccess>> GetAllProjectAccess()
 		{
-			IList<Models.DB.Local.ProjectAccess> ProjectAccess = new List<Models.DB.Local.ProjectAccess>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectAccess(long id, Models.DB.Local.ProjectAccess projectAccess)
+		public async Task<bool> UpdateProjectAccess(Models.DB.Local.ProjectAccess projectAccess)
 		{
 			try
 			{

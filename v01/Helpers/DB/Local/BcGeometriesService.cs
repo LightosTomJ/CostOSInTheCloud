@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcGeometry>> GetAllBcGeometries()
 		{
-			IList<Models.DB.Local.BcGeometry> BcGeometries = new List<Models.DB.Local.BcGeometry>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcGeometry(long id, Models.DB.Local.BcGeometry bcGeometry)
+		public async Task<bool> UpdateBcGeometry(Models.DB.Local.BcGeometry bcGeometry)
 		{
 			try
 			{

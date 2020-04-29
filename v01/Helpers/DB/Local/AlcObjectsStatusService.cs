@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcObjectsStatus>> GetAllAlcObjectsStatus()
 		{
-			IList<Models.DB.Local.AlcObjectsStatus> AlcObjectsStatus = new List<Models.DB.Local.AlcObjectsStatus>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcObjectsStatus(long id, Models.DB.Local.AlcObjectsStatus alcObjectsStatus)
+		public async Task<bool> UpdateAlcObjectsStatus(Models.DB.Local.AlcObjectsStatus alcObjectsStatus)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Wscolident>> GetAllWscolidents()
 		{
-			IList<Models.DB.Project.Wscolident> Wscolidents = new List<Models.DB.Project.Wscolident>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWscolident(long id, Models.DB.Project.Wscolident wscolident)
+		public async Task<bool> UpdateWscolident(Models.DB.Project.Wscolident wscolident)
 		{
 			try
 			{

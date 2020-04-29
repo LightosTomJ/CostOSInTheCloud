@@ -70,7 +70,7 @@ namespace Helper.DB.Cache
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCurrency(long id, Models.DB.Cache.Currency currency)
+		public async Task<bool> UpdateCurrency(Models.DB.Cache.Currency currency)
 		{
 			try
 			{

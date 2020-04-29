@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.IfcProperty>> GetAllIfcProperties()
 		{
-			IList<Models.DB.Project.IfcProperty> IfcProperties = new List<Models.DB.Project.IfcProperty>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateIfcProperty(long id, Models.DB.Project.IfcProperty ifcProperty)
+		public async Task<bool> UpdateIfcProperty(Models.DB.Project.IfcProperty ifcProperty)
 		{
 			try
 			{

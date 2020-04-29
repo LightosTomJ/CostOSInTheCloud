@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.XcellFile>> GetAllXcellFiles()
 		{
-			IList<Models.DB.Local.XcellFile> XcellFiles = new List<Models.DB.Local.XcellFile>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateXcellFile(long id, Models.DB.Local.XcellFile xcellFile)
+		public async Task<bool> UpdateXcellFile(Models.DB.Local.XcellFile xcellFile)
 		{
 			try
 			{

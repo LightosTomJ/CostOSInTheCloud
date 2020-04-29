@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.EquipmentPartial>> GetAllEquipmentPartials()
 		{
-			IList<Models.DB.Results.EquipmentPartial> EquipmentPartials = new List<Models.DB.Results.EquipmentPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateEquipmentPartial(long id, Models.DB.Results.EquipmentPartial equipmentPartial)
+		public async Task<bool> UpdateEquipmentPartial(Models.DB.Results.EquipmentPartial equipmentPartial)
 		{
 			try
 			{

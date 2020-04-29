@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.FiltroProperty>> GetAllFiltroProperties()
 		{
-			IList<Models.DB.Local.FiltroProperty> FiltroProperties = new List<Models.DB.Local.FiltroProperty>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateFiltroProperty(long id, Models.DB.Local.FiltroProperty filtroProperty)
+		public async Task<bool> UpdateFiltroProperty(Models.DB.Local.FiltroProperty filtroProperty)
 		{
 			try
 			{

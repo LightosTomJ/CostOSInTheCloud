@@ -7,7 +7,7 @@ namespace Models.DB.Project
     {
         public ProjectTemplate()
         {
-            Projectspecvar = new HashSet<Projectspecvar>();
+            Projectspecvar = new HashSet<ProjectSpecVar>();
             Ratebuildup = new HashSet<RateBuildUp>();
             Ratebuildupcols = new HashSet<RateBuildUpCols>();
             Ratedistrib = new HashSet<RateDistrib>();
@@ -32,7 +32,7 @@ namespace Models.DB.Project
         public long? RefId { get; set; }
 
         public virtual XcellFile Template { get; set; }
-        public virtual ICollection<Projectspecvar> Projectspecvar { get; set; }
+        public virtual ICollection<ProjectSpecVar> Projectspecvar { get; set; }
         public virtual ICollection<RateBuildUp> Ratebuildup { get; set; }
         public virtual ICollection<RateBuildUpCols> Ratebuildupcols { get; set; }
         public virtual ICollection<RateDistrib> Ratedistrib { get; set; }

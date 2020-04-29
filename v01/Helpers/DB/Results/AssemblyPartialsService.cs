@@ -35,7 +35,6 @@ namespace Helper.DB.Results
 
 		public async Task<IList<Models.DB.Results.AssemblyPartial>> GetAllAssemblyPartials()
 		{
-			IList<Models.DB.Results.AssemblyPartial> AssemblyPartials = new List<Models.DB.Results.AssemblyPartial>();
 			try
 			{
 				if (resultsContext == null) resultsContext = new ResultsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Results
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyPartial(long id, Models.DB.Results.AssemblyPartial assemblyPartial)
+		public async Task<bool> UpdateAssemblyPartial(Models.DB.Results.AssemblyPartial assemblyPartial)
 		{
 			try
 			{

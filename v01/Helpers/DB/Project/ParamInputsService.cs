@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.ParamInput>> GetAllParamInputs()
 		{
-			IList<Models.DB.Project.ParamInput> ParamInputs = new List<Models.DB.Project.ParamInput>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamInput(long id, Models.DB.Project.ParamInput paramInput)
+		public async Task<bool> UpdateParamInput(Models.DB.Project.ParamInput paramInput)
 		{
 			try
 			{

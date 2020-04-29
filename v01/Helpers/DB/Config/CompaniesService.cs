@@ -35,7 +35,6 @@ namespace Helper.DB.Config
 
 		public async Task<IList<Models.DB.Config.Companies>> GetAllCompanies()
 		{
-			IList<Models.DB.Config.Companies> Companies = new List<Models.DB.Config.Companies>();
 			try
 			{
 				if (configContext == null) configContext = new ConfigContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Config
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCompanies(long id, Models.DB.Config.Companies companies)
+		public async Task<bool> UpdateCompanies(Models.DB.Config.Companies companies)
 		{
 			try
 			{

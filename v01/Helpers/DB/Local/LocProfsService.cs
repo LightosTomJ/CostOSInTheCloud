@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.LocProf>> GetAllLocProfs()
 		{
-			IList<Models.DB.Local.LocProf> LocProfs = new List<Models.DB.Local.LocProf>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -71,7 +70,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLocProf(long id, Models.DB.Local.LocProf locProf)
+		public async Task<bool> UpdateLocProf(Models.DB.Local.LocProf locProf)
 		{
 			try
 			{

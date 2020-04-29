@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectEPS>> GetAllProjectEPS()
 		{
-			IList<Models.DB.Local.ProjectEPS> ProjectEPS = new List<Models.DB.Local.ProjectEPS>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectEPS(long id, Models.DB.Local.ProjectEPS projectEPS)
+		public async Task<bool> UpdateProjectEPS(Models.DB.Local.ProjectEPS projectEPS)
 		{
 			try
 			{

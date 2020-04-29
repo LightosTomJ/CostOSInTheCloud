@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.BoqItemMaterial>> GetAllBoqItemMaterials()
 		{
-			IList<Models.DB.Project.BoqItemMaterial> BoqItemMaterials = new List<Models.DB.Project.BoqItemMaterial>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItemMaterial(long id, Models.DB.Project.BoqItemMaterial boqItemMaterial)
+		public async Task<bool> UpdateBoqItemMaterial(Models.DB.Project.BoqItemMaterial boqItemMaterial)
 		{
 			try
 			{

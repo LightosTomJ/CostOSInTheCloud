@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.UnitAlias>> GetAllUnitAlias()
 		{
-			IList<Models.DB.Local.UnitAlias> UnitAlias = new List<Models.DB.Local.UnitAlias>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateUnitAlias(long id, Models.DB.Local.UnitAlias unitAlias)
+		public async Task<bool> UpdateUnitAlias(Models.DB.Local.UnitAlias unitAlias)
 		{
 			try
 			{

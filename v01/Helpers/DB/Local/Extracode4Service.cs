@@ -70,7 +70,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExtracode4(long id, Models.DB.Local.Extracode4 extracode4)
+		public async Task<bool> UpdateExtracode4(Models.DB.Local.Extracode4 extracode4)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.AssemblyConsumable>> GetAllAssemblyConsumables()
 		{
-			IList<Models.DB.Project.AssemblyConsumable> AssemblyConsumables = new List<Models.DB.Project.AssemblyConsumable>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyConsumable(long id, Models.DB.Project.AssemblyConsumable assemblyConsumable)
+		public async Task<bool> UpdateAssemblyConsumable(Models.DB.Project.AssemblyConsumable assemblyConsumable)
 		{
 			try
 			{

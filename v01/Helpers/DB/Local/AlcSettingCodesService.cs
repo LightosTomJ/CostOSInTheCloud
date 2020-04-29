@@ -35,7 +35,7 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcSettingCodes>> GetAllAlcSettingCodes()
 		{
-			IList<Models.DB.Local.AlcSettingCodes> AlcSettingCodes = new List<Models.DB.Local.AlcSettingCodes>();
+
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +70,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcSettingCodes(long id, Models.DB.Local.AlcSettingCodes alcSettingCodes)
+		public async Task<bool> UpdateAlcSettingCodes(Models.DB.Local.AlcSettingCodes alcSettingCodes)
 		{
 			try
 			{

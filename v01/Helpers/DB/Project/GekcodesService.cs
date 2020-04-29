@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Gekcode>> GetAllGekcodes()
 		{
-			IList<Models.DB.Project.Gekcode> Gekcodes = new List<Models.DB.Project.Gekcode>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateGekcode(long id, Models.DB.Project.Gekcode gekcode)
+		public async Task<bool> UpdateGekcode(Models.DB.Project.Gekcode gekcode)
 		{
 			try
 			{

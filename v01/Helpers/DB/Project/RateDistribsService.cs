@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.RateDistrib>> GetAllRateDistribs()
 		{
-			IList<Models.DB.Project.RateDistrib> RateDistribs = new List<Models.DB.Project.RateDistrib>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRateDistrib(long id, Models.DB.Project.RateDistrib rateDistrib)
+		public async Task<bool> UpdateRateDistrib(Models.DB.Project.RateDistrib rateDistrib)
 		{
 			try
 			{

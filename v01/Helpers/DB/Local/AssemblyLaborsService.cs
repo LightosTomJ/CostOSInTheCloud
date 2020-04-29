@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AssemblyLabor>> GetAllAssemblyLabors()
 		{
-			IList<Models.DB.Local.AssemblyLabor> AssemblyLabors = new List<Models.DB.Local.AssemblyLabor>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyLabor(long id, Models.DB.Local.AssemblyLabor assemblyLabor)
+		public async Task<bool> UpdateAssemblyLabor(Models.DB.Local.AssemblyLabor assemblyLabor)
 		{
 			try
 			{

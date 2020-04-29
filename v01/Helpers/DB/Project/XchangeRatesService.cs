@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.XchangeRate>> GetAllXchangeRates()
 		{
-			IList<Models.DB.Project.XchangeRate> XchangeRates = new List<Models.DB.Project.XchangeRate>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateXchangeRate(long id, Models.DB.Project.XchangeRate xchangeRate)
+		public async Task<bool> UpdateXchangeRate(Models.DB.Project.XchangeRate xchangeRate)
 		{
 			try
 			{

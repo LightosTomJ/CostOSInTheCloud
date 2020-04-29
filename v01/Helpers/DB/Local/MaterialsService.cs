@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Material>> GetAllMaterials()
 		{
-			IList<Models.DB.Local.Material> Materials = new List<Models.DB.Local.Material>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -73,7 +72,7 @@ namespace Helper.DB.Local
 			return lReturns;
 		}
 
-		public async Task<bool> UpdateMaterial(long id, Models.DB.Local.Material material)
+		public async Task<bool> UpdateMaterial(Models.DB.Local.Material material)
 		{
 			try
 			{

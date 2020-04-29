@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Roles>> GetAllRoles()
 		{
-			IList<Models.DB.Local.Roles> Roles = new List<Models.DB.Local.Roles>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateRoles(long id, Models.DB.Local.Roles roles)
+		public async Task<bool> UpdateRoles(Models.DB.Local.Roles roles)
 		{
 			try
 			{

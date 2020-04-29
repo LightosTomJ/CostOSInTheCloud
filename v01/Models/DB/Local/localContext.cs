@@ -99,7 +99,7 @@ namespace Models.DB.Local
         public virtual DbSet<ProjectInfo> ProjectInfo { get; set; }
         public virtual DbSet<ProjectSpecVar> ProjectSpecVar { get; set; }
         public virtual DbSet<ProjectTemplate> ProjectTemplate { get; set; }
-        public virtual DbSet<Projecturl> Projecturl { get; set; }
+        public virtual DbSet<ProjectURL> Projecturl { get; set; }
         public virtual DbSet<ProjectUser> ProjectUser { get; set; }
         public virtual DbSet<ProjectUserTemplate> ProjectUserTemplate { get; set; }
         public virtual DbSet<QueryResource> QueryResource { get; set; }
@@ -5163,7 +5163,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKD8968A734DF865AC");
             });
 
-            modelBuilder.Entity<Projecturl>(entity =>
+            modelBuilder.Entity<ProjectURL>(entity =>
             {
                 entity.ToTable("PROJECTURL");
 

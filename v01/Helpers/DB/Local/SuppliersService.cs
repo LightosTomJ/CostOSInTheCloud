@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Supplier>> GetAllSuppliers()
 		{
-			IList<Models.DB.Local.Supplier> Suppliers = new List<Models.DB.Local.Supplier>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateSupplier(long id, Models.DB.Local.Supplier supplier)
+		public async Task<bool> UpdateSupplier(Models.DB.Local.Supplier supplier)
 		{
 			try
 			{

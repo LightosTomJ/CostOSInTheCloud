@@ -33,13 +33,12 @@ namespace Helper.DB.Project
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Project.Projectspecvar>> GetAllProjectspecvars()
+		public async Task<IList<Models.DB.Project.ProjectSpecVar>> GetAllProjectspecvars()
 		{
-			IList<Models.DB.Project.Projectspecvar> Projectspecvars = new List<Models.DB.Project.Projectspecvar>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
-				IList<Models.DB.Project.Projectspecvar> projectspecvars = await projectContext.Projectspecvar.ToListAsync();
+				IList<Models.DB.Project.ProjectSpecVar> projectspecvars = await projectContext.Projectspecvar.ToListAsync();
 				return projectspecvars;
 			}
 			catch (Exception ae)
@@ -49,13 +48,13 @@ namespace Helper.DB.Project
 			}
 			return null;
 		}
-		public async Task<long> CreateProjectspecvar(List<Models.DB.Project.Projectspecvar> Projectspecvars)
+		public async Task<long> CreateProjectspecvar(List<Models.DB.Project.ProjectSpecVar> Projectspecvars)
 		{
 			long returnid = -1;
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
-				foreach (Models.DB.Project.Projectspecvar projectspecvar in Projectspecvars)
+				foreach (Models.DB.Project.ProjectSpecVar projectspecvar in Projectspecvars)
 				{
 					projectContext.Projectspecvar.Add(projectspecvar);
 					await projectContext.SaveChangesAsync();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectspecvar(long id, Models.DB.Project.Projectspecvar projectspecvar)
+		public async Task<bool> UpdateProjectspecvar(Models.DB.Project.ProjectSpecVar projectspecvar)
 		{
 			try
 			{
@@ -91,7 +90,7 @@ namespace Helper.DB.Project
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
-				Models.DB.Project.Projectspecvar projectspecvar = projectContext.Projectspecvar.First(p => p.Id == projectspecvarId);
+				Models.DB.Project.ProjectSpecVar projectspecvar = projectContext.Projectspecvar.First(p => p.Id == projectspecvarId);
 				projectContext.Projectspecvar.Remove(projectspecvar);
 				await projectContext.SaveChangesAsync();
 				return true;

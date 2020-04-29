@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Equipment>> GetAllEquipments()
 		{
-			IList<Models.DB.Local.Equipment> Equipments = new List<Models.DB.Local.Equipment>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateEquipment(long id, Models.DB.Local.Equipment equipment)
+		public async Task<bool> UpdateEquipment(Models.DB.Local.Equipment equipment)
 		{
 			try
 			{

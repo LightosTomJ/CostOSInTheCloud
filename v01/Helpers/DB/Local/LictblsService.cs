@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Lictbl>> GetAllLictbls()
 		{
-			IList<Models.DB.Local.Lictbl> Lictbls = new List<Models.DB.Local.Lictbl>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLictbl(long id, Models.DB.Local.Lictbl lictbl)
+		public async Task<bool> UpdateLictbl(Models.DB.Local.Lictbl lictbl)
 		{
 			try
 			{

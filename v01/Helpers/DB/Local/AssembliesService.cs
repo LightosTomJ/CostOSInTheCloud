@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.Assembly>> GetAllAssemblies()
 		{
-			IList<Models.DB.Local.Assembly> Assemblies = new List<Models.DB.Local.Assembly>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssembly(long id, Models.DB.Local.Assembly assembly)
+		public async Task<bool> UpdateAssembly(Models.DB.Local.Assembly assembly)
 		{
 			try
 			{

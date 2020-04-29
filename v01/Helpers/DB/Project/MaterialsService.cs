@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Material>> GetAllMaterials()
 		{
-			IList<Models.DB.Project.Material> Materials = new List<Models.DB.Project.Material>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateMaterial(long id, Models.DB.Project.Material material)
+		public async Task<bool> UpdateMaterial(Models.DB.Project.Material material)
 		{
 			try
 			{

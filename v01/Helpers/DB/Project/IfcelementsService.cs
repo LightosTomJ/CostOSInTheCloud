@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Ifcelement>> GetAllIfcelements()
 		{
-			IList<Models.DB.Project.Ifcelement> Ifcelements = new List<Models.DB.Project.Ifcelement>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateIfcelement(long id, Models.DB.Project.Ifcelement ifcelement)
+		public async Task<bool> UpdateIfcelement(Models.DB.Project.Ifcelement ifcelement)
 		{
 			try
 			{

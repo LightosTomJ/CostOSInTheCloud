@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.QueryRow>> GetAllQueryRows()
 		{
-			IList<Models.DB.Project.QueryRow> QueryRows = new List<Models.DB.Project.QueryRow>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQueryRow(long id, Models.DB.Project.QueryRow queryRow)
+		public async Task<bool> UpdateQueryRow(Models.DB.Project.QueryRow queryRow)
 		{
 			try
 			{

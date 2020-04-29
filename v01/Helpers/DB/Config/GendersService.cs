@@ -35,7 +35,6 @@ namespace Helper.DB.Config
 
 		public async Task<IList<Models.DB.Config.Genders>> GetAllGenders()
 		{
-			IList<Models.DB.Config.Genders> Genders = new List<Models.DB.Config.Genders>();
 			try
 			{
 				if (configContext == null) configContext = new ConfigContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Config
 			return returnid;
 		}
 
-		public async Task<bool> UpdateGenders(long id, Models.DB.Config.Genders genders)
+		public async Task<bool> UpdateGenders(Models.DB.Config.Genders genders)
 		{
 			try
 			{

@@ -35,7 +35,7 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AlcUserGroups>> GetAllAlcUserGroups()
 		{
-			IList<Models.DB.Local.AlcUserGroups> AlcUserGroups = new List<Models.DB.Local.AlcUserGroups>();
+
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +70,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAlcUserGroups(long id, Models.DB.Local.AlcUserGroups alcUserGroups)
+		public async Task<bool> UpdateAlcUserGroups(Models.DB.Local.AlcUserGroups alcUserGroups)
 		{
 			try
 			{

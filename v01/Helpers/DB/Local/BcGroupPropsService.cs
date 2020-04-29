@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcGroupProp>> GetAllBcGroupProps()
 		{
-			IList<Models.DB.Local.BcGroupProp> BcGroupProps = new List<Models.DB.Local.BcGroupProp>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcGroupProp(long id, Models.DB.Local.BcGroupProp bcGroupProp)
+		public async Task<bool> UpdateBcGroupProp(Models.DB.Local.BcGroupProp bcGroupProp)
 		{
 			try
 			{

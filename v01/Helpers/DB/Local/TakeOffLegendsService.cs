@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TakeOffLegend>> GetAllTakeOffLegends()
 		{
-			IList<Models.DB.Local.TakeOffLegend> TakeOffLegends = new List<Models.DB.Local.TakeOffLegend>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTakeOffLegend(long id, Models.DB.Local.TakeOffLegend takeOffLegend)
+		public async Task<bool> UpdateTakeOffLegend(Models.DB.Local.TakeOffLegend takeOffLegend)
 		{
 			try
 			{

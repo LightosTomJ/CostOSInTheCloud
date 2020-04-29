@@ -35,7 +35,6 @@ namespace Helper.DB.Types
 
 		public async Task<IList<Models.DB.Types.Placeholder>> GetAllPlaceholders()
 		{
-			IList<Models.DB.Types.Placeholder> Placeholders = new List<Models.DB.Types.Placeholder>();
 			try
 			{
 				if (typesContext == null) typesContext = new TypesContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Types
 			return returnid;
 		}
 
-		public async Task<bool> UpdatePlaceholder(long id, Models.DB.Types.Placeholder placeholder)
+		public async Task<bool> UpdatePlaceholder(Models.DB.Types.Placeholder placeholder)
 		{
 			try
 			{

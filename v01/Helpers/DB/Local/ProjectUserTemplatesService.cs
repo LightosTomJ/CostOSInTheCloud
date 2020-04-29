@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ProjectUserTemplate>> GetAllProjectUserTemplates()
 		{
-			IList<Models.DB.Local.ProjectUserTemplate> ProjectUserTemplates = new List<Models.DB.Local.ProjectUserTemplate>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectUserTemplate(long id, Models.DB.Local.ProjectUserTemplate projectUserTemplate)
+		public async Task<bool> UpdateProjectUserTemplate(Models.DB.Local.ProjectUserTemplate projectUserTemplate)
 		{
 			try
 			{

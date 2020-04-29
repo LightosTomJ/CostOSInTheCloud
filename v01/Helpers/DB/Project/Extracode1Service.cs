@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Extracode1>> GetAllExtracode1s()
 		{
-			IList<Models.DB.Project.Extracode1> Extracode1s = new List<Models.DB.Project.Extracode1>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateExtracode1(long id, Models.DB.Project.Extracode1 extracode1)
+		public async Task<bool> UpdateExtracode1(Models.DB.Project.Extracode1 extracode1)
 		{
 			try
 			{

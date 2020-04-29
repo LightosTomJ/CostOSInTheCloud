@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.Groupcode>> GetAllGroupcodes()
 		{
-			IList<Models.DB.Project.Groupcode> Groupcodes = new List<Models.DB.Project.Groupcode>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateGroupcode(long id, Models.DB.Project.Groupcode groupcode)
+		public async Task<bool> UpdateGroupcode(Models.DB.Project.Groupcode groupcode)
 		{
 			try
 			{

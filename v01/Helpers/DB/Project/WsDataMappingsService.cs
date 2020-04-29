@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.WsDataMapping>> GetAllWsDataMappings()
 		{
-			IList<Models.DB.Project.WsDataMapping> WsDataMappings = new List<Models.DB.Project.WsDataMapping>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateWsDataMapping(long id, Models.DB.Project.WsDataMapping wsDataMapping)
+		public async Task<bool> UpdateWsDataMapping(Models.DB.Project.WsDataMapping wsDataMapping)
 		{
 			try
 			{

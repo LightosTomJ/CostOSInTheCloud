@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.AssemblyConsumable>> GetAllAssemblyConsumables()
 		{
-			IList<Models.DB.Local.AssemblyConsumable> AssemblyConsumables = new List<Models.DB.Local.AssemblyConsumable>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateAssemblyConsumable(long id, Models.DB.Local.AssemblyConsumable assemblyConsumable)
+		public async Task<bool> UpdateAssemblyConsumable(Models.DB.Local.AssemblyConsumable assemblyConsumable)
 		{
 			try
 			{

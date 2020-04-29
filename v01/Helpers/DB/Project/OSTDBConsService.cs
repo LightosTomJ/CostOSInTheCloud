@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.OSTDBCon>> GetAllOSTDBCons()
 		{
-			IList<Models.DB.Project.OSTDBCon> OSTDBCons = new List<Models.DB.Project.OSTDBCon>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateOSTDBCon(long id, Models.DB.Project.OSTDBCon oSTDBCon)
+		public async Task<bool> UpdateOSTDBCon(Models.DB.Project.OSTDBCon oSTDBCon)
 		{
 			try
 			{

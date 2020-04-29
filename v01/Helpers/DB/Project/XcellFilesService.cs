@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.XcellFile>> GetAllXcellFiles()
 		{
-			IList<Models.DB.Project.XcellFile> XcellFiles = new List<Models.DB.Project.XcellFile>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateXcellFile(long id, Models.DB.Project.XcellFile xcellFile)
+		public async Task<bool> UpdateXcellFile(Models.DB.Project.XcellFile xcellFile)
 		{
 			try
 			{

@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.MatHistory>> GetAllMatHistories()
 		{
-			IList<Models.DB.Project.MatHistory> MatHistories = new List<Models.DB.Project.MatHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateMatHistory(long id, Models.DB.Project.MatHistory matHistory)
+		public async Task<bool> UpdateMatHistory(Models.DB.Project.MatHistory matHistory)
 		{
 			try
 			{

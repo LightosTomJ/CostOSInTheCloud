@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.QuoteItem>> GetAllQuoteItems()
 		{
-			IList<Models.DB.Project.QuoteItem> QuoteItems = new List<Models.DB.Project.QuoteItem>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQuoteItem(long id, Models.DB.Project.QuoteItem quoteItem)
+		public async Task<bool> UpdateQuoteItem(Models.DB.Project.QuoteItem quoteItem)
 		{
 			try
 			{

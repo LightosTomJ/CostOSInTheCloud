@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.QueryRow>> GetAllQueryRows()
 		{
-			IList<Models.DB.Local.QueryRow> QueryRows = new List<Models.DB.Local.QueryRow>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateQueryRow(long id, Models.DB.Local.QueryRow queryRow)
+		public async Task<bool> UpdateQueryRow(Models.DB.Local.QueryRow queryRow)
 		{
 			try
 			{

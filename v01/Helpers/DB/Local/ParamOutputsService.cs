@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.ParamOutput>> GetAllParamOutputs()
 		{
-			IList<Models.DB.Local.ParamOutput> ParamOutputs = new List<Models.DB.Local.ParamOutput>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateParamOutput(long id, Models.DB.Local.ParamOutput paramOutput)
+		public async Task<bool> UpdateParamOutput(Models.DB.Local.ParamOutput paramOutput)
 		{
 			try
 			{

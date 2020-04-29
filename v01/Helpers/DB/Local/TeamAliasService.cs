@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.TeamAlias>> GetAllTeamAlias()
 		{
-			IList<Models.DB.Local.TeamAlias> TeamAlias = new List<Models.DB.Local.TeamAlias>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateTeamAlias(long id, Models.DB.Local.TeamAlias teamAlias)
+		public async Task<bool> UpdateTeamAlias(Models.DB.Local.TeamAlias teamAlias)
 		{
 			try
 			{

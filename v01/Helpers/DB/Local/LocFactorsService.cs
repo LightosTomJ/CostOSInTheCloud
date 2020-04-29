@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.LocFactor>> GetAllLocFactors()
 		{
-			IList<Models.DB.Local.LocFactor> LocFactors = new List<Models.DB.Local.LocFactor>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateLocFactor(long id, Models.DB.Local.LocFactor locFactor)
+		public async Task<bool> UpdateLocFactor(Models.DB.Local.LocFactor locFactor)
 		{
 			try
 			{

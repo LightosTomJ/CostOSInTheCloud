@@ -35,7 +35,6 @@ namespace Helper.DB.Ns
 
 		public async Task<IList<Models.DB.NS.ProjectNamingStrategy>> GetAllProjectNamingStrategies()
 		{
-			IList<Models.DB.NS.ProjectNamingStrategy> ProjectNamingStrategies = new List<Models.DB.NS.ProjectNamingStrategy>();
 			try
 			{
 				if (nsContext == null) nsContext = new NsContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Ns
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectNamingStrategy(long id, Models.DB.NS.ProjectNamingStrategy projectNamingStrategy)
+		public async Task<bool> UpdateProjectNamingStrategy(Models.DB.NS.ProjectNamingStrategy projectNamingStrategy)
 		{
 			try
 			{

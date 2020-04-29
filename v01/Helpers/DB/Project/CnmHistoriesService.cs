@@ -35,7 +35,6 @@ namespace Helper.DB.Project
 
 		public async Task<IList<Models.DB.Project.CnmHistory>> GetAllCnmHistories()
 		{
-			IList<Models.DB.Project.CnmHistory> CnmHistories = new List<Models.DB.Project.CnmHistory>();
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateCnmHistory(long id, Models.DB.Project.CnmHistory cnmHistory)
+		public async Task<bool> UpdateCnmHistory(Models.DB.Project.CnmHistory cnmHistory)
 		{
 			try
 			{

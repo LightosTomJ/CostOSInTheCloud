@@ -35,7 +35,6 @@ namespace Helper.DB.Local
 
 		public async Task<IList<Models.DB.Local.BcElement>> GetAllBcElements()
 		{
-			IList<Models.DB.Local.BcElement> BcElements = new List<Models.DB.Local.BcElement>();
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
@@ -70,7 +69,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBcElement(long id, Models.DB.Local.BcElement bcElement)
+		public async Task<bool> UpdateBcElement(Models.DB.Local.BcElement bcElement)
 		{
 			try
 			{
