@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Fldfn
+    public partial class FldFn
     {
         public long Fldfnid { get; set; }
         public string Name { get; set; }
@@ -12,6 +12,6 @@ namespace Models.DB.Local
         public long? Rpdfnid { get; set; }
         public int? Rpdfnfildefcount { get; set; }
 
-        public virtual Rpdfn Rpdfn { get; set; }
+        public virtual RpdFn Rpdfn { get; set; }
     }
 }

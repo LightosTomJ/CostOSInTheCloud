@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Asshistory
+    public partial class AssHistory
     {
         public long Id { get; set; }
         public long? Assemlbyid { get; set; }

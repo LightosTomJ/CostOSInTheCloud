@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class BoqitemLabor
+    public partial class BoqItemLabor
     {
         public long Boqitemlaborid { get; set; }
         public decimal? Frate { get; set; }
@@ -32,8 +32,8 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Boqitem Boqitem { get; set; }
+        public virtual BoqItem Boqitem { get; set; }
         public virtual Labor Labor { get; set; }
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

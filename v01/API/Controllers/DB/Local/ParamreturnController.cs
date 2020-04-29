@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Paramreturn
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Paramreturn>>> GetParamreturn()
+        public async Task<ActionResult<IEnumerable<ParamReturn>>> GetParamreturn()
         {
-            return await _context.Paramreturn.ToListAsync();
+            return await _context.ParamReturn.ToListAsync();
         }
 
         // GET: api/Paramreturn/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Paramreturn>> GetParamreturn(long id)
+        public async Task<ActionResult<ParamReturn>> GetParamreturn(long id)
         {
-            var paramreturn = await _context.Paramreturn.FindAsync(id);
+            var paramreturn = await _context.ParamReturn.FindAsync(id);
 
             if (paramreturn == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutParamreturn(long id, Paramreturn paramreturn)
+        public async Task<IActionResult> PutParamreturn(long id, ParamReturn paramreturn)
         {
             if (id != paramreturn.Paramreturnid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Paramreturn>> PostParamreturn(Paramreturn paramreturn)
+        public async Task<ActionResult<ParamReturn>> PostParamreturn(ParamReturn paramreturn)
         {
-            _context.Paramreturn.Add(paramreturn);
+            _context.ParamReturn.Add(paramreturn);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetParamreturn", new { id = paramreturn.Paramreturnid }, paramreturn);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Paramreturn/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Paramreturn>> DeleteParamreturn(long id)
+        public async Task<ActionResult<ParamReturn>> DeleteParamreturn(long id)
         {
-            var paramreturn = await _context.Paramreturn.FindAsync(id);
+            var paramreturn = await _context.ParamReturn.FindAsync(id);
             if (paramreturn == null)
             {
                 return NotFound();
             }
 
-            _context.Paramreturn.Remove(paramreturn);
+            _context.ParamReturn.Remove(paramreturn);
             await _context.SaveChangesAsync();
 
             return paramreturn;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ParamreturnExists(long id)
         {
-            return _context.Paramreturn.Any(e => e.Paramreturnid == id);
+            return _context.ParamReturn.Any(e => e.Paramreturnid == id);
         }
     }
 }

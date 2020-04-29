@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Utils
 {
-    public partial class utilsContext : DbContext
+    public partial class UtilsContext : DbContext
     {
-        public utilsContext()
+        public UtilsContext()
         {
         }
 
-        public utilsContext(DbContextOptions<utilsContext> options)
+        public UtilsContext(DbContextOptions<UtilsContext> options)
             : base(options)
         {
         }

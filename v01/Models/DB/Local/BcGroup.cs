@@ -7,8 +7,8 @@ namespace Models.DB.Local
     {
         public BcGroup()
         {
-            BcGroupelem = new HashSet<BcGroupelem>();
-            BcGroupprop = new HashSet<BcGroupprop>();
+            BcGroupelem = new HashSet<BcGroupElem>();
+            BcGroupprop = new HashSet<BcGroupProp>();
             InverseParent = new HashSet<BcGroup>();
         }
 
@@ -22,8 +22,8 @@ namespace Models.DB.Local
 
         public virtual BcModel Model { get; set; }
         public virtual BcGroup Parent { get; set; }
-        public virtual ICollection<BcGroupelem> BcGroupelem { get; set; }
-        public virtual ICollection<BcGroupprop> BcGroupprop { get; set; }
+        public virtual ICollection<BcGroupElem> BcGroupelem { get; set; }
+        public virtual ICollection<BcGroupProp> BcGroupprop { get; set; }
         public virtual ICollection<BcGroup> InverseParent { get; set; }
     }
 }

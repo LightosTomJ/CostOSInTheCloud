@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class QuotetemplateBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Quotetemplate> quotetemplate = null;
+        protected IList<Models.DB.Local.QuoteTemplate> quotetemplate = null;
 
         protected override async Task OnInitializedAsync()
         {

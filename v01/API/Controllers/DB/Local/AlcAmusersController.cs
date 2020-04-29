@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/AlcAmusers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AlcAmusers>>> GetAlcAmusers()
+        public async Task<ActionResult<IEnumerable<AlcAmUsers>>> GetAlcAmusers()
         {
-            return await _context.AlcAmusers.ToListAsync();
+            return await _context.AlcAmUsers.ToListAsync();
         }
 
         // GET: api/AlcAmusers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<AlcAmusers>> GetAlcAmusers(Guid id)
+        public async Task<ActionResult<AlcAmUsers>> GetAlcAmusers(Guid id)
         {
-            var alcAmusers = await _context.AlcAmusers.FindAsync(id);
+            var alcAmusers = await _context.AlcAmUsers.FindAsync(id);
 
             if (alcAmusers == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAlcAmusers(Guid id, AlcAmusers alcAmusers)
+        public async Task<IActionResult> PutAlcAmusers(Guid id, AlcAmUsers alcAmusers)
         {
             if (id != alcAmusers.UserGid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<AlcAmusers>> PostAlcAmusers(AlcAmusers alcAmusers)
+        public async Task<ActionResult<AlcAmUsers>> PostAlcAmusers(AlcAmUsers alcAmusers)
         {
-            _context.AlcAmusers.Add(alcAmusers);
+            _context.AlcAmUsers.Add(alcAmusers);
             try
             {
                 await _context.SaveChangesAsync();
@@ -101,15 +101,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/AlcAmusers/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<AlcAmusers>> DeleteAlcAmusers(Guid id)
+        public async Task<ActionResult<AlcAmUsers>> DeleteAlcAmusers(Guid id)
         {
-            var alcAmusers = await _context.AlcAmusers.FindAsync(id);
+            var alcAmusers = await _context.AlcAmUsers.FindAsync(id);
             if (alcAmusers == null)
             {
                 return NotFound();
             }
 
-            _context.AlcAmusers.Remove(alcAmusers);
+            _context.AlcAmUsers.Remove(alcAmusers);
             await _context.SaveChangesAsync();
 
             return alcAmusers;
@@ -117,7 +117,7 @@ namespace API.Controllers.DB.Local
 
         private bool AlcAmusersExists(Guid id)
         {
-            return _context.AlcAmusers.Any(e => e.UserGid == id);
+            return _context.AlcAmUsers.Any(e => e.UserGid == id);
         }
     }
 }

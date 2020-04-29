@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class FldfnBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Fldfn> fldfn = null;
+        protected IList<Models.DB.Local.FldFn> fldfn = null;
 
         protected override async Task OnInitializedAsync()
         {

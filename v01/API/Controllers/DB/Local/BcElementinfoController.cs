@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcElementinfo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcElementinfo>>> GetBcElementinfo()
+        public async Task<ActionResult<IEnumerable<BcElementInfo>>> GetBcElementinfo()
         {
-            return await _context.BcElementinfo.ToListAsync();
+            return await _context.BcElementInfo.ToListAsync();
         }
 
         // GET: api/BcElementinfo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcElementinfo>> GetBcElementinfo(long id)
+        public async Task<ActionResult<BcElementInfo>> GetBcElementinfo(long id)
         {
-            var bcElementinfo = await _context.BcElementinfo.FindAsync(id);
+            var bcElementinfo = await _context.BcElementInfo.FindAsync(id);
 
             if (bcElementinfo == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcElementinfo(long id, BcElementinfo bcElementinfo)
+        public async Task<IActionResult> PutBcElementinfo(long id, BcElementInfo bcElementinfo)
         {
             if (id != bcElementinfo.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcElementinfo>> PostBcElementinfo(BcElementinfo bcElementinfo)
+        public async Task<ActionResult<BcElementInfo>> PostBcElementinfo(BcElementInfo bcElementinfo)
         {
-            _context.BcElementinfo.Add(bcElementinfo);
+            _context.BcElementInfo.Add(bcElementinfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcElementinfo", new { id = bcElementinfo.Id }, bcElementinfo);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcElementinfo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcElementinfo>> DeleteBcElementinfo(long id)
+        public async Task<ActionResult<BcElementInfo>> DeleteBcElementinfo(long id)
         {
-            var bcElementinfo = await _context.BcElementinfo.FindAsync(id);
+            var bcElementinfo = await _context.BcElementInfo.FindAsync(id);
             if (bcElementinfo == null)
             {
                 return NotFound();
             }
 
-            _context.BcElementinfo.Remove(bcElementinfo);
+            _context.BcElementInfo.Remove(bcElementinfo);
             await _context.SaveChangesAsync();
 
             return bcElementinfo;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcElementinfoExists(long id)
         {
-            return _context.BcElementinfo.Any(e => e.Id == id);
+            return _context.BcElementInfo.Any(e => e.Id == id);
         }
     }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Quoteitem
+    public partial class QuoteItem
     {
-        public Quoteitem()
+        public QuoteItem()
         {
-            BoqitemMaterial = new HashSet<BoqitemMaterial>();
-            BoqitemSubcontractor = new HashSet<BoqitemSubcontractor>();
+            BoqitemMaterial = new HashSet<BoqItemMaterial>();
+            BoqitemSubcontractor = new HashSet<BoqItemSubcontractor>();
         }
 
         public long Quoteitemid { get; set; }
@@ -35,9 +35,9 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Boqitem Boqitem { get; set; }
+        public virtual BoqItem Boqitem { get; set; }
         public virtual Quote Quotation { get; set; }
-        public virtual ICollection<BoqitemMaterial> BoqitemMaterial { get; set; }
-        public virtual ICollection<BoqitemSubcontractor> BoqitemSubcontractor { get; set; }
+        public virtual ICollection<BoqItemMaterial> BoqitemMaterial { get; set; }
+        public virtual ICollection<BoqItemSubcontractor> BoqitemSubcontractor { get; set; }
     }
 }

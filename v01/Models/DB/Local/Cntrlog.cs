@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Cntrlog
+    public partial class CntrLog
     {
         public long Id { get; set; }
         public DateTime? Logdate { get; set; }

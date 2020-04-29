@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Paramitem
+    public partial class ParamItem
     {
-        public Paramitem()
+        public ParamItem()
         {
-            Boqitem = new HashSet<Boqitem>();
-            BoqitemAssembly = new HashSet<BoqitemAssembly>();
-            BoqitemCondition = new HashSet<BoqitemCondition>();
-            BoqitemConsumable = new HashSet<BoqitemConsumable>();
-            BoqitemEquipment = new HashSet<BoqitemEquipment>();
-            BoqitemLabor = new HashSet<BoqitemLabor>();
-            BoqitemMaterial = new HashSet<BoqitemMaterial>();
-            BoqitemSubcontractor = new HashSet<BoqitemSubcontractor>();
-            Paramcondition = new HashSet<Paramcondition>();
-            Paraminput = new HashSet<Paraminput>();
-            Paramoutput = new HashSet<Paramoutput>();
+            Boqitem = new HashSet<BoqItem>();
+            BoqitemAssembly = new HashSet<BoqItemAssembly>();
+            BoqitemCondition = new HashSet<BoqItemCondition>();
+            BoqitemConsumable = new HashSet<BoqItemConsumable>();
+            BoqitemEquipment = new HashSet<BoqItemEquipment>();
+            BoqitemLabor = new HashSet<BoqItemLabor>();
+            BoqitemMaterial = new HashSet<BoqItemMaterial>();
+            BoqitemSubcontractor = new HashSet<BoqItemSubcontractor>();
+            Paramcondition = new HashSet<ParamCondition>();
+            Paraminput = new HashSet<ParamInput>();
+            Paramoutput = new HashSet<ParamOutput>();
             Paramreturn = new HashSet<Paramreturn>();
         }
 
@@ -69,18 +69,18 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Boqitem BoqitemNavigation { get; set; }
-        public virtual ICollection<Boqitem> Boqitem { get; set; }
-        public virtual ICollection<BoqitemAssembly> BoqitemAssembly { get; set; }
-        public virtual ICollection<BoqitemCondition> BoqitemCondition { get; set; }
-        public virtual ICollection<BoqitemConsumable> BoqitemConsumable { get; set; }
-        public virtual ICollection<BoqitemEquipment> BoqitemEquipment { get; set; }
-        public virtual ICollection<BoqitemLabor> BoqitemLabor { get; set; }
-        public virtual ICollection<BoqitemMaterial> BoqitemMaterial { get; set; }
-        public virtual ICollection<BoqitemSubcontractor> BoqitemSubcontractor { get; set; }
-        public virtual ICollection<Paramcondition> Paramcondition { get; set; }
-        public virtual ICollection<Paraminput> Paraminput { get; set; }
-        public virtual ICollection<Paramoutput> Paramoutput { get; set; }
+        public virtual BoqItem BoqitemNavigation { get; set; }
+        public virtual ICollection<BoqItem> Boqitem { get; set; }
+        public virtual ICollection<BoqItemAssembly> BoqitemAssembly { get; set; }
+        public virtual ICollection<BoqItemCondition> BoqitemCondition { get; set; }
+        public virtual ICollection<BoqItemConsumable> BoqitemConsumable { get; set; }
+        public virtual ICollection<BoqItemEquipment> BoqitemEquipment { get; set; }
+        public virtual ICollection<BoqItemLabor> BoqitemLabor { get; set; }
+        public virtual ICollection<BoqItemMaterial> BoqitemMaterial { get; set; }
+        public virtual ICollection<BoqItemSubcontractor> BoqitemSubcontractor { get; set; }
+        public virtual ICollection<ParamCondition> Paramcondition { get; set; }
+        public virtual ICollection<ParamInput> Paraminput { get; set; }
+        public virtual ICollection<ParamOutput> Paramoutput { get; set; }
         public virtual ICollection<Paramreturn> Paramreturn { get; set; }
     }
 }

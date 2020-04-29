@@ -13,7 +13,7 @@ namespace Models.DB.Local
         public long? ModelId { get; set; }
 
         public virtual BcElement Element { get; set; }
-        public virtual BcGeomfile Geomfile { get; set; }
+        public virtual BcGeomFile Geomfile { get; set; }
         public virtual BcModel Model { get; set; }
     }
 }

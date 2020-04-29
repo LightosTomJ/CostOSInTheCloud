@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Fldfn
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Fldfn>>> GetFldfn()
+        public async Task<ActionResult<IEnumerable<FldFn>>> GetFldfn()
         {
-            return await _context.Fldfn.ToListAsync();
+            return await _context.FldFn.ToListAsync();
         }
 
         // GET: api/Fldfn/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Fldfn>> GetFldfn(long id)
+        public async Task<ActionResult<FldFn>> GetFldfn(long id)
         {
-            var fldfn = await _context.Fldfn.FindAsync(id);
+            var fldfn = await _context.FldFn.FindAsync(id);
 
             if (fldfn == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFldfn(long id, Fldfn fldfn)
+        public async Task<IActionResult> PutFldfn(long id, FldFn fldfn)
         {
             if (id != fldfn.Fldfnid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Fldfn>> PostFldfn(Fldfn fldfn)
+        public async Task<ActionResult<FldFn>> PostFldfn(FldFn fldfn)
         {
-            _context.Fldfn.Add(fldfn);
+            _context.FldFn.Add(fldfn);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetFldfn", new { id = fldfn.Fldfnid }, fldfn);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Fldfn/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Fldfn>> DeleteFldfn(long id)
+        public async Task<ActionResult<FldFn>> DeleteFldfn(long id)
         {
-            var fldfn = await _context.Fldfn.FindAsync(id);
+            var fldfn = await _context.FldFn.FindAsync(id);
             if (fldfn == null)
             {
                 return NotFound();
             }
 
-            _context.Fldfn.Remove(fldfn);
+            _context.FldFn.Remove(fldfn);
             await _context.SaveChangesAsync();
 
             return fldfn;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool FldfnExists(long id)
         {
-            return _context.Fldfn.Any(e => e.Fldfnid == id);
+            return _context.FldFn.Any(e => e.Fldfnid == id);
         }
     }
 }

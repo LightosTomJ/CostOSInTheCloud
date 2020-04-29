@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcGpuserver
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcGpuserver>>> GetBcGpuserver()
+        public async Task<ActionResult<IEnumerable<BcGPUServer>>> GetBcGpuserver()
         {
-            return await _context.BcGpuserver.ToListAsync();
+            return await _context.BcGPUServer.ToListAsync();
         }
 
         // GET: api/BcGpuserver/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcGpuserver>> GetBcGpuserver(long id)
+        public async Task<ActionResult<BcGPUServer>> GetBcGpuserver(long id)
         {
-            var bcGpuserver = await _context.BcGpuserver.FindAsync(id);
+            var bcGpuserver = await _context.BcGPUServer.FindAsync(id);
 
             if (bcGpuserver == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcGpuserver(long id, BcGpuserver bcGpuserver)
+        public async Task<IActionResult> PutBcGpuserver(long id, BcGPUServer bcGpuserver)
         {
             if (id != bcGpuserver.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcGpuserver>> PostBcGpuserver(BcGpuserver bcGpuserver)
+        public async Task<ActionResult<BcGPUServer>> PostBcGpuserver(BcGPUServer bcGpuserver)
         {
-            _context.BcGpuserver.Add(bcGpuserver);
+            _context.BcGPUServer.Add(bcGpuserver);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcGpuserver", new { id = bcGpuserver.Id }, bcGpuserver);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcGpuserver/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcGpuserver>> DeleteBcGpuserver(long id)
+        public async Task<ActionResult<BcGPUServer>> DeleteBcGpuserver(long id)
         {
-            var bcGpuserver = await _context.BcGpuserver.FindAsync(id);
+            var bcGpuserver = await _context.BcGPUServer.FindAsync(id);
             if (bcGpuserver == null)
             {
                 return NotFound();
             }
 
-            _context.BcGpuserver.Remove(bcGpuserver);
+            _context.BcGPUServer.Remove(bcGpuserver);
             await _context.SaveChangesAsync();
 
             return bcGpuserver;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcGpuserverExists(long id)
         {
-            return _context.BcGpuserver.Any(e => e.Id == id);
+            return _context.BcGPUServer.Any(e => e.Id == id);
         }
     }
 }

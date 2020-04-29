@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Cntrlog
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cntrlog>>> GetCntrlog()
+        public async Task<ActionResult<IEnumerable<CntrLog>>> GetCntrlog()
         {
-            return await _context.Cntrlog.ToListAsync();
+            return await _context.CntrLog.ToListAsync();
         }
 
         // GET: api/Cntrlog/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cntrlog>> GetCntrlog(long id)
+        public async Task<ActionResult<CntrLog>> GetCntrlog(long id)
         {
-            var cntrlog = await _context.Cntrlog.FindAsync(id);
+            var cntrlog = await _context.CntrLog.FindAsync(id);
 
             if (cntrlog == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCntrlog(long id, Cntrlog cntrlog)
+        public async Task<IActionResult> PutCntrlog(long id, CntrLog cntrlog)
         {
             if (id != cntrlog.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Cntrlog>> PostCntrlog(Cntrlog cntrlog)
+        public async Task<ActionResult<CntrLog>> PostCntrlog(CntrLog cntrlog)
         {
-            _context.Cntrlog.Add(cntrlog);
+            _context.CntrLog.Add(cntrlog);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCntrlog", new { id = cntrlog.Id }, cntrlog);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Cntrlog/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Cntrlog>> DeleteCntrlog(long id)
+        public async Task<ActionResult<CntrLog>> DeleteCntrlog(long id)
         {
-            var cntrlog = await _context.Cntrlog.FindAsync(id);
+            var cntrlog = await _context.CntrLog.FindAsync(id);
             if (cntrlog == null)
             {
                 return NotFound();
             }
 
-            _context.Cntrlog.Remove(cntrlog);
+            _context.CntrLog.Remove(cntrlog);
             await _context.SaveChangesAsync();
 
             return cntrlog;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool CntrlogExists(long id)
         {
-            return _context.Cntrlog.Any(e => e.Id == id);
+            return _context.CntrLog.Any(e => e.Id == id);
         }
     }
 }

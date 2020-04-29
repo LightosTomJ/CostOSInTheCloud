@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Prjprop
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Prjprop>>> GetPrjprop()
+        public async Task<ActionResult<IEnumerable<PrjProp>>> GetPrjprop()
         {
-            return await _context.Prjprop.ToListAsync();
+            return await _context.PrjProp.ToListAsync();
         }
 
         // GET: api/Prjprop/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Prjprop>> GetPrjprop(long id)
+        public async Task<ActionResult<PrjProp>> GetPrjprop(long id)
         {
-            var prjprop = await _context.Prjprop.FindAsync(id);
+            var prjprop = await _context.PrjProp.FindAsync(id);
 
             if (prjprop == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPrjprop(long id, Prjprop prjprop)
+        public async Task<IActionResult> PutPrjprop(long id, PrjProp prjprop)
         {
             if (id != prjprop.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Prjprop>> PostPrjprop(Prjprop prjprop)
+        public async Task<ActionResult<PrjProp>> PostPrjprop(PrjProp prjprop)
         {
-            _context.Prjprop.Add(prjprop);
+            _context.PrjProp.Add(prjprop);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPrjprop", new { id = prjprop.Id }, prjprop);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Prjprop/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Prjprop>> DeletePrjprop(long id)
+        public async Task<ActionResult<PrjProp>> DeletePrjprop(long id)
         {
-            var prjprop = await _context.Prjprop.FindAsync(id);
+            var prjprop = await _context.PrjProp.FindAsync(id);
             if (prjprop == null)
             {
                 return NotFound();
             }
 
-            _context.Prjprop.Remove(prjprop);
+            _context.PrjProp.Remove(prjprop);
             await _context.SaveChangesAsync();
 
             return prjprop;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool PrjpropExists(long id)
         {
-            return _context.Prjprop.Any(e => e.Id == id);
+            return _context.PrjProp.Any(e => e.Id == id);
         }
     }
 }

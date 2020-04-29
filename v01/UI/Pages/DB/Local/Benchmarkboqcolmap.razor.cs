@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BenchmarkboqcolmapBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Benchmarkboqcolmap> benchmarkboqcolmap = null;
+        protected IList<Models.DB.Local.BenchmarkBOQColMap> benchmarkboqcolmap = null;
 
         protected override async Task OnInitializedAsync()
         {

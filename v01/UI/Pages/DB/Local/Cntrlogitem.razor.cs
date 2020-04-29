@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class CntrlogitemBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Cntrlogitem> cntrlogitem = null;
+        protected IList<Models.DB.Local.CntrLogItem> cntrlogitem = null;
 
         protected override async Task OnInitializedAsync()
         {

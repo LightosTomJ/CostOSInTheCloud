@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Teamalias
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Teamalias>>> GetTeamalias()
+        public async Task<ActionResult<IEnumerable<TeamAlias>>> GetTeamalias()
         {
-            return await _context.Teamalias.ToListAsync();
+            return await _context.TeamAlias.ToListAsync();
         }
 
         // GET: api/Teamalias/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Teamalias>> GetTeamalias(long id)
+        public async Task<ActionResult<TeamAlias>> GetTeamalias(long id)
         {
-            var teamalias = await _context.Teamalias.FindAsync(id);
+            var teamalias = await _context.TeamAlias.FindAsync(id);
 
             if (teamalias == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTeamalias(long id, Teamalias teamalias)
+        public async Task<IActionResult> PutTeamalias(long id, TeamAlias teamalias)
         {
             if (id != teamalias.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Teamalias>> PostTeamalias(Teamalias teamalias)
+        public async Task<ActionResult<TeamAlias>> PostTeamalias(TeamAlias teamalias)
         {
-            _context.Teamalias.Add(teamalias);
+            _context.TeamAlias.Add(teamalias);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTeamalias", new { id = teamalias.Id }, teamalias);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Teamalias/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Teamalias>> DeleteTeamalias(long id)
+        public async Task<ActionResult<TeamAlias>> DeleteTeamalias(long id)
         {
-            var teamalias = await _context.Teamalias.FindAsync(id);
+            var teamalias = await _context.TeamAlias.FindAsync(id);
             if (teamalias == null)
             {
                 return NotFound();
             }
 
-            _context.Teamalias.Remove(teamalias);
+            _context.TeamAlias.Remove(teamalias);
             await _context.SaveChangesAsync();
 
             return teamalias;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TeamaliasExists(long id)
         {
-            return _context.Teamalias.Any(e => e.Id == id);
+            return _context.TeamAlias.Any(e => e.Id == id);
         }
     }
 }

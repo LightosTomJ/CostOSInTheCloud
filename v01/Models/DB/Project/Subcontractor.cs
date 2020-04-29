@@ -8,8 +8,8 @@ namespace Models.DB.Project
         public Subcontractor()
         {
             AssemblySubcontractor = new HashSet<AssemblySubcontractor>();
-            BoqitemSubcontractor = new HashSet<BoqitemSubcontractor>();
-            Subhistory = new HashSet<Subhistory>();
+            BoqitemSubcontractor = new HashSet<BoqItemSubcontractor>();
+            Subhistory = new HashSet<SubHistory>();
         }
 
         public long Subcontractorid { get; set; }
@@ -75,7 +75,7 @@ namespace Models.DB.Project
         public long? RefId { get; set; }
 
         public virtual ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
-        public virtual ICollection<BoqitemSubcontractor> BoqitemSubcontractor { get; set; }
-        public virtual ICollection<Subhistory> Subhistory { get; set; }
+        public virtual ICollection<BoqItemSubcontractor> BoqitemSubcontractor { get; set; }
+        public virtual ICollection<SubHistory> Subhistory { get; set; }
     }
 }

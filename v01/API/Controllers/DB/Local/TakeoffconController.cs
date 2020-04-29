@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeoffcon
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeoffcon>>> GetTakeoffcon()
+        public async Task<ActionResult<IEnumerable<TakeOffCon>>> GetTakeoffcon()
         {
-            return await _context.Takeoffcon.ToListAsync();
+            return await _context.TakeOffCon.ToListAsync();
         }
 
         // GET: api/Takeoffcon/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeoffcon>> GetTakeoffcon(long id)
+        public async Task<ActionResult<TakeOffCon>> GetTakeoffcon(long id)
         {
-            var takeoffcon = await _context.Takeoffcon.FindAsync(id);
+            var takeoffcon = await _context.TakeOffCon.FindAsync(id);
 
             if (takeoffcon == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeoffcon(long id, Takeoffcon takeoffcon)
+        public async Task<IActionResult> PutTakeoffcon(long id, TakeOffCon takeoffcon)
         {
             if (id != takeoffcon.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeoffcon>> PostTakeoffcon(Takeoffcon takeoffcon)
+        public async Task<ActionResult<TakeOffCon>> PostTakeoffcon(TakeOffCon takeoffcon)
         {
-            _context.Takeoffcon.Add(takeoffcon);
+            _context.TakeOffCon.Add(takeoffcon);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeoffcon", new { id = takeoffcon.Id }, takeoffcon);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeoffcon/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeoffcon>> DeleteTakeoffcon(long id)
+        public async Task<ActionResult<TakeOffCon>> DeleteTakeoffcon(long id)
         {
-            var takeoffcon = await _context.Takeoffcon.FindAsync(id);
+            var takeoffcon = await _context.TakeOffCon.FindAsync(id);
             if (takeoffcon == null)
             {
                 return NotFound();
             }
 
-            _context.Takeoffcon.Remove(takeoffcon);
+            _context.TakeOffCon.Remove(takeoffcon);
             await _context.SaveChangesAsync();
 
             return takeoffcon;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeoffconExists(long id)
         {
-            return _context.Takeoffcon.Any(e => e.Id == id);
+            return _context.TakeOffCon.Any(e => e.Id == id);
         }
     }
 }

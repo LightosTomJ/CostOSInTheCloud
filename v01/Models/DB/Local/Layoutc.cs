@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Layoutc
+    public partial class LayoutC
     {
-        public Layoutc()
+        public LayoutC()
         {
-            Layoutcpanel = new HashSet<Layoutcpanel>();
+            Layoutcpanel = new HashSet<LayoutCPanel>();
         }
 
         public long Layoutcid { get; set; }
@@ -84,6 +84,6 @@ namespace Models.DB.Local
         public string Gridclr { get; set; }
         public string Layoutroles { get; set; }
 
-        public virtual ICollection<Layoutcpanel> Layoutcpanel { get; set; }
+        public virtual ICollection<LayoutCPanel> Layoutcpanel { get; set; }
     }
 }

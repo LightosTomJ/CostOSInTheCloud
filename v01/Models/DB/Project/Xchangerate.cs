@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Xchangerate
+    public partial class XchangeRate
     {
         public long Xchangerateid { get; set; }
         public string FromCurrency { get; set; }

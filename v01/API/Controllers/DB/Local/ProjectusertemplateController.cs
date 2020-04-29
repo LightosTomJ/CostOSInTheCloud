@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projectusertemplate
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projectusertemplate>>> GetProjectusertemplate()
+        public async Task<ActionResult<IEnumerable<ProjectUserTemplate>>> GetProjectusertemplate()
         {
-            return await _context.Projectusertemplate.ToListAsync();
+            return await _context.ProjectUserTemplate.ToListAsync();
         }
 
         // GET: api/Projectusertemplate/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projectusertemplate>> GetProjectusertemplate(long id)
+        public async Task<ActionResult<ProjectUserTemplate>> GetProjectusertemplate(long id)
         {
-            var projectusertemplate = await _context.Projectusertemplate.FindAsync(id);
+            var projectusertemplate = await _context.ProjectUserTemplate.FindAsync(id);
 
             if (projectusertemplate == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectusertemplate(long id, Projectusertemplate projectusertemplate)
+        public async Task<IActionResult> PutProjectusertemplate(long id, ProjectUserTemplate projectusertemplate)
         {
             if (id != projectusertemplate.Templateid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projectusertemplate>> PostProjectusertemplate(Projectusertemplate projectusertemplate)
+        public async Task<ActionResult<ProjectUserTemplate>> PostProjectusertemplate(ProjectUserTemplate projectusertemplate)
         {
-            _context.Projectusertemplate.Add(projectusertemplate);
+            _context.ProjectUserTemplate.Add(projectusertemplate);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectusertemplate", new { id = projectusertemplate.Templateid }, projectusertemplate);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projectusertemplate/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projectusertemplate>> DeleteProjectusertemplate(long id)
+        public async Task<ActionResult<ProjectUserTemplate>> DeleteProjectusertemplate(long id)
         {
-            var projectusertemplate = await _context.Projectusertemplate.FindAsync(id);
+            var projectusertemplate = await _context.ProjectUserTemplate.FindAsync(id);
             if (projectusertemplate == null)
             {
                 return NotFound();
             }
 
-            _context.Projectusertemplate.Remove(projectusertemplate);
+            _context.ProjectUserTemplate.Remove(projectusertemplate);
             await _context.SaveChangesAsync();
 
             return projectusertemplate;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectusertemplateExists(long id)
         {
-            return _context.Projectusertemplate.Any(e => e.Templateid == id);
+            return _context.ProjectUserTemplate.Any(e => e.Templateid == id);
         }
     }
 }

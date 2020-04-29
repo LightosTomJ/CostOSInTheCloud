@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Ratebuildupcols
+    public partial class RateBuildUpCols
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }
@@ -88,6 +88,6 @@ namespace Models.DB.Local
         public decimal? Coldefval13 { get; set; }
         public decimal? Coldefval14 { get; set; }
 
-        public virtual Projecttemplate Template { get; set; }
+        public virtual ProjectTemplate Template { get; set; }
     }
 }

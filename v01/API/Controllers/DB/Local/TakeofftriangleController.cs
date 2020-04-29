@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeofftriangle
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeofftriangle>>> GetTakeofftriangle()
+        public async Task<ActionResult<IEnumerable<TakeOffTriangle>>> GetTakeofftriangle()
         {
-            return await _context.Takeofftriangle.ToListAsync();
+            return await _context.TakeOffTriangle.ToListAsync();
         }
 
         // GET: api/Takeofftriangle/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeofftriangle>> GetTakeofftriangle(long id)
+        public async Task<ActionResult<TakeOffTriangle>> GetTakeofftriangle(long id)
         {
-            var takeofftriangle = await _context.Takeofftriangle.FindAsync(id);
+            var takeofftriangle = await _context.TakeOffTriangle.FindAsync(id);
 
             if (takeofftriangle == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeofftriangle(long id, Takeofftriangle takeofftriangle)
+        public async Task<IActionResult> PutTakeofftriangle(long id, TakeOffTriangle takeofftriangle)
         {
             if (id != takeofftriangle.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeofftriangle>> PostTakeofftriangle(Takeofftriangle takeofftriangle)
+        public async Task<ActionResult<TakeOffTriangle>> PostTakeofftriangle(TakeOffTriangle takeofftriangle)
         {
-            _context.Takeofftriangle.Add(takeofftriangle);
+            _context.TakeOffTriangle.Add(takeofftriangle);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeofftriangle", new { id = takeofftriangle.Id }, takeofftriangle);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeofftriangle/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeofftriangle>> DeleteTakeofftriangle(long id)
+        public async Task<ActionResult<TakeOffTriangle>> DeleteTakeofftriangle(long id)
         {
-            var takeofftriangle = await _context.Takeofftriangle.FindAsync(id);
+            var takeofftriangle = await _context.TakeOffTriangle.FindAsync(id);
             if (takeofftriangle == null)
             {
                 return NotFound();
             }
 
-            _context.Takeofftriangle.Remove(takeofftriangle);
+            _context.TakeOffTriangle.Remove(takeofftriangle);
             await _context.SaveChangesAsync();
 
             return takeofftriangle;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeofftriangleExists(long id)
         {
-            return _context.Takeofftriangle.Any(e => e.Id == id);
+            return _context.TakeOffTriangle.Any(e => e.Id == id);
         }
     }
 }

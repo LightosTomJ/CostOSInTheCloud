@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class BoqitemCondition
+    public partial class BoqItemCondition
     {
         public long Boqitemconditionid { get; set; }
         public string Funit { get; set; }
@@ -23,8 +23,8 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Boqitem Boqitem { get; set; }
+        public virtual BoqItem Boqitem { get; set; }
         public virtual Cndon Condition { get; set; }
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

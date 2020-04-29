@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcClassitemBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcClassitem> bcclassitem = null;
+        protected IList<Models.DB.Local.BcClassItem> bcclassitem = null;
 
         protected override async Task OnInitializedAsync()
         {

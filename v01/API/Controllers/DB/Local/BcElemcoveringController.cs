@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcElemcovering
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcElemcovering>>> GetBcElemcovering()
+        public async Task<ActionResult<IEnumerable<BcElemCovering>>> GetBcElemcovering()
         {
-            return await _context.BcElemcovering.ToListAsync();
+            return await _context.BcElemCovering.ToListAsync();
         }
 
         // GET: api/BcElemcovering/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcElemcovering>> GetBcElemcovering(long id)
+        public async Task<ActionResult<BcElemCovering>> GetBcElemcovering(long id)
         {
-            var bcElemcovering = await _context.BcElemcovering.FindAsync(id);
+            var bcElemcovering = await _context.BcElemCovering.FindAsync(id);
 
             if (bcElemcovering == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcElemcovering(long id, BcElemcovering bcElemcovering)
+        public async Task<IActionResult> PutBcElemcovering(long id, BcElemCovering bcElemcovering)
         {
             if (id != bcElemcovering.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcElemcovering>> PostBcElemcovering(BcElemcovering bcElemcovering)
+        public async Task<ActionResult<BcElemCovering>> PostBcElemcovering(BcElemCovering bcElemcovering)
         {
-            _context.BcElemcovering.Add(bcElemcovering);
+            _context.BcElemCovering.Add(bcElemcovering);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcElemcovering", new { id = bcElemcovering.Id }, bcElemcovering);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcElemcovering/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcElemcovering>> DeleteBcElemcovering(long id)
+        public async Task<ActionResult<BcElemCovering>> DeleteBcElemcovering(long id)
         {
-            var bcElemcovering = await _context.BcElemcovering.FindAsync(id);
+            var bcElemcovering = await _context.BcElemCovering.FindAsync(id);
             if (bcElemcovering == null)
             {
                 return NotFound();
             }
 
-            _context.BcElemcovering.Remove(bcElemcovering);
+            _context.BcElemCovering.Remove(bcElemcovering);
             await _context.SaveChangesAsync();
 
             return bcElemcovering;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcElemcoveringExists(long id)
         {
-            return _context.BcElemcovering.Any(e => e.Id == id);
+            return _context.BcElemCovering.Any(e => e.Id == id);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public Filtro()
         {
-            Filtroproperty = new HashSet<Filtroproperty>();
+            Filtroproperty = new HashSet<FiltroProperty>();
         }
 
         public long Filtroid { get; set; }
@@ -16,6 +16,6 @@ namespace Models.DB.Local
         public string Filtrotype { get; set; }
         public string Filtrodescription { get; set; }
 
-        public virtual ICollection<Filtroproperty> Filtroproperty { get; set; }
+        public virtual ICollection<FiltroProperty> Filtroproperty { get; set; }
     }
 }

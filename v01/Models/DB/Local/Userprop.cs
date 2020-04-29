@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Userprop
+    public partial class UserProp
     {
         public long Id { get; set; }
         public string Userid { get; set; }

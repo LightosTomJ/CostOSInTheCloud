@@ -132,6 +132,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Paramoutput Paramoutput { get; set; }
+        public virtual ParamOutput Paramoutput { get; set; }
     }
 }

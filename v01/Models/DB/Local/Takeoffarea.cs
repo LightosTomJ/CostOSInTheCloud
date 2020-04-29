@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Takeoffarea
+    public partial class TakeOffArea
     {
-        public Takeoffarea()
+        public TakeOffArea()
         {
-            Takeoffpoint = new HashSet<Takeoffpoint>();
-            Takeofftriangle = new HashSet<Takeofftriangle>();
+            Takeoffpoint = new HashSet<TakeOffPoint>();
+            Takeofftriangle = new HashSet<TakeOffTriangle>();
         }
 
         public long Id { get; set; }
@@ -18,8 +18,8 @@ namespace Models.DB.Local
         public long? Aid { get; set; }
         public int? Areacount { get; set; }
 
-        public virtual Takeoffcon A { get; set; }
-        public virtual ICollection<Takeoffpoint> Takeoffpoint { get; set; }
-        public virtual ICollection<Takeofftriangle> Takeofftriangle { get; set; }
+        public virtual TakeOffCon A { get; set; }
+        public virtual ICollection<TakeOffPoint> Takeoffpoint { get; set; }
+        public virtual ICollection<TakeOffTriangle> Takeofftriangle { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcElemprop
+    public partial class BcElemProp
     {
         public long Id { get; set; }
         public string Grpname { get; set; }

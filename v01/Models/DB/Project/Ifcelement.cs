@@ -7,7 +7,7 @@ namespace Models.DB.Project
     {
         public Ifcelement()
         {
-            Ifcproperty = new HashSet<Ifcproperty>();
+            Ifcproperty = new HashSet<IfcProperty>();
         }
 
         public long Elemid { get; set; }
@@ -49,6 +49,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual ICollection<Ifcproperty> Ifcproperty { get; set; }
+        public virtual ICollection<IfcProperty> Ifcproperty { get; set; }
     }
 }

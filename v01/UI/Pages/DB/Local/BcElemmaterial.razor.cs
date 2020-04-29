@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcElemmaterialBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcElemmaterial> bcelemmaterial = null;
+        protected IList<Models.DB.Local.BcElemMaterial> bcelemmaterial = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Cntrlogitem
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cntrlogitem>>> GetCntrlogitem()
+        public async Task<ActionResult<IEnumerable<CntrLogItem>>> GetCntrlogitem()
         {
-            return await _context.Cntrlogitem.ToListAsync();
+            return await _context.CntrLogItem.ToListAsync();
         }
 
         // GET: api/Cntrlogitem/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cntrlogitem>> GetCntrlogitem(long id)
+        public async Task<ActionResult<CntrLogItem>> GetCntrlogitem(long id)
         {
-            var cntrlogitem = await _context.Cntrlogitem.FindAsync(id);
+            var cntrlogitem = await _context.CntrLogItem.FindAsync(id);
 
             if (cntrlogitem == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCntrlogitem(long id, Cntrlogitem cntrlogitem)
+        public async Task<IActionResult> PutCntrlogitem(long id, CntrLogItem cntrlogitem)
         {
             if (id != cntrlogitem.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Cntrlogitem>> PostCntrlogitem(Cntrlogitem cntrlogitem)
+        public async Task<ActionResult<CntrLogItem>> PostCntrlogitem(CntrLogItem cntrlogitem)
         {
-            _context.Cntrlogitem.Add(cntrlogitem);
+            _context.CntrLogItem.Add(cntrlogitem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCntrlogitem", new { id = cntrlogitem.Id }, cntrlogitem);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Cntrlogitem/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Cntrlogitem>> DeleteCntrlogitem(long id)
+        public async Task<ActionResult<CntrLogItem>> DeleteCntrlogitem(long id)
         {
-            var cntrlogitem = await _context.Cntrlogitem.FindAsync(id);
+            var cntrlogitem = await _context.CntrLogItem.FindAsync(id);
             if (cntrlogitem == null)
             {
                 return NotFound();
             }
 
-            _context.Cntrlogitem.Remove(cntrlogitem);
+            _context.CntrLogItem.Remove(cntrlogitem);
             await _context.SaveChangesAsync();
 
             return cntrlogitem;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool CntrlogitemExists(long id)
         {
-            return _context.Cntrlogitem.Any(e => e.Id == id);
+            return _context.CntrLogItem.Any(e => e.Id == id);
         }
     }
 }

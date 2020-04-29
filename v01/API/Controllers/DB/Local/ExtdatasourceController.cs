@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Extdatasource
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Extdatasource>>> GetExtdatasource()
+        public async Task<ActionResult<IEnumerable<ExtDatasource>>> GetExtdatasource()
         {
-            return await _context.Extdatasource.ToListAsync();
+            return await _context.ExtDatasource.ToListAsync();
         }
 
         // GET: api/Extdatasource/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Extdatasource>> GetExtdatasource(long id)
+        public async Task<ActionResult<ExtDatasource>> GetExtdatasource(long id)
         {
-            var extdatasource = await _context.Extdatasource.FindAsync(id);
+            var extdatasource = await _context.ExtDatasource.FindAsync(id);
 
             if (extdatasource == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutExtdatasource(long id, Extdatasource extdatasource)
+        public async Task<IActionResult> PutExtdatasource(long id, ExtDatasource extdatasource)
         {
             if (id != extdatasource.Datasourceid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Extdatasource>> PostExtdatasource(Extdatasource extdatasource)
+        public async Task<ActionResult<ExtDatasource>> PostExtdatasource(ExtDatasource extdatasource)
         {
-            _context.Extdatasource.Add(extdatasource);
+            _context.ExtDatasource.Add(extdatasource);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetExtdatasource", new { id = extdatasource.Datasourceid }, extdatasource);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Extdatasource/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Extdatasource>> DeleteExtdatasource(long id)
+        public async Task<ActionResult<ExtDatasource>> DeleteExtdatasource(long id)
         {
-            var extdatasource = await _context.Extdatasource.FindAsync(id);
+            var extdatasource = await _context.ExtDatasource.FindAsync(id);
             if (extdatasource == null)
             {
                 return NotFound();
             }
 
-            _context.Extdatasource.Remove(extdatasource);
+            _context.ExtDatasource.Remove(extdatasource);
             await _context.SaveChangesAsync();
 
             return extdatasource;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ExtdatasourceExists(long id)
         {
-            return _context.Extdatasource.Any(e => e.Datasourceid == id);
+            return _context.ExtDatasource.Any(e => e.Datasourceid == id);
         }
     }
 }

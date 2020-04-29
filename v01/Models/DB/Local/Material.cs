@@ -10,7 +10,7 @@ namespace Models.DB.Local
             AssemblyMaterial = new HashSet<AssemblyMaterial>();
         }
 
-        public long Materialid { get; set; }
+        public long MaterialId { get; set; }
         public string Accuracy { get; set; }
         public string Description { get; set; }
         public bool? Virtual { get; set; }

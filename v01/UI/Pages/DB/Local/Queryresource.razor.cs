@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class QueryresourceBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Queryresource> queryresource = null;
+        protected IList<Models.DB.Local.QueryResource> queryresource = null;
 
         protected override async Task OnInitializedAsync()
         {

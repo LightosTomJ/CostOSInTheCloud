@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcGroupelem
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcGroupelem>>> GetBcGroupelem()
+        public async Task<ActionResult<IEnumerable<BcGroupElem>>> GetBcGroupelem()
         {
-            return await _context.BcGroupelem.ToListAsync();
+            return await _context.BcGroupElem.ToListAsync();
         }
 
         // GET: api/BcGroupelem/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcGroupelem>> GetBcGroupelem(long id)
+        public async Task<ActionResult<BcGroupElem>> GetBcGroupelem(long id)
         {
-            var bcGroupelem = await _context.BcGroupelem.FindAsync(id);
+            var bcGroupelem = await _context.BcGroupElem.FindAsync(id);
 
             if (bcGroupelem == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcGroupelem(long id, BcGroupelem bcGroupelem)
+        public async Task<IActionResult> PutBcGroupelem(long id, BcGroupElem bcGroupelem)
         {
             if (id != bcGroupelem.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcGroupelem>> PostBcGroupelem(BcGroupelem bcGroupelem)
+        public async Task<ActionResult<BcGroupElem>> PostBcGroupelem(BcGroupElem bcGroupelem)
         {
-            _context.BcGroupelem.Add(bcGroupelem);
+            _context.BcGroupElem.Add(bcGroupelem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcGroupelem", new { id = bcGroupelem.Id }, bcGroupelem);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcGroupelem/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcGroupelem>> DeleteBcGroupelem(long id)
+        public async Task<ActionResult<BcGroupElem>> DeleteBcGroupelem(long id)
         {
-            var bcGroupelem = await _context.BcGroupelem.FindAsync(id);
+            var bcGroupelem = await _context.BcGroupElem.FindAsync(id);
             if (bcGroupelem == null)
             {
                 return NotFound();
             }
 
-            _context.BcGroupelem.Remove(bcGroupelem);
+            _context.BcGroupElem.Remove(bcGroupelem);
             await _context.SaveChangesAsync();
 
             return bcGroupelem;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcGroupelemExists(long id)
         {
-            return _context.BcGroupelem.Any(e => e.Id == id);
+            return _context.BcGroupElem.Any(e => e.Id == id);
         }
     }
 }

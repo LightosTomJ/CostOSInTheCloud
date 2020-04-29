@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class RatebuildupcolsBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Ratebuildupcols> ratebuildupcols = null;
+        protected IList<Models.DB.Local.RateBuildUpCols> ratebuildupcols = null;
 
         protected override async Task OnInitializedAsync()
         {

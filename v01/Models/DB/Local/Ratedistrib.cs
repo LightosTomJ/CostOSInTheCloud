@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Ratedistrib
+    public partial class RateDistrib
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }
@@ -23,6 +23,6 @@ namespace Models.DB.Local
         public int? Celly { get; set; }
         public decimal? Stovalnum { get; set; }
 
-        public virtual Projecttemplate Template { get; set; }
+        public virtual ProjectTemplate Template { get; set; }
     }
 }

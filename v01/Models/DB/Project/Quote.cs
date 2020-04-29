@@ -7,7 +7,7 @@ namespace Models.DB.Project
     {
         public Quote()
         {
-            Quoteitem = new HashSet<Quoteitem>();
+            Quoteitem = new HashSet<QuoteItem>();
         }
 
         public long Expenseid { get; set; }
@@ -45,6 +45,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual ICollection<Quoteitem> Quoteitem { get; set; }
+        public virtual ICollection<QuoteItem> Quoteitem { get; set; }
     }
 }

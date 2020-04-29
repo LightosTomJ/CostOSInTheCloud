@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Glbprop
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Glbprop>>> GetGlbprop()
+        public async Task<ActionResult<IEnumerable<GlbProp>>> GetGlbprop()
         {
-            return await _context.Glbprop.ToListAsync();
+            return await _context.GlbProp.ToListAsync();
         }
 
         // GET: api/Glbprop/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Glbprop>> GetGlbprop(long id)
+        public async Task<ActionResult<GlbProp>> GetGlbprop(long id)
         {
-            var glbprop = await _context.Glbprop.FindAsync(id);
+            var glbprop = await _context.GlbProp.FindAsync(id);
 
             if (glbprop == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutGlbprop(long id, Glbprop glbprop)
+        public async Task<IActionResult> PutGlbprop(long id, GlbProp glbprop)
         {
             if (id != glbprop.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Glbprop>> PostGlbprop(Glbprop glbprop)
+        public async Task<ActionResult<GlbProp>> PostGlbprop(GlbProp glbprop)
         {
-            _context.Glbprop.Add(glbprop);
+            _context.GlbProp.Add(glbprop);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetGlbprop", new { id = glbprop.Id }, glbprop);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Glbprop/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Glbprop>> DeleteGlbprop(long id)
+        public async Task<ActionResult<GlbProp>> DeleteGlbprop(long id)
         {
-            var glbprop = await _context.Glbprop.FindAsync(id);
+            var glbprop = await _context.GlbProp.FindAsync(id);
             if (glbprop == null)
             {
                 return NotFound();
             }
 
-            _context.Glbprop.Remove(glbprop);
+            _context.GlbProp.Remove(glbprop);
             await _context.SaveChangesAsync();
 
             return glbprop;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool GlbpropExists(long id)
         {
-            return _context.Glbprop.Any(e => e.Id == id);
+            return _context.GlbProp.Any(e => e.Id == id);
         }
     }
 }

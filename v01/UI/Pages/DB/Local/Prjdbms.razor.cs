@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class PrjdbmsBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Prjdbms> prjdbms = null;
+        protected IList<Models.DB.Local.PrjDBMS> prjdbms = null;
 
         protected override async Task OnInitializedAsync()
         {

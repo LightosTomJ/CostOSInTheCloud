@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Takeofflegend
+    public partial class TakeOffLegend
     {
         public long Id { get; set; }
         public decimal? Xpos { get; set; }
@@ -16,6 +16,6 @@ namespace Models.DB.Local
         public long? Cid { get; set; }
         public int? Lgdcount { get; set; }
 
-        public virtual Takeoffcon C { get; set; }
+        public virtual TakeOffCon C { get; set; }
     }
 }

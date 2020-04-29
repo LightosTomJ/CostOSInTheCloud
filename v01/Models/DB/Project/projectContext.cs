@@ -22,21 +22,21 @@ namespace Models.DB.Project
         public virtual DbSet<AssemblyLabor> AssemblyLabor { get; set; }
         public virtual DbSet<AssemblyMaterial> AssemblyMaterial { get; set; }
         public virtual DbSet<AssemblySubcontractor> AssemblySubcontractor { get; set; }
-        public virtual DbSet<Asshistory> Asshistory { get; set; }
-        public virtual DbSet<Boqitem> Boqitem { get; set; }
-        public virtual DbSet<BoqitemAssembly> BoqitemAssembly { get; set; }
-        public virtual DbSet<BoqitemCondition> BoqitemCondition { get; set; }
-        public virtual DbSet<BoqitemConsumable> BoqitemConsumable { get; set; }
-        public virtual DbSet<BoqitemEquipment> BoqitemEquipment { get; set; }
-        public virtual DbSet<BoqitemLabor> BoqitemLabor { get; set; }
-        public virtual DbSet<BoqitemMaterial> BoqitemMaterial { get; set; }
-        public virtual DbSet<BoqitemSubcontractor> BoqitemSubcontractor { get; set; }
-        public virtual DbSet<Boqitemmetadata> Boqitemmetadata { get; set; }
+        public virtual DbSet<AssHistory> AssHistory { get; set; }
+        public virtual DbSet<BoqItem> BoqItem { get; set; }
+        public virtual DbSet<BoqItemAssembly> BoqItemAssembly { get; set; }
+        public virtual DbSet<BoqItemCondition> BoqItemCondition { get; set; }
+        public virtual DbSet<BoqItemConsumable> BoqItemConsumable { get; set; }
+        public virtual DbSet<BoqItemEquipment> BoqItemEquipment { get; set; }
+        public virtual DbSet<BoqItemLabor> BoqItemLabor { get; set; }
+        public virtual DbSet<BoqItemMaterial> BoqItemMaterial { get; set; }
+        public virtual DbSet<BoqItemSubcontractor> BoqItemSubcontractor { get; set; }
+        public virtual DbSet<BoqItemMetadata> BoqItemMetadata { get; set; }
         public virtual DbSet<Cndon> Cndon { get; set; }
-        public virtual DbSet<Cnmhistory> Cnmhistory { get; set; }
+        public virtual DbSet<CnmHistory> CnmHistory { get; set; }
         public virtual DbSet<Conceptuals> Conceptuals { get; set; }
         public virtual DbSet<Consumable> Consumable { get; set; }
-        public virtual DbSet<Equhistory> Equhistory { get; set; }
+        public virtual DbSet<EquHistory> EquHistory { get; set; }
         public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<Extracode1> Extracode1 { get; set; }
         public virtual DbSet<Extracode2> Extracode2 { get; set; }
@@ -50,40 +50,40 @@ namespace Models.DB.Project
         public virtual DbSet<Gekcode> Gekcode { get; set; }
         public virtual DbSet<Groupcode> Groupcode { get; set; }
         public virtual DbSet<Ifcelement> Ifcelement { get; set; }
-        public virtual DbSet<Ifcproperty> Ifcproperty { get; set; }
-        public virtual DbSet<Labhistory> Labhistory { get; set; }
+        public virtual DbSet<IfcProperty> IfcProperty { get; set; }
+        public virtual DbSet<LabHistory> LabHistory { get; set; }
         public virtual DbSet<Labor> Labor { get; set; }
         public virtual DbSet<Material> Material { get; set; }
-        public virtual DbSet<Mathistory> Mathistory { get; set; }
-        public virtual DbSet<Ostdbcon> Ostdbcon { get; set; }
-        public virtual DbSet<Paramcondition> Paramcondition { get; set; }
-        public virtual DbSet<Paraminput> Paraminput { get; set; }
-        public virtual DbSet<Paramitem> Paramitem { get; set; }
-        public virtual DbSet<Paramoutput> Paramoutput { get; set; }
+        public virtual DbSet<MatHistory> MatHistory { get; set; }
+        public virtual DbSet<OSTDBCon> OSTDBCon { get; set; }
+        public virtual DbSet<ParamCondition> ParamCondition { get; set; }
+        public virtual DbSet<ParamInput> ParamInput { get; set; }
+        public virtual DbSet<ParamItem> ParamItem { get; set; }
+        public virtual DbSet<ParamOutput> ParamOutput { get; set; }
         public virtual DbSet<Paramreturn> Paramreturn { get; set; }
-        public virtual DbSet<Prjprop> Prjprop { get; set; }
-        public virtual DbSet<Prjuserprop> Prjuserprop { get; set; }
+        public virtual DbSet<PrjProp> PrjProp { get; set; }
+        public virtual DbSet<PrjUserProp> PrjUserProp { get; set; }
         public virtual DbSet<Projectspecvar> Projectspecvar { get; set; }
-        public virtual DbSet<Projecttemplate> Projecttemplate { get; set; }
-        public virtual DbSet<Projectwbs> Projectwbs { get; set; }
-        public virtual DbSet<Projectwbs2> Projectwbs2 { get; set; }
-        public virtual DbSet<Queryresource> Queryresource { get; set; }
-        public virtual DbSet<Queryrow> Queryrow { get; set; }
+        public virtual DbSet<ProjectTemplate> ProjectTemplate { get; set; }
+        public virtual DbSet<ProjectWBS> ProjectWBS { get; set; }
+        public virtual DbSet<ProjectWBS2> ProjectWBS2 { get; set; }
+        public virtual DbSet<QueryResource> QueryResource { get; set; }
+        public virtual DbSet<QueryRow> QueryRow { get; set; }
         public virtual DbSet<Quote> Quote { get; set; }
-        public virtual DbSet<Quoteitem> Quoteitem { get; set; }
-        public virtual DbSet<Ratebuildup> Ratebuildup { get; set; }
-        public virtual DbSet<Ratebuildupcols> Ratebuildupcols { get; set; }
-        public virtual DbSet<Ratedistrib> Ratedistrib { get; set; }
-        public virtual DbSet<Rawmaterial> Rawmaterial { get; set; }
+        public virtual DbSet<QuoteItem> QuoteItem { get; set; }
+        public virtual DbSet<RateBuildUp> RateBuildUp { get; set; }
+        public virtual DbSet<RateBuildUpCols> RateBuildUpCols { get; set; }
+        public virtual DbSet<RateDistrib> RateDistrib { get; set; }
+        public virtual DbSet<RawMaterial> RawMaterial { get; set; }
         public virtual DbSet<Subcontractor> Subcontractor { get; set; }
-        public virtual DbSet<Subhistory> Subhistory { get; set; }
+        public virtual DbSet<SubHistory> SubHistory { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<Wscolident> Wscolident { get; set; }
-        public virtual DbSet<Wsdatamapping> Wsdatamapping { get; set; }
-        public virtual DbSet<Wsfile> Wsfile { get; set; }
-        public virtual DbSet<Wsrevision> Wsrevision { get; set; }
-        public virtual DbSet<Xcellfile> Xcellfile { get; set; }
-        public virtual DbSet<Xchangerate> Xchangerate { get; set; }
+        public virtual DbSet<WsDataMapping> WsDataMapping { get; set; }
+        public virtual DbSet<WsFile> WsFile { get; set; }
+        public virtual DbSet<WsRevision> WsRevision { get; set; }
+        public virtual DbSet<XcellFile> XcellFile { get; set; }
+        public virtual DbSet<XchangeRate> XchangeRate { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -1055,7 +1055,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK3F0CDDFC7C0276B4");
             });
 
-            modelBuilder.Entity<Asshistory>(entity =>
+            modelBuilder.Entity<AssHistory>(entity =>
             {
                 entity.ToTable("ASSHISTORY");
 
@@ -1094,7 +1094,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK28E2B2F3148B6D72");
             });
 
-            modelBuilder.Entity<Boqitem>(entity =>
+            modelBuilder.Entity<BoqItem>(entity =>
             {
                 entity.ToTable("BOQITEM");
 
@@ -2153,7 +2153,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK2EC202B7B8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemAssembly>(entity =>
+            modelBuilder.Entity<BoqItemAssembly>(entity =>
             {
                 entity.ToTable("BOQITEM_ASSEMBLY");
 
@@ -2311,7 +2311,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK9CA97A6EB8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemCondition>(entity =>
+            modelBuilder.Entity<BoqItemCondition>(entity =>
             {
                 entity.ToTable("BOQITEM_CONDITION");
 
@@ -2397,7 +2397,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK7725C173B8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemConsumable>(entity =>
+            modelBuilder.Entity<BoqItemConsumable>(entity =>
             {
                 entity.ToTable("BOQITEM_CONSUMABLE");
 
@@ -2507,7 +2507,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK9B2394EBB8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemEquipment>(entity =>
+            modelBuilder.Entity<BoqItemEquipment>(entity =>
             {
                 entity.ToTable("BOQITEM_EQUIPMENT");
 
@@ -2633,7 +2633,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKEAA439E6B8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemLabor>(entity =>
+            modelBuilder.Entity<BoqItemLabor>(entity =>
             {
                 entity.ToTable("BOQITEM_LABOR");
 
@@ -2744,7 +2744,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKD8B6C888B8FEF034");
             });
 
-            modelBuilder.Entity<BoqitemMaterial>(entity =>
+            modelBuilder.Entity<BoqItemMaterial>(entity =>
             {
                 entity.ToTable("BOQITEM_MATERIAL");
 
@@ -2868,7 +2868,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKC4BEA1AF37613E66");
             });
 
-            modelBuilder.Entity<BoqitemSubcontractor>(entity =>
+            modelBuilder.Entity<BoqItemSubcontractor>(entity =>
             {
                 entity.ToTable("BOQITEM_SUBCONTRACTOR");
 
@@ -2982,7 +2982,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK7EC9710D7C0276B4");
             });
 
-            modelBuilder.Entity<Boqitemmetadata>(entity =>
+            modelBuilder.Entity<BoqItemMetadata>(entity =>
             {
                 entity.ToTable("BOQITEMMETADATA");
 
@@ -3154,7 +3154,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.Virt).HasColumnName("VIRT");
             });
 
-            modelBuilder.Entity<Cnmhistory>(entity =>
+            modelBuilder.Entity<CnmHistory>(entity =>
             {
                 entity.ToTable("CNMHISTORY");
 
@@ -3654,7 +3654,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.Virtual).HasColumnName("VIRTUAL");
             });
 
-            modelBuilder.Entity<Equhistory>(entity =>
+            modelBuilder.Entity<EquHistory>(entity =>
             {
                 entity.ToTable("EQUHISTORY");
 
@@ -4522,7 +4522,7 @@ namespace Models.DB.Project
                     .HasColumnType("numeric(30, 10)");
             });
 
-            modelBuilder.Entity<Ifcproperty>(entity =>
+            modelBuilder.Entity<IfcProperty>(entity =>
             {
                 entity.HasKey(e => e.Propid)
                     .HasName("PK__IFCPROPE__FDD62FBD06A5B186");
@@ -4576,7 +4576,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK2A8C29BE515D4A5");
             });
 
-            modelBuilder.Entity<Labhistory>(entity =>
+            modelBuilder.Entity<LabHistory>(entity =>
             {
                 entity.ToTable("LABHISTORY");
 
@@ -5090,7 +5090,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK40795527D05B2C5E");
             });
 
-            modelBuilder.Entity<Mathistory>(entity =>
+            modelBuilder.Entity<MatHistory>(entity =>
             {
                 entity.ToTable("MATHISTORY");
 
@@ -5122,7 +5122,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK97655F342461A27E");
             });
 
-            modelBuilder.Entity<Ostdbcon>(entity =>
+            modelBuilder.Entity<OSTDBCon>(entity =>
             {
                 entity.HasKey(e => e.Ostconid)
                     .HasName("PK__OSTDBCON__BA2974565FAD6A9C");
@@ -5155,7 +5155,7 @@ namespace Models.DB.Project
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Paramcondition>(entity =>
+            modelBuilder.Entity<ParamCondition>(entity =>
             {
                 entity.HasKey(e => e.Conditionid)
                     .HasName("PK__PARAMCON__AF05447C394666BD");
@@ -5326,7 +5326,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK5664872EB8FEF034");
             });
 
-            modelBuilder.Entity<Paraminput>(entity =>
+            modelBuilder.Entity<ParamInput>(entity =>
             {
                 entity.ToTable("PARAMINPUT");
 
@@ -5408,7 +5408,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK38777B5DB8FEF034");
             });
 
-            modelBuilder.Entity<Paramitem>(entity =>
+            modelBuilder.Entity<ParamItem>(entity =>
             {
                 entity.ToTable("PARAMITEM");
 
@@ -5589,7 +5589,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK1A98950089F3BCA6");
             });
 
-            modelBuilder.Entity<Paramoutput>(entity =>
+            modelBuilder.Entity<ParamOutput>(entity =>
             {
                 entity.ToTable("PARAMOUTPUT");
 
@@ -5664,7 +5664,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKE5568BDDB8FEF034");
             });
 
-            modelBuilder.Entity<Prjprop>(entity =>
+            modelBuilder.Entity<PrjProp>(entity =>
             {
                 entity.ToTable("PRJPROP");
 
@@ -5687,7 +5687,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.RefId).HasColumnName("REF__ID");
             });
 
-            modelBuilder.Entity<Prjuserprop>(entity =>
+            modelBuilder.Entity<PrjUserProp>(entity =>
             {
                 entity.ToTable("PRJUSERPROP");
 
@@ -5777,7 +5777,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKD3E10C539A9C964D");
             });
 
-            modelBuilder.Entity<Projecttemplate>(entity =>
+            modelBuilder.Entity<ProjectTemplate>(entity =>
             {
                 entity.ToTable("PROJECTTEMPLATE");
 
@@ -5835,7 +5835,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKD8968A734DF865AC");
             });
 
-            modelBuilder.Entity<Projectwbs>(entity =>
+            modelBuilder.Entity<ProjectWBS>(entity =>
             {
                 entity.ToTable("PROJECTWBS");
 
@@ -5882,7 +5882,7 @@ namespace Models.DB.Project
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Projectwbs2>(entity =>
+            modelBuilder.Entity<ProjectWBS2>(entity =>
             {
                 entity.HasKey(e => e.Projectwbsid)
                     .HasName("PK__PROJECTW__2089D484BB7D7933");
@@ -5932,7 +5932,7 @@ namespace Models.DB.Project
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Queryresource>(entity =>
+            modelBuilder.Entity<QueryResource>(entity =>
             {
                 entity.HasKey(e => e.Qresid)
                     .HasName("PK__QUERYRES__E123B43816936CD2");
@@ -6148,7 +6148,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKCB7ACB662282EA1");
             });
 
-            modelBuilder.Entity<Queryrow>(entity =>
+            modelBuilder.Entity<QueryRow>(entity =>
             {
                 entity.HasKey(e => e.Qrowid)
                     .HasName("PK__QUERYROW__4AE9FF7B3045E9C5");
@@ -6314,7 +6314,7 @@ namespace Models.DB.Project
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Quoteitem>(entity =>
+            modelBuilder.Entity<QuoteItem>(entity =>
             {
                 entity.ToTable("QUOTEITEM");
 
@@ -6419,7 +6419,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK4DBD2B6F28564966");
             });
 
-            modelBuilder.Entity<Ratebuildup>(entity =>
+            modelBuilder.Entity<RateBuildUp>(entity =>
             {
                 entity.ToTable("RATEBUILDUP");
 
@@ -6529,7 +6529,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK969BFC899A9C964D");
             });
 
-            modelBuilder.Entity<Ratebuildupcols>(entity =>
+            modelBuilder.Entity<RateBuildUpCols>(entity =>
             {
                 entity.ToTable("RATEBUILDUPCOLS");
 
@@ -6743,7 +6743,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKB7E836FC9A9C964D");
             });
 
-            modelBuilder.Entity<Ratedistrib>(entity =>
+            modelBuilder.Entity<RateDistrib>(entity =>
             {
                 entity.ToTable("RATEDISTRIB");
 
@@ -6805,7 +6805,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FKEC7F0CA59A9C964D");
             });
 
-            modelBuilder.Entity<Rawmaterial>(entity =>
+            modelBuilder.Entity<RawMaterial>(entity =>
             {
                 entity.HasKey(e => e.Rawmatid)
                     .HasName("PK__RAWMATER__3C967267CC786019");
@@ -7055,7 +7055,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.Virtual).HasColumnName("VIRTUAL");
             });
 
-            modelBuilder.Entity<Subhistory>(entity =>
+            modelBuilder.Entity<SubHistory>(entity =>
             {
                 entity.ToTable("SUBHISTORY");
 
@@ -7293,7 +7293,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK1FF56F4CBCB673A4");
             });
 
-            modelBuilder.Entity<Wsdatamapping>(entity =>
+            modelBuilder.Entity<WsDataMapping>(entity =>
             {
                 entity.ToTable("WSDATAMAPPING");
 
@@ -7327,7 +7327,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.Xcellfile).HasColumnName("XCELLFILE");
             });
 
-            modelBuilder.Entity<Wsfile>(entity =>
+            modelBuilder.Entity<WsFile>(entity =>
             {
                 entity.ToTable("WSFILE");
 
@@ -7371,7 +7371,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK99282A5859F4EE84");
             });
 
-            modelBuilder.Entity<Wsrevision>(entity =>
+            modelBuilder.Entity<WsRevision>(entity =>
             {
                 entity.ToTable("WSREVISION");
 
@@ -7417,7 +7417,7 @@ namespace Models.DB.Project
                     .HasConstraintName("FK364016B7BCB673A4");
             });
 
-            modelBuilder.Entity<Xcellfile>(entity =>
+            modelBuilder.Entity<XcellFile>(entity =>
             {
                 entity.HasKey(e => e.Xcellid)
                     .HasName("PK__XCELLFIL__C594AC250ADFE194");
@@ -7442,7 +7442,7 @@ namespace Models.DB.Project
                 entity.Property(e => e.Xcellfile1).HasColumnName("XCELLFILE");
             });
 
-            modelBuilder.Entity<Xchangerate>(entity =>
+            modelBuilder.Entity<XchangeRate>(entity =>
             {
                 entity.ToTable("XCHANGERATE");
 

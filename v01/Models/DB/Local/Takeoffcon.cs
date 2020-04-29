@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Takeoffcon
+    public partial class TakeOffCon
     {
-        public Takeoffcon()
+        public TakeOffCon()
         {
-            Takeoffarea = new HashSet<Takeoffarea>();
-            Takeofflegend = new HashSet<Takeofflegend>();
-            Takeoffline = new HashSet<Takeoffline>();
-            Takeoffpoint = new HashSet<Takeoffpoint>();
+            Takeoffarea = new HashSet<TakeOffArea>();
+            Takeofflegend = new HashSet<TakeOffLegend>();
+            Takeoffline = new HashSet<TakeOffLine>();
+            Takeoffpoint = new HashSet<TakeOffPoint>();
         }
 
         public long Id { get; set; }
@@ -43,10 +43,10 @@ namespace Models.DB.Local
         public decimal? Qty3 { get; set; }
         public long? Projectinfoid { get; set; }
 
-        public virtual Projectinfo Projectinfo { get; set; }
-        public virtual ICollection<Takeoffarea> Takeoffarea { get; set; }
-        public virtual ICollection<Takeofflegend> Takeofflegend { get; set; }
-        public virtual ICollection<Takeoffline> Takeoffline { get; set; }
-        public virtual ICollection<Takeoffpoint> Takeoffpoint { get; set; }
+        public virtual ProjectInfo Projectinfo { get; set; }
+        public virtual ICollection<TakeOffArea> Takeoffarea { get; set; }
+        public virtual ICollection<TakeOffLegend> Takeofflegend { get; set; }
+        public virtual ICollection<TakeOffLine> Takeoffline { get; set; }
+        public virtual ICollection<TakeOffPoint> Takeoffpoint { get; set; }
     }
 }

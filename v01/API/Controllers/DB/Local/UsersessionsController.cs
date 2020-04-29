@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Usersessions
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usersessions>>> GetUsersessions()
+        public async Task<ActionResult<IEnumerable<UserSessions>>> GetUsersessions()
         {
-            return await _context.Usersessions.ToListAsync();
+            return await _context.UserSessions.ToListAsync();
         }
 
         // GET: api/Usersessions/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Usersessions>> GetUsersessions(long id)
+        public async Task<ActionResult<UserSessions>> GetUsersessions(long id)
         {
-            var usersessions = await _context.Usersessions.FindAsync(id);
+            var usersessions = await _context.UserSessions.FindAsync(id);
 
             if (usersessions == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsersessions(long id, Usersessions usersessions)
+        public async Task<IActionResult> PutUsersessions(long id, UserSessions usersessions)
         {
             if (id != usersessions.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Usersessions>> PostUsersessions(Usersessions usersessions)
+        public async Task<ActionResult<UserSessions>> PostUsersessions(UserSessions usersessions)
         {
-            _context.Usersessions.Add(usersessions);
+            _context.UserSessions.Add(usersessions);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUsersessions", new { id = usersessions.Id }, usersessions);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Usersessions/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Usersessions>> DeleteUsersessions(long id)
+        public async Task<ActionResult<UserSessions>> DeleteUsersessions(long id)
         {
-            var usersessions = await _context.Usersessions.FindAsync(id);
+            var usersessions = await _context.UserSessions.FindAsync(id);
             if (usersessions == null)
             {
                 return NotFound();
             }
 
-            _context.Usersessions.Remove(usersessions);
+            _context.UserSessions.Remove(usersessions);
             await _context.SaveChangesAsync();
 
             return usersessions;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool UsersessionsExists(long id)
         {
-            return _context.Usersessions.Any(e => e.Id == id);
+            return _context.UserSessions.Any(e => e.Id == id);
         }
     }
 }

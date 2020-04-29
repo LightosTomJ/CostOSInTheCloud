@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Xcellfile
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Xcellfile>>> GetXcellfile()
+        public async Task<ActionResult<IEnumerable<XcellFile>>> GetXcellfile()
         {
-            return await _context.Xcellfile.ToListAsync();
+            return await _context.XcellFile.ToListAsync();
         }
 
         // GET: api/Xcellfile/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Xcellfile>> GetXcellfile(long id)
+        public async Task<ActionResult<XcellFile>> GetXcellfile(long id)
         {
-            var xcellfile = await _context.Xcellfile.FindAsync(id);
+            var xcellfile = await _context.XcellFile.FindAsync(id);
 
             if (xcellfile == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutXcellfile(long id, Xcellfile xcellfile)
+        public async Task<IActionResult> PutXcellfile(long id, XcellFile xcellfile)
         {
             if (id != xcellfile.Xcellid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Xcellfile>> PostXcellfile(Xcellfile xcellfile)
+        public async Task<ActionResult<XcellFile>> PostXcellfile(XcellFile xcellfile)
         {
-            _context.Xcellfile.Add(xcellfile);
+            _context.XcellFile.Add(xcellfile);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetXcellfile", new { id = xcellfile.Xcellid }, xcellfile);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Xcellfile/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Xcellfile>> DeleteXcellfile(long id)
+        public async Task<ActionResult<XcellFile>> DeleteXcellfile(long id)
         {
-            var xcellfile = await _context.Xcellfile.FindAsync(id);
+            var xcellfile = await _context.XcellFile.FindAsync(id);
             if (xcellfile == null)
             {
                 return NotFound();
             }
 
-            _context.Xcellfile.Remove(xcellfile);
+            _context.XcellFile.Remove(xcellfile);
             await _context.SaveChangesAsync();
 
             return xcellfile;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool XcellfileExists(long id)
         {
-            return _context.Xcellfile.Any(e => e.Xcellid == id);
+            return _context.XcellFile.Any(e => e.Xcellid == id);
         }
     }
 }

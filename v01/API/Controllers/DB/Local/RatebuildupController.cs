@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Ratebuildup
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Ratebuildup>>> GetRatebuildup()
+        public async Task<ActionResult<IEnumerable<RateBuildUp>>> GetRatebuildup()
         {
-            return await _context.Ratebuildup.ToListAsync();
+            return await _context.RateBuildUp.ToListAsync();
         }
 
         // GET: api/Ratebuildup/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Ratebuildup>> GetRatebuildup(long id)
+        public async Task<ActionResult<RateBuildUp>> GetRatebuildup(long id)
         {
-            var ratebuildup = await _context.Ratebuildup.FindAsync(id);
+            var ratebuildup = await _context.RateBuildUp.FindAsync(id);
 
             if (ratebuildup == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRatebuildup(long id, Ratebuildup ratebuildup)
+        public async Task<IActionResult> PutRatebuildup(long id, RateBuildUp ratebuildup)
         {
             if (id != ratebuildup.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Ratebuildup>> PostRatebuildup(Ratebuildup ratebuildup)
+        public async Task<ActionResult<RateBuildUp>> PostRatebuildup(RateBuildUp ratebuildup)
         {
-            _context.Ratebuildup.Add(ratebuildup);
+            _context.RateBuildUp.Add(ratebuildup);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRatebuildup", new { id = ratebuildup.Id }, ratebuildup);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Ratebuildup/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Ratebuildup>> DeleteRatebuildup(long id)
+        public async Task<ActionResult<RateBuildUp>> DeleteRatebuildup(long id)
         {
-            var ratebuildup = await _context.Ratebuildup.FindAsync(id);
+            var ratebuildup = await _context.RateBuildUp.FindAsync(id);
             if (ratebuildup == null)
             {
                 return NotFound();
             }
 
-            _context.Ratebuildup.Remove(ratebuildup);
+            _context.RateBuildUp.Remove(ratebuildup);
             await _context.SaveChangesAsync();
 
             return ratebuildup;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool RatebuildupExists(long id)
         {
-            return _context.Ratebuildup.Any(e => e.Id == id);
+            return _context.RateBuildUp.Any(e => e.Id == id);
         }
     }
 }

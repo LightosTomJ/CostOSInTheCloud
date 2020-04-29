@@ -8,8 +8,8 @@ namespace Models.DB.Project
         public Labor()
         {
             AssemblyLabor = new HashSet<AssemblyLabor>();
-            BoqitemLabor = new HashSet<BoqitemLabor>();
-            Labhistory = new HashSet<Labhistory>();
+            BoqitemLabor = new HashSet<BoqItemLabor>();
+            Labhistory = new HashSet<LabHistory>();
         }
 
         public long Laborid { get; set; }
@@ -68,7 +68,7 @@ namespace Models.DB.Project
         public long? RefId { get; set; }
 
         public virtual ICollection<AssemblyLabor> AssemblyLabor { get; set; }
-        public virtual ICollection<BoqitemLabor> BoqitemLabor { get; set; }
-        public virtual ICollection<Labhistory> Labhistory { get; set; }
+        public virtual ICollection<BoqItemLabor> BoqitemLabor { get; set; }
+        public virtual ICollection<LabHistory> Labhistory { get; set; }
     }
 }

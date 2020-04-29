@@ -8,8 +8,8 @@ namespace Models.DB.Project
         public Material()
         {
             AssemblyMaterial = new HashSet<AssemblyMaterial>();
-            BoqitemMaterial = new HashSet<BoqitemMaterial>();
-            Mathistory = new HashSet<Mathistory>();
+            BoqitemMaterial = new HashSet<BoqItemMaterial>();
+            Mathistory = new HashSet<MatHistory>();
         }
 
         public long Materialid { get; set; }
@@ -94,7 +94,7 @@ namespace Models.DB.Project
 
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
-        public virtual ICollection<BoqitemMaterial> BoqitemMaterial { get; set; }
-        public virtual ICollection<Mathistory> Mathistory { get; set; }
+        public virtual ICollection<BoqItemMaterial> BoqitemMaterial { get; set; }
+        public virtual ICollection<MatHistory> Mathistory { get; set; }
     }
 }

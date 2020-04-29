@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Wsrevision
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Wsrevision>>> GetWsrevision()
+        public async Task<ActionResult<IEnumerable<WsRevision>>> GetWsrevision()
         {
-            return await _context.Wsrevision.ToListAsync();
+            return await _context.WsRevision.ToListAsync();
         }
 
         // GET: api/Wsrevision/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wsrevision>> GetWsrevision(long id)
+        public async Task<ActionResult<WsRevision>> GetWsrevision(long id)
         {
-            var wsrevision = await _context.Wsrevision.FindAsync(id);
+            var wsrevision = await _context.WsRevision.FindAsync(id);
 
             if (wsrevision == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWsrevision(long id, Wsrevision wsrevision)
+        public async Task<IActionResult> PutWsrevision(long id, WsRevision wsrevision)
         {
             if (id != wsrevision.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Wsrevision>> PostWsrevision(Wsrevision wsrevision)
+        public async Task<ActionResult<WsRevision>> PostWsrevision(WsRevision wsrevision)
         {
-            _context.Wsrevision.Add(wsrevision);
+            _context.WsRevision.Add(wsrevision);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetWsrevision", new { id = wsrevision.Id }, wsrevision);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Wsrevision/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Wsrevision>> DeleteWsrevision(long id)
+        public async Task<ActionResult<WsRevision>> DeleteWsrevision(long id)
         {
-            var wsrevision = await _context.Wsrevision.FindAsync(id);
+            var wsrevision = await _context.WsRevision.FindAsync(id);
             if (wsrevision == null)
             {
                 return NotFound();
             }
 
-            _context.Wsrevision.Remove(wsrevision);
+            _context.WsRevision.Remove(wsrevision);
             await _context.SaveChangesAsync();
 
             return wsrevision;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool WsrevisionExists(long id)
         {
-            return _context.Wsrevision.Any(e => e.Id == id);
+            return _context.WsRevision.Any(e => e.Id == id);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Quotetemplate
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Quotetemplate>>> GetQuotetemplate()
+        public async Task<ActionResult<IEnumerable<QuoteTemplate>>> GetQuotetemplate()
         {
-            return await _context.Quotetemplate.ToListAsync();
+            return await _context.QuoteTemplate.ToListAsync();
         }
 
         // GET: api/Quotetemplate/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Quotetemplate>> GetQuotetemplate(long id)
+        public async Task<ActionResult<QuoteTemplate>> GetQuotetemplate(long id)
         {
-            var quotetemplate = await _context.Quotetemplate.FindAsync(id);
+            var quotetemplate = await _context.QuoteTemplate.FindAsync(id);
 
             if (quotetemplate == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuotetemplate(long id, Quotetemplate quotetemplate)
+        public async Task<IActionResult> PutQuotetemplate(long id, QuoteTemplate quotetemplate)
         {
             if (id != quotetemplate.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Quotetemplate>> PostQuotetemplate(Quotetemplate quotetemplate)
+        public async Task<ActionResult<QuoteTemplate>> PostQuotetemplate(QuoteTemplate quotetemplate)
         {
-            _context.Quotetemplate.Add(quotetemplate);
+            _context.QuoteTemplate.Add(quotetemplate);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQuotetemplate", new { id = quotetemplate.Id }, quotetemplate);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Quotetemplate/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Quotetemplate>> DeleteQuotetemplate(long id)
+        public async Task<ActionResult<QuoteTemplate>> DeleteQuotetemplate(long id)
         {
-            var quotetemplate = await _context.Quotetemplate.FindAsync(id);
+            var quotetemplate = await _context.QuoteTemplate.FindAsync(id);
             if (quotetemplate == null)
             {
                 return NotFound();
             }
 
-            _context.Quotetemplate.Remove(quotetemplate);
+            _context.QuoteTemplate.Remove(quotetemplate);
             await _context.SaveChangesAsync();
 
             return quotetemplate;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool QuotetemplateExists(long id)
         {
-            return _context.Quotetemplate.Any(e => e.Id == id);
+            return _context.QuoteTemplate.Any(e => e.Id == id);
         }
     }
 }

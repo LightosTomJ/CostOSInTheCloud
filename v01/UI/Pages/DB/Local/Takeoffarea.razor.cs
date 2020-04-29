@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeoffareaBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeoffarea> takeoffarea = null;
+        protected IList<Models.DB.Local.TakeOffArea> takeoffarea = null;
 
         protected override async Task OnInitializedAsync()
         {

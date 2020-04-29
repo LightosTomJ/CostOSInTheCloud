@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcGeomfile
+    public partial class BcGeomFile
     {
-        public BcGeomfile()
+        public BcGeomFile()
         {
             BcGeometry = new HashSet<BcGeometry>();
         }

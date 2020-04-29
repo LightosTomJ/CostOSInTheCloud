@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projectaccess
+    public partial class ProjectAccess
     {
         public long Paid { get; set; }
         public string Title { get; set; }
@@ -13,6 +13,6 @@ namespace Models.DB.Local
         public bool? Alrem { get; set; }
         public long? Puid { get; set; }
 
-        public virtual Projectuser Pu { get; set; }
+        public virtual ProjectUser Pu { get; set; }
     }
 }

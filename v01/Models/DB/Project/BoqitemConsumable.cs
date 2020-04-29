@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class BoqitemConsumable
+    public partial class BoqItemConsumable
     {
         public long Boqitemconsumableid { get; set; }
         public decimal? Frate { get; set; }
@@ -31,8 +31,8 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Boqitem Boqitem { get; set; }
+        public virtual BoqItem Boqitem { get; set; }
         public virtual Consumable Consumable { get; set; }
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

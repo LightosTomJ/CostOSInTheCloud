@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Paraminput
+    public partial class ParamInput
     {
-        public Paraminput()
+        public ParamInput()
         {
-            Paramcondition = new HashSet<Paramcondition>();
+            Paramcondition = new HashSet<ParamCondition>();
         }
 
         public long Paraminputid { get; set; }
@@ -37,7 +37,7 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Paramitem Paramitem { get; set; }
-        public virtual ICollection<Paramcondition> Paramcondition { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
+        public virtual ICollection<ParamCondition> Paramcondition { get; set; }
     }
 }

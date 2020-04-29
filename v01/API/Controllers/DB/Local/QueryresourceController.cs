@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Queryresource
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Queryresource>>> GetQueryresource()
+        public async Task<ActionResult<IEnumerable<QueryResource>>> GetQueryresource()
         {
-            return await _context.Queryresource.ToListAsync();
+            return await _context.QueryResource.ToListAsync();
         }
 
         // GET: api/Queryresource/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Queryresource>> GetQueryresource(long id)
+        public async Task<ActionResult<QueryResource>> GetQueryresource(long id)
         {
-            var queryresource = await _context.Queryresource.FindAsync(id);
+            var queryresource = await _context.QueryResource.FindAsync(id);
 
             if (queryresource == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQueryresource(long id, Queryresource queryresource)
+        public async Task<IActionResult> PutQueryresource(long id, QueryResource queryresource)
         {
             if (id != queryresource.Qresid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Queryresource>> PostQueryresource(Queryresource queryresource)
+        public async Task<ActionResult<QueryResource>> PostQueryresource(QueryResource queryresource)
         {
-            _context.Queryresource.Add(queryresource);
+            _context.QueryResource.Add(queryresource);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQueryresource", new { id = queryresource.Qresid }, queryresource);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Queryresource/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Queryresource>> DeleteQueryresource(long id)
+        public async Task<ActionResult<QueryResource>> DeleteQueryresource(long id)
         {
-            var queryresource = await _context.Queryresource.FindAsync(id);
+            var queryresource = await _context.QueryResource.FindAsync(id);
             if (queryresource == null)
             {
                 return NotFound();
             }
 
-            _context.Queryresource.Remove(queryresource);
+            _context.QueryResource.Remove(queryresource);
             await _context.SaveChangesAsync();
 
             return queryresource;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool QueryresourceExists(long id)
         {
-            return _context.Queryresource.Any(e => e.Qresid == id);
+            return _context.QueryResource.Any(e => e.Qresid == id);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Filtroproperty
+    public partial class FiltroProperty
     {
         public long Filtropropertyid { get; set; }
         public bool? Used { get; set; }

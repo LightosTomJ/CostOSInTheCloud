@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Extquery
+    public partial class ExtQuery
     {
-        public Extquery()
+        public ExtQuery()
         {
-            Extalias = new HashSet<Extalias>();
+            Extalias = new HashSet<ExtAlias>();
         }
 
         public long Queryid { get; set; }
@@ -20,7 +20,7 @@ namespace Models.DB.Local
         public DateTime? Lastupdate { get; set; }
         public long? Datasourceid { get; set; }
 
-        public virtual Extdatasource Datasource { get; set; }
-        public virtual ICollection<Extalias> Extalias { get; set; }
+        public virtual ExtDatasource Datasource { get; set; }
+        public virtual ICollection<ExtAlias> Extalias { get; set; }
     }
 }

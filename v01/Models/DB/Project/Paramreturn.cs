@@ -11,6 +11,6 @@ namespace Models.DB.Project
         public long? Paramitemid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

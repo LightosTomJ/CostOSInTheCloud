@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Takeofftriangle
+    public partial class TakeOffTriangle
     {
         public long Id { get; set; }
         public decimal? Xpos1 { get; set; }
@@ -18,6 +18,6 @@ namespace Models.DB.Local
         public long? Tid { get; set; }
         public int? Triacount { get; set; }
 
-        public virtual Takeoffarea T { get; set; }
+        public virtual TakeOffArea T { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class UnitaliasBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Unitalias> unitalias = null;
+        protected IList<Models.DB.Local.UnitAlias> unitalias = null;
 
         protected override async Task OnInitializedAsync()
         {

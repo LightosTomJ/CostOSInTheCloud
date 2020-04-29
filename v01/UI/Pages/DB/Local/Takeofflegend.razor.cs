@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeofflegendBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeofflegend> takeofflegend = null;
+        protected IList<Models.DB.Local.TakeOffLegend> takeofflegend = null;
 
         protected override async Task OnInitializedAsync()
         {

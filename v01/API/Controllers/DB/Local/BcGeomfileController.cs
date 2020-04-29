@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcGeomfile
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcGeomfile>>> GetBcGeomfile()
+        public async Task<ActionResult<IEnumerable<BcGeomFile>>> GetBcGeomfile()
         {
-            return await _context.BcGeomfile.ToListAsync();
+            return await _context.BcGeomFile.ToListAsync();
         }
 
         // GET: api/BcGeomfile/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcGeomfile>> GetBcGeomfile(long id)
+        public async Task<ActionResult<BcGeomFile>> GetBcGeomfile(long id)
         {
-            var bcGeomfile = await _context.BcGeomfile.FindAsync(id);
+            var bcGeomfile = await _context.BcGeomFile.FindAsync(id);
 
             if (bcGeomfile == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcGeomfile(long id, BcGeomfile bcGeomfile)
+        public async Task<IActionResult> PutBcGeomfile(long id, BcGeomFile bcGeomfile)
         {
             if (id != bcGeomfile.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcGeomfile>> PostBcGeomfile(BcGeomfile bcGeomfile)
+        public async Task<ActionResult<BcGeomFile>> PostBcGeomfile(BcGeomFile bcGeomfile)
         {
-            _context.BcGeomfile.Add(bcGeomfile);
+            _context.BcGeomFile.Add(bcGeomfile);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcGeomfile", new { id = bcGeomfile.Id }, bcGeomfile);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcGeomfile/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcGeomfile>> DeleteBcGeomfile(long id)
+        public async Task<ActionResult<BcGeomFile>> DeleteBcGeomfile(long id)
         {
-            var bcGeomfile = await _context.BcGeomfile.FindAsync(id);
+            var bcGeomfile = await _context.BcGeomFile.FindAsync(id);
             if (bcGeomfile == null)
             {
                 return NotFound();
             }
 
-            _context.BcGeomfile.Remove(bcGeomfile);
+            _context.BcGeomFile.Remove(bcGeomfile);
             await _context.SaveChangesAsync();
 
             return bcGeomfile;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcGeomfileExists(long id)
         {
-            return _context.BcGeomfile.Any(e => e.Id == id);
+            return _context.BcGeomFile.Any(e => e.Id == id);
         }
     }
 }

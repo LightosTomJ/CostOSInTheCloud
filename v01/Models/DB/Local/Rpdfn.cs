@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Rpdfn
+    public partial class RpdFn
     {
-        public Rpdfn()
+        public RpdFn()
         {
-            Fldfn = new HashSet<Fldfn>();
+            Fldfn = new HashSet<FldFn>();
         }
 
         public long Rpdfnid { get; set; }
@@ -27,6 +27,6 @@ namespace Models.DB.Local
         public string Rjsurl { get; set; }
         public string Reportroles { get; set; }
 
-        public virtual ICollection<Fldfn> Fldfn { get; set; }
+        public virtual ICollection<FldFn> Fldfn { get; set; }
     }
 }

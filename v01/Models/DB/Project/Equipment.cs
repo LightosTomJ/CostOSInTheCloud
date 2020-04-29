@@ -8,8 +8,8 @@ namespace Models.DB.Project
         public Equipment()
         {
             AssemblyEquipment = new HashSet<AssemblyEquipment>();
-            BoqitemEquipment = new HashSet<BoqitemEquipment>();
-            Equhistory = new HashSet<Equhistory>();
+            BoqitemEquipment = new HashSet<BoqItemEquipment>();
+            Equhistory = new HashSet<EquHistory>();
         }
 
         public long Equipmentid { get; set; }
@@ -75,7 +75,7 @@ namespace Models.DB.Project
         public long? RefId { get; set; }
 
         public virtual ICollection<AssemblyEquipment> AssemblyEquipment { get; set; }
-        public virtual ICollection<BoqitemEquipment> BoqitemEquipment { get; set; }
-        public virtual ICollection<Equhistory> Equhistory { get; set; }
+        public virtual ICollection<BoqItemEquipment> BoqitemEquipment { get; set; }
+        public virtual ICollection<EquHistory> Equhistory { get; set; }
     }
 }

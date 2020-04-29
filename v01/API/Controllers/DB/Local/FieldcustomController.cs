@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Fieldcustom
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Fieldcustom>>> GetFieldcustom()
+        public async Task<ActionResult<IEnumerable<FieldCustom>>> GetFieldcustom()
         {
-            return await _context.Fieldcustom.ToListAsync();
+            return await _context.FieldCustom.ToListAsync();
         }
 
         // GET: api/Fieldcustom/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Fieldcustom>> GetFieldcustom(long id)
+        public async Task<ActionResult<FieldCustom>> GetFieldcustom(long id)
         {
-            var fieldcustom = await _context.Fieldcustom.FindAsync(id);
+            var fieldcustom = await _context.FieldCustom.FindAsync(id);
 
             if (fieldcustom == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFieldcustom(long id, Fieldcustom fieldcustom)
+        public async Task<IActionResult> PutFieldcustom(long id, FieldCustom fieldcustom)
         {
             if (id != fieldcustom.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Fieldcustom>> PostFieldcustom(Fieldcustom fieldcustom)
+        public async Task<ActionResult<FieldCustom>> PostFieldcustom(FieldCustom fieldcustom)
         {
-            _context.Fieldcustom.Add(fieldcustom);
+            _context.FieldCustom.Add(fieldcustom);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetFieldcustom", new { id = fieldcustom.Id }, fieldcustom);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Fieldcustom/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Fieldcustom>> DeleteFieldcustom(long id)
+        public async Task<ActionResult<FieldCustom>> DeleteFieldcustom(long id)
         {
-            var fieldcustom = await _context.Fieldcustom.FindAsync(id);
+            var fieldcustom = await _context.FieldCustom.FindAsync(id);
             if (fieldcustom == null)
             {
                 return NotFound();
             }
 
-            _context.Fieldcustom.Remove(fieldcustom);
+            _context.FieldCustom.Remove(fieldcustom);
             await _context.SaveChangesAsync();
 
             return fieldcustom;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool FieldcustomExists(long id)
         {
-            return _context.Fieldcustom.Any(e => e.Id == id);
+            return _context.FieldCustom.Any(e => e.Id == id);
         }
     }
 }

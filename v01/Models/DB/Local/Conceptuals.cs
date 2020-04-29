@@ -130,6 +130,6 @@ namespace Models.DB.Local
         public string Cc20eq { get; set; }
         public long? Paramoutputid { get; set; }
 
-        public virtual Paramoutput Paramoutput { get; set; }
+        public virtual ParamOutput Paramoutput { get; set; }
     }
 }

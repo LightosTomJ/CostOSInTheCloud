@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Paraminput
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Paraminput>>> GetParaminput()
+        public async Task<ActionResult<IEnumerable<ParamInput>>> GetParaminput()
         {
-            return await _context.Paraminput.ToListAsync();
+            return await _context.ParamInput.ToListAsync();
         }
 
         // GET: api/Paraminput/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Paraminput>> GetParaminput(long id)
+        public async Task<ActionResult<ParamInput>> GetParaminput(long id)
         {
-            var paraminput = await _context.Paraminput.FindAsync(id);
+            var paraminput = await _context.ParamInput.FindAsync(id);
 
             if (paraminput == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutParaminput(long id, Paraminput paraminput)
+        public async Task<IActionResult> PutParaminput(long id, ParamInput paraminput)
         {
             if (id != paraminput.Paraminputid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Paraminput>> PostParaminput(Paraminput paraminput)
+        public async Task<ActionResult<ParamInput>> PostParaminput(ParamInput paraminput)
         {
-            _context.Paraminput.Add(paraminput);
+            _context.ParamInput.Add(paraminput);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetParaminput", new { id = paraminput.Paraminputid }, paraminput);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Paraminput/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Paraminput>> DeleteParaminput(long id)
+        public async Task<ActionResult<ParamInput>> DeleteParaminput(long id)
         {
-            var paraminput = await _context.Paraminput.FindAsync(id);
+            var paraminput = await _context.ParamInput.FindAsync(id);
             if (paraminput == null)
             {
                 return NotFound();
             }
 
-            _context.Paraminput.Remove(paraminput);
+            _context.ParamInput.Remove(paraminput);
             await _context.SaveChangesAsync();
 
             return paraminput;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ParaminputExists(long id)
         {
-            return _context.Paraminput.Any(e => e.Paraminputid == id);
+            return _context.ParamInput.Any(e => e.Paraminputid == id);
         }
     }
 }

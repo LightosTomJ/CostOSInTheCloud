@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeofflineBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeoffline> takeoffline = null;
+        protected IList<Models.DB.Local.TakeOffLine> takeoffline = null;
 
         protected override async Task OnInitializedAsync()
         {

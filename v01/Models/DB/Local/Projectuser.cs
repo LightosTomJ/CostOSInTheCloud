@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projectuser
+    public partial class ProjectUser
     {
-        public Projectuser()
+        public ProjectUser()
         {
-            Projectaccess = new HashSet<Projectaccess>();
+            Projectaccess = new HashSet<ProjectAccess>();
         }
 
         public long Puid { get; set; }
@@ -34,7 +34,7 @@ namespace Models.DB.Local
         public bool? Varsviewer { get; set; }
         public long? Projectinfoid { get; set; }
 
-        public virtual Projectinfo Projectinfo { get; set; }
-        public virtual ICollection<Projectaccess> Projectaccess { get; set; }
+        public virtual ProjectInfo Projectinfo { get; set; }
+        public virtual ICollection<ProjectAccess> Projectaccess { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Locfactor
+    public partial class LocFactor
     {
         public long Lfid { get; set; }
         public string Parentecode { get; set; }
@@ -24,6 +24,6 @@ namespace Models.DB.Local
         public long? Fid { get; set; }
         public int? Faccount { get; set; }
 
-        public virtual Locprof F { get; set; }
+        public virtual LocProf F { get; set; }
     }
 }

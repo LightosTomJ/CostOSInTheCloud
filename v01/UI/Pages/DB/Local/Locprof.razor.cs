@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class LocprofBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Locprof> locprof = null;
+        protected IList<Models.DB.Local.LocProf> locprof = null;
 
         protected override async Task OnInitializedAsync()
         {

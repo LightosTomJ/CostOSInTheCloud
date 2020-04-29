@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Wsfile
+    public partial class WsFile
     {
         public long Id { get; set; }
         public bool? Xmlfile { get; set; }
@@ -18,6 +18,6 @@ namespace Models.DB.Project
         public int? Findex { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Wsrevision Filerev { get; set; }
+        public virtual WsRevision Filerev { get; set; }
     }
 }

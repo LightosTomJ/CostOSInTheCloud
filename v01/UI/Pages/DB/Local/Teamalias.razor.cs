@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TeamaliasBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Teamalias> teamalias = null;
+        protected IList<Models.DB.Local.TeamAlias> teamalias = null;
 
         protected override async Task OnInitializedAsync()
         {

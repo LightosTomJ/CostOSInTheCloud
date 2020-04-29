@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.Results
 {
-    public partial class resultsContext : DbContext
+    public partial class ResultsContext : DbContext
     {
-        public resultsContext()
+        public ResultsContext()
         {
         }
 
-        public resultsContext(DbContextOptions<resultsContext> options)
+        public ResultsContext(DbContextOptions<ResultsContext> options)
             : base(options)
         {
         }

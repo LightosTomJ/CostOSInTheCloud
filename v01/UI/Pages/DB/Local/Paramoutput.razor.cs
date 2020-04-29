@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ParamoutputBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Paramoutput> paramoutput = null;
+        protected IList<Models.DB.Local.ParamOutput> paramoutput = null;
 
         protected override async Task OnInitializedAsync()
         {

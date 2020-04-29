@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class WscolidentBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Wscolident> wscolident = null;
+        protected IList<Models.DB.Local.WsColident> wscolident = null;
 
         protected override async Task OnInitializedAsync()
         {

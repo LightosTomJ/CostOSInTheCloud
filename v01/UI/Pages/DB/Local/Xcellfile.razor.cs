@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class XcellfileBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Xcellfile> xcellfile = null;
+        protected IList<Models.DB.Local.XcellFile> xcellfile = null;
 
         protected override async Task OnInitializedAsync()
         {

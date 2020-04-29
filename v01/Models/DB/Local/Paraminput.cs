@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Paraminput
+    public partial class ParamInput
     {
         public long Paraminputid { get; set; }
         public string Name { get; set; }
@@ -29,6 +29,6 @@ namespace Models.DB.Local
         public string Stoval { get; set; }
         public long? Paramitemid { get; set; }
 
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Queryrow
+    public partial class QueryRow
     {
         public long Qrowid { get; set; }
         public string Fname { get; set; }
@@ -15,6 +15,6 @@ namespace Models.DB.Project
         public int? Qrowscount { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Queryresource Qres { get; set; }
+        public virtual QueryResource Qres { get; set; }
     }
 }

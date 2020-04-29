@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class FieldcustomBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Fieldcustom> fieldcustom = null;
+        protected IList<Models.DB.Local.FieldCustom> fieldcustom = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcElemconnection
+    public partial class BcElemConnection
     {
         public long Id { get; set; }
         public string Globalid { get; set; }

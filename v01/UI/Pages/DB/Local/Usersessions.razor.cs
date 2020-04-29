@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class UsersessionsBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Usersessions> usersessions = null;
+        protected IList<Models.DB.Local.UserSessions> usersessions = null;
 
         protected override async Task OnInitializedAsync()
         {

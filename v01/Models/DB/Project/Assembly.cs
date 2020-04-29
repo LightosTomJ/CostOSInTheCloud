@@ -14,9 +14,9 @@ namespace Models.DB.Project
             AssemblyLabor = new HashSet<AssemblyLabor>();
             AssemblyMaterial = new HashSet<AssemblyMaterial>();
             AssemblySubcontractor = new HashSet<AssemblySubcontractor>();
-            AsshistoryAssembly = new HashSet<Asshistory>();
-            AsshistoryAssemlby = new HashSet<Asshistory>();
-            BoqitemAssembly = new HashSet<BoqitemAssembly>();
+            AsshistoryAssembly = new HashSet<AssHistory>();
+            AsshistoryAssemlby = new HashSet<AssHistory>();
+            BoqitemAssembly = new HashSet<BoqItemAssembly>();
         }
 
         public long Assemblyid { get; set; }
@@ -137,8 +137,8 @@ namespace Models.DB.Project
         public virtual ICollection<AssemblyLabor> AssemblyLabor { get; set; }
         public virtual ICollection<AssemblyMaterial> AssemblyMaterial { get; set; }
         public virtual ICollection<AssemblySubcontractor> AssemblySubcontractor { get; set; }
-        public virtual ICollection<Asshistory> AsshistoryAssembly { get; set; }
-        public virtual ICollection<Asshistory> AsshistoryAssemlby { get; set; }
-        public virtual ICollection<BoqitemAssembly> BoqitemAssembly { get; set; }
+        public virtual ICollection<AssHistory> AsshistoryAssembly { get; set; }
+        public virtual ICollection<AssHistory> AsshistoryAssemlby { get; set; }
+        public virtual ICollection<BoqItemAssembly> BoqitemAssembly { get; set; }
     }
 }

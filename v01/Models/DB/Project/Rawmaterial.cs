@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Rawmaterial
+    public partial class RawMaterial
     {
         public long Rawmatid { get; set; }
         public string Code { get; set; }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projecttemplate
+    public partial class ProjectTemplate
     {
-        public Projecttemplate()
+        public ProjectTemplate()
         {
-            Projectspecvar = new HashSet<Projectspecvar>();
-            Ratebuildup = new HashSet<Ratebuildup>();
-            Ratebuildupcols = new HashSet<Ratebuildupcols>();
-            Ratedistrib = new HashSet<Ratedistrib>();
+            Projectspecvar = new HashSet<ProjectSpecVar>();
+            Ratebuildup = new HashSet<RateBuildUp>();
+            Ratebuildupcols = new HashSet<RateBuildUpCols>();
+            Ratedistrib = new HashSet<RateDistrib>();
         }
 
         public long Id { get; set; }
@@ -29,10 +29,10 @@ namespace Models.DB.Local
         public bool? Allowviewers { get; set; }
         public string Description { get; set; }
 
-        public virtual Xcellfile Template { get; set; }
-        public virtual ICollection<Projectspecvar> Projectspecvar { get; set; }
-        public virtual ICollection<Ratebuildup> Ratebuildup { get; set; }
-        public virtual ICollection<Ratebuildupcols> Ratebuildupcols { get; set; }
-        public virtual ICollection<Ratedistrib> Ratedistrib { get; set; }
+        public virtual XcellFile Template { get; set; }
+        public virtual ICollection<ProjectSpecVar> Projectspecvar { get; set; }
+        public virtual ICollection<RateBuildUp> Ratebuildup { get; set; }
+        public virtual ICollection<RateBuildUpCols> Ratebuildupcols { get; set; }
+        public virtual ICollection<RateDistrib> Ratedistrib { get; set; }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Rpdfn
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Rpdfn>>> GetRpdfn()
+        public async Task<ActionResult<IEnumerable<RpdFn>>> GetRpdfn()
         {
-            return await _context.Rpdfn.ToListAsync();
+            return await _context.RpdFn.ToListAsync();
         }
 
         // GET: api/Rpdfn/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Rpdfn>> GetRpdfn(long id)
+        public async Task<ActionResult<RpdFn>> GetRpdfn(long id)
         {
-            var rpdfn = await _context.Rpdfn.FindAsync(id);
+            var rpdfn = await _context.RpdFn.FindAsync(id);
 
             if (rpdfn == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRpdfn(long id, Rpdfn rpdfn)
+        public async Task<IActionResult> PutRpdfn(long id, RpdFn rpdfn)
         {
             if (id != rpdfn.Rpdfnid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Rpdfn>> PostRpdfn(Rpdfn rpdfn)
+        public async Task<ActionResult<RpdFn>> PostRpdfn(RpdFn rpdfn)
         {
-            _context.Rpdfn.Add(rpdfn);
+            _context.RpdFn.Add(rpdfn);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRpdfn", new { id = rpdfn.Rpdfnid }, rpdfn);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Rpdfn/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Rpdfn>> DeleteRpdfn(long id)
+        public async Task<ActionResult<RpdFn>> DeleteRpdfn(long id)
         {
-            var rpdfn = await _context.Rpdfn.FindAsync(id);
+            var rpdfn = await _context.RpdFn.FindAsync(id);
             if (rpdfn == null)
             {
                 return NotFound();
             }
 
-            _context.Rpdfn.Remove(rpdfn);
+            _context.RpdFn.Remove(rpdfn);
             await _context.SaveChangesAsync();
 
             return rpdfn;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool RpdfnExists(long id)
         {
-            return _context.Rpdfn.Any(e => e.Rpdfnid == id);
+            return _context.RpdFn.Any(e => e.Rpdfnid == id);
         }
     }
 }

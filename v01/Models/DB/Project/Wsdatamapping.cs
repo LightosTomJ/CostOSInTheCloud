@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Wsdatamapping
+    public partial class WsDataMapping
     {
-        public Wsdatamapping()
+        public WsDataMapping()
         {
             Wscolident = new HashSet<Wscolident>();
-            Wsrevision = new HashSet<Wsrevision>();
+            Wsrevision = new HashSet<WsRevision>();
         }
 
         public long Id { get; set; }
@@ -25,6 +25,6 @@ namespace Models.DB.Project
         public bool? Keepitems { get; set; }
 
         public virtual ICollection<Wscolident> Wscolident { get; set; }
-        public virtual ICollection<Wsrevision> Wsrevision { get; set; }
+        public virtual ICollection<WsRevision> Wsrevision { get; set; }
     }
 }

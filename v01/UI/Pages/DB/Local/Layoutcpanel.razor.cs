@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class LayoutcpanelBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Layoutcpanel> layoutcpanel = null;
+        protected IList<Models.DB.Local.LayoutCPanel> layoutcpanel = null;
 
         protected override async Task OnInitializedAsync()
         {

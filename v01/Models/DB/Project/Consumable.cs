@@ -8,8 +8,8 @@ namespace Models.DB.Project
         public Consumable()
         {
             AssemblyConsumable = new HashSet<AssemblyConsumable>();
-            BoqitemConsumable = new HashSet<BoqitemConsumable>();
-            Cnmhistory = new HashSet<Cnmhistory>();
+            BoqitemConsumable = new HashSet<BoqItemConsumable>();
+            Cnmhistory = new HashSet<CnmHistory>();
         }
 
         public long Consumableid { get; set; }
@@ -60,7 +60,7 @@ namespace Models.DB.Project
         public long? RefId { get; set; }
 
         public virtual ICollection<AssemblyConsumable> AssemblyConsumable { get; set; }
-        public virtual ICollection<BoqitemConsumable> BoqitemConsumable { get; set; }
-        public virtual ICollection<Cnmhistory> Cnmhistory { get; set; }
+        public virtual ICollection<BoqItemConsumable> BoqitemConsumable { get; set; }
+        public virtual ICollection<CnmHistory> Cnmhistory { get; set; }
     }
 }

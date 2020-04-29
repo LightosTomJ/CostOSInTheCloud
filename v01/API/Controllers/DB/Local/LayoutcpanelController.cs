@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Layoutcpanel
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Layoutcpanel>>> GetLayoutcpanel()
+        public async Task<ActionResult<IEnumerable<LayoutCPanel>>> GetLayoutcpanel()
         {
-            return await _context.Layoutcpanel.ToListAsync();
+            return await _context.LayoutCPanel.ToListAsync();
         }
 
         // GET: api/Layoutcpanel/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Layoutcpanel>> GetLayoutcpanel(long id)
+        public async Task<ActionResult<LayoutCPanel>> GetLayoutcpanel(long id)
         {
-            var layoutcpanel = await _context.Layoutcpanel.FindAsync(id);
+            var layoutcpanel = await _context.LayoutCPanel.FindAsync(id);
 
             if (layoutcpanel == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLayoutcpanel(long id, Layoutcpanel layoutcpanel)
+        public async Task<IActionResult> PutLayoutcpanel(long id, LayoutCPanel layoutcpanel)
         {
             if (id != layoutcpanel.Layoutcpanelid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Layoutcpanel>> PostLayoutcpanel(Layoutcpanel layoutcpanel)
+        public async Task<ActionResult<LayoutCPanel>> PostLayoutcpanel(LayoutCPanel layoutcpanel)
         {
-            _context.Layoutcpanel.Add(layoutcpanel);
+            _context.LayoutCPanel.Add(layoutcpanel);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetLayoutcpanel", new { id = layoutcpanel.Layoutcpanelid }, layoutcpanel);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Layoutcpanel/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Layoutcpanel>> DeleteLayoutcpanel(long id)
+        public async Task<ActionResult<LayoutCPanel>> DeleteLayoutcpanel(long id)
         {
-            var layoutcpanel = await _context.Layoutcpanel.FindAsync(id);
+            var layoutcpanel = await _context.LayoutCPanel.FindAsync(id);
             if (layoutcpanel == null)
             {
                 return NotFound();
             }
 
-            _context.Layoutcpanel.Remove(layoutcpanel);
+            _context.LayoutCPanel.Remove(layoutcpanel);
             await _context.SaveChangesAsync();
 
             return layoutcpanel;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool LayoutcpanelExists(long id)
         {
-            return _context.Layoutcpanel.Any(e => e.Layoutcpanelid == id);
+            return _context.LayoutCPanel.Any(e => e.Layoutcpanelid == id);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Unitalias
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Unitalias>>> GetUnitalias()
+        public async Task<ActionResult<IEnumerable<UnitAlias>>> GetUnitalias()
         {
-            return await _context.Unitalias.ToListAsync();
+            return await _context.UnitAlias.ToListAsync();
         }
 
         // GET: api/Unitalias/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Unitalias>> GetUnitalias(long id)
+        public async Task<ActionResult<UnitAlias>> GetUnitalias(long id)
         {
-            var unitalias = await _context.Unitalias.FindAsync(id);
+            var unitalias = await _context.UnitAlias.FindAsync(id);
 
             if (unitalias == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUnitalias(long id, Unitalias unitalias)
+        public async Task<IActionResult> PutUnitalias(long id, UnitAlias unitalias)
         {
             if (id != unitalias.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Unitalias>> PostUnitalias(Unitalias unitalias)
+        public async Task<ActionResult<UnitAlias>> PostUnitalias(UnitAlias unitalias)
         {
-            _context.Unitalias.Add(unitalias);
+            _context.UnitAlias.Add(unitalias);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUnitalias", new { id = unitalias.Id }, unitalias);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Unitalias/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Unitalias>> DeleteUnitalias(long id)
+        public async Task<ActionResult<UnitAlias>> DeleteUnitalias(long id)
         {
-            var unitalias = await _context.Unitalias.FindAsync(id);
+            var unitalias = await _context.UnitAlias.FindAsync(id);
             if (unitalias == null)
             {
                 return NotFound();
             }
 
-            _context.Unitalias.Remove(unitalias);
+            _context.UnitAlias.Remove(unitalias);
             await _context.SaveChangesAsync();
 
             return unitalias;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool UnitaliasExists(long id)
         {
-            return _context.Unitalias.Any(e => e.Id == id);
+            return _context.UnitAlias.Any(e => e.Id == id);
         }
     }
 }

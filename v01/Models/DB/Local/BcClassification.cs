@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public BcClassification()
         {
-            BcClassitem = new HashSet<BcClassitem>();
+            BcClassitem = new HashSet<BcClassItem>();
         }
 
         public long Id { get; set; }
@@ -17,6 +17,6 @@ namespace Models.DB.Local
         public long? ModelId { get; set; }
 
         public virtual BcModel Model { get; set; }
-        public virtual ICollection<BcClassitem> BcClassitem { get; set; }
+        public virtual ICollection<BcClassItem> BcClassitem { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeoffpointBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeoffpoint> takeoffpoint = null;
+        protected IList<Models.DB.Local.TakeOffPoint> takeoffpoint = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcGpuserver
+    public partial class BcGPUServer
     {
         public long Id { get; set; }
         public bool? Active { get; set; }

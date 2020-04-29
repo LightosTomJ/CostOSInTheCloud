@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcElemcoveringBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcElemcovering> bcelemcovering = null;
+        protected IList<Models.DB.Local.BcElemCovering> bcelemcovering = null;
 
         protected override async Task OnInitializedAsync()
         {

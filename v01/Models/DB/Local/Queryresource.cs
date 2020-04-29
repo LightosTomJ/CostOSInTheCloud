@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Queryresource
+    public partial class QueryResource
     {
-        public Queryresource()
+        public QueryResource()
         {
-            Queryrow = new HashSet<Queryrow>();
+            Queryrow = new HashSet<QueryRow>();
         }
 
         public long Qresid { get; set; }
@@ -105,7 +105,7 @@ namespace Models.DB.Local
         public string Cc20eq { get; set; }
         public long? Paramoutputid { get; set; }
 
-        public virtual Paramoutput Paramoutput { get; set; }
-        public virtual ICollection<Queryrow> Queryrow { get; set; }
+        public virtual ParamOutput Paramoutput { get; set; }
+        public virtual ICollection<QueryRow> Queryrow { get; set; }
     }
 }

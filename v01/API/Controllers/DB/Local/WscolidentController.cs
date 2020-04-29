@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Wscolident
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Wscolident>>> GetWscolident()
+        public async Task<ActionResult<IEnumerable<WsColident>>> GetWscolident()
         {
-            return await _context.Wscolident.ToListAsync();
+            return await _context.WsColident.ToListAsync();
         }
 
         // GET: api/Wscolident/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wscolident>> GetWscolident(long id)
+        public async Task<ActionResult<WsColident>> GetWscolident(long id)
         {
-            var wscolident = await _context.Wscolident.FindAsync(id);
+            var wscolident = await _context.WsColident.FindAsync(id);
 
             if (wscolident == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWscolident(long id, Wscolident wscolident)
+        public async Task<IActionResult> PutWscolident(long id, WsColident wscolident)
         {
             if (id != wscolident.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Wscolident>> PostWscolident(Wscolident wscolident)
+        public async Task<ActionResult<WsColident>> PostWscolident(WsColident wscolident)
         {
-            _context.Wscolident.Add(wscolident);
+            _context.WsColident.Add(wscolident);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetWscolident", new { id = wscolident.Id }, wscolident);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Wscolident/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Wscolident>> DeleteWscolident(long id)
+        public async Task<ActionResult<WsColident>> DeleteWscolident(long id)
         {
-            var wscolident = await _context.Wscolident.FindAsync(id);
+            var wscolident = await _context.WsColident.FindAsync(id);
             if (wscolident == null)
             {
                 return NotFound();
             }
 
-            _context.Wscolident.Remove(wscolident);
+            _context.WsColident.Remove(wscolident);
             await _context.SaveChangesAsync();
 
             return wscolident;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool WscolidentExists(long id)
         {
-            return _context.Wscolident.Any(e => e.Id == id);
+            return _context.WsColident.Any(e => e.Id == id);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcGeomfileBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcGeomfile> bcgeomfile = null;
+        protected IList<Models.DB.Local.BcGeomFile> bcgeomfile = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -21,6 +21,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Wsdatamapping Mapping { get; set; }
+        public virtual WsDataMapping Mapping { get; set; }
     }
 }

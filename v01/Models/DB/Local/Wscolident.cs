@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Wscolident
+    public partial class WsColident
     {
         public long Id { get; set; }
         public string Splitfield { get; set; }
@@ -19,6 +19,6 @@ namespace Models.DB.Local
         public string Fieldmap { get; set; }
         public long? Mappingid { get; set; }
 
-        public virtual Wsdatamapping Mapping { get; set; }
+        public virtual WsDataMapping Mapping { get; set; }
     }
 }

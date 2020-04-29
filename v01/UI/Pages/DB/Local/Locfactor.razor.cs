@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class LocfactorBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Locfactor> locfactor = null;
+        protected IList<Models.DB.Local.LocFactor> locfactor = null;
 
         protected override async Task OnInitializedAsync()
         {

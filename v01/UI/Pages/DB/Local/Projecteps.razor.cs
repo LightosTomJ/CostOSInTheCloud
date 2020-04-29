@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ProjectepsBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Projecteps> projecteps = null;
+        protected IList<Models.DB.Local.ProjectEPS> projecteps = null;
 
         protected override async Task OnInitializedAsync()
         {

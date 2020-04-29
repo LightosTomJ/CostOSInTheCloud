@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Paramitem
+    public partial class ParamItem
     {
-        public Paramitem()
+        public ParamItem()
         {
-            Paraminput = new HashSet<Paraminput>();
-            Paramoutput = new HashSet<Paramoutput>();
-            Paramreturn = new HashSet<Paramreturn>();
+            Paraminput = new HashSet<ParamInput>();
+            Paramoutput = new HashSet<ParamOutput>();
+            Paramreturn = new HashSet<ParamReturn>();
         }
 
         public long Paramitemid { get; set; }
@@ -53,8 +53,8 @@ namespace Models.DB.Local
         public string Createuserid { get; set; }
         public DateTime? Createdate { get; set; }
 
-        public virtual ICollection<Paraminput> Paraminput { get; set; }
-        public virtual ICollection<Paramoutput> Paramoutput { get; set; }
-        public virtual ICollection<Paramreturn> Paramreturn { get; set; }
+        public virtual ICollection<ParamInput> Paraminput { get; set; }
+        public virtual ICollection<ParamOutput> Paramoutput { get; set; }
+        public virtual ICollection<ParamReturn> Paramreturn { get; set; }
     }
 }

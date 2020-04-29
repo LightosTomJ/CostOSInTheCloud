@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Layoutcpanel
+    public partial class LayoutCPanel
     {
         public long Layoutcpanelid { get; set; }
         public long? Layoutcid { get; set; }
@@ -30,6 +30,6 @@ namespace Models.DB.Local
         public bool? Xtralvl { get; set; }
         public int? Layoutcpanelcount { get; set; }
 
-        public virtual Layoutc Layoutc { get; set; }
+        public virtual LayoutC Layoutc { get; set; }
     }
 }

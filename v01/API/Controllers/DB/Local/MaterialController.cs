@@ -1,52 +1,56 @@
+//using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
+using Microsoft.EntityFrameworkCore;
+using Models.DB.Local;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Models.DB.Local;
 
 namespace API.Controllers.DB.Local
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class MaterialController : ControllerBase
+    public class MaterialController : Controller
     {
-        private readonly LocalContext _context;
+        //Get relevant services
+        Helper.DB.Local.MaterialsService materialService = new Helper.DB.Local.MaterialsService(new LocalContext());
 
-        public MaterialController(LocalContext context)
-        {
-            _context = context;
-        }
+        //Get local context
+        private LocalContext _context = new LocalContext();
 
         // GET: api/Materials
         [HttpGet]
-        public async Task<ActionResult<IList<Material>>> GetMaterials()
-        //public ActionResult<IList<Material>> GetMaterials()
+        public async Task<ActionResult<string>> GetMaterials()
+        //public async Task<ActionResult<IList<Material>>> GetMaterials()
         {
-            ActionResult<IList<Material>> mats = new List<Material>();
-            try
+            IList<Material> materials = await materialService.GetAllMaterials();
+            if (materials == null)
             {
-                mats = await _context.Material.ToListAsync();
+                return BadRequest();
             }
-            catch (Exception ae)
-            { }
-            return mats;
+            else if (materials.Count == 0)
+            {
+                return NoContent();
+            }
+            return JsonConvert.SerializeObject(materials.ToArray());
         }
 
         // GET: api/Materials/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Material>> GetMaterials(string id)
         {
-            var roles = await _context.Material.FindAsync(id);
+            var material = await _context.Material.FindAsync(id);
 
-            if (roles == null)
-            {
-                return NotFound();
+            if (material == null)
+            { 
+                return BadRequest(); 
             }
 
-            return roles;
+            return material;
         }
 
         // PUT: api/Materials/5
@@ -55,77 +59,51 @@ namespace API.Controllers.DB.Local
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMaterials(long id, Material materials)
         {
-            if (id != materials.Materialid)
+            if (id != materials.MaterialId)
             {
                 return BadRequest();
             }
 
             _context.Entry(materials).State = EntityState.Modified;
 
-            try
+            if (await materialService.UpdateMaterial(id, materials) == false)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MaterialsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
-            return NoContent();
+            return RedirectToAction();
         }
 
         // POST: api/Materials
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Material>> PostMaterials(Material materials)
+        public async Task<IActionResult> PostMaterials(IList<Material> materials)
         {
-            _context.Material.Add(materials);
-            try
+            IList<long> lIds = await materialService.CreateMaterial(materials);
+            IList<Material> AcceptedMaterials = new List<Material>();
+            IList<Material> RejectedMaterials = new List<Material>();
+
+            if (lIds.Count(j => j == -1) > 0)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (MaterialsExists(materials.Materialid))
+                for (int i = 0; i < materials.Count; i ++)
                 {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
+                    if (lIds[i] == -1)
+                    { RejectedMaterials.Add(materials[i]); }
+                    else
+                    { AcceptedMaterials.Add(materials[i]); }
                 }
             }
 
-            return CreatedAtAction("GetMaterials", new { id = materials.Materialid }, materials);
+            return RedirectToRoute("");
         }
 
         // DELETE: api/Materials/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Material>> DeleteMaterials(string id)
+        public async Task<IActionResult> DeleteMaterials(long id)
         {
-            var roles = await _context.Material.FindAsync(id);
-            if (roles == null)
-            {
-                return NotFound();
-            }
-
-            _context.Material.Remove(roles);
-            await _context.SaveChangesAsync();
-
-            return roles;
-        }
-
-        private bool MaterialsExists(long id)
-        {
-            return _context.Material.Any(e => e.Materialid == id);
+            await materialService.DeleteMaterial(id);
+            return Ok();
         }
     }
 }

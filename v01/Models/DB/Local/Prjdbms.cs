@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Prjdbms
+    public partial class PrjDBMS
     {
-        public Prjdbms()
+        public PrjDBMS()
         {
             Projecturl = new HashSet<Projecturl>();
         }

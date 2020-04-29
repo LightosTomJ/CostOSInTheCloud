@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class WsdatamappingBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Wsdatamapping> wsdatamapping = null;
+        protected IList<Models.DB.Local.WsDataMapping> wsdatamapping = null;
 
         protected override async Task OnInitializedAsync()
         {

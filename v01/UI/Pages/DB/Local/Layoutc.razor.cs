@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class LayoutcBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Layoutc> layoutc = null;
+        protected IList<Models.DB.Local.LayoutC> layoutc = null;
 
         protected override async Task OnInitializedAsync()
         {

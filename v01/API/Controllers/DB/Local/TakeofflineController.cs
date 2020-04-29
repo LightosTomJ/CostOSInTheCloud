@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeoffline
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeoffline>>> GetTakeoffline()
+        public async Task<ActionResult<IEnumerable<TakeOffLine>>> GetTakeoffline()
         {
-            return await _context.Takeoffline.ToListAsync();
+            return await _context.TakeOffLine.ToListAsync();
         }
 
         // GET: api/Takeoffline/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeoffline>> GetTakeoffline(long id)
+        public async Task<ActionResult<TakeOffLine>> GetTakeoffline(long id)
         {
-            var takeoffline = await _context.Takeoffline.FindAsync(id);
+            var takeoffline = await _context.TakeOffLine.FindAsync(id);
 
             if (takeoffline == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeoffline(long id, Takeoffline takeoffline)
+        public async Task<IActionResult> PutTakeoffline(long id, TakeOffLine takeoffline)
         {
             if (id != takeoffline.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeoffline>> PostTakeoffline(Takeoffline takeoffline)
+        public async Task<ActionResult<TakeOffLine>> PostTakeoffline(TakeOffLine takeoffline)
         {
-            _context.Takeoffline.Add(takeoffline);
+            _context.TakeOffLine.Add(takeoffline);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeoffline", new { id = takeoffline.Id }, takeoffline);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeoffline/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeoffline>> DeleteTakeoffline(long id)
+        public async Task<ActionResult<TakeOffLine>> DeleteTakeoffline(long id)
         {
-            var takeoffline = await _context.Takeoffline.FindAsync(id);
+            var takeoffline = await _context.TakeOffLine.FindAsync(id);
             if (takeoffline == null)
             {
                 return NotFound();
             }
 
-            _context.Takeoffline.Remove(takeoffline);
+            _context.TakeOffLine.Remove(takeoffline);
             await _context.SaveChangesAsync();
 
             return takeoffline;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeofflineExists(long id)
         {
-            return _context.Takeoffline.Any(e => e.Id == id);
+            return _context.TakeOffLine.Any(e => e.Id == id);
         }
     }
 }

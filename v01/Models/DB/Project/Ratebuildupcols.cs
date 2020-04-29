@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Ratebuildupcols
+    public partial class RateBuildUpCols
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }
@@ -90,6 +90,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Projecttemplate Template { get; set; }
+        public virtual ProjectTemplate Template { get; set; }
     }
 }

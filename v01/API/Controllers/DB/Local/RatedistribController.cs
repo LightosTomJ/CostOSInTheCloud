@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Ratedistrib
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Ratedistrib>>> GetRatedistrib()
+        public async Task<ActionResult<IEnumerable<RateDistrib>>> GetRatedistrib()
         {
-            return await _context.Ratedistrib.ToListAsync();
+            return await _context.RateDistrib.ToListAsync();
         }
 
         // GET: api/Ratedistrib/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Ratedistrib>> GetRatedistrib(long id)
+        public async Task<ActionResult<RateDistrib>> GetRatedistrib(long id)
         {
-            var ratedistrib = await _context.Ratedistrib.FindAsync(id);
+            var ratedistrib = await _context.RateDistrib.FindAsync(id);
 
             if (ratedistrib == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRatedistrib(long id, Ratedistrib ratedistrib)
+        public async Task<IActionResult> PutRatedistrib(long id, RateDistrib ratedistrib)
         {
             if (id != ratedistrib.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Ratedistrib>> PostRatedistrib(Ratedistrib ratedistrib)
+        public async Task<ActionResult<RateDistrib>> PostRatedistrib(RateDistrib ratedistrib)
         {
-            _context.Ratedistrib.Add(ratedistrib);
+            _context.RateDistrib.Add(ratedistrib);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRatedistrib", new { id = ratedistrib.Id }, ratedistrib);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Ratedistrib/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Ratedistrib>> DeleteRatedistrib(long id)
+        public async Task<ActionResult<RateDistrib>> DeleteRatedistrib(long id)
         {
-            var ratedistrib = await _context.Ratedistrib.FindAsync(id);
+            var ratedistrib = await _context.RateDistrib.FindAsync(id);
             if (ratedistrib == null)
             {
                 return NotFound();
             }
 
-            _context.Ratedistrib.Remove(ratedistrib);
+            _context.RateDistrib.Remove(ratedistrib);
             await _context.SaveChangesAsync();
 
             return ratedistrib;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool RatedistribExists(long id)
         {
-            return _context.Ratedistrib.Any(e => e.Id == id);
+            return _context.RateDistrib.Any(e => e.Id == id);
         }
     }
 }

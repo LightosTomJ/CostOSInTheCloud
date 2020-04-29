@@ -7,7 +7,7 @@ namespace Models.DB.Project
     {
         public Cndon()
         {
-            BoqitemCondition = new HashSet<BoqitemCondition>();
+            BoqitemCondition = new HashSet<BoqItemCondition>();
         }
 
         public long Conditionid { get; set; }
@@ -53,6 +53,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual ICollection<BoqitemCondition> BoqitemCondition { get; set; }
+        public virtual ICollection<BoqItemCondition> BoqitemCondition { get; set; }
     }
 }

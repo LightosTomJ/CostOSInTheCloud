@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class FiltropropertyBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Filtroproperty> filtroproperty = null;
+        protected IList<Models.DB.Local.FiltroProperty> filtroproperty = null;
 
         protected override async Task OnInitializedAsync()
         {

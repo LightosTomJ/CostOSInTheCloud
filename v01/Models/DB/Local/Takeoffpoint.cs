@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Takeoffpoint
+    public partial class TakeOffPoint
     {
         public long Id { get; set; }
         public decimal? Zpos { get; set; }
@@ -16,8 +16,8 @@ namespace Models.DB.Local
         public int? Pointcount { get; set; }
         public int? Elevcount { get; set; }
 
-        public virtual Takeoffcon C { get; set; }
-        public virtual Takeoffarea P { get; set; }
-        public virtual Takeoffline S { get; set; }
+        public virtual TakeOffCon C { get; set; }
+        public virtual TakeOffArea P { get; set; }
+        public virtual TakeOffLine S { get; set; }
     }
 }

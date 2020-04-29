@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projectuser
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projectuser>>> GetProjectuser()
+        public async Task<ActionResult<IEnumerable<ProjectUser>>> GetProjectuser()
         {
-            return await _context.Projectuser.ToListAsync();
+            return await _context.ProjectUser.ToListAsync();
         }
 
         // GET: api/Projectuser/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projectuser>> GetProjectuser(long id)
+        public async Task<ActionResult<ProjectUser>> GetProjectuser(long id)
         {
-            var projectuser = await _context.Projectuser.FindAsync(id);
+            var projectuser = await _context.ProjectUser.FindAsync(id);
 
             if (projectuser == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectuser(long id, Projectuser projectuser)
+        public async Task<IActionResult> PutProjectuser(long id, ProjectUser projectuser)
         {
             if (id != projectuser.Puid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projectuser>> PostProjectuser(Projectuser projectuser)
+        public async Task<ActionResult<ProjectUser>> PostProjectuser(ProjectUser projectuser)
         {
-            _context.Projectuser.Add(projectuser);
+            _context.ProjectUser.Add(projectuser);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectuser", new { id = projectuser.Puid }, projectuser);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projectuser/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projectuser>> DeleteProjectuser(long id)
+        public async Task<ActionResult<ProjectUser>> DeleteProjectuser(long id)
         {
-            var projectuser = await _context.Projectuser.FindAsync(id);
+            var projectuser = await _context.ProjectUser.FindAsync(id);
             if (projectuser == null)
             {
                 return NotFound();
             }
 
-            _context.Projectuser.Remove(projectuser);
+            _context.ProjectUser.Remove(projectuser);
             await _context.SaveChangesAsync();
 
             return projectuser;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectuserExists(long id)
         {
-            return _context.Projectuser.Any(e => e.Puid == id);
+            return _context.ProjectUser.Any(e => e.Puid == id);
         }
     }
 }

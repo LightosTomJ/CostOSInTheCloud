@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projectinfo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projectinfo>>> GetProjectinfo()
+        public async Task<ActionResult<IEnumerable<ProjectInfo>>> GetProjectinfo()
         {
-            return await _context.Projectinfo.ToListAsync();
+            return await _context.ProjectInfo.ToListAsync();
         }
 
         // GET: api/Projectinfo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projectinfo>> GetProjectinfo(long id)
+        public async Task<ActionResult<ProjectInfo>> GetProjectinfo(long id)
         {
-            var projectinfo = await _context.Projectinfo.FindAsync(id);
+            var projectinfo = await _context.ProjectInfo.FindAsync(id);
 
             if (projectinfo == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectinfo(long id, Projectinfo projectinfo)
+        public async Task<IActionResult> PutProjectinfo(long id, ProjectInfo projectinfo)
         {
             if (id != projectinfo.Projectinfoid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projectinfo>> PostProjectinfo(Projectinfo projectinfo)
+        public async Task<ActionResult<ProjectInfo>> PostProjectinfo(ProjectInfo projectinfo)
         {
-            _context.Projectinfo.Add(projectinfo);
+            _context.ProjectInfo.Add(projectinfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectinfo", new { id = projectinfo.Projectinfoid }, projectinfo);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projectinfo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projectinfo>> DeleteProjectinfo(long id)
+        public async Task<ActionResult<ProjectInfo>> DeleteProjectinfo(long id)
         {
-            var projectinfo = await _context.Projectinfo.FindAsync(id);
+            var projectinfo = await _context.ProjectInfo.FindAsync(id);
             if (projectinfo == null)
             {
                 return NotFound();
             }
 
-            _context.Projectinfo.Remove(projectinfo);
+            _context.ProjectInfo.Remove(projectinfo);
             await _context.SaveChangesAsync();
 
             return projectinfo;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectinfoExists(long id)
         {
-            return _context.Projectinfo.Any(e => e.Projectinfoid == id);
+            return _context.ProjectInfo.Any(e => e.Projectinfoid == id);
         }
     }
 }

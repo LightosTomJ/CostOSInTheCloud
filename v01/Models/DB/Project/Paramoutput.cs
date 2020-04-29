@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Paramoutput
+    public partial class ParamOutput
     {
-        public Paramoutput()
+        public ParamOutput()
         {
             Conceptuals = new HashSet<Conceptuals>();
-            Queryresource = new HashSet<Queryresource>();
+            Queryresource = new HashSet<QueryResource>();
         }
 
         public long Paramoutputid { get; set; }
@@ -29,8 +29,8 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
         public virtual ICollection<Conceptuals> Conceptuals { get; set; }
-        public virtual ICollection<Queryresource> Queryresource { get; set; }
+        public virtual ICollection<QueryResource> Queryresource { get; set; }
     }
 }

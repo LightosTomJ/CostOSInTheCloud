@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class AlcAmusersBase : ComponentBase
     {
-        protected IList<Models.DB.Local.AlcAmusers> alcamusers = null;
+        protected IList<Models.DB.Local.AlcAmUsers> alcamusers = null;
 
         protected override async Task OnInitializedAsync()
         {

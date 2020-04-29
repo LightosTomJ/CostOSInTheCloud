@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projectinfo
+    public partial class ProjectInfo
     {
-        public Projectinfo()
+        public ProjectInfo()
         {
             Projecturl = new HashSet<Projecturl>();
-            Projectuser = new HashSet<Projectuser>();
-            Takeoffcon = new HashSet<Takeoffcon>();
+            Projectuser = new HashSet<ProjectUser>();
+            Takeoffcon = new HashSet<TakeOffCon>();
         }
 
         public long Projectinfoid { get; set; }
@@ -119,9 +119,9 @@ namespace Models.DB.Local
         public string Creatorid { get; set; }
         public DateTime? Createdate { get; set; }
 
-        public virtual Projecteps Projecteps { get; set; }
+        public virtual ProjectEPS Projecteps { get; set; }
         public virtual ICollection<Projecturl> Projecturl { get; set; }
-        public virtual ICollection<Projectuser> Projectuser { get; set; }
-        public virtual ICollection<Takeoffcon> Takeoffcon { get; set; }
+        public virtual ICollection<ProjectUser> Projectuser { get; set; }
+        public virtual ICollection<TakeOffCon> Takeoffcon { get; set; }
     }
 }

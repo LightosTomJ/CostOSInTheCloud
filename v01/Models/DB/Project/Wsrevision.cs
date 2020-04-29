@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Wsrevision
+    public partial class WsRevision
     {
-        public Wsrevision()
+        public WsRevision()
         {
-            Wsfile = new HashSet<Wsfile>();
+            Wsfile = new HashSet<WsFile>();
         }
 
         public long Id { get; set; }
@@ -22,7 +22,7 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Wsdatamapping Mapping { get; set; }
-        public virtual ICollection<Wsfile> Wsfile { get; set; }
+        public virtual WsDataMapping Mapping { get; set; }
+        public virtual ICollection<WsFile> Wsfile { get; set; }
     }
 }

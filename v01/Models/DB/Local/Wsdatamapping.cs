@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Wsdatamapping
+    public partial class WsDataMapping
     {
-        public Wsdatamapping()
+        public WsDataMapping()
         {
-            Wscolident = new HashSet<Wscolident>();
-            Wsrevision = new HashSet<Wsrevision>();
+            Wscolident = new HashSet<WsColident>();
+            Wsrevision = new HashSet<WsRevision>();
         }
 
         public long Id { get; set; }
@@ -20,7 +20,7 @@ namespace Models.DB.Local
         public bool? Treedetect { get; set; }
         public string Tableprefer { get; set; }
 
-        public virtual ICollection<Wscolident> Wscolident { get; set; }
-        public virtual ICollection<Wsrevision> Wsrevision { get; set; }
+        public virtual ICollection<WsColident> Wscolident { get; set; }
+        public virtual ICollection<WsRevision> Wsrevision { get; set; }
     }
 }

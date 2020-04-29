@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Filtroproperty
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Filtroproperty>>> GetFiltroproperty()
+        public async Task<ActionResult<IEnumerable<FiltroProperty>>> GetFiltroproperty()
         {
-            return await _context.Filtroproperty.ToListAsync();
+            return await _context.FiltroProperty.ToListAsync();
         }
 
         // GET: api/Filtroproperty/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Filtroproperty>> GetFiltroproperty(long id)
+        public async Task<ActionResult<FiltroProperty>> GetFiltroproperty(long id)
         {
-            var filtroproperty = await _context.Filtroproperty.FindAsync(id);
+            var filtroproperty = await _context.FiltroProperty.FindAsync(id);
 
             if (filtroproperty == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFiltroproperty(long id, Filtroproperty filtroproperty)
+        public async Task<IActionResult> PutFiltroproperty(long id, FiltroProperty filtroproperty)
         {
             if (id != filtroproperty.Filtropropertyid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Filtroproperty>> PostFiltroproperty(Filtroproperty filtroproperty)
+        public async Task<ActionResult<FiltroProperty>> PostFiltroproperty(FiltroProperty filtroproperty)
         {
-            _context.Filtroproperty.Add(filtroproperty);
+            _context.FiltroProperty.Add(filtroproperty);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetFiltroproperty", new { id = filtroproperty.Filtropropertyid }, filtroproperty);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Filtroproperty/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Filtroproperty>> DeleteFiltroproperty(long id)
+        public async Task<ActionResult<FiltroProperty>> DeleteFiltroproperty(long id)
         {
-            var filtroproperty = await _context.Filtroproperty.FindAsync(id);
+            var filtroproperty = await _context.FiltroProperty.FindAsync(id);
             if (filtroproperty == null)
             {
                 return NotFound();
             }
 
-            _context.Filtroproperty.Remove(filtroproperty);
+            _context.FiltroProperty.Remove(filtroproperty);
             await _context.SaveChangesAsync();
 
             return filtroproperty;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool FiltropropertyExists(long id)
         {
-            return _context.Filtroproperty.Any(e => e.Filtropropertyid == id);
+            return _context.FiltroProperty.Any(e => e.Filtropropertyid == id);
         }
     }
 }

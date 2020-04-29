@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcClassitem
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcClassitem>>> GetBcClassitem()
+        public async Task<ActionResult<IEnumerable<BcClassItem>>> GetBcClassitem()
         {
-            return await _context.BcClassitem.ToListAsync();
+            return await _context.BcClassItem.ToListAsync();
         }
 
         // GET: api/BcClassitem/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcClassitem>> GetBcClassitem(long id)
+        public async Task<ActionResult<BcClassItem>> GetBcClassitem(long id)
         {
-            var bcClassitem = await _context.BcClassitem.FindAsync(id);
+            var bcClassitem = await _context.BcClassItem.FindAsync(id);
 
             if (bcClassitem == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcClassitem(long id, BcClassitem bcClassitem)
+        public async Task<IActionResult> PutBcClassitem(long id, BcClassItem bcClassitem)
         {
             if (id != bcClassitem.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcClassitem>> PostBcClassitem(BcClassitem bcClassitem)
+        public async Task<ActionResult<BcClassItem>> PostBcClassitem(BcClassItem bcClassitem)
         {
-            _context.BcClassitem.Add(bcClassitem);
+            _context.BcClassItem.Add(bcClassitem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcClassitem", new { id = bcClassitem.Id }, bcClassitem);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcClassitem/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcClassitem>> DeleteBcClassitem(long id)
+        public async Task<ActionResult<BcClassItem>> DeleteBcClassitem(long id)
         {
-            var bcClassitem = await _context.BcClassitem.FindAsync(id);
+            var bcClassitem = await _context.BcClassItem.FindAsync(id);
             if (bcClassitem == null)
             {
                 return NotFound();
             }
 
-            _context.BcClassitem.Remove(bcClassitem);
+            _context.BcClassItem.Remove(bcClassitem);
             await _context.SaveChangesAsync();
 
             return bcClassitem;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcClassitemExists(long id)
         {
-            return _context.BcClassitem.Any(e => e.Id == id);
+            return _context.BcClassItem.Any(e => e.Id == id);
         }
     }
 }

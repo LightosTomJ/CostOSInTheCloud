@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeofflegend
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeofflegend>>> GetTakeofflegend()
+        public async Task<ActionResult<IEnumerable<TakeOffLegend>>> GetTakeofflegend()
         {
-            return await _context.Takeofflegend.ToListAsync();
+            return await _context.TakeOffLegend.ToListAsync();
         }
 
         // GET: api/Takeofflegend/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeofflegend>> GetTakeofflegend(long id)
+        public async Task<ActionResult<TakeOffLegend>> GetTakeofflegend(long id)
         {
-            var takeofflegend = await _context.Takeofflegend.FindAsync(id);
+            var takeofflegend = await _context.TakeOffLegend.FindAsync(id);
 
             if (takeofflegend == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeofflegend(long id, Takeofflegend takeofflegend)
+        public async Task<IActionResult> PutTakeofflegend(long id, TakeOffLegend takeofflegend)
         {
             if (id != takeofflegend.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeofflegend>> PostTakeofflegend(Takeofflegend takeofflegend)
+        public async Task<ActionResult<TakeOffLegend>> PostTakeofflegend(TakeOffLegend takeofflegend)
         {
-            _context.Takeofflegend.Add(takeofflegend);
+            _context.TakeOffLegend.Add(takeofflegend);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeofflegend", new { id = takeofflegend.Id }, takeofflegend);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeofflegend/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeofflegend>> DeleteTakeofflegend(long id)
+        public async Task<ActionResult<TakeOffLegend>> DeleteTakeofflegend(long id)
         {
-            var takeofflegend = await _context.Takeofflegend.FindAsync(id);
+            var takeofflegend = await _context.TakeOffLegend.FindAsync(id);
             if (takeofflegend == null)
             {
                 return NotFound();
             }
 
-            _context.Takeofflegend.Remove(takeofflegend);
+            _context.TakeOffLegend.Remove(takeofflegend);
             await _context.SaveChangesAsync();
 
             return takeofflegend;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeofflegendExists(long id)
         {
-            return _context.Takeofflegend.Any(e => e.Id == id);
+            return _context.TakeOffLegend.Any(e => e.Id == id);
         }
     }
 }

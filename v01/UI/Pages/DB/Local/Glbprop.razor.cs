@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class GlbpropBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Glbprop> glbprop = null;
+        protected IList<Models.DB.Local.GlbProp> glbprop = null;
 
         protected override async Task OnInitializedAsync()
         {

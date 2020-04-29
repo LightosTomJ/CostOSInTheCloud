@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Mathistory
+    public partial class MatHistory
     {
         public long Id { get; set; }
         public long? Materialid { get; set; }

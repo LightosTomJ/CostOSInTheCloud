@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Layoutc
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Layoutc>>> GetLayoutc()
+        public async Task<ActionResult<IEnumerable<LayoutC>>> GetLayoutc()
         {
-            return await _context.Layoutc.ToListAsync();
+            return await _context.LayoutC.ToListAsync();
         }
 
         // GET: api/Layoutc/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Layoutc>> GetLayoutc(long id)
+        public async Task<ActionResult<LayoutC>> GetLayoutc(long id)
         {
-            var layoutc = await _context.Layoutc.FindAsync(id);
+            var layoutc = await _context.LayoutC.FindAsync(id);
 
             if (layoutc == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLayoutc(long id, Layoutc layoutc)
+        public async Task<IActionResult> PutLayoutc(long id, LayoutC layoutc)
         {
             if (id != layoutc.Layoutcid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Layoutc>> PostLayoutc(Layoutc layoutc)
+        public async Task<ActionResult<LayoutC>> PostLayoutc(LayoutC layoutc)
         {
-            _context.Layoutc.Add(layoutc);
+            _context.LayoutC.Add(layoutc);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetLayoutc", new { id = layoutc.Layoutcid }, layoutc);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Layoutc/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Layoutc>> DeleteLayoutc(long id)
+        public async Task<ActionResult<LayoutC>> DeleteLayoutc(long id)
         {
-            var layoutc = await _context.Layoutc.FindAsync(id);
+            var layoutc = await _context.LayoutC.FindAsync(id);
             if (layoutc == null)
             {
                 return NotFound();
             }
 
-            _context.Layoutc.Remove(layoutc);
+            _context.LayoutC.Remove(layoutc);
             await _context.SaveChangesAsync();
 
             return layoutc;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool LayoutcExists(long id)
         {
-            return _context.Layoutc.Any(e => e.Layoutcid == id);
+            return _context.LayoutC.Any(e => e.Layoutcid == id);
         }
     }
 }

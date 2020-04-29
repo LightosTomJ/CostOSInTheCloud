@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcElemprop
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcElemprop>>> GetBcElemprop()
+        public async Task<ActionResult<IEnumerable<BcElemProp>>> GetBcElemprop()
         {
-            return await _context.BcElemprop.ToListAsync();
+            return await _context.BcElemProp.ToListAsync();
         }
 
         // GET: api/BcElemprop/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcElemprop>> GetBcElemprop(long id)
+        public async Task<ActionResult<BcElemProp>> GetBcElemprop(long id)
         {
-            var bcElemprop = await _context.BcElemprop.FindAsync(id);
+            var bcElemprop = await _context.BcElemProp.FindAsync(id);
 
             if (bcElemprop == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcElemprop(long id, BcElemprop bcElemprop)
+        public async Task<IActionResult> PutBcElemprop(long id, BcElemProp bcElemprop)
         {
             if (id != bcElemprop.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcElemprop>> PostBcElemprop(BcElemprop bcElemprop)
+        public async Task<ActionResult<BcElemProp>> PostBcElemprop(BcElemProp bcElemprop)
         {
-            _context.BcElemprop.Add(bcElemprop);
+            _context.BcElemProp.Add(bcElemprop);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcElemprop", new { id = bcElemprop.Id }, bcElemprop);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcElemprop/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcElemprop>> DeleteBcElemprop(long id)
+        public async Task<ActionResult<BcElemProp>> DeleteBcElemprop(long id)
         {
-            var bcElemprop = await _context.BcElemprop.FindAsync(id);
+            var bcElemprop = await _context.BcElemProp.FindAsync(id);
             if (bcElemprop == null)
             {
                 return NotFound();
             }
 
-            _context.BcElemprop.Remove(bcElemprop);
+            _context.BcElemProp.Remove(bcElemprop);
             await _context.SaveChangesAsync();
 
             return bcElemprop;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcElempropExists(long id)
         {
-            return _context.BcElemprop.Any(e => e.Id == id);
+            return _context.BcElemProp.Any(e => e.Id == id);
         }
     }
 }

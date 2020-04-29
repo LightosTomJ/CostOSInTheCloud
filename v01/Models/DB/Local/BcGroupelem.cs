@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcGroupelem
+    public partial class BcGroupElem
     {
         public long Id { get; set; }
         public long? ElemId { get; set; }

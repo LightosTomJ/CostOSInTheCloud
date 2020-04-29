@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Wsdatamapping
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Wsdatamapping>>> GetWsdatamapping()
+        public async Task<ActionResult<IEnumerable<WsDataMapping>>> GetWsdatamapping()
         {
-            return await _context.Wsdatamapping.ToListAsync();
+            return await _context.WsDataMapping.ToListAsync();
         }
 
         // GET: api/Wsdatamapping/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wsdatamapping>> GetWsdatamapping(long id)
+        public async Task<ActionResult<WsDataMapping>> GetWsdatamapping(long id)
         {
-            var wsdatamapping = await _context.Wsdatamapping.FindAsync(id);
+            var wsdatamapping = await _context.WsDataMapping.FindAsync(id);
 
             if (wsdatamapping == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWsdatamapping(long id, Wsdatamapping wsdatamapping)
+        public async Task<IActionResult> PutWsdatamapping(long id, WsDataMapping wsdatamapping)
         {
             if (id != wsdatamapping.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Wsdatamapping>> PostWsdatamapping(Wsdatamapping wsdatamapping)
+        public async Task<ActionResult<WsDataMapping>> PostWsdatamapping(WsDataMapping wsdatamapping)
         {
-            _context.Wsdatamapping.Add(wsdatamapping);
+            _context.WsDataMapping.Add(wsdatamapping);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetWsdatamapping", new { id = wsdatamapping.Id }, wsdatamapping);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Wsdatamapping/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Wsdatamapping>> DeleteWsdatamapping(long id)
+        public async Task<ActionResult<WsDataMapping>> DeleteWsdatamapping(long id)
         {
-            var wsdatamapping = await _context.Wsdatamapping.FindAsync(id);
+            var wsdatamapping = await _context.WsDataMapping.FindAsync(id);
             if (wsdatamapping == null)
             {
                 return NotFound();
             }
 
-            _context.Wsdatamapping.Remove(wsdatamapping);
+            _context.WsDataMapping.Remove(wsdatamapping);
             await _context.SaveChangesAsync();
 
             return wsdatamapping;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool WsdatamappingExists(long id)
         {
-            return _context.Wsdatamapping.Any(e => e.Id == id);
+            return _context.WsDataMapping.Any(e => e.Id == id);
         }
     }
 }

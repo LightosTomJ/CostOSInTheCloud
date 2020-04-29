@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ParamitemBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Paramitem> paramitem = null;
+        protected IList<Models.DB.Local.ParamItem> paramitem = null;
 
         protected override async Task OnInitializedAsync()
         {

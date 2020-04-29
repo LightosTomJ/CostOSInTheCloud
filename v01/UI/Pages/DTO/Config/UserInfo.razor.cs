@@ -29,7 +29,7 @@ namespace UI.Pages.DTO.Config
         {
             try
             {
-                configContext configC = new configContext();
+                ConfigContext configC = new ConfigContext();
 
                 //Get users
                 AspNetUsersController uc = new AspNetUsersController(configC);

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ParaminputBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Paraminput> paraminput = null;
+        protected IList<Models.DB.Local.ParamInput> paraminput = null;
 
         protected override async Task OnInitializedAsync()
         {

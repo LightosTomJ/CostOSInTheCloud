@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public BcMaterial()
         {
-            BcElemmaterial = new HashSet<BcElemmaterial>();
+            BcElemmaterial = new HashSet<BcElemMaterial>();
         }
 
         public long Id { get; set; }
@@ -16,6 +16,6 @@ namespace Models.DB.Local
         public long? ModelId { get; set; }
 
         public virtual BcModel Model { get; set; }
-        public virtual ICollection<BcElemmaterial> BcElemmaterial { get; set; }
+        public virtual ICollection<BcElemMaterial> BcElemmaterial { get; set; }
     }
 }

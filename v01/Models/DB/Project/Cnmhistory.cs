@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Cnmhistory
+    public partial class CnmHistory
     {
         public long Id { get; set; }
         public long? Consumableid { get; set; }

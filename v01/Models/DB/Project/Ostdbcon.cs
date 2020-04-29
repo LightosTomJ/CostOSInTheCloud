@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Ostdbcon
+    public partial class OSTDBCon
     {
         public long Ostconid { get; set; }
         public string Host { get; set; }

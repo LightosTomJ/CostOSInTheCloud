@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Models.DB.View
 {
-    public partial class viewContext : DbContext
+    public partial class ViewContext : DbContext
     {
-        public viewContext()
+        public ViewContext()
         {
         }
 
-        public viewContext(DbContextOptions<viewContext> options)
+        public ViewContext(DbContextOptions<ViewContext> options)
             : base(options)
         {
         }

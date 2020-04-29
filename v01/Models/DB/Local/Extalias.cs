@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Extalias
+    public partial class ExtAlias
     {
         public long Aliasid { get; set; }
         public short? Linenumber { get; set; }
@@ -14,6 +14,6 @@ namespace Models.DB.Local
         public bool? Isquerycolumnid { get; set; }
         public long? Queryid { get; set; }
 
-        public virtual Extquery Query { get; set; }
+        public virtual ExtQuery Query { get; set; }
     }
 }

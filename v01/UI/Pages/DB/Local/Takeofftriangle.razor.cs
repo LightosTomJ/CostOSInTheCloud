@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeofftriangleBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeofftriangle> takeofftriangle = null;
+        protected IList<Models.DB.Local.TakeOffTriangle> takeofftriangle = null;
 
         protected override async Task OnInitializedAsync()
         {

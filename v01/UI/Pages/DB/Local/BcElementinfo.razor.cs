@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcElementinfoBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcElementinfo> bcelementinfo = null;
+        protected IList<Models.DB.Local.BcElementInfo> bcelementinfo = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ProjectaccessBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Projectaccess> projectaccess = null;
+        protected IList<Models.DB.Local.ProjectAccess> projectaccess = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Benchmarkboqcolmap
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Benchmarkboqcolmap>>> GetBenchmarkboqcolmap()
+        public async Task<ActionResult<IEnumerable<BenchmarkBOQColMap>>> GetBenchmarkboqcolmap()
         {
-            return await _context.Benchmarkboqcolmap.ToListAsync();
+            return await _context.BenchmarkBOQColMap.ToListAsync();
         }
 
         // GET: api/Benchmarkboqcolmap/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Benchmarkboqcolmap>> GetBenchmarkboqcolmap(long id)
+        public async Task<ActionResult<BenchmarkBOQColMap>> GetBenchmarkboqcolmap(long id)
         {
-            var benchmarkboqcolmap = await _context.Benchmarkboqcolmap.FindAsync(id);
+            var benchmarkboqcolmap = await _context.BenchmarkBOQColMap.FindAsync(id);
 
             if (benchmarkboqcolmap == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBenchmarkboqcolmap(long id, Benchmarkboqcolmap benchmarkboqcolmap)
+        public async Task<IActionResult> PutBenchmarkboqcolmap(long id, BenchmarkBOQColMap benchmarkboqcolmap)
         {
             if (id != benchmarkboqcolmap.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Benchmarkboqcolmap>> PostBenchmarkboqcolmap(Benchmarkboqcolmap benchmarkboqcolmap)
+        public async Task<ActionResult<BenchmarkBOQColMap>> PostBenchmarkboqcolmap(BenchmarkBOQColMap benchmarkboqcolmap)
         {
-            _context.Benchmarkboqcolmap.Add(benchmarkboqcolmap);
+            _context.BenchmarkBOQColMap.Add(benchmarkboqcolmap);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBenchmarkboqcolmap", new { id = benchmarkboqcolmap.Id }, benchmarkboqcolmap);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Benchmarkboqcolmap/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Benchmarkboqcolmap>> DeleteBenchmarkboqcolmap(long id)
+        public async Task<ActionResult<BenchmarkBOQColMap>> DeleteBenchmarkboqcolmap(long id)
         {
-            var benchmarkboqcolmap = await _context.Benchmarkboqcolmap.FindAsync(id);
+            var benchmarkboqcolmap = await _context.BenchmarkBOQColMap.FindAsync(id);
             if (benchmarkboqcolmap == null)
             {
                 return NotFound();
             }
 
-            _context.Benchmarkboqcolmap.Remove(benchmarkboqcolmap);
+            _context.BenchmarkBOQColMap.Remove(benchmarkboqcolmap);
             await _context.SaveChangesAsync();
 
             return benchmarkboqcolmap;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BenchmarkboqcolmapExists(long id)
         {
-            return _context.Benchmarkboqcolmap.Any(e => e.Id == id);
+            return _context.BenchmarkBOQColMap.Any(e => e.Id == id);
         }
     }
 }

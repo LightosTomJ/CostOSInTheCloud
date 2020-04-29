@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeoffarea
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeoffarea>>> GetTakeoffarea()
+        public async Task<ActionResult<IEnumerable<TakeOffArea>>> GetTakeoffarea()
         {
-            return await _context.Takeoffarea.ToListAsync();
+            return await _context.TakeOffArea.ToListAsync();
         }
 
         // GET: api/Takeoffarea/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeoffarea>> GetTakeoffarea(long id)
+        public async Task<ActionResult<TakeOffArea>> GetTakeoffarea(long id)
         {
-            var takeoffarea = await _context.Takeoffarea.FindAsync(id);
+            var takeoffarea = await _context.TakeOffArea.FindAsync(id);
 
             if (takeoffarea == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeoffarea(long id, Takeoffarea takeoffarea)
+        public async Task<IActionResult> PutTakeoffarea(long id, TakeOffArea takeoffarea)
         {
             if (id != takeoffarea.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeoffarea>> PostTakeoffarea(Takeoffarea takeoffarea)
+        public async Task<ActionResult<TakeOffArea>> PostTakeoffarea(TakeOffArea takeoffarea)
         {
-            _context.Takeoffarea.Add(takeoffarea);
+            _context.TakeOffArea.Add(takeoffarea);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeoffarea", new { id = takeoffarea.Id }, takeoffarea);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeoffarea/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeoffarea>> DeleteTakeoffarea(long id)
+        public async Task<ActionResult<TakeOffArea>> DeleteTakeoffarea(long id)
         {
-            var takeoffarea = await _context.Takeoffarea.FindAsync(id);
+            var takeoffarea = await _context.TakeOffArea.FindAsync(id);
             if (takeoffarea == null)
             {
                 return NotFound();
             }
 
-            _context.Takeoffarea.Remove(takeoffarea);
+            _context.TakeOffArea.Remove(takeoffarea);
             await _context.SaveChangesAsync();
 
             return takeoffarea;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeoffareaExists(long id)
         {
-            return _context.Takeoffarea.Any(e => e.Id == id);
+            return _context.TakeOffArea.Any(e => e.Id == id);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Userprop
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Userprop>>> GetUserprop()
+        public async Task<ActionResult<IEnumerable<UserProp>>> GetUserprop()
         {
-            return await _context.Userprop.ToListAsync();
+            return await _context.UserProp.ToListAsync();
         }
 
         // GET: api/Userprop/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Userprop>> GetUserprop(long id)
+        public async Task<ActionResult<UserProp>> GetUserprop(long id)
         {
-            var userprop = await _context.Userprop.FindAsync(id);
+            var userprop = await _context.UserProp.FindAsync(id);
 
             if (userprop == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserprop(long id, Userprop userprop)
+        public async Task<IActionResult> PutUserprop(long id, UserProp userprop)
         {
             if (id != userprop.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Userprop>> PostUserprop(Userprop userprop)
+        public async Task<ActionResult<UserProp>> PostUserprop(UserProp userprop)
         {
-            _context.Userprop.Add(userprop);
+            _context.UserProp.Add(userprop);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUserprop", new { id = userprop.Id }, userprop);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Userprop/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Userprop>> DeleteUserprop(long id)
+        public async Task<ActionResult<UserProp>> DeleteUserprop(long id)
         {
-            var userprop = await _context.Userprop.FindAsync(id);
+            var userprop = await _context.UserProp.FindAsync(id);
             if (userprop == null)
             {
                 return NotFound();
             }
 
-            _context.Userprop.Remove(userprop);
+            _context.UserProp.Remove(userprop);
             await _context.SaveChangesAsync();
 
             return userprop;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool UserpropExists(long id)
         {
-            return _context.Userprop.Any(e => e.Id == id);
+            return _context.UserProp.Any(e => e.Id == id);
         }
     }
 }

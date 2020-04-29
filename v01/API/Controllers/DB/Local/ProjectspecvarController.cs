@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projectspecvar
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projectspecvar>>> GetProjectspecvar()
+        public async Task<ActionResult<IEnumerable<ProjectSpecVar>>> GetProjectspecvar()
         {
-            return await _context.Projectspecvar.ToListAsync();
+            return await _context.ProjectSpecVar.ToListAsync();
         }
 
         // GET: api/Projectspecvar/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projectspecvar>> GetProjectspecvar(long id)
+        public async Task<ActionResult<ProjectSpecVar>> GetProjectspecvar(long id)
         {
-            var projectspecvar = await _context.Projectspecvar.FindAsync(id);
+            var projectspecvar = await _context.ProjectSpecVar.FindAsync(id);
 
             if (projectspecvar == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectspecvar(long id, Projectspecvar projectspecvar)
+        public async Task<IActionResult> PutProjectspecvar(long id, ProjectSpecVar projectspecvar)
         {
             if (id != projectspecvar.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projectspecvar>> PostProjectspecvar(Projectspecvar projectspecvar)
+        public async Task<ActionResult<ProjectSpecVar>> PostProjectspecvar(ProjectSpecVar projectspecvar)
         {
-            _context.Projectspecvar.Add(projectspecvar);
+            _context.ProjectSpecVar.Add(projectspecvar);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectspecvar", new { id = projectspecvar.Id }, projectspecvar);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projectspecvar/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projectspecvar>> DeleteProjectspecvar(long id)
+        public async Task<ActionResult<ProjectSpecVar>> DeleteProjectspecvar(long id)
         {
-            var projectspecvar = await _context.Projectspecvar.FindAsync(id);
+            var projectspecvar = await _context.ProjectSpecVar.FindAsync(id);
             if (projectspecvar == null)
             {
                 return NotFound();
             }
 
-            _context.Projectspecvar.Remove(projectspecvar);
+            _context.ProjectSpecVar.Remove(projectspecvar);
             await _context.SaveChangesAsync();
 
             return projectspecvar;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectspecvarExists(long id)
         {
-            return _context.Projectspecvar.Any(e => e.Id == id);
+            return _context.ProjectSpecVar.Any(e => e.Id == id);
         }
     }
 }

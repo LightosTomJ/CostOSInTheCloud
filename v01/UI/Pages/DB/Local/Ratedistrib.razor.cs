@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class RatedistribBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Ratedistrib> ratedistrib = null;
+        protected IList<Models.DB.Local.RateDistrib> ratedistrib = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Takeoffpoint
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Takeoffpoint>>> GetTakeoffpoint()
+        public async Task<ActionResult<IEnumerable<TakeOffPoint>>> GetTakeoffpoint()
         {
-            return await _context.Takeoffpoint.ToListAsync();
+            return await _context.TakeOffPoint.ToListAsync();
         }
 
         // GET: api/Takeoffpoint/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Takeoffpoint>> GetTakeoffpoint(long id)
+        public async Task<ActionResult<TakeOffPoint>> GetTakeoffpoint(long id)
         {
-            var takeoffpoint = await _context.Takeoffpoint.FindAsync(id);
+            var takeoffpoint = await _context.TakeOffPoint.FindAsync(id);
 
             if (takeoffpoint == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTakeoffpoint(long id, Takeoffpoint takeoffpoint)
+        public async Task<IActionResult> PutTakeoffpoint(long id, TakeOffPoint takeoffpoint)
         {
             if (id != takeoffpoint.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Takeoffpoint>> PostTakeoffpoint(Takeoffpoint takeoffpoint)
+        public async Task<ActionResult<TakeOffPoint>> PostTakeoffpoint(TakeOffPoint takeoffpoint)
         {
-            _context.Takeoffpoint.Add(takeoffpoint);
+            _context.TakeOffPoint.Add(takeoffpoint);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTakeoffpoint", new { id = takeoffpoint.Id }, takeoffpoint);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Takeoffpoint/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Takeoffpoint>> DeleteTakeoffpoint(long id)
+        public async Task<ActionResult<TakeOffPoint>> DeleteTakeoffpoint(long id)
         {
-            var takeoffpoint = await _context.Takeoffpoint.FindAsync(id);
+            var takeoffpoint = await _context.TakeOffPoint.FindAsync(id);
             if (takeoffpoint == null)
             {
                 return NotFound();
             }
 
-            _context.Takeoffpoint.Remove(takeoffpoint);
+            _context.TakeOffPoint.Remove(takeoffpoint);
             await _context.SaveChangesAsync();
 
             return takeoffpoint;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool TakeoffpointExists(long id)
         {
-            return _context.Takeoffpoint.Any(e => e.Id == id);
+            return _context.TakeOffPoint.Any(e => e.Id == id);
         }
     }
 }

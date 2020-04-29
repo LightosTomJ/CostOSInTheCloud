@@ -7,7 +7,7 @@ namespace Models.DB.Local
     {
         public Projecturl()
         {
-            Prjprop = new HashSet<Prjprop>();
+            Prjprop = new HashSet<PrjProp>();
         }
 
         public long Projecturlid { get; set; }
@@ -45,8 +45,8 @@ namespace Models.DB.Local
         public long? Projectinfoid { get; set; }
         public long? Projectdbmsid { get; set; }
 
-        public virtual Prjdbms Projectdbms { get; set; }
-        public virtual Projectinfo Projectinfo { get; set; }
-        public virtual ICollection<Prjprop> Prjprop { get; set; }
+        public virtual PrjDBMS Projectdbms { get; set; }
+        public virtual ProjectInfo Projectinfo { get; set; }
+        public virtual ICollection<PrjProp> Prjprop { get; set; }
     }
 }

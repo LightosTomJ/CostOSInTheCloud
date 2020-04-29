@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcElemconnection
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcElemconnection>>> GetBcElemconnection()
+        public async Task<ActionResult<IEnumerable<BcElemConnection>>> GetBcElemconnection()
         {
-            return await _context.BcElemconnection.ToListAsync();
+            return await _context.BcElemConnection.ToListAsync();
         }
 
         // GET: api/BcElemconnection/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcElemconnection>> GetBcElemconnection(long id)
+        public async Task<ActionResult<BcElemConnection>> GetBcElemconnection(long id)
         {
-            var bcElemconnection = await _context.BcElemconnection.FindAsync(id);
+            var bcElemconnection = await _context.BcElemConnection.FindAsync(id);
 
             if (bcElemconnection == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcElemconnection(long id, BcElemconnection bcElemconnection)
+        public async Task<IActionResult> PutBcElemconnection(long id, BcElemConnection bcElemconnection)
         {
             if (id != bcElemconnection.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcElemconnection>> PostBcElemconnection(BcElemconnection bcElemconnection)
+        public async Task<ActionResult<BcElemConnection>> PostBcElemconnection(BcElemConnection bcElemconnection)
         {
-            _context.BcElemconnection.Add(bcElemconnection);
+            _context.BcElemConnection.Add(bcElemconnection);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcElemconnection", new { id = bcElemconnection.Id }, bcElemconnection);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcElemconnection/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcElemconnection>> DeleteBcElemconnection(long id)
+        public async Task<ActionResult<BcElemConnection>> DeleteBcElemconnection(long id)
         {
-            var bcElemconnection = await _context.BcElemconnection.FindAsync(id);
+            var bcElemconnection = await _context.BcElemConnection.FindAsync(id);
             if (bcElemconnection == null)
             {
                 return NotFound();
             }
 
-            _context.BcElemconnection.Remove(bcElemconnection);
+            _context.BcElemConnection.Remove(bcElemconnection);
             await _context.SaveChangesAsync();
 
             return bcElemconnection;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcElemconnectionExists(long id)
         {
-            return _context.BcElemconnection.Any(e => e.Id == id);
+            return _context.BcElemConnection.Any(e => e.Id == id);
         }
     }
 }

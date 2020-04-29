@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class CntrlogBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Cntrlog> cntrlog = null;
+        protected IList<Models.DB.Local.CntrLog> cntrlog = null;
 
         protected override async Task OnInitializedAsync()
         {

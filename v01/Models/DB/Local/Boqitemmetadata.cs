@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Boqitemmetadata
+    public partial class BOQItemMetadata
     {
         public long Id { get; set; }
         public string Fieldkey { get; set; }

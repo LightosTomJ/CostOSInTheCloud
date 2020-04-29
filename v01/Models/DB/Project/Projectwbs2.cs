@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Projectwbs2
+    public partial class ProjectWBS2
     {
         public long Projectwbsid { get; set; }
         public DateTime? Lastupdate { get; set; }

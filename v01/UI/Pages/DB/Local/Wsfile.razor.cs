@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class WsfileBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Wsfile> wsfile = null;
+        protected IList<Models.DB.Local.WsFile> wsfile = null;
 
         protected override async Task OnInitializedAsync()
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcSpatialinfo
+    public partial class BcSpatialInfo
     {
         public long Id { get; set; }
         public double? MaxX { get; set; }

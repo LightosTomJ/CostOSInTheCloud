@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Quotetemplate
+    public partial class QuoteTemplate
     {
         public long Id { get; set; }
         public byte[] Xcellfile { get; set; }

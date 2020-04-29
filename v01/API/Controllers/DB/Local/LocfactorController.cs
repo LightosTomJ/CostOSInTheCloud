@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Locfactor
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Locfactor>>> GetLocfactor()
+        public async Task<ActionResult<IEnumerable<LocFactor>>> GetLocfactor()
         {
-            return await _context.Locfactor.ToListAsync();
+            return await _context.LocFactor.ToListAsync();
         }
 
         // GET: api/Locfactor/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Locfactor>> GetLocfactor(long id)
+        public async Task<ActionResult<LocFactor>> GetLocfactor(long id)
         {
-            var locfactor = await _context.Locfactor.FindAsync(id);
+            var locfactor = await _context.LocFactor.FindAsync(id);
 
             if (locfactor == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLocfactor(long id, Locfactor locfactor)
+        public async Task<IActionResult> PutLocfactor(long id, LocFactor locfactor)
         {
             if (id != locfactor.Lfid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Locfactor>> PostLocfactor(Locfactor locfactor)
+        public async Task<ActionResult<LocFactor>> PostLocfactor(LocFactor locfactor)
         {
-            _context.Locfactor.Add(locfactor);
+            _context.LocFactor.Add(locfactor);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetLocfactor", new { id = locfactor.Lfid }, locfactor);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Locfactor/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Locfactor>> DeleteLocfactor(long id)
+        public async Task<ActionResult<LocFactor>> DeleteLocfactor(long id)
         {
-            var locfactor = await _context.Locfactor.FindAsync(id);
+            var locfactor = await _context.LocFactor.FindAsync(id);
             if (locfactor == null)
             {
                 return NotFound();
             }
 
-            _context.Locfactor.Remove(locfactor);
+            _context.LocFactor.Remove(locfactor);
             await _context.SaveChangesAsync();
 
             return locfactor;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool LocfactorExists(long id)
         {
-            return _context.Locfactor.Any(e => e.Lfid == id);
+            return _context.LocFactor.Any(e => e.Lfid == id);
         }
     }
 }

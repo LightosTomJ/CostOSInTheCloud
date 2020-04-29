@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class QueryrowBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Queryrow> queryrow = null;
+        protected IList<Models.DB.Local.QueryRow> queryrow = null;
 
         protected override async Task OnInitializedAsync()
         {

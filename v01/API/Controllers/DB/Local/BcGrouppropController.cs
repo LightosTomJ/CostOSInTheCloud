@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcGroupprop
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcGroupprop>>> GetBcGroupprop()
+        public async Task<ActionResult<IEnumerable<BcGroupProp>>> GetBcGroupprop()
         {
-            return await _context.BcGroupprop.ToListAsync();
+            return await _context.BcGroupProp.ToListAsync();
         }
 
         // GET: api/BcGroupprop/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcGroupprop>> GetBcGroupprop(long id)
+        public async Task<ActionResult<BcGroupProp>> GetBcGroupprop(long id)
         {
-            var bcGroupprop = await _context.BcGroupprop.FindAsync(id);
+            var bcGroupprop = await _context.BcGroupProp.FindAsync(id);
 
             if (bcGroupprop == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcGroupprop(long id, BcGroupprop bcGroupprop)
+        public async Task<IActionResult> PutBcGroupprop(long id, BcGroupProp bcGroupprop)
         {
             if (id != bcGroupprop.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcGroupprop>> PostBcGroupprop(BcGroupprop bcGroupprop)
+        public async Task<ActionResult<BcGroupProp>> PostBcGroupprop(BcGroupProp bcGroupprop)
         {
-            _context.BcGroupprop.Add(bcGroupprop);
+            _context.BcGroupProp.Add(bcGroupprop);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcGroupprop", new { id = bcGroupprop.Id }, bcGroupprop);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcGroupprop/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcGroupprop>> DeleteBcGroupprop(long id)
+        public async Task<ActionResult<BcGroupProp>> DeleteBcGroupprop(long id)
         {
-            var bcGroupprop = await _context.BcGroupprop.FindAsync(id);
+            var bcGroupprop = await _context.BcGroupProp.FindAsync(id);
             if (bcGroupprop == null)
             {
                 return NotFound();
             }
 
-            _context.BcGroupprop.Remove(bcGroupprop);
+            _context.BcGroupProp.Remove(bcGroupprop);
             await _context.SaveChangesAsync();
 
             return bcGroupprop;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcGrouppropExists(long id)
         {
-            return _context.BcGroupprop.Any(e => e.Id == id);
+            return _context.BcGroupProp.Any(e => e.Id == id);
         }
     }
 }

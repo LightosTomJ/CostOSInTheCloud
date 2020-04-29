@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcElemmaterial
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcElemmaterial>>> GetBcElemmaterial()
+        public async Task<ActionResult<IEnumerable<BcElemMaterial>>> GetBcElemmaterial()
         {
-            return await _context.BcElemmaterial.ToListAsync();
+            return await _context.BcElemMaterial.ToListAsync();
         }
 
         // GET: api/BcElemmaterial/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcElemmaterial>> GetBcElemmaterial(long id)
+        public async Task<ActionResult<BcElemMaterial>> GetBcElemmaterial(long id)
         {
-            var bcElemmaterial = await _context.BcElemmaterial.FindAsync(id);
+            var bcElemmaterial = await _context.BcElemMaterial.FindAsync(id);
 
             if (bcElemmaterial == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcElemmaterial(long id, BcElemmaterial bcElemmaterial)
+        public async Task<IActionResult> PutBcElemmaterial(long id, BcElemMaterial bcElemmaterial)
         {
             if (id != bcElemmaterial.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcElemmaterial>> PostBcElemmaterial(BcElemmaterial bcElemmaterial)
+        public async Task<ActionResult<BcElemMaterial>> PostBcElemmaterial(BcElemMaterial bcElemmaterial)
         {
-            _context.BcElemmaterial.Add(bcElemmaterial);
+            _context.BcElemMaterial.Add(bcElemmaterial);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcElemmaterial", new { id = bcElemmaterial.Id }, bcElemmaterial);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcElemmaterial/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcElemmaterial>> DeleteBcElemmaterial(long id)
+        public async Task<ActionResult<BcElemMaterial>> DeleteBcElemmaterial(long id)
         {
-            var bcElemmaterial = await _context.BcElemmaterial.FindAsync(id);
+            var bcElemmaterial = await _context.BcElemMaterial.FindAsync(id);
             if (bcElemmaterial == null)
             {
                 return NotFound();
             }
 
-            _context.BcElemmaterial.Remove(bcElemmaterial);
+            _context.BcElemMaterial.Remove(bcElemmaterial);
             await _context.SaveChangesAsync();
 
             return bcElemmaterial;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcElemmaterialExists(long id)
         {
-            return _context.BcElemmaterial.Any(e => e.Id == id);
+            return _context.BcElemMaterial.Any(e => e.Id == id);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Models.DB.Local
         }
 
         public virtual DbSet<Ad> Ad { get; set; }
-        public virtual DbSet<AlcAmusers> AlcAmusers { get; set; }
+        public virtual DbSet<AlcAmUsers> AlcAmUsers { get; set; }
         public virtual DbSet<AlcGroups> AlcGroups { get; set; }
         public virtual DbSet<AlcObjectsInUse> AlcObjectsInUse { get; set; }
         public virtual DbSet<AlcObjectsStatus> AlcObjectsStatus { get; set; }
@@ -32,38 +32,38 @@ namespace Models.DB.Local
         public virtual DbSet<AssemblyMaterial> AssemblyMaterial { get; set; }
         public virtual DbSet<AssemblySubcontractor> AssemblySubcontractor { get; set; }
         public virtual DbSet<BcClassification> BcClassification { get; set; }
-        public virtual DbSet<BcClassitem> BcClassitem { get; set; }
-        public virtual DbSet<BcElemclassitem> BcElemclassitem { get; set; }
-        public virtual DbSet<BcElemconnection> BcElemconnection { get; set; }
-        public virtual DbSet<BcElemcovering> BcElemcovering { get; set; }
+        public virtual DbSet<BcClassItem> BcClassItem { get; set; }
+        public virtual DbSet<BcElemClassItem> BcElemClassItem { get; set; }
+        public virtual DbSet<BcElemConnection> BcElemConnection { get; set; }
+        public virtual DbSet<BcElemCovering> BcElemCovering { get; set; }
         public virtual DbSet<BcElement> BcElement { get; set; }
-        public virtual DbSet<BcElementinfo> BcElementinfo { get; set; }
-        public virtual DbSet<BcElemmaterial> BcElemmaterial { get; set; }
-        public virtual DbSet<BcElemprop> BcElemprop { get; set; }
+        public virtual DbSet<BcElementInfo> BcElementInfo { get; set; }
+        public virtual DbSet<BcElemMaterial> BcElemMaterial { get; set; }
+        public virtual DbSet<BcElemProp> BcElemProp { get; set; }
         public virtual DbSet<BcGeometry> BcGeometry { get; set; }
-        public virtual DbSet<BcGeomfile> BcGeomfile { get; set; }
-        public virtual DbSet<BcGpuserver> BcGpuserver { get; set; }
+        public virtual DbSet<BcGeomFile> BcGeomFile { get; set; }
+        public virtual DbSet<BcGPUServer> BcGPUServer { get; set; }
         public virtual DbSet<BcGroup> BcGroup { get; set; }
-        public virtual DbSet<BcGroupelem> BcGroupelem { get; set; }
-        public virtual DbSet<BcGroupprop> BcGroupprop { get; set; }
+        public virtual DbSet<BcGroupElem> BcGroupElem { get; set; }
+        public virtual DbSet<BcGroupProp> BcGroupProp { get; set; }
         public virtual DbSet<BcMaterial> BcMaterial { get; set; }
         public virtual DbSet<BcModel> BcModel { get; set; }
         public virtual DbSet<BcProject> BcProject { get; set; }
         public virtual DbSet<BcQuantity> BcQuantity { get; set; }
         public virtual DbSet<BcScene> BcScene { get; set; }
-        public virtual DbSet<BcSpatialinfo> BcSpatialinfo { get; set; }
-        public virtual DbSet<Benchmarkboqcolmap> Benchmarkboqcolmap { get; set; }
-        public virtual DbSet<Boqitemmetadata> Boqitemmetadata { get; set; }
-        public virtual DbSet<Cntrlog> Cntrlog { get; set; }
-        public virtual DbSet<Cntrlogitem> Cntrlogitem { get; set; }
+        public virtual DbSet<BcSpatialInfo> BcSpatialInfo { get; set; }
+        public virtual DbSet<BenchmarkBOQColMap> BenchmarkBOQColMap { get; set; }
+        public virtual DbSet<BOQItemMetadata> BOQItemMetadata { get; set; }
+        public virtual DbSet<CntrLog> CntrLog { get; set; }
+        public virtual DbSet<CntrLogItem> CntrLogItem { get; set; }
         public virtual DbSet<Conceptuals> Conceptuals { get; set; }
         public virtual DbSet<Consumable> Consumable { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Currency> Currency { get; set; }
         public virtual DbSet<Equipment> Equipment { get; set; }
-        public virtual DbSet<Extalias> Extalias { get; set; }
-        public virtual DbSet<Extdatasource> Extdatasource { get; set; }
-        public virtual DbSet<Extquery> Extquery { get; set; }
+        public virtual DbSet<ExtAlias> ExtAlias { get; set; }
+        public virtual DbSet<ExtDatasource> ExtDatasource { get; set; }
+        public virtual DbSet<ExtQuery> ExtQuery { get; set; }
         public virtual DbSet<Extracode1> Extracode1 { get; set; }
         public virtual DbSet<Extracode2> Extracode2 { get; set; }
         public virtual DbSet<Extracode3> Extracode3 { get; set; }
@@ -71,62 +71,62 @@ namespace Models.DB.Local
         public virtual DbSet<Extracode5> Extracode5 { get; set; }
         public virtual DbSet<Extracode6> Extracode6 { get; set; }
         public virtual DbSet<Extracode7> Extracode7 { get; set; }
-        public virtual DbSet<Fieldcustom> Fieldcustom { get; set; }
+        public virtual DbSet<FieldCustom> FieldCustom { get; set; }
         public virtual DbSet<Filtro> Filtro { get; set; }
-        public virtual DbSet<Filtroproperty> Filtroproperty { get; set; }
-        public virtual DbSet<Fldfn> Fldfn { get; set; }
+        public virtual DbSet<FiltroProperty> FiltroProperty { get; set; }
+        public virtual DbSet<FldFn> FldFn { get; set; }
         public virtual DbSet<Fncton> Fncton { get; set; }
         public virtual DbSet<FnctonArgument> FnctonArgument { get; set; }
         public virtual DbSet<Gekcode> Gekcode { get; set; }
-        public virtual DbSet<Glbprop> Glbprop { get; set; }
+        public virtual DbSet<GlbProp> GlbProp { get; set; }
         public virtual DbSet<Groupcode> Groupcode { get; set; }
         public virtual DbSet<Labor> Labor { get; set; }
-        public virtual DbSet<Layoutc> Layoutc { get; set; }
-        public virtual DbSet<Layoutcpanel> Layoutcpanel { get; set; }
+        public virtual DbSet<LayoutC> LayoutC { get; set; }
+        public virtual DbSet<LayoutCPanel> LayoutCPanel { get; set; }
         public virtual DbSet<Lictbl> Lictbl { get; set; }
-        public virtual DbSet<Locfactor> Locfactor { get; set; }
-        public virtual DbSet<Locprof> Locprof { get; set; }
+        public virtual DbSet<LocFactor> LocFactor { get; set; }
+        public virtual DbSet<LocProf> LocProf { get; set; }
         public virtual DbSet<Material> Material { get; set; }
-        public virtual DbSet<Paraminput> Paraminput { get; set; }
-        public virtual DbSet<Paramitem> Paramitem { get; set; }
-        public virtual DbSet<Paramoutput> Paramoutput { get; set; }
-        public virtual DbSet<Paramreturn> Paramreturn { get; set; }
+        public virtual DbSet<ParamInput> ParamInput { get; set; }
+        public virtual DbSet<ParamItem> ParamItem { get; set; }
+        public virtual DbSet<ParamOutput> ParamOutput { get; set; }
+        public virtual DbSet<ParamReturn> ParamReturn { get; set; }
         public virtual DbSet<Principals> Principals { get; set; }
-        public virtual DbSet<Prjdbms> Prjdbms { get; set; }
-        public virtual DbSet<Prjprop> Prjprop { get; set; }
-        public virtual DbSet<Projectaccess> Projectaccess { get; set; }
-        public virtual DbSet<Projecteps> Projecteps { get; set; }
-        public virtual DbSet<Projectinfo> Projectinfo { get; set; }
-        public virtual DbSet<Projectspecvar> Projectspecvar { get; set; }
-        public virtual DbSet<Projecttemplate> Projecttemplate { get; set; }
+        public virtual DbSet<PrjDBMS> PrjDBMS { get; set; }
+        public virtual DbSet<PrjProp> PrjProp { get; set; }
+        public virtual DbSet<ProjectAccess> ProjectAccess { get; set; }
+        public virtual DbSet<ProjectEPS> ProjectEPS { get; set; }
+        public virtual DbSet<ProjectInfo> ProjectInfo { get; set; }
+        public virtual DbSet<ProjectSpecVar> ProjectSpecVar { get; set; }
+        public virtual DbSet<ProjectTemplate> ProjectTemplate { get; set; }
         public virtual DbSet<Projecturl> Projecturl { get; set; }
-        public virtual DbSet<Projectuser> Projectuser { get; set; }
-        public virtual DbSet<Projectusertemplate> Projectusertemplate { get; set; }
-        public virtual DbSet<Queryresource> Queryresource { get; set; }
-        public virtual DbSet<Queryrow> Queryrow { get; set; }
-        public virtual DbSet<Quotetemplate> Quotetemplate { get; set; }
-        public virtual DbSet<Ratebuildup> Ratebuildup { get; set; }
-        public virtual DbSet<Ratebuildupcols> Ratebuildupcols { get; set; }
-        public virtual DbSet<Ratedistrib> Ratedistrib { get; set; }
+        public virtual DbSet<ProjectUser> ProjectUser { get; set; }
+        public virtual DbSet<ProjectUserTemplate> ProjectUserTemplate { get; set; }
+        public virtual DbSet<QueryResource> QueryResource { get; set; }
+        public virtual DbSet<QueryRow> QueryRow { get; set; }
+        public virtual DbSet<QuoteTemplate> QuoteTemplate { get; set; }
+        public virtual DbSet<RateBuildUp> RateBuildUp { get; set; }
+        public virtual DbSet<RateBuildUpCols> RateBuildUpCols { get; set; }
+        public virtual DbSet<RateDistrib> RateDistrib { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<Rpdfn> Rpdfn { get; set; }
+        public virtual DbSet<RpdFn> RpdFn { get; set; }
         public virtual DbSet<Subcontractor> Subcontractor { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
-        public virtual DbSet<Takeoffarea> Takeoffarea { get; set; }
-        public virtual DbSet<Takeoffcon> Takeoffcon { get; set; }
-        public virtual DbSet<Takeofflegend> Takeofflegend { get; set; }
-        public virtual DbSet<Takeoffline> Takeoffline { get; set; }
-        public virtual DbSet<Takeoffpoint> Takeoffpoint { get; set; }
-        public virtual DbSet<Takeofftriangle> Takeofftriangle { get; set; }
-        public virtual DbSet<Teamalias> Teamalias { get; set; }
-        public virtual DbSet<Unitalias> Unitalias { get; set; }
-        public virtual DbSet<Userprop> Userprop { get; set; }
-        public virtual DbSet<Usersessions> Usersessions { get; set; }
-        public virtual DbSet<Wscolident> Wscolident { get; set; }
-        public virtual DbSet<Wsdatamapping> Wsdatamapping { get; set; }
-        public virtual DbSet<Wsfile> Wsfile { get; set; }
-        public virtual DbSet<Wsrevision> Wsrevision { get; set; }
-        public virtual DbSet<Xcellfile> Xcellfile { get; set; }
+        public virtual DbSet<TakeOffArea> TakeOffArea { get; set; }
+        public virtual DbSet<TakeOffCon> TakeOffCon { get; set; }
+        public virtual DbSet<TakeOffLegend> TakeOffLegend { get; set; }
+        public virtual DbSet<TakeOffLine> TakeOffLine { get; set; }
+        public virtual DbSet<TakeOffPoint> TakeOffPoint { get; set; }
+        public virtual DbSet<TakeOffTriangle> TakeOffTriangle { get; set; }
+        public virtual DbSet<TeamAlias> TeamAlias { get; set; }
+        public virtual DbSet<UnitAlias> UnitAlias { get; set; }
+        public virtual DbSet<UserProp> UserProp { get; set; }
+        public virtual DbSet<UserSessions> UserSessions { get; set; }
+        public virtual DbSet<WsColident> WsColident { get; set; }
+        public virtual DbSet<WsDataMapping> WsDataMapping { get; set; }
+        public virtual DbSet<WsFile> WsFile { get; set; }
+        public virtual DbSet<WsRevision> WsRevision { get; set; }
+        public virtual DbSet<XcellFile> XcellFile { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -188,7 +188,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<AlcAmusers>(entity =>
+            modelBuilder.Entity<AlcAmUsers>(entity =>
             {
                 entity.HasKey(e => e.UserGid)
                     .HasName("alcAMUsers_I00");
@@ -1189,7 +1189,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKC233D3A44160E6D4");
             });
 
-            modelBuilder.Entity<BcClassitem>(entity =>
+            modelBuilder.Entity<BcClassItem>(entity =>
             {
                 entity.ToTable("BC_CLASSITEM");
 
@@ -1218,7 +1218,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK40761DED4160E6D4");
             });
 
-            modelBuilder.Entity<BcElemclassitem>(entity =>
+            modelBuilder.Entity<BcElemClassItem>(entity =>
             {
                 entity.ToTable("BC_ELEMCLASSITEM");
 
@@ -1246,7 +1246,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK50AC9A3E4160E6D4");
             });
 
-            modelBuilder.Entity<BcElemconnection>(entity =>
+            modelBuilder.Entity<BcElemConnection>(entity =>
             {
                 entity.ToTable("BC_ELEMCONNECTION");
 
@@ -1286,7 +1286,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKA76BC36BA2CCAEA5");
             });
 
-            modelBuilder.Entity<BcElemcovering>(entity =>
+            modelBuilder.Entity<BcElemCovering>(entity =>
             {
                 entity.ToTable("BC_ELEMCOVERING");
 
@@ -1370,7 +1370,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK1D1688DEACC2EE40");
             });
 
-            modelBuilder.Entity<BcElementinfo>(entity =>
+            modelBuilder.Entity<BcElementInfo>(entity =>
             {
                 entity.ToTable("BC_ELEMENTINFO");
 
@@ -1403,7 +1403,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK2AED468C4160E6D4");
             });
 
-            modelBuilder.Entity<BcElemmaterial>(entity =>
+            modelBuilder.Entity<BcElemMaterial>(entity =>
             {
                 entity.ToTable("BC_ELEMMATERIAL");
 
@@ -1433,7 +1433,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKC1DD6CF44160E6D4");
             });
 
-            modelBuilder.Entity<BcElemprop>(entity =>
+            modelBuilder.Entity<BcElemProp>(entity =>
             {
                 entity.ToTable("BC_ELEMPROP");
 
@@ -1506,7 +1506,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKF441DAB04160E6D4");
             });
 
-            modelBuilder.Entity<BcGeomfile>(entity =>
+            modelBuilder.Entity<BcGeomFile>(entity =>
             {
                 entity.ToTable("BC_GEOMFILE");
 
@@ -1546,7 +1546,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKF44224F64160E6D4");
             });
 
-            modelBuilder.Entity<BcGpuserver>(entity =>
+            modelBuilder.Entity<BcGPUServer>(entity =>
             {
                 entity.ToTable("BC_GPUSERVER");
 
@@ -1636,7 +1636,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK467A74E1B0A6081D");
             });
 
-            modelBuilder.Entity<BcGroupelem>(entity =>
+            modelBuilder.Entity<BcGroupElem>(entity =>
             {
                 entity.ToTable("BC_GROUPELEM");
 
@@ -1664,7 +1664,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKE8A39FF04160E6D4");
             });
 
-            modelBuilder.Entity<BcGroupprop>(entity =>
+            modelBuilder.Entity<BcGroupProp>(entity =>
             {
                 entity.ToTable("BC_GROUPPROP");
 
@@ -1863,7 +1863,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Stype).HasColumnName("STYPE");
             });
 
-            modelBuilder.Entity<BcSpatialinfo>(entity =>
+            modelBuilder.Entity<BcSpatialInfo>(entity =>
             {
                 entity.ToTable("BC_SPATIALINFO");
 
@@ -1896,7 +1896,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK63A480944160E6D4");
             });
 
-            modelBuilder.Entity<Benchmarkboqcolmap>(entity =>
+            modelBuilder.Entity<BenchmarkBOQColMap>(entity =>
             {
                 entity.ToTable("BENCHMARKBOQCOLMAP");
 
@@ -1921,7 +1921,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Boqitemmetadata>(entity =>
+            modelBuilder.Entity<BOQItemMetadata>(entity =>
             {
                 entity.ToTable("BOQITEMMETADATA");
 
@@ -1944,7 +1944,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Cntrlog>(entity =>
+            modelBuilder.Entity<CntrLog>(entity =>
             {
                 entity.ToTable("CNTRLOG");
 
@@ -1974,7 +1974,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Cntrlogitem>(entity =>
+            modelBuilder.Entity<CntrLogItem>(entity =>
             {
                 entity.ToTable("CNTRLOGITEM");
 
@@ -2682,7 +2682,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Virtual).HasColumnName("VIRTUAL");
             });
 
-            modelBuilder.Entity<Extalias>(entity =>
+            modelBuilder.Entity<ExtAlias>(entity =>
             {
                 entity.HasKey(e => e.Aliasid)
                     .HasName("PK__EXTALIAS__74715419E6966398");
@@ -2717,7 +2717,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKC1E428CF25370FFF");
             });
 
-            modelBuilder.Entity<Extdatasource>(entity =>
+            modelBuilder.Entity<ExtDatasource>(entity =>
             {
                 entity.HasKey(e => e.Datasourceid)
                     .HasName("PK__EXTDATAS__DFDD78415C82822D");
@@ -2759,7 +2759,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Lastupdate).HasColumnName("LASTUPDATE");
             });
 
-            modelBuilder.Entity<Extquery>(entity =>
+            modelBuilder.Entity<ExtQuery>(entity =>
             {
                 entity.HasKey(e => e.Queryid)
                     .HasName("PK__EXTQUERY__A3AEB32A4AC6D286");
@@ -3071,7 +3071,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Fieldcustom>(entity =>
+            modelBuilder.Entity<FieldCustom>(entity =>
             {
                 entity.ToTable("FIELDCUSTOM");
 
@@ -3123,7 +3123,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Lastupdate).HasColumnName("LASTUPDATE");
             });
 
-            modelBuilder.Entity<Filtroproperty>(entity =>
+            modelBuilder.Entity<FiltroProperty>(entity =>
             {
                 entity.ToTable("FILTROPROPERTY");
 
@@ -3153,7 +3153,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKDDE206DDF6543BAE");
             });
 
-            modelBuilder.Entity<Fldfn>(entity =>
+            modelBuilder.Entity<FldFn>(entity =>
             {
                 entity.ToTable("FLDFN");
 
@@ -3331,7 +3331,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Glbprop>(entity =>
+            modelBuilder.Entity<GlbProp>(entity =>
             {
                 entity.ToTable("GLBPROP");
 
@@ -3552,7 +3552,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Virtual).HasColumnName("VIRTUAL");
             });
 
-            modelBuilder.Entity<Layoutc>(entity =>
+            modelBuilder.Entity<LayoutC>(entity =>
             {
                 entity.ToTable("LAYOUTC");
 
@@ -3773,7 +3773,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Zoom).HasColumnName("ZOOM");
             });
 
-            modelBuilder.Entity<Layoutcpanel>(entity =>
+            modelBuilder.Entity<LayoutCPanel>(entity =>
             {
                 entity.ToTable("LAYOUTCPANEL");
 
@@ -3846,7 +3846,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Hashkey).HasColumnName("HASHKEY");
             });
 
-            modelBuilder.Entity<Locfactor>(entity =>
+            modelBuilder.Entity<LocFactor>(entity =>
             {
                 entity.HasKey(e => e.Lfid)
                     .HasName("PK__LOCFACTO__6E7E2C1C099ACFE6");
@@ -3921,7 +3921,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK66363C6F9B8D46AA");
             });
 
-            modelBuilder.Entity<Locprof>(entity =>
+            modelBuilder.Entity<LocProf>(entity =>
             {
                 entity.HasKey(e => e.Functionid)
                     .HasName("PK__LOCPROF__466C3FDFC2D058B5");
@@ -3961,7 +3961,7 @@ namespace Models.DB.Local
             {
                 entity.ToTable("MATERIAL");
 
-                entity.Property(e => e.Materialid).HasColumnName("MATERIALID");
+                entity.Property(e => e.MaterialId).HasColumnName("MATERIALID");
 
                 entity.Property(e => e.Accrights)
                     .HasColumnName("ACCRIGHTS")
@@ -4229,7 +4229,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK40795527D05B2C5E");
             });
 
-            modelBuilder.Entity<Paraminput>(entity =>
+            modelBuilder.Entity<ParamInput>(entity =>
             {
                 entity.ToTable("PARAMINPUT");
 
@@ -4299,7 +4299,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK38777B5DB8FEF034");
             });
 
-            modelBuilder.Entity<Paramitem>(entity =>
+            modelBuilder.Entity<ParamItem>(entity =>
             {
                 entity.ToTable("PARAMITEM");
 
@@ -4452,7 +4452,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Paramoutput>(entity =>
+            modelBuilder.Entity<ParamOutput>(entity =>
             {
                 entity.ToTable("PARAMOUTPUT");
 
@@ -4494,7 +4494,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKE11967AEB8FEF034");
             });
 
-            modelBuilder.Entity<Paramreturn>(entity =>
+            modelBuilder.Entity<ParamReturn>(entity =>
             {
                 entity.ToTable("PARAMRETURN");
 
@@ -4555,7 +4555,7 @@ namespace Models.DB.Local
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Prjdbms>(entity =>
+            modelBuilder.Entity<PrjDBMS>(entity =>
             {
                 entity.ToTable("PRJDBMS");
 
@@ -4594,7 +4594,7 @@ namespace Models.DB.Local
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Prjprop>(entity =>
+            modelBuilder.Entity<PrjProp>(entity =>
             {
                 entity.ToTable("PRJPROP");
 
@@ -4617,7 +4617,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK18184DEB7C786EFE");
             });
 
-            modelBuilder.Entity<Projectaccess>(entity =>
+            modelBuilder.Entity<ProjectAccess>(entity =>
             {
                 entity.HasKey(e => e.Paid)
                     .HasName("PK__PROJECTA__5986FD6D5461A5FD");
@@ -4646,7 +4646,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK844DA19D4D514A55");
             });
 
-            modelBuilder.Entity<Projecteps>(entity =>
+            modelBuilder.Entity<ProjectEPS>(entity =>
             {
                 entity.ToTable("PROJECTEPS");
 
@@ -4674,7 +4674,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Projectinfo>(entity =>
+            modelBuilder.Entity<ProjectInfo>(entity =>
             {
                 entity.ToTable("PROJECTINFO");
 
@@ -5064,7 +5064,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK48580F27CC46545E");
             });
 
-            modelBuilder.Entity<Projectspecvar>(entity =>
+            modelBuilder.Entity<ProjectSpecVar>(entity =>
             {
                 entity.ToTable("PROJECTSPECVAR");
 
@@ -5112,7 +5112,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKD3E10C539A9C964D");
             });
 
-            modelBuilder.Entity<Projecttemplate>(entity =>
+            modelBuilder.Entity<ProjectTemplate>(entity =>
             {
                 entity.ToTable("PROJECTTEMPLATE");
 
@@ -5278,7 +5278,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKA77EE3B65B1C0C14");
             });
 
-            modelBuilder.Entity<Projectuser>(entity =>
+            modelBuilder.Entity<ProjectUser>(entity =>
             {
                 entity.HasKey(e => e.Puid)
                     .HasName("PK__PROJECTU__B280976DEF9F9F51");
@@ -5346,7 +5346,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK485D96445B1C0C14");
             });
 
-            modelBuilder.Entity<Projectusertemplate>(entity =>
+            modelBuilder.Entity<ProjectUserTemplate>(entity =>
             {
                 entity.HasKey(e => e.Templateid)
                     .HasName("PK__PROJECTU__9EE4AD53EE447426");
@@ -5408,7 +5408,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Xchange).HasColumnName("XCHANGE");
             });
 
-            modelBuilder.Entity<Queryresource>(entity =>
+            modelBuilder.Entity<QueryResource>(entity =>
             {
                 entity.HasKey(e => e.Qresid)
                     .HasName("PK__QUERYRES__E123B4381F2E16D9");
@@ -5617,7 +5617,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKCB7ACB662282EA1");
             });
 
-            modelBuilder.Entity<Queryrow>(entity =>
+            modelBuilder.Entity<QueryRow>(entity =>
             {
                 entity.HasKey(e => e.Qrowid)
                     .HasName("PK__QUERYROW__4AE9FF7B3279F1EC");
@@ -5650,7 +5650,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKE91C7C12AB986C17");
             });
 
-            modelBuilder.Entity<Quotetemplate>(entity =>
+            modelBuilder.Entity<QuoteTemplate>(entity =>
             {
                 entity.ToTable("QUOTETEMPLATE");
 
@@ -5675,7 +5675,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Xcellfile).HasColumnName("XCELLFILE");
             });
 
-            modelBuilder.Entity<Ratebuildup>(entity =>
+            modelBuilder.Entity<RateBuildUp>(entity =>
             {
                 entity.ToTable("RATEBUILDUP");
 
@@ -5775,7 +5775,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK969BFC899A9C964D");
             });
 
-            modelBuilder.Entity<Ratebuildupcols>(entity =>
+            modelBuilder.Entity<RateBuildUpCols>(entity =>
             {
                 entity.ToTable("RATEBUILDUPCOLS");
 
@@ -5979,7 +5979,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKB7E836FC9A9C964D");
             });
 
-            modelBuilder.Entity<Ratedistrib>(entity =>
+            modelBuilder.Entity<RateDistrib>(entity =>
             {
                 entity.ToTable("RATEDISTRIB");
 
@@ -6059,7 +6059,7 @@ namespace Models.DB.Local
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Rpdfn>(entity =>
+            modelBuilder.Entity<RpdFn>(entity =>
             {
                 entity.ToTable("RPDFN");
 
@@ -6455,7 +6455,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Takeoffarea>(entity =>
+            modelBuilder.Entity<TakeOffArea>(entity =>
             {
                 entity.ToTable("TAKEOFFAREA");
 
@@ -6479,7 +6479,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK1FE6B7F53EBE986C");
             });
 
-            modelBuilder.Entity<Takeoffcon>(entity =>
+            modelBuilder.Entity<TakeOffCon>(entity =>
             {
                 entity.ToTable("TAKEOFFCON");
 
@@ -6587,7 +6587,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK94988FA5B1C0C14");
             });
 
-            modelBuilder.Entity<Takeofflegend>(entity =>
+            modelBuilder.Entity<TakeOffLegend>(entity =>
             {
                 entity.ToTable("TAKEOFFLEGEND");
 
@@ -6627,7 +6627,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKD327AD753EBE9FEE");
             });
 
-            modelBuilder.Entity<Takeoffline>(entity =>
+            modelBuilder.Entity<TakeOffLine>(entity =>
             {
                 entity.ToTable("TAKEOFFLINE");
 
@@ -6659,7 +6659,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK1FEB975C3EBEC1B7");
             });
 
-            modelBuilder.Entity<Takeoffpoint>(entity =>
+            modelBuilder.Entity<TakeOffPoint>(entity =>
             {
                 entity.ToTable("TAKEOFFPOINT");
 
@@ -6705,7 +6705,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FKDDC25B08DC1D472B");
             });
 
-            modelBuilder.Entity<Takeofftriangle>(entity =>
+            modelBuilder.Entity<TakeOffTriangle>(entity =>
             {
                 entity.ToTable("TAKEOFFTRIANGLE");
 
@@ -6757,7 +6757,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK99DDF570412BA1F3");
             });
 
-            modelBuilder.Entity<Teamalias>(entity =>
+            modelBuilder.Entity<TeamAlias>(entity =>
             {
                 entity.ToTable("TEAMALIAS");
 
@@ -6778,7 +6778,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Unitalias>(entity =>
+            modelBuilder.Entity<UnitAlias>(entity =>
             {
                 entity.ToTable("UNITALIAS");
 
@@ -6799,7 +6799,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Userprop>(entity =>
+            modelBuilder.Entity<UserProp>(entity =>
             {
                 entity.ToTable("USERPROP");
 
@@ -6819,7 +6819,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Usersessions>(entity =>
+            modelBuilder.Entity<UserSessions>(entity =>
             {
                 entity.ToTable("USERSESSIONS");
 
@@ -6838,7 +6838,7 @@ namespace Models.DB.Local
                     .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Wscolident>(entity =>
+            modelBuilder.Entity<WsColident>(entity =>
             {
                 entity.ToTable("WSCOLIDENT");
 
@@ -6878,7 +6878,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK1FF56F4CBCB673A4");
             });
 
-            modelBuilder.Entity<Wsdatamapping>(entity =>
+            modelBuilder.Entity<WsDataMapping>(entity =>
             {
                 entity.ToTable("WSDATAMAPPING");
 
@@ -6901,7 +6901,7 @@ namespace Models.DB.Local
                 entity.Property(e => e.Treemapping).HasColumnName("TREEMAPPING");
             });
 
-            modelBuilder.Entity<Wsfile>(entity =>
+            modelBuilder.Entity<WsFile>(entity =>
             {
                 entity.ToTable("WSFILE");
 
@@ -6933,7 +6933,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK99282A5859F4EE84");
             });
 
-            modelBuilder.Entity<Wsrevision>(entity =>
+            modelBuilder.Entity<WsRevision>(entity =>
             {
                 entity.ToTable("WSREVISION");
 
@@ -6967,7 +6967,7 @@ namespace Models.DB.Local
                     .HasConstraintName("FK364016B7BCB673A4");
             });
 
-            modelBuilder.Entity<Xcellfile>(entity =>
+            modelBuilder.Entity<XcellFile>(entity =>
             {
                 entity.HasKey(e => e.Xcellid)
                     .HasName("PK__XCELLFIL__C594AC25160E1F06");

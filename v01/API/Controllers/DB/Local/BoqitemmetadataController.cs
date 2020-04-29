@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Boqitemmetadata
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Boqitemmetadata>>> GetBoqitemmetadata()
+        public async Task<ActionResult<IEnumerable<BOQItemMetadata>>> GetBoqitemmetadata()
         {
-            return await _context.Boqitemmetadata.ToListAsync();
+            return await _context.BOQItemMetadata.ToListAsync();
         }
 
         // GET: api/Boqitemmetadata/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Boqitemmetadata>> GetBoqitemmetadata(long id)
+        public async Task<ActionResult<BOQItemMetadata>> GetBoqitemmetadata(long id)
         {
-            var boqitemmetadata = await _context.Boqitemmetadata.FindAsync(id);
+            var boqitemmetadata = await _context.BOQItemMetadata.FindAsync(id);
 
             if (boqitemmetadata == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBoqitemmetadata(long id, Boqitemmetadata boqitemmetadata)
+        public async Task<IActionResult> PutBoqitemmetadata(long id, BOQItemMetadata boqitemmetadata)
         {
             if (id != boqitemmetadata.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Boqitemmetadata>> PostBoqitemmetadata(Boqitemmetadata boqitemmetadata)
+        public async Task<ActionResult<BOQItemMetadata>> PostBoqitemmetadata(BOQItemMetadata boqitemmetadata)
         {
-            _context.Boqitemmetadata.Add(boqitemmetadata);
+            _context.BOQItemMetadata.Add(boqitemmetadata);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBoqitemmetadata", new { id = boqitemmetadata.Id }, boqitemmetadata);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Boqitemmetadata/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Boqitemmetadata>> DeleteBoqitemmetadata(long id)
+        public async Task<ActionResult<BOQItemMetadata>> DeleteBoqitemmetadata(long id)
         {
-            var boqitemmetadata = await _context.Boqitemmetadata.FindAsync(id);
+            var boqitemmetadata = await _context.BOQItemMetadata.FindAsync(id);
             if (boqitemmetadata == null)
             {
                 return NotFound();
             }
 
-            _context.Boqitemmetadata.Remove(boqitemmetadata);
+            _context.BOQItemMetadata.Remove(boqitemmetadata);
             await _context.SaveChangesAsync();
 
             return boqitemmetadata;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BoqitemmetadataExists(long id)
         {
-            return _context.Boqitemmetadata.Any(e => e.Id == id);
+            return _context.BOQItemMetadata.Any(e => e.Id == id);
         }
     }
 }

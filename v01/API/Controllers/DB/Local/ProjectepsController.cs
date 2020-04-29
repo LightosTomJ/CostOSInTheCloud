@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projecteps
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projecteps>>> GetProjecteps()
+        public async Task<ActionResult<IEnumerable<ProjectEPS>>> GetProjecteps()
         {
-            return await _context.Projecteps.ToListAsync();
+            return await _context.ProjectEPS.ToListAsync();
         }
 
         // GET: api/Projecteps/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projecteps>> GetProjecteps(long id)
+        public async Task<ActionResult<ProjectEPS>> GetProjecteps(long id)
         {
-            var projecteps = await _context.Projecteps.FindAsync(id);
+            var projecteps = await _context.ProjectEPS.FindAsync(id);
 
             if (projecteps == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjecteps(long id, Projecteps projecteps)
+        public async Task<IActionResult> PutProjecteps(long id, ProjectEPS projecteps)
         {
             if (id != projecteps.Projectepsid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projecteps>> PostProjecteps(Projecteps projecteps)
+        public async Task<ActionResult<ProjectEPS>> PostProjecteps(ProjectEPS projecteps)
         {
-            _context.Projecteps.Add(projecteps);
+            _context.ProjectEPS.Add(projecteps);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjecteps", new { id = projecteps.Projectepsid }, projecteps);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projecteps/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projecteps>> DeleteProjecteps(long id)
+        public async Task<ActionResult<ProjectEPS>> DeleteProjecteps(long id)
         {
-            var projecteps = await _context.Projecteps.FindAsync(id);
+            var projecteps = await _context.ProjectEPS.FindAsync(id);
             if (projecteps == null)
             {
                 return NotFound();
             }
 
-            _context.Projecteps.Remove(projecteps);
+            _context.ProjectEPS.Remove(projecteps);
             await _context.SaveChangesAsync();
 
             return projecteps;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectepsExists(long id)
         {
-            return _context.Projecteps.Any(e => e.Projectepsid == id);
+            return _context.ProjectEPS.Any(e => e.Projectepsid == id);
         }
     }
 }

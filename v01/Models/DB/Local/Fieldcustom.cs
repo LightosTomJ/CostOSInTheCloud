@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Fieldcustom
+    public partial class FieldCustom
     {
         public long Id { get; set; }
         public string Name { get; set; }

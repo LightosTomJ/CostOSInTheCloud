@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projectusertemplate
+    public partial class ProjectUserTemplate
     {
         public long Templateid { get; set; }
         public string Name { get; set; }

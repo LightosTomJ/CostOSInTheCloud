@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class PrjpropBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Prjprop> prjprop = null;
+        protected IList<Models.DB.Local.PrjProp> prjprop = null;
 
         protected override async Task OnInitializedAsync()
         {

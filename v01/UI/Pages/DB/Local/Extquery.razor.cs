@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ExtqueryBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Extquery> extquery = null;
+        protected IList<Models.DB.Local.ExtQuery> extquery = null;
 
         protected override async Task OnInitializedAsync()
         {

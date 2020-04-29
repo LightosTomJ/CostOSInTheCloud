@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Locprof
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Locprof>>> GetLocprof()
+        public async Task<ActionResult<IEnumerable<LocProf>>> GetLocprof()
         {
-            return await _context.Locprof.ToListAsync();
+            return await _context.LocProf.ToListAsync();
         }
 
         // GET: api/Locprof/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Locprof>> GetLocprof(long id)
+        public async Task<ActionResult<LocProf>> GetLocprof(long id)
         {
-            var locprof = await _context.Locprof.FindAsync(id);
+            var locprof = await _context.LocProf.FindAsync(id);
 
             if (locprof == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutLocprof(long id, Locprof locprof)
+        public async Task<IActionResult> PutLocprof(long id, LocProf locprof)
         {
             if (id != locprof.Functionid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Locprof>> PostLocprof(Locprof locprof)
+        public async Task<ActionResult<LocProf>> PostLocprof(LocProf locprof)
         {
-            _context.Locprof.Add(locprof);
+            _context.LocProf.Add(locprof);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetLocprof", new { id = locprof.Functionid }, locprof);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Locprof/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Locprof>> DeleteLocprof(long id)
+        public async Task<ActionResult<LocProf>> DeleteLocprof(long id)
         {
-            var locprof = await _context.Locprof.FindAsync(id);
+            var locprof = await _context.LocProf.FindAsync(id);
             if (locprof == null)
             {
                 return NotFound();
             }
 
-            _context.Locprof.Remove(locprof);
+            _context.LocProf.Remove(locprof);
             await _context.SaveChangesAsync();
 
             return locprof;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool LocprofExists(long id)
         {
-            return _context.Locprof.Any(e => e.Functionid == id);
+            return _context.LocProf.Any(e => e.Functionid == id);
         }
     }
 }

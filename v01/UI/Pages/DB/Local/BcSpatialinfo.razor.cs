@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcSpatialinfoBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcSpatialinfo> bcspatialinfo = null;
+        protected IList<Models.DB.Local.BcSpatialInfo> bcspatialinfo = null;
 
         protected override async Task OnInitializedAsync()
         {

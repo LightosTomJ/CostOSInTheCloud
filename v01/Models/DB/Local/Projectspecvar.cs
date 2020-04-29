@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projectspecvar
+    public partial class ProjectSpecVar
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }
@@ -22,6 +22,6 @@ namespace Models.DB.Local
         public bool? Mandatory { get; set; }
         public string Pushfield { get; set; }
 
-        public virtual Projecttemplate Template { get; set; }
+        public virtual ProjectTemplate Template { get; set; }
     }
 }

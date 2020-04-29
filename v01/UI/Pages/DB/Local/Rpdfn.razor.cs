@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class RpdfnBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Rpdfn> rpdfn = null;
+        protected IList<Models.DB.Local.RpdFn> rpdfn = null;
 
         protected override async Task OnInitializedAsync()
         {

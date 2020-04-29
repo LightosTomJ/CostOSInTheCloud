@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Prjdbms
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Prjdbms>>> GetPrjdbms()
+        public async Task<ActionResult<IEnumerable<PrjDBMS>>> GetPrjdbms()
         {
-            return await _context.Prjdbms.ToListAsync();
+            return await _context.PrjDBMS.ToListAsync();
         }
 
         // GET: api/Prjdbms/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Prjdbms>> GetPrjdbms(long id)
+        public async Task<ActionResult<PrjDBMS>> GetPrjdbms(long id)
         {
-            var prjdbms = await _context.Prjdbms.FindAsync(id);
+            var prjdbms = await _context.PrjDBMS.FindAsync(id);
 
             if (prjdbms == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPrjdbms(long id, Prjdbms prjdbms)
+        public async Task<IActionResult> PutPrjdbms(long id, PrjDBMS prjdbms)
         {
             if (id != prjdbms.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Prjdbms>> PostPrjdbms(Prjdbms prjdbms)
+        public async Task<ActionResult<PrjDBMS>> PostPrjdbms(PrjDBMS prjdbms)
         {
-            _context.Prjdbms.Add(prjdbms);
+            _context.PrjDBMS.Add(prjdbms);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPrjdbms", new { id = prjdbms.Id }, prjdbms);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Prjdbms/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Prjdbms>> DeletePrjdbms(long id)
+        public async Task<ActionResult<PrjDBMS>> DeletePrjdbms(long id)
         {
-            var prjdbms = await _context.Prjdbms.FindAsync(id);
+            var prjdbms = await _context.PrjDBMS.FindAsync(id);
             if (prjdbms == null)
             {
                 return NotFound();
             }
 
-            _context.Prjdbms.Remove(prjdbms);
+            _context.PrjDBMS.Remove(prjdbms);
             await _context.SaveChangesAsync();
 
             return prjdbms;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool PrjdbmsExists(long id)
         {
-            return _context.Prjdbms.Any(e => e.Id == id);
+            return _context.PrjDBMS.Any(e => e.Id == id);
         }
     }
 }

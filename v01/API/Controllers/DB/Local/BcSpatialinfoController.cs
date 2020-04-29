@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/BcSpatialinfo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BcSpatialinfo>>> GetBcSpatialinfo()
+        public async Task<ActionResult<IEnumerable<BcSpatialInfo>>> GetBcSpatialinfo()
         {
-            return await _context.BcSpatialinfo.ToListAsync();
+            return await _context.BcSpatialInfo.ToListAsync();
         }
 
         // GET: api/BcSpatialinfo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BcSpatialinfo>> GetBcSpatialinfo(long id)
+        public async Task<ActionResult<BcSpatialInfo>> GetBcSpatialinfo(long id)
         {
-            var bcSpatialinfo = await _context.BcSpatialinfo.FindAsync(id);
+            var bcSpatialinfo = await _context.BcSpatialInfo.FindAsync(id);
 
             if (bcSpatialinfo == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBcSpatialinfo(long id, BcSpatialinfo bcSpatialinfo)
+        public async Task<IActionResult> PutBcSpatialinfo(long id, BcSpatialInfo bcSpatialinfo)
         {
             if (id != bcSpatialinfo.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<BcSpatialinfo>> PostBcSpatialinfo(BcSpatialinfo bcSpatialinfo)
+        public async Task<ActionResult<BcSpatialInfo>> PostBcSpatialinfo(BcSpatialInfo bcSpatialinfo)
         {
-            _context.BcSpatialinfo.Add(bcSpatialinfo);
+            _context.BcSpatialInfo.Add(bcSpatialinfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBcSpatialinfo", new { id = bcSpatialinfo.Id }, bcSpatialinfo);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/BcSpatialinfo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<BcSpatialinfo>> DeleteBcSpatialinfo(long id)
+        public async Task<ActionResult<BcSpatialInfo>> DeleteBcSpatialinfo(long id)
         {
-            var bcSpatialinfo = await _context.BcSpatialinfo.FindAsync(id);
+            var bcSpatialinfo = await _context.BcSpatialInfo.FindAsync(id);
             if (bcSpatialinfo == null)
             {
                 return NotFound();
             }
 
-            _context.BcSpatialinfo.Remove(bcSpatialinfo);
+            _context.BcSpatialInfo.Remove(bcSpatialinfo);
             await _context.SaveChangesAsync();
 
             return bcSpatialinfo;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool BcSpatialinfoExists(long id)
         {
-            return _context.BcSpatialinfo.Any(e => e.Id == id);
+            return _context.BcSpatialInfo.Any(e => e.Id == id);
         }
     }
 }

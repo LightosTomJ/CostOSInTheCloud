@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcElemconnectionBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcElemconnection> bcelemconnection = null;
+        protected IList<Models.DB.Local.BcElemConnection> bcelemconnection = null;
 
         protected override async Task OnInitializedAsync()
         {

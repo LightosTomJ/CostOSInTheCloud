@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Paramoutput
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Paramoutput>>> GetParamoutput()
+        public async Task<ActionResult<IEnumerable<ParamOutput>>> GetParamoutput()
         {
-            return await _context.Paramoutput.ToListAsync();
+            return await _context.ParamOutput.ToListAsync();
         }
 
         // GET: api/Paramoutput/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Paramoutput>> GetParamoutput(long id)
+        public async Task<ActionResult<ParamOutput>> GetParamoutput(long id)
         {
-            var paramoutput = await _context.Paramoutput.FindAsync(id);
+            var paramoutput = await _context.ParamOutput.FindAsync(id);
 
             if (paramoutput == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutParamoutput(long id, Paramoutput paramoutput)
+        public async Task<IActionResult> PutParamoutput(long id, ParamOutput paramoutput)
         {
             if (id != paramoutput.Paramoutputid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Paramoutput>> PostParamoutput(Paramoutput paramoutput)
+        public async Task<ActionResult<ParamOutput>> PostParamoutput(ParamOutput paramoutput)
         {
-            _context.Paramoutput.Add(paramoutput);
+            _context.ParamOutput.Add(paramoutput);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetParamoutput", new { id = paramoutput.Paramoutputid }, paramoutput);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Paramoutput/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Paramoutput>> DeleteParamoutput(long id)
+        public async Task<ActionResult<ParamOutput>> DeleteParamoutput(long id)
         {
-            var paramoutput = await _context.Paramoutput.FindAsync(id);
+            var paramoutput = await _context.ParamOutput.FindAsync(id);
             if (paramoutput == null)
             {
                 return NotFound();
             }
 
-            _context.Paramoutput.Remove(paramoutput);
+            _context.ParamOutput.Remove(paramoutput);
             await _context.SaveChangesAsync();
 
             return paramoutput;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ParamoutputExists(long id)
         {
-            return _context.Paramoutput.Any(e => e.Paramoutputid == id);
+            return _context.ParamOutput.Any(e => e.Paramoutputid == id);
         }
     }
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Xcellfile
+    public partial class XcellFile
     {
-        public Xcellfile()
+        public XcellFile()
         {
-            Projecttemplate = new HashSet<Projecttemplate>();
+            Projecttemplate = new HashSet<ProjectTemplate>();
         }
 
         public long Xcellid { get; set; }
@@ -18,6 +18,6 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual ICollection<Projecttemplate> Projecttemplate { get; set; }
+        public virtual ICollection<ProjectTemplate> Projecttemplate { get; set; }
     }
 }

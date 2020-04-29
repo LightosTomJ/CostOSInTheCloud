@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BoqitemmetadataBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Boqitemmetadata> boqitemmetadata = null;
+        protected IList<Models.DB.Local.BOQItemMetadata> boqitemmetadata = null;
 
         protected override async Task OnInitializedAsync()
         {

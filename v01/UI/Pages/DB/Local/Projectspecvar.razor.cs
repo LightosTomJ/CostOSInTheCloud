@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ProjectspecvarBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Projectspecvar> projectspecvar = null;
+        protected IList<Models.DB.Local.ProjectSpecVar> projectspecvar = null;
 
         protected override async Task OnInitializedAsync()
         {

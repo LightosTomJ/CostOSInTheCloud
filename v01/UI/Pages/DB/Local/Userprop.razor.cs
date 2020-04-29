@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class UserpropBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Userprop> userprop = null;
+        protected IList<Models.DB.Local.UserProp> userprop = null;
 
         protected override async Task OnInitializedAsync()
         {

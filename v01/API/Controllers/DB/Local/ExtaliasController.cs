@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Extalias
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Extalias>>> GetExtalias()
+        public async Task<ActionResult<IEnumerable<ExtAlias>>> GetExtalias()
         {
-            return await _context.Extalias.ToListAsync();
+            return await _context.ExtAlias.ToListAsync();
         }
 
         // GET: api/Extalias/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Extalias>> GetExtalias(long id)
+        public async Task<ActionResult<ExtAlias>> GetExtalias(long id)
         {
-            var extalias = await _context.Extalias.FindAsync(id);
+            var extalias = await _context.ExtAlias.FindAsync(id);
 
             if (extalias == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutExtalias(long id, Extalias extalias)
+        public async Task<IActionResult> PutExtalias(long id, ExtAlias extalias)
         {
             if (id != extalias.Aliasid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Extalias>> PostExtalias(Extalias extalias)
+        public async Task<ActionResult<ExtAlias>> PostExtalias(ExtAlias extalias)
         {
-            _context.Extalias.Add(extalias);
+            _context.ExtAlias.Add(extalias);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetExtalias", new { id = extalias.Aliasid }, extalias);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Extalias/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Extalias>> DeleteExtalias(long id)
+        public async Task<ActionResult<ExtAlias>> DeleteExtalias(long id)
         {
-            var extalias = await _context.Extalias.FindAsync(id);
+            var extalias = await _context.ExtAlias.FindAsync(id);
             if (extalias == null)
             {
                 return NotFound();
             }
 
-            _context.Extalias.Remove(extalias);
+            _context.ExtAlias.Remove(extalias);
             await _context.SaveChangesAsync();
 
             return extalias;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ExtaliasExists(long id)
         {
-            return _context.Extalias.Any(e => e.Aliasid == id);
+            return _context.ExtAlias.Any(e => e.Aliasid == id);
         }
     }
 }

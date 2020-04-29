@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Ifcproperty
+    public partial class IfcProperty
     {
         public long Propid { get; set; }
         public string Ifcpropgroup { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Benchmarkboqcolmap
+    public partial class BenchmarkBOQColMap
     {
         public long Id { get; set; }
         public long? Templateid { get; set; }

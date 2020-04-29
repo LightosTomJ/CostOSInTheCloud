@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class WsrevisionBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Wsrevision> wsrevision = null;
+        protected IList<Models.DB.Local.WsRevision> wsrevision = null;
 
         protected override async Task OnInitializedAsync()
         {

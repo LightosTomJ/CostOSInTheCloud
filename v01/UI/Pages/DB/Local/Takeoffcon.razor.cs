@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class TakeoffconBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Takeoffcon> takeoffcon = null;
+        protected IList<Models.DB.Local.TakeOffCon> takeoffcon = null;
 
         protected override async Task OnInitializedAsync()
         {

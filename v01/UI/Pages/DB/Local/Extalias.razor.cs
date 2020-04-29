@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ExtaliasBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Extalias> extalias = null;
+        protected IList<Models.DB.Local.ExtAlias> extalias = null;
 
         protected override async Task OnInitializedAsync()
         {

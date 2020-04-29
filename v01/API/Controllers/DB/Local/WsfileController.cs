@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Wsfile
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Wsfile>>> GetWsfile()
+        public async Task<ActionResult<IEnumerable<WsFile>>> GetWsfile()
         {
-            return await _context.Wsfile.ToListAsync();
+            return await _context.WsFile.ToListAsync();
         }
 
         // GET: api/Wsfile/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wsfile>> GetWsfile(long id)
+        public async Task<ActionResult<WsFile>> GetWsfile(long id)
         {
-            var wsfile = await _context.Wsfile.FindAsync(id);
+            var wsfile = await _context.WsFile.FindAsync(id);
 
             if (wsfile == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWsfile(long id, Wsfile wsfile)
+        public async Task<IActionResult> PutWsfile(long id, WsFile wsfile)
         {
             if (id != wsfile.Id)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Wsfile>> PostWsfile(Wsfile wsfile)
+        public async Task<ActionResult<WsFile>> PostWsfile(WsFile wsfile)
         {
-            _context.Wsfile.Add(wsfile);
+            _context.WsFile.Add(wsfile);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetWsfile", new { id = wsfile.Id }, wsfile);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Wsfile/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Wsfile>> DeleteWsfile(long id)
+        public async Task<ActionResult<WsFile>> DeleteWsfile(long id)
         {
-            var wsfile = await _context.Wsfile.FindAsync(id);
+            var wsfile = await _context.WsFile.FindAsync(id);
             if (wsfile == null)
             {
                 return NotFound();
             }
 
-            _context.Wsfile.Remove(wsfile);
+            _context.WsFile.Remove(wsfile);
             await _context.SaveChangesAsync();
 
             return wsfile;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool WsfileExists(long id)
         {
-            return _context.Wsfile.Any(e => e.Id == id);
+            return _context.WsFile.Any(e => e.Id == id);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class BcGpuserverBase : ComponentBase
     {
-        protected IList<Models.DB.Local.BcGpuserver> bcgpuserver = null;
+        protected IList<Models.DB.Local.BcGPUServer> bcgpuserver = null;
 
         protected override async Task OnInitializedAsync()
         {

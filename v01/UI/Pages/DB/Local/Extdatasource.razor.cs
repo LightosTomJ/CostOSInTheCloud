@@ -10,7 +10,7 @@ namespace UI.Pages.DB.Local
 {
     public class ExtdatasourceBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Extdatasource> extdatasource = null;
+        protected IList<Models.DB.Local.ExtDatasource> extdatasource = null;
 
         protected override async Task OnInitializedAsync()
         {

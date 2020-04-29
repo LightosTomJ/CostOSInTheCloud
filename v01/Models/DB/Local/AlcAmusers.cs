@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class AlcAmusers
+    public partial class AlcAmUsers
     {
         public Guid UserGid { get; set; }
         public string UserId { get; set; }

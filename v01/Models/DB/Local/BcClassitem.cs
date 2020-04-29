@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class BcClassitem
+    public partial class BcClassItem
     {
-        public BcClassitem()
+        public BcClassItem()
         {
-            BcElemclassitem = new HashSet<BcElemclassitem>();
+            BcElemclassitem = new HashSet<BcElemClassItem>();
         }
 
         public long Id { get; set; }
@@ -18,6 +18,6 @@ namespace Models.DB.Local
 
         public virtual BcClassification Classification { get; set; }
         public virtual BcModel Model { get; set; }
-        public virtual ICollection<BcElemclassitem> BcElemclassitem { get; set; }
+        public virtual ICollection<BcElemClassItem> BcElemclassitem { get; set; }
     }
 }

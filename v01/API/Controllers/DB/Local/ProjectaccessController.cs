@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Projectaccess
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projectaccess>>> GetProjectaccess()
+        public async Task<ActionResult<IEnumerable<ProjectAccess>>> GetProjectaccess()
         {
-            return await _context.Projectaccess.ToListAsync();
+            return await _context.ProjectAccess.ToListAsync();
         }
 
         // GET: api/Projectaccess/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projectaccess>> GetProjectaccess(long id)
+        public async Task<ActionResult<ProjectAccess>> GetProjectaccess(long id)
         {
-            var projectaccess = await _context.Projectaccess.FindAsync(id);
+            var projectaccess = await _context.ProjectAccess.FindAsync(id);
 
             if (projectaccess == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjectaccess(long id, Projectaccess projectaccess)
+        public async Task<IActionResult> PutProjectaccess(long id, ProjectAccess projectaccess)
         {
             if (id != projectaccess.Paid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Projectaccess>> PostProjectaccess(Projectaccess projectaccess)
+        public async Task<ActionResult<ProjectAccess>> PostProjectaccess(ProjectAccess projectaccess)
         {
-            _context.Projectaccess.Add(projectaccess);
+            _context.ProjectAccess.Add(projectaccess);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProjectaccess", new { id = projectaccess.Paid }, projectaccess);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Projectaccess/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Projectaccess>> DeleteProjectaccess(long id)
+        public async Task<ActionResult<ProjectAccess>> DeleteProjectaccess(long id)
         {
-            var projectaccess = await _context.Projectaccess.FindAsync(id);
+            var projectaccess = await _context.ProjectAccess.FindAsync(id);
             if (projectaccess == null)
             {
                 return NotFound();
             }
 
-            _context.Projectaccess.Remove(projectaccess);
+            _context.ProjectAccess.Remove(projectaccess);
             await _context.SaveChangesAsync();
 
             return projectaccess;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ProjectaccessExists(long id)
         {
-            return _context.Projectaccess.Any(e => e.Paid == id);
+            return _context.ProjectAccess.Any(e => e.Paid == id);
         }
     }
 }

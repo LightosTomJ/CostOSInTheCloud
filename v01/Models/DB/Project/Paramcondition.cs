@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Models.DB.Project
 {
-    public partial class Paramcondition
+    public partial class ParamCondition
     {
         public long Conditionid { get; set; }
         public bool? Virt { get; set; }
@@ -50,7 +50,7 @@ namespace Models.DB.Project
         public long? Prjid { get; set; }
         public long? RefId { get; set; }
 
-        public virtual Paraminput Paraminput { get; set; }
-        public virtual Paramitem Paramitem { get; set; }
+        public virtual ParamInput Paraminput { get; set; }
+        public virtual ParamItem Paramitem { get; set; }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Paramitem
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Paramitem>>> GetParamitem()
+        public async Task<ActionResult<IEnumerable<ParamItem>>> GetParamitem()
         {
-            return await _context.Paramitem.ToListAsync();
+            return await _context.ParamItem.ToListAsync();
         }
 
         // GET: api/Paramitem/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Paramitem>> GetParamitem(long id)
+        public async Task<ActionResult<ParamItem>> GetParamitem(long id)
         {
-            var paramitem = await _context.Paramitem.FindAsync(id);
+            var paramitem = await _context.ParamItem.FindAsync(id);
 
             if (paramitem == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutParamitem(long id, Paramitem paramitem)
+        public async Task<IActionResult> PutParamitem(long id, ParamItem paramitem)
         {
             if (id != paramitem.Paramitemid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Paramitem>> PostParamitem(Paramitem paramitem)
+        public async Task<ActionResult<ParamItem>> PostParamitem(ParamItem paramitem)
         {
-            _context.Paramitem.Add(paramitem);
+            _context.ParamItem.Add(paramitem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetParamitem", new { id = paramitem.Paramitemid }, paramitem);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Paramitem/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Paramitem>> DeleteParamitem(long id)
+        public async Task<ActionResult<ParamItem>> DeleteParamitem(long id)
         {
-            var paramitem = await _context.Paramitem.FindAsync(id);
+            var paramitem = await _context.ParamItem.FindAsync(id);
             if (paramitem == null)
             {
                 return NotFound();
             }
 
-            _context.Paramitem.Remove(paramitem);
+            _context.ParamItem.Remove(paramitem);
             await _context.SaveChangesAsync();
 
             return paramitem;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool ParamitemExists(long id)
         {
-            return _context.Paramitem.Any(e => e.Paramitemid == id);
+            return _context.ParamItem.Any(e => e.Paramitemid == id);
         }
     }
 }

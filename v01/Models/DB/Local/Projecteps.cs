@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Models.DB.Local
 {
-    public partial class Projecteps
+    public partial class ProjectEPS
     {
-        public Projecteps()
+        public ProjectEPS()
         {
-            Projectinfo = new HashSet<Projectinfo>();
+            Projectinfo = new HashSet<ProjectInfo>();
         }
 
         public long Projectepsid { get; set; }
@@ -18,6 +18,6 @@ namespace Models.DB.Local
         public DateTime? Lastupdate { get; set; }
         public long? Parentid { get; set; }
 
-        public virtual ICollection<Projectinfo> Projectinfo { get; set; }
+        public virtual ICollection<ProjectInfo> Projectinfo { get; set; }
     }
 }

@@ -22,16 +22,16 @@ namespace API.Controllers.DB.Local
 
         // GET: api/Queryrow
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Queryrow>>> GetQueryrow()
+        public async Task<ActionResult<IEnumerable<QueryRow>>> GetQueryrow()
         {
-            return await _context.Queryrow.ToListAsync();
+            return await _context.QueryRow.ToListAsync();
         }
 
         // GET: api/Queryrow/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Queryrow>> GetQueryrow(long id)
+        public async Task<ActionResult<QueryRow>> GetQueryrow(long id)
         {
-            var queryrow = await _context.Queryrow.FindAsync(id);
+            var queryrow = await _context.QueryRow.FindAsync(id);
 
             if (queryrow == null)
             {
@@ -45,7 +45,7 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQueryrow(long id, Queryrow queryrow)
+        public async Task<IActionResult> PutQueryrow(long id, QueryRow queryrow)
         {
             if (id != queryrow.Qrowid)
             {
@@ -77,9 +77,9 @@ namespace API.Controllers.DB.Local
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Queryrow>> PostQueryrow(Queryrow queryrow)
+        public async Task<ActionResult<QueryRow>> PostQueryrow(QueryRow queryrow)
         {
-            _context.Queryrow.Add(queryrow);
+            _context.QueryRow.Add(queryrow);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetQueryrow", new { id = queryrow.Qrowid }, queryrow);
@@ -87,15 +87,15 @@ namespace API.Controllers.DB.Local
 
         // DELETE: api/Queryrow/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Queryrow>> DeleteQueryrow(long id)
+        public async Task<ActionResult<QueryRow>> DeleteQueryrow(long id)
         {
-            var queryrow = await _context.Queryrow.FindAsync(id);
+            var queryrow = await _context.QueryRow.FindAsync(id);
             if (queryrow == null)
             {
                 return NotFound();
             }
 
-            _context.Queryrow.Remove(queryrow);
+            _context.QueryRow.Remove(queryrow);
             await _context.SaveChangesAsync();
 
             return queryrow;
@@ -103,7 +103,7 @@ namespace API.Controllers.DB.Local
 
         private bool QueryrowExists(long id)
         {
-            return _context.Queryrow.Any(e => e.Qrowid == id);
+            return _context.QueryRow.Any(e => e.Qrowid == id);
         }
     }
 }
