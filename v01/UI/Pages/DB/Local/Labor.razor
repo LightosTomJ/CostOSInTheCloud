@@ -1,12 +1,42 @@
 ﻿@page "/labor"
-
 @inherits LaborBase
 
-@using Models.DB.Local 
+@using Models.DB.Local
+@using System.Globalization
 
-<h3>Labor</h3>
+<h3>Labors</h3>
 
+@if (laborers == null)
+{
+    <span>Loading</span>
+}
+else
+{
+    @if (laborers.Count == 0)
+    {
+        <h>No labors found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@laborers" TItem="Models.DB.Local.Labor">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Laborid" Title="Id" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Title" Title="Title" Width="100px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Rate" Title="Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="labor">
+                        @String.Format(nfi, "{0:C}", labor.Rate)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Labor" Property="Totalrate" Title="Total Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="labor">
+                        @String.Format(nfi, "{0:C}", labor.Totalrate)
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
 
-
-
-@code { }
+    }
+}

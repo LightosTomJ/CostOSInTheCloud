@@ -1,4 +1,5 @@
-﻿using API.Controllers.DB.Cache;
+﻿using Diagnostics.Logger;
+using Helper.DB.Cache;
 using Microsoft.AspNetCore.Components;
 using Models.DB.Cache;
 using System;
@@ -10,20 +11,20 @@ namespace UI.Pages.DB.Cache
 {
     public class ExchangeRateBase : ComponentBase
     {
-        protected IEnumerable<Models.DB.Cache.ExchangeRate> rates = null;
-        protected Dictionary<DateTime, string> events = new Dictionary<DateTime, string>();
+        protected IList<Models.DB.Cache.ExchangeRate> rates = null;
+        protected static CacheContext cacheContext = new CacheContext();
+        protected ExchangeRatesService exchangeRatesService = new ExchangeRatesService(cacheContext);
+        
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                ExchangeRateController rateC = new ExchangeRateController(new CacheContext());
-                rates = await rateC.AllExchangeRates();
-
+                rates = await exchangeRatesService.GetAllExchangeRates();
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }

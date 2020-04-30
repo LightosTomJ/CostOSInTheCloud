@@ -30,8 +30,8 @@ namespace UI.Shared
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Diagnostics.Logger.Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Diagnostics.Logger.Log.WriteLine(ae.InnerException.ToString());
             }
         }
 

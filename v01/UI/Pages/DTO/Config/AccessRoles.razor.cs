@@ -34,8 +34,8 @@ namespace UI.Pages.DTO.Config
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Diagnostics.Logger.Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Diagnostics.Logger.Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }
@@ -61,8 +61,8 @@ namespace UI.Pages.DTO.Config
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Diagnostics.Logger.Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Diagnostics.Logger.Log.WriteLine(ae.InnerException.ToString());
             }
         }
 
@@ -84,8 +84,8 @@ namespace UI.Pages.DTO.Config
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Diagnostics.Logger.Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Diagnostics.Logger.Log.WriteLine(ae.InnerException.ToString());
             }
             return r;
         }

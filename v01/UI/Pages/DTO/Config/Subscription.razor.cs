@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Diagnostics.Logger;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,8 @@ namespace UI.Pages.DTO.Config
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }

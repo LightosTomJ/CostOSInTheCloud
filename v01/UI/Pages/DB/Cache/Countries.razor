@@ -59,20 +59,3 @@ else
         </tbody>
     </table>
 }
-
-@code {
-
-    List<Country> countries = new List<Country>();
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            countries = await listCountries();
-        }
-        catch (Exception ae)
-        {
-            string strError = ae.Message.ToString();
-        }
-        return;
-    }
-}

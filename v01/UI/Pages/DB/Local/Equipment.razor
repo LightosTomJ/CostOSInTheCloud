@@ -11,5 +11,38 @@
 }
 else
 {
-
+    <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                AllowSorting="true" Data="@equipment" TItem="Models.DB.Local.Equipment">
+        <Columns>
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Equipmentid" Title="Id" Width="7px" />
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Title" Title="Title" Width="100px" />
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Totalrate" Title="Total Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                <Template Context="equipment">
+                    @String.Format(nfi, "{0:C}", equipment.Totalrate)
+                </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="10px" />
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Reservationrate" Title="Reservation" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                <Template Context="equipment">
+                    @String.Format(nfi, "{0:C}", equipment.Reservationrate)
+                </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Tiresrate" Title="Tires Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                <Template Context="equipment">
+                    @String.Format(nfi, "{0:C}", equipment.Tiresrate)
+                </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Lubricatesrate" Title="Lubrication Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                <Template Context="equipment">
+                    @String.Format(nfi, "{0:C}", equipment.Lubricatesrate)
+                </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="Models.DB.Local.Equipment" Property="Depreciationrate" Title="Depreciation" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                <Template Context="equipment">
+                    @String.Format(nfi, "{0:C}", equipment.Depreciationrate)
+                </Template>
+            </RadzenGridColumn>
+        </Columns>
+    </RadzenGrid>
 }

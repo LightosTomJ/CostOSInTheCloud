@@ -1,15 +1,47 @@
-@page "/material"
+@page "/materials"
 @inherits MaterialBase
 
 @using Models.DB.Local
+@using System.Globalization 
 
-<h3>Material</h3>
+<h3>Materials</h3>
 
-@if (material == null)
+@if (materials == null)
 {
     <span>Loading</span>
 }
 else
 {
-
+    @if (materials.Count == 0)
+    {
+        <h>No materials found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@materials" TItem="Models.DB.Local.Material">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="MaterialId" Title="Id" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Title" Title="Title" Width="100px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Rate" Title="Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="material">
+                        @String.Format(nfi, "{0:C}", material.Rate)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Shiprate" Title="Ship Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="material">
+                        @String.Format(nfi, "{0:C}", material.Shiprate)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.Material" Property="Fabrate" Title="Fab Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="material">
+                        @String.Format(nfi, "{0:C}", material.Fabrate)
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
+        
+    }
 }

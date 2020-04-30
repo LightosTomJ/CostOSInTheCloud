@@ -2,9 +2,10 @@
 using Helper.DB.Local;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
-using Models.DB.Local;
+using Diagnostics.Logger; using Models.DB.Local;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,19 +13,20 @@ namespace UI.Pages.DB.Local
 {
     public class LaborBase : ComponentBase
     {
-        protected IList<Models.DB.Local.Labor> labors = null;
-
+        protected IList<Models.DB.Local.Labor> laborers = null;
+        protected static LocalContext localContext = new LocalContext();
+        protected LaborsService laborsService = new LaborsService(localContext);
+        protected NumberFormatInfo nfi = new CultureInfo("en-GB", false).NumberFormat;
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                LaborsService laborsService = new LaborsService(new LocalContext());
-                labors = await laborsService.GetAllLaborers();
+                laborers = await laborsService.GetAllLaborers();
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Diagnostics.Logger;
+using Microsoft.AspNetCore.Components;
 using Models.DTO.Config;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,8 @@ namespace UI.Shared.HeaderBar
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }

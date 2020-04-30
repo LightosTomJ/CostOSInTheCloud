@@ -1,4 +1,4 @@
-﻿using API.Controllers.DB.Cache;
+﻿using Diagnostics.Logger; using API.Controllers.DB.Cache;
 using Microsoft.AspNetCore.Components;
 using Models.DB.Cache;
 using Models.DTO.Cache;
@@ -61,8 +61,8 @@ namespace UI.Pages.DTO.Cache
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
         }

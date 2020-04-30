@@ -1,21 +1,31 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Diagnostics.Logger;
+using Helper.DB.Cache;
+using Microsoft.AspNetCore.Components;
+using Models.DB.Cache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Models.DB.Cache;
-using API.Controllers.DB.Cache;
 
 namespace UI.Pages.DB.Cache
 {
     public class CountriesBase : ComponentBase
     {
-        public async Task<List<Country>> listCountries()
+        protected IList<Country> countries = null;
+        protected static CacheContext cacheContext = new CacheContext();
+        protected CountriesService countriesService = new CountriesService(cacheContext);
+        protected override async Task OnInitializedAsync()
         {
-            List<Country> countries = new List<Country>();
-            CountryController cc = new CountryController(new CacheContext());
-            countries = await cc.GetCountries();
-            return countries;
+            try
+            {
+                countries = await countriesService.GetAllCountries();
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
         }
     }
 }
