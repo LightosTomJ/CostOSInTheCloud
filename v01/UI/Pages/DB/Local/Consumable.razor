@@ -1,15 +1,38 @@
-@page "/consumable"
+@page "/consumables"
 @inherits ConsumableBase
 
 @using Models.DB.Local
+@using System.Globalization
 
-<h3>Consumable</h3>
+<h3>Consumables</h3>
 
-@if (consumable == null)
+@if (consumables == null)
 {
     <span>Loading</span>
 }
 else
 {
+    @if (consumables.Count == 0)
+    {
+        <h>No consumables found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@consumables" TItem="Models.DB.Local.Consumable">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="ConsumableId" Title="Id" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="Title" Title="Title" Width="100px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="Rate" Title="Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="consumable">
+                        @String.Format(nfi, "{0:C}", consumable.Rate)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Consumable" Property="Notes" Title="Notes" Type="string" TextAlign="TextAlign.Right" Width="12px" />
+            </Columns>
+        </RadzenGrid>
 
+    }
 }

@@ -1,15 +1,38 @@
-@page "/subcontractor"
+@page "/subcontractors"
 @inherits SubcontractorBase
 
 @using Models.DB.Local
+@using System.Globalization
 
-<h3>Subcontractor</h3>
+<h3>Subcontractors</h3>
 
-@if (subcontractor == null)
+@if (subcontractors == null)
 {
     <span>Loading</span>
 }
 else
 {
-
+    @if (subcontractors.Count == 0)
+    {
+        <h>No subcontractors found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@subcontractors" TItem="Models.DB.Local.Subcontractor">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="SubcontractorId" Title="Id" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Title" Title="Title" Width="100px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Rate" Title="Rate" Type="decimal" TextAlign="TextAlign.Right" Width="12px">
+                    <Template Context="subcontractor">
+                        @String.Format(nfi, "{0:C}", subcontractor.Rate)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Rescode" Title="Res Code" Type="string" TextAlign="TextAlign.Left" Width="12px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Subcontractor" Property="Country" Title="Country" Type="string" TextAlign="TextAlign.Left" Width="12px" />
+            </Columns>
+        </RadzenGrid>
+    }
 }

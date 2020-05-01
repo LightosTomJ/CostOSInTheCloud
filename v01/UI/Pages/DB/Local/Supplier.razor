@@ -1,15 +1,35 @@
-@page "/supplier"
+@page "/suppliers"
 @inherits SupplierBase
 
 @using Models.DB.Local
+@using System.Globalization
 
-<h3>Supplier</h3>
+<h3>Suppliers</h3>
 
-@if (supplier == null)
+@if (suppliers == null)
 {
     <span>Loading</span>
 }
 else
 {
+    @if (suppliers.Count == 0)
+    {
+        <h>No suppliers found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30"
+                    AllowSorting="true" Data="@suppliers" TItem="Models.DB.Local.Supplier">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="SupplierId" Title="Id" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Title" Title="Title" Width="100px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Contactperson" Title="Contact Person" Type="decimal" TextAlign="TextAlign.Right" Width="12px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Email" Title="Email" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Currency" Title="Currency" TextAlign="TextAlign.Left" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Rescode" Title="Res Code" Type="string" TextAlign="TextAlign.Left" Width="12px" />
+                <RadzenGridColumn TItem="Models.DB.Local.Supplier" Property="Country" Title="Country" Type="string" TextAlign="TextAlign.Left" Width="12px" />
+            </Columns>
+        </RadzenGrid>
 
+    }
 }
