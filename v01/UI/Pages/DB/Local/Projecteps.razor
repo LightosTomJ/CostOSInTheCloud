@@ -1,7 +1,9 @@
 @page "/projecteps"
-@inherits ProjectepsBase
+@inherits ProjectEPSBase
 
 @using Models.DB.Local
+@using Models.DB.Project
+
 
 <h3>Enterprise Project Structure</h3>
 
@@ -11,28 +13,11 @@
 }
 else
 {
-<div class="col-md-6" style="margin-bottom: 16px">
-    <RadzenTree Expand="@LogExpand" Change="@LogChange" Data="@projectEPS" Style="width: 100%; height: 300px">
+    <div class="col-md-6" style="margin-bottom: 16px">
+        <RadzenTree Change="@LogChange" Data="@entries" Expand="@OnExpand" Style="width: 100%; height: 300px">
+            <RadzenTreeLevel TextProperty="Value" />
+        </RadzenTree>
+    </div>
 
-        @if (CountParentNodes().Result > 0)
-        {
-            @foreach (var parent in GetParentNodes().Result)
-            {
-                <RadzenTreeItem Text=@parent.Title Value=@parent.Projectepsid>
-                    @if (HasSubNodes(parent).Result == true)
-                    {
-                        @foreach (var sub in GetSubNodes(parent).Result)
-                        {
-                            <RadzenTreeItem Text=@sub.Title Value=@sub.Projectepsid>
-                                 
-                            </RadzenTreeItem>
-                        }
-                    }
-                </RadzenTreeItem>
-            }
-        }
-</RadzenTree>
-
-</div>
 
 }

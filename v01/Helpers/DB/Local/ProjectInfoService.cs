@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Helper.DB.Local
 {
-	public class ProjectInfosService
+	public class ProjectInfoService
 	{
 		private LocalContext localContext;
 
-		public ProjectInfosService(LocalContext dbContext)
+		public ProjectInfoService(LocalContext dbContext)
 		{
 			localContext = dbContext;
 		}
@@ -33,7 +33,7 @@ namespace Helper.DB.Local
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Local.ProjectInfo>> GetAllProjectInfos()
+		public async Task<IList<ProjectInfo>> GetAllProjectInfoAsync()
 		{
 			try
 			{
@@ -48,7 +48,42 @@ namespace Helper.DB.Local
 			}
 			return null;
 		}
-		public async Task<long> CreateProjectInfo(List<Models.DB.Local.ProjectInfo> ProjectInfos)
+
+		public async Task<IList<ProjectInfo>> GetAllProjectInfosByParentIdAsync(long id)
+		{
+			try
+			{
+				if (localContext == null) localContext = new LocalContext();
+				IList<ProjectInfo> projectInfos = 
+					await localContext.ProjectInfo.Where(p => p.Projectepsid == id).ToListAsync();
+				return projectInfos;
+			}
+			catch (Exception ae)
+			{
+				Log.WriteLine(ae.Message);
+				if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+			}
+			return null;
+		}
+
+		public IList<ProjectInfo> GetAllProjectInfosByParentId(long id)
+		{
+			try
+			{
+				if (localContext == null) localContext = new LocalContext();
+				IList<ProjectInfo> projectInfos =
+					localContext.ProjectInfo.Where(p => p.Projectepsid == id).ToList();
+				return projectInfos;
+			}
+			catch (Exception ae)
+			{
+				Log.WriteLine(ae.Message);
+				if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+			}
+			return null;
+		}
+
+		public async Task<long> CreateProjectInfo(List<ProjectInfo> ProjectInfos)
 		{
 			long returnid = -1;
 			try
@@ -69,7 +104,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectInfo(Models.DB.Local.ProjectInfo projectInfo)
+		public async Task<bool> UpdateProjectInfo(ProjectInfo projectInfo)
 		{
 			try
 			{
@@ -85,6 +120,7 @@ namespace Helper.DB.Local
 			}
 			return false;
 		}
+
 		public async Task<bool> DeleteProjectInfo(long projectInfoId)
 		{
 			try

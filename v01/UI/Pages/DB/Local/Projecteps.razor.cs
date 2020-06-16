@@ -1,31 +1,44 @@
-using Diagnostics.Logger;
 using Helper.DB.Local;
-using Models.DB.Local;
 using Microsoft.AspNetCore.Components;
+using Models.DB.Local;
+using Log = Diagnostics.Logger.Log;
+using Radzen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Radzen;
-using Radzen.Blazor;
-using System.IO;
+using UI.Pages.DTO.Local;
+using Blazorise;
 
 namespace UI.Pages.DB.Local
 {
-    public class ProjectepsBase : ComponentBase
+    public class ProjectEPSBase : ComponentBase
     {
         protected IList<Models.DB.Local.ProjectEPS> projectEPS = null;
+        protected IList<ProjectInfo> projects = null;
         protected static LocalContext localContext = new LocalContext();
         protected ProjectEPSService projectEPSService = new ProjectEPSService(localContext);
-        protected List<string> entries = null;
+        protected ProjectInfoService projectInfoService = new ProjectInfoService(localContext);
+        protected List<ProjectEPSDto> entries = new List<ProjectEPSDto>();
         protected Dictionary<DateTime, string> events = new Dictionary<DateTime, string>();
+        [Inject] HelperService HelperService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
                 projectEPS = await projectEPSService.GetAllProjectEPSAsync();
-                entries = projectEPS.Select(e => e.Title).ToList();
+                projects = await projectInfoService.GetAllProjectInfoAsync();
+                foreach (var p in projectEPS.Where(p => p.Parentid == null))
+                {
+                    entries.Add(new ProjectEPSDto()
+                    {
+                        ProjectEPSId = p.Projectepsid,
+                        Code = p.Code,
+                        Title = p.Title,
+                        Value = string.Concat(p.Code, " - ", p.Title)
+                    });
+                }
             }
             catch (Exception ae)
             {
@@ -33,81 +46,6 @@ namespace UI.Pages.DB.Local
                 if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
             }
             return;
-        }
-
-        protected async Task<int> CountParentNodes()
-        {
-            IList<Models.DB.Local.ProjectEPS> lNodes = new List<Models.DB.Local.ProjectEPS>();
-            try
-            {
-                var nodes = await projectEPSService.GetProjectEPSParentsAsync();
-                if (nodes != null)
-                {
-                    return nodes.Count;
-                }
-            }
-            catch (Exception ae)
-            {
-                Log.WriteLine(ae.Message);
-                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
-            }
-            return 0;
-        }
-
-        protected async Task<IList<Models.DB.Local.ProjectEPS>> GetParentNodes()
-        {
-            IList<Models.DB.Local.ProjectEPS> lNodes = new List<Models.DB.Local.ProjectEPS>();
-            try
-            {
-                var nodes = await projectEPSService.GetProjectEPSParentsAsync();
-                if (nodes != null)
-                {
-                    lNodes = nodes;
-                }
-            }
-            catch (Exception ae)
-            {
-                Log.WriteLine(ae.Message);
-                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
-            }
-            return lNodes;
-        }
-
-        protected async Task<bool> HasSubNodes(Models.DB.Local.ProjectEPS node)
-        {
-            try
-            {
-                var nodes = await projectEPSService.GetProjectEPSByNodeAsync(node);
-                if (nodes != null)
-                {
-                    return true;
-                }
-            }
-            catch (Exception ae)
-            {
-                Log.WriteLine(ae.Message);
-                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
-            }
-            return false;
-        }
-
-        protected async Task<IList<Models.DB.Local.ProjectEPS>> GetSubNodes(Models.DB.Local.ProjectEPS node)
-        {
-            IList<Models.DB.Local.ProjectEPS> lNodes = new List<Models.DB.Local.ProjectEPS>();
-            try
-            {
-                var nodes = await projectEPSService.GetProjectEPSByNodeAsync(node);
-                if (nodes != null)
-                {
-                    lNodes = nodes;
-                }
-            }
-            catch (Exception ae)
-            {
-                Log.WriteLine(ae.Message);
-                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
-            }
-            return lNodes;
         }
 
         protected void TreeLog(string eventName, string value)
@@ -124,12 +62,46 @@ namespace UI.Pages.DB.Local
         {
             try
             {
-                TreeLog("Expand", $"Text: {entries.IndexOf(args.Text.ToString())}");
+                TreeLog("Expand", $"Text: {entries.IndexOf((ProjectEPSDto)args.Value)}");
             }
             catch (Exception ae)
             {
-                Diagnostics.Logger.Log.WriteLine(ae.Message);
-                if (ae.InnerException != null) Diagnostics.Logger.Log.WriteLine(ae.InnerException.ToString());
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+        }
+
+        protected void OnExpand(TreeExpandEventArgs args)
+        {
+            ProjectEPSDto epsNode = null;
+            bool HasChildren = false;
+            if (args.Value.GetType() == typeof(ProjectEPSDto))
+            {
+                epsNode = args.Value as ProjectEPSDto;
+                List<ProjectEPSDto> subEntries = new List<ProjectEPSDto>();
+                if (epsNode.ProjectId == 0)
+                {
+                    if (projects.Count(p => p.Projectepsid == epsNode.ProjectEPSId) > 0)    //Checks for EPS subnodes
+                    {
+                        subEntries.AddRange(epsNode.FromInfoList(
+                            localContext.ProjectInfo.Where(p => p.Projectepsid == epsNode.ProjectEPSId).ToList()));
+                        HasChildren = false;
+                    }
+                    if (localContext.ProjectEPS.Count(p => p.Parentid == epsNode.ProjectEPSId) > 0)         //Checks for EPS subnodes
+                    {
+                        subEntries.AddRange(epsNode.FromEPSList(
+                            localContext.ProjectEPS.Where(p => p.Parentid == epsNode.ProjectEPSId).ToList()));
+                        HasChildren = true;
+                    }
+                    args.Children.Data = subEntries;
+                    args.Children.TextProperty = "Value";
+                    args.Children.HasChildren = (epsNode) => HasChildren;
+                    LogExpand(args);
+                }
+                else
+                {
+                    HelperService.ChangePage("/equipment", true);
+                }
             }
         }
     }

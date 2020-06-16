@@ -33,12 +33,12 @@ namespace Helper.DB.Local
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Local.ProjectEPS>> GetAllProjectEPSAsync()
+		public async Task<IList<ProjectEPS>> GetAllProjectEPSAsync()
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectEPS> projectEPS = await localContext.ProjectEPS.ToListAsync();
+				IList<ProjectEPS> projectEPS = await localContext.ProjectEPS.ToListAsync();
 				return projectEPS;
 			}
 			catch (Exception ae)
@@ -49,13 +49,13 @@ namespace Helper.DB.Local
 			return null;
 		}
 
-		public async Task<IList<Models.DB.Local.ProjectEPS>> GetProjectEPSParentsAsync()
+		public async Task<IList<ProjectEPS>> GetProjectEPSParentsAsync()
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectEPS> projectEPS = localContext.ProjectEPS.Where(e => e.Parentid == null).ToList();
-				//IList <Models.DB.Local.ProjectEPS> projectEPS = await localContext.ProjectEPS.Where(e => e.Parentid == null).ToListAsync();
+				//IList<ProjectEPS> projectEPS = localContext.ProjectEPS.Where(e => e.Parentid == null).ToList();
+				IList <ProjectEPS> projectEPS = await localContext.ProjectEPS.Where(e => e.Parentid == null).ToListAsync();
 				return projectEPS;
 			}
 			catch (Exception ae)
@@ -66,12 +66,12 @@ namespace Helper.DB.Local
 			return null;
 		}
 
-		public async Task<IList<Models.DB.Local.ProjectEPS>> GetProjectEPSByNodeAsync(Models.DB.Local.ProjectEPS eps)
+		public async Task<IList<ProjectEPS>> GetProjectEPSByNodeAsync(ProjectEPS eps)
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectEPS> projectEPS = 
+				IList<ProjectEPS> projectEPS = 
 					await localContext.ProjectEPS.Where(e => e.Parentid == eps.Projectepsid).ToListAsync();
 				return projectEPS;
 			}
@@ -83,13 +83,13 @@ namespace Helper.DB.Local
 			return null;
 		}
 
-		public async Task<long> CreateProjectEPS(List<Models.DB.Local.ProjectEPS> ProjectEPS)
+		public async Task<long> CreateProjectEPS(List<ProjectEPS> ProjectEPS)
 		{
 			long returnid = -1;
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				foreach (Models.DB.Local.ProjectEPS projectEPS in ProjectEPS)
+				foreach (ProjectEPS projectEPS in ProjectEPS)
 				{
 					localContext.ProjectEPS.Add(projectEPS);
 					await localContext.SaveChangesAsync();
@@ -104,7 +104,7 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjectEPS(Models.DB.Local.ProjectEPS projectEPS)
+		public async Task<bool> UpdateProjectEPS(ProjectEPS projectEPS)
 		{
 			try
 			{
@@ -125,7 +125,7 @@ namespace Helper.DB.Local
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				Models.DB.Local.ProjectEPS projectEPS = localContext.ProjectEPS.First(p => p.Projectepsid == projectEPSId);
+				ProjectEPS projectEPS = localContext.ProjectEPS.First(p => p.Projectepsid == projectEPSId);
 				localContext.ProjectEPS.Remove(projectEPS);
 				await localContext.SaveChangesAsync();
 				return true;

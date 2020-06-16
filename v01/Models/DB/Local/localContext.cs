@@ -15,6 +15,16 @@ namespace Models.DB.Local
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=local;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-QDVS6I6;Initial Catalog=Costos2019;Integrated Security=True;Persist Security Info=False;");
+            }
+        }
+
         public virtual DbSet<Ad> Ad { get; set; }
         public virtual DbSet<AlcAmUsers> AlcAmUsers { get; set; }
         public virtual DbSet<AlcGroups> AlcGroups { get; set; }
@@ -127,15 +137,6 @@ namespace Models.DB.Local
         public virtual DbSet<WsFile> WsFile { get; set; }
         public virtual DbSet<WsRevision> WsRevision { get; set; }
         public virtual DbSet<XcellFile> XcellFile { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=local;Integrated Security=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -4678,13 +4679,15 @@ namespace Models.DB.Local
             {
                 entity.ToTable("PROJECTINFO");
 
-                entity.Property(e => e.Projectinfoid).HasColumnName("PROJECTINFOID");
+                entity.Property(e => e.Projectinfoid)
+                    .HasColumnName("PROJECTINFOID");
 
                 entity.Property(e => e.Basement)
                     .HasColumnName("BASEMENT")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Bimtakeoff).HasColumnName("BIMTAKEOFF");
+                entity.Property(e => e.Bimtakeoff)
+                    .HasColumnName("BIMTAKEOFF");
 
                 entity.Property(e => e.Client)
                     .HasColumnName("CLIENT")
@@ -4714,7 +4717,8 @@ namespace Models.DB.Local
                     .HasColumnName("COUNTRY")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.Createdate).HasColumnName("CREATEDATE");
+                entity.Property(e => e.Createdate)
+                    .HasColumnName("CREATEDATE");
 
                 entity.Property(e => e.Creatorid)
                     .HasColumnName("CREATORID")
@@ -4804,25 +4808,35 @@ namespace Models.DB.Local
                     .HasColumnName("CUSCUMRATE9")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Cusepsdate1).HasColumnName("CUSEPSDATE1");
+                entity.Property(e => e.Cusepsdate1)
+                    .HasColumnName("CUSEPSDATE1");
 
-                entity.Property(e => e.Cusepsdate10).HasColumnName("CUSEPSDATE10");
+                entity.Property(e => e.Cusepsdate10)    
+                    .HasColumnName("CUSEPSDATE10");
 
-                entity.Property(e => e.Cusepsdate2).HasColumnName("CUSEPSDATE2");
+                entity.Property(e => e.Cusepsdate2)
+                    .HasColumnName("CUSEPSDATE2");
 
-                entity.Property(e => e.Cusepsdate3).HasColumnName("CUSEPSDATE3");
+                entity.Property(e => e.Cusepsdate3)
+                    .HasColumnName("CUSEPSDATE3");
 
-                entity.Property(e => e.Cusepsdate4).HasColumnName("CUSEPSDATE4");
+                entity.Property(e => e.Cusepsdate4) 
+                    .HasColumnName("CUSEPSDATE4");
 
-                entity.Property(e => e.Cusepsdate5).HasColumnName("CUSEPSDATE5");
+                entity.Property(e => e.Cusepsdate5)
+                    .HasColumnName("CUSEPSDATE5");
 
-                entity.Property(e => e.Cusepsdate6).HasColumnName("CUSEPSDATE6");
+                entity.Property(e => e.Cusepsdate6)
+                    .HasColumnName("CUSEPSDATE6");
 
-                entity.Property(e => e.Cusepsdate7).HasColumnName("CUSEPSDATE7");
+                entity.Property(e => e.Cusepsdate7)
+                    .HasColumnName("CUSEPSDATE7");
 
-                entity.Property(e => e.Cusepsdate8).HasColumnName("CUSEPSDATE8");
+                entity.Property(e => e.Cusepsdate8)
+                    .HasColumnName("CUSEPSDATE8");
 
-                entity.Property(e => e.Cusepsdate9).HasColumnName("CUSEPSDATE9");
+                entity.Property(e => e.Cusepsdate9)
+                    .HasColumnName("CUSEPSDATE9");
 
                 entity.Property(e => e.Cusepsrate1)
                     .HasColumnName("CUSEPSRATE1")
@@ -4948,9 +4962,11 @@ namespace Models.DB.Local
                     .HasColumnName("DEFREV")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.Description).HasColumnName("DESCRIPTION");
+                entity.Property(e => e.Description)
+                    .HasColumnName("DESCRIPTION");
 
-                entity.Property(e => e.Duration).HasColumnName("DURATION");
+                entity.Property(e => e.Duration)
+                    .HasColumnName("DURATION");
 
                 entity.Property(e => e.Editorid)
                     .HasColumnName("EDITORID")
@@ -4968,7 +4984,8 @@ namespace Models.DB.Local
                     .HasColumnName("EQUHOURS")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Floors).HasColumnName("FLOORS");
+                entity.Property(e => e.Floors)
+                    .HasColumnName("FLOORS");
 
                 entity.Property(e => e.Geoloc)
                     .HasColumnName("GEOLOC")
@@ -4978,13 +4995,15 @@ namespace Models.DB.Local
                     .HasColumnName("LABCOST")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Lastupdate).HasColumnName("LASTUPDATE");
+                entity.Property(e => e.Lastupdate)
+                    .HasColumnName("LASTUPDATE");
 
                 entity.Property(e => e.Location)
                     .HasColumnName("LOCATION")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.Locfac).HasColumnName("LOCFAC");
+                entity.Property(e => e.Locfac)
+                    .HasColumnName("LOCFAC");
 
                 entity.Property(e => e.Locprof)
                     .HasColumnName("LOCPROF")
@@ -5006,9 +5025,11 @@ namespace Models.DB.Local
                     .HasColumnName("OFFEREDPRICE")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Ostakeoff).HasColumnName("OSTAKEOFF");
+                entity.Property(e => e.Ostakeoff)
+                    .HasColumnName("OSTAKEOFF");
 
-                entity.Property(e => e.Primavera).HasColumnName("PRIMAVERA");
+                entity.Property(e => e.Primavera)
+                    .HasColumnName("PRIMAVERA");
 
                 entity.Property(e => e.Prjsubcat)
                     .HasColumnName("PRJSUBCAT")
@@ -5018,7 +5039,8 @@ namespace Models.DB.Local
                     .HasColumnName("PRJTYPE")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.Projectepsid).HasColumnName("PROJECTEPSID");
+                entity.Property(e => e.Projectepsid)
+                    .HasColumnName("PROJECTEPSID");
 
                 entity.Property(e => e.Selfac)
                     .HasColumnName("SELFAC")
@@ -5040,7 +5062,8 @@ namespace Models.DB.Local
                     .HasColumnName("SUBCOST")
                     .HasColumnType("numeric(30, 10)");
 
-                entity.Property(e => e.Subdate).HasColumnName("SUBDATE");
+                entity.Property(e => e.Subdate)
+                    .HasColumnName("SUBDATE");
 
                 entity.Property(e => e.Title)
                     .HasColumnName("TITLE")

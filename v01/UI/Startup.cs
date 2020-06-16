@@ -38,6 +38,7 @@ namespace UI
                  options.ChangeTextOnKeyPress = true;
             }).AddBootstrapProviders().AddFontAwesomeIcons();
             //services.AddSingleton<Controllers.DB.Cache.CountryController>();
+            services.AddTransient<HelperService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
