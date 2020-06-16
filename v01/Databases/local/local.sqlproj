@@ -199,5 +199,6 @@
     <None Include="dbo\Data\Labor.sql" />
     <None Include="dbo\Data\Equipment.sql" />
     <None Include="dbo\Data\Subcontractor.sql" />
+    <None Include="dbo\Data\ProjectEPS.sql" />
   </ItemGroup>
 </Project>

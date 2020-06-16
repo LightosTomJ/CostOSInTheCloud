@@ -14,3 +14,4 @@ Post-Deployment Script Template
 :r ..\..\Data\Labor.sql
 :r ..\..\Data\Materials.sql
 :r ..\..\Data\Subcontractor.sql
+:r ..\..\Data\ProjectEPS.sql

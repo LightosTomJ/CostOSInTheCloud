@@ -54,8 +54,8 @@ namespace Helper.DB.Local
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectEPS> projectEPS =
-					await localContext.ProjectEPS.Where(e => e.Parentid == null).ToListAsync();
+				IList<Models.DB.Local.ProjectEPS> projectEPS = localContext.ProjectEPS.Where(e => e.Parentid == null).ToList();
+				//IList <Models.DB.Local.ProjectEPS> projectEPS = await localContext.ProjectEPS.Where(e => e.Parentid == null).ToListAsync();
 				return projectEPS;
 			}
 			catch (Exception ae)

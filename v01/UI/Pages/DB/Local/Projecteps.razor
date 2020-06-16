@@ -12,20 +12,19 @@
 else
 {
 <div class="col-md-6" style="margin-bottom: 16px">
-    <h3>Data-bound to Entity Framework</h3>
     <RadzenTree Expand="@LogExpand" Change="@LogChange" Data="@projectEPS" Style="width: 100%; height: 300px">
 
         @if (CountParentNodes().Result > 0)
         {
             @foreach (var parent in GetParentNodes().Result)
             {
-                <RadzenTreeItem Text=@parent.Title>
+                <RadzenTreeItem Text=@parent.Title Value=@parent.Projectepsid>
                     @if (HasSubNodes(parent).Result == true)
                     {
                         @foreach (var sub in GetSubNodes(parent).Result)
                         {
-                            <RadzenTreeItem Text=@sub.Title>
-
+                            <RadzenTreeItem Text=@sub.Title Value=@sub.Projectepsid>
+                                 
                             </RadzenTreeItem>
                         }
                     }

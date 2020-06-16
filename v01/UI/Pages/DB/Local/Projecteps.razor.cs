@@ -25,6 +25,7 @@ namespace UI.Pages.DB.Local
             try
             {
                 projectEPS = await projectEPSService.GetAllProjectEPSAsync();
+                entries = projectEPS.Select(e => e.Title).ToList();
             }
             catch (Exception ae)
             {
