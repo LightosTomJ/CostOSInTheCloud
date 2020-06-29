@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UI.Pages.DTO.Local;
-using Blazorise;
+using Radzen.Blazor;
 
 namespace UI.Pages.DB.Local
 {
     public class ProjectEPSBase : ComponentBase
     {
         protected IList<Models.DB.Local.ProjectEPS> projectEPS = null;
-        protected IList<ProjectInfo> projects = null;
+        protected IList<Models.DB.Local.ProjectInfo> projects = null;
         protected static LocalContext localContext = new LocalContext();
         protected ProjectEPSService projectEPSService = new ProjectEPSService(localContext);
         protected ProjectInfoService projectInfoService = new ProjectInfoService(localContext);
@@ -100,9 +100,19 @@ namespace UI.Pages.DB.Local
                 }
                 else
                 {
-                    HelperService.ChangePage("/equipment", true);
+                    HelperService.ChangePage("/project/" + epsNode.ProjectId.ToString(), true);
                 }
             }
+        }
+
+        protected RenderFragment NavigateNode(object data)
+        {
+            if (data.GetType() == typeof(RadzenTreeItem))
+            {
+                RadzenTreeItem rti = (RadzenTreeItem)data;
+                //return rti.Template as RenderFragment;
+            }
+            return (RenderFragment)data;
         }
     }
 }

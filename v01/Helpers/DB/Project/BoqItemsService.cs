@@ -33,12 +33,14 @@ namespace Helper.DB.Project
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Project.BoqItem>> GetAllBoqItems()
+		public async Task<IList<Models.DB.Project.BoqItem>> GetAllBoqItemsAsync(int projectId)
 		{
 			try
 			{
 				if (projectContext == null) projectContext = new ProjectContext();
-				IList<Models.DB.Project.BoqItem> boqItems = await projectContext.BoqItem.ToListAsync();
+				IList<Models.DB.Project.BoqItem> boqItems = await projectContext.BoqItem
+					.Where(p => p.Prjid == projectId)
+					.ToListAsync();
 				return boqItems;
 			}
 			catch (Exception ae)

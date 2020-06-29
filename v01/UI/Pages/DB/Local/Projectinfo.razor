@@ -1,15 +1,42 @@
-@page "/projectinfo"
-@inherits ProjectinfoBase
+@page "/project/{ProjectId}"
+@inherits ProjectInfoBase
 
 @using Models.DB.Local
 
-<h3>Projectinfo</h3>
+<h3>Projects</h3>
 
-@if (projectinfo == null)
+@if (projectInfo == null)
 {
     <span>Loading</span>
 }
 else
 {
+    @if (projectInfo.Count == 0)
+    {
+        <h>No projects found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30" RowSelect="@RowSelected"
+                    AllowSorting="true" Data="@projectInfo" TItem="Models.DB.Local.ProjectInfo">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Client" Title="Client" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Title" Title="Title" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Duration" Title="Duration" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Contractor" Title="Contractor" TextAlign="TextAlign.Left" Width="30px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Unit" Title="Unit" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Totalcost" Title="Total Cost" Type="decimal" TextAlign="TextAlign.Right" Width="30px">
+                    <Template Context="project">
+                        @String.Format(nfi, "{0:C}", project.Totalcost)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectInfo" Property="Clientbudget" Title="Client Budget" Type="decimal" TextAlign="TextAlign.Right" Width="20px">
+                    <Template Context="project">
+                        @String.Format(nfi, "{0:C}", project.Clientbudget)
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
 
+    }
 }

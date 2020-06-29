@@ -1,7 +1,6 @@
 using Diagnostics.Logger;
 using Microsoft.EntityFrameworkCore;
 using Models.DB.Local;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Helper.DB.Local
 {
-	public class ProjectInfoService
+    public class ProjectInfoService
 	{
 		private LocalContext localContext;
 
@@ -38,7 +37,7 @@ namespace Helper.DB.Local
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectInfo> projectInfos = await localContext.ProjectInfo.ToListAsync();
+				IList<ProjectInfo> projectInfos = await localContext.ProjectInfo.ToListAsync();
 				return projectInfos;
 			}
 			catch (Exception ae)
@@ -49,30 +48,14 @@ namespace Helper.DB.Local
 			return null;
 		}
 
-		public async Task<IList<ProjectInfo>> GetAllProjectInfosByParentIdAsync(long id)
+		public async Task<IList<ProjectInfo>> GetAllProjectInfoByIdAsync(int projectInfoId)
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<ProjectInfo> projectInfos = 
-					await localContext.ProjectInfo.Where(p => p.Projectepsid == id).ToListAsync();
-				return projectInfos;
-			}
-			catch (Exception ae)
-			{
-				Log.WriteLine(ae.Message);
-				if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
-			}
-			return null;
-		}
-
-		public IList<ProjectInfo> GetAllProjectInfosByParentId(long id)
-		{
-			try
-			{
-				if (localContext == null) localContext = new LocalContext();
-				IList<ProjectInfo> projectInfos =
-					localContext.ProjectInfo.Where(p => p.Projectepsid == id).ToList();
+				IList<ProjectInfo> projectInfos = await localContext.ProjectInfo
+					.Where(p => p.Projectinfoid == projectInfoId)
+					.ToListAsync();
 				return projectInfos;
 			}
 			catch (Exception ae)

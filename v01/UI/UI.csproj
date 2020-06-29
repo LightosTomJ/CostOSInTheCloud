@@ -120,7 +120,6 @@
     <Compile Remove="Pages\DB\Project\BoqItemLabors.razor.cs" />
     <Compile Remove="Pages\DB\Project\BoqItemMaterials.razor.cs" />
     <Compile Remove="Pages\DB\Project\BoqItemMetadatas.razor.cs" />
-    <Compile Remove="Pages\DB\Project\BoqItems.razor.cs" />
     <Compile Remove="Pages\DB\Project\BoqItemSubcontractors.razor.cs" />
     <Compile Remove="Pages\DB\Project\Cndons.razor.cs" />
     <Compile Remove="Pages\DB\Project\CnmHistories.razor.cs" />
@@ -292,7 +291,6 @@
     <Content Remove="Pages\DB\Project\BoqItemLabors.razor" />
     <Content Remove="Pages\DB\Project\BoqItemMaterials.razor" />
     <Content Remove="Pages\DB\Project\BoqItemMetadatas.razor" />
-    <Content Remove="Pages\DB\Project\BoqItems.razor" />
     <Content Remove="Pages\DB\Project\BoqItemSubcontractors.razor" />
     <Content Remove="Pages\DB\Project\Cndons.razor" />
     <Content Remove="Pages\DB\Project\CnmHistories.razor" />

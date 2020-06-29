@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Radzen;
+using Diagnostics.Logger;
 
 namespace UI.Pages.DB.Project
 {
     public class BoqitemAssemblyBase : ComponentBase
     {
-        protected IList<Models.DB.Project.BoqitemAssembly> boqitemassemblies = null;
+        protected IList<BoqItemAssembly> boqitemassemblies = null;
 
         protected override async Task OnInitializedAsync()
         {
@@ -20,8 +21,8 @@ namespace UI.Pages.DB.Project
             }
             catch (Exception ae)
             {
-                ae.Message.ToString();
-                if (ae.InnerException != null) _ = ae.InnerException.Message.ToString();
+                Log.WriteLine(ae.Message.ToString());
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.Message.ToString());
             }
             return;
         }

@@ -62,9 +62,9 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
-    <Folder Include="dbo\Data" />
     <Folder Include="dbo\Deploy" />
     <Folder Include="dbo\Deploy\Local" />
+    <Folder Include="dbo\Data" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\EXTDATASOURCE.sql" />
@@ -190,15 +190,15 @@
     <Build Include="dbo\Stored Procedures\usp_dyn_multibase_with_layouts.sql" />
     <Build Include="dbo\Stored Procedures\usp_fixed_list_project_info_view.sql" />
     <Build Include="dbo\Stored Procedures\usp_get_project_worksheet_revtree_sql.sql" />
+    <None Include="dbo\Data\Equipment.sql" />
+    <None Include="dbo\Data\Labor.sql" />
+    <None Include="dbo\Data\ProjectEPS.sql" />
+    <None Include="dbo\Data\ProjectInfo.sql" />
+    <None Include="dbo\Data\ProjectURL.sql" />
+    <None Include="dbo\Data\Subcontractor.sql" />
+    <None Include="dbo\Data\Materials.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Deploy\Local\Script.PostDeployment.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="dbo\Data\Materials.sql" />
-    <None Include="dbo\Data\Labor.sql" />
-    <None Include="dbo\Data\Equipment.sql" />
-    <None Include="dbo\Data\Subcontractor.sql" />
-    <None Include="dbo\Data\ProjectEPS.sql" />
   </ItemGroup>
 </Project>

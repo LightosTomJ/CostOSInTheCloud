@@ -1,15 +1,42 @@
-@page "/projecturl"
-@inherits ProjecturlBase
+@page "/project/{ProjectId}/Sub-Projects"
+@inherits ProjectURLBase
 
 @using Models.DB.Local
 
-<h3>Projecturl</h3>
+<h3>Sub Projects</h3>
 
-@if (projecturl == null)
+@if (projectURLs == null)
 {
     <span>Loading</span>
 }
 else
 {
+    @if (projectURLs.Count == 0)
+    {
+        <h>No projects found</h>
+    }
+    else
+    {
+        <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30" RowSelect="@RowSelected"
+                    AllowSorting="true" Data="@projectURLs" TItem="Models.DB.Local.ProjectURL">
+            <Columns>
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Projecturlid" Title="Version #" Type="integer" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Name" Title="Name" Type="string" Width="20px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Createdate" Title="Created" Type="string" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Lastupdate" Title="Updated" Type="string" TextAlign="TextAlign.Right" Width="7px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Rvson" Title="Revision" Type="integer" TextAlign="TextAlign.Left" Width="30px" />
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Esttotal" Title="Estimated Value" Type="decimal" TextAlign="TextAlign.Right" Width="30px">
+                    <Template Context="project">
+                        @String.Format(nfi, "{0:C}", project.Esttotal)
+                    </Template>
+                </RadzenGridColumn>
+                <RadzenGridColumn TItem="Models.DB.Local.ProjectURL" Property="Quotedtotal" Title="Quoted Value" Type="decimal" TextAlign="TextAlign.Right" Width="20px">
+                    <Template Context="project">
+                        @String.Format(nfi, "{0:C}", project.Quotedtotal)
+                    </Template>
+                </RadzenGridColumn>
+            </Columns>
+        </RadzenGrid>
 
+    }
 }

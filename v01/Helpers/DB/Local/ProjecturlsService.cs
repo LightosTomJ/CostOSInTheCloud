@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Helper.DB.Local
 {
-	public class ProjecturlsService
+	public class ProjectURLsService
 	{
 		private LocalContext localContext;
 
-		public ProjecturlsService(LocalContext dbContext)
+		public ProjectURLsService(LocalContext dbContext)
 		{
 			localContext = dbContext;
 		}
 
-		public async Task<long> ProjecturlCount()
+		public async Task<long> ProjectURLCount()
 		{
 			try
 			{
@@ -33,13 +33,15 @@ namespace Helper.DB.Local
 			return -1;
 		}
 
-		public async Task<IList<Models.DB.Local.ProjectURL>> GetAllProjecturls()
+		public async Task<IList<ProjectURL>> GetAllProjectURLs(int projectInfoId)
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				IList<Models.DB.Local.ProjectURL> projecturls = await localContext.Projecturl.ToListAsync();
-				return projecturls;
+				IList<ProjectURL> projectURLs = await localContext.Projecturl
+									.Where(p => p.Projectinfoid == projectInfoId)
+									.ToListAsync();
+				return projectURLs;
 			}
 			catch (Exception ae)
 			{
@@ -48,17 +50,17 @@ namespace Helper.DB.Local
 			}
 			return null;
 		}
-		public async Task<long> CreateProjecturl(List<Models.DB.Local.ProjectURL> Projecturls)
+		public async Task<long> CreateProjectURL(List<ProjectURL> ProjectURLs)
 		{
 			long returnid = -1;
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				foreach (Models.DB.Local.ProjectURL projecturl in Projecturls)
+				foreach (ProjectURL projectURL in ProjectURLs)
 				{
-					localContext.Projecturl.Add(projecturl);
+					localContext.Projecturl.Add(projectURL);
 					await localContext.SaveChangesAsync();
-					returnid = projecturl.Projecturlid;
+					returnid = projectURL.Projecturlid;
 				}
 			}
 			catch (Exception ae)
@@ -69,12 +71,12 @@ namespace Helper.DB.Local
 			return returnid;
 		}
 
-		public async Task<bool> UpdateProjecturl(Models.DB.Local.ProjectURL projecturl)
+		public async Task<bool> UpdateProjectURL(ProjectURL projectURL)
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				localContext.Projecturl.Update(projecturl);
+				localContext.Projecturl.Update(projectURL);
 				await localContext.SaveChangesAsync();
 				return true;
 			}
@@ -85,13 +87,13 @@ namespace Helper.DB.Local
 			}
 			return false;
 		}
-		public async Task<bool> DeleteProjecturl(long projecturlId)
+		public async Task<bool> DeleteProjectURL(long projectURLId)
 		{
 			try
 			{
 				if (localContext == null) localContext = new LocalContext();
-				Models.DB.Local.ProjectURL projecturl = localContext.Projecturl.First(p => p.Projecturlid == projecturlId);
-				localContext.Projecturl.Remove(projecturl);
+				ProjectURL projectURL = localContext.Projecturl.First(p => p.Projecturlid == projectURLId);
+				localContext.Projecturl.Remove(projectURL);
 				await localContext.SaveChangesAsync();
 				return true;
 			}

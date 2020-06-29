@@ -1,15 +1,30 @@
-@page "/boqitems"
+@page "/project/{ProjectId}/Sub-Project/{SubProjectId}"
 @inherits BoqitemBase
 
 @using Models.DB.Project
 
-<h3>BoqItems</h3>
+<h3>BoQ Items</h3>
 
-@if (boqitems == null)
+@if (boqItems == null)
 {
     <span>Loading</span>
 }
 else
 {
-
+    <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30" RowSelect="@RowSelected"
+                AllowSorting="true" Data="@boqItems" TItem="Models.DB.Project.BoqItem">
+        <Columns>
+            <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Title" Title="Title" Width="20px" />
+            @*<RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Totalcost" Title="Total Cost" Type="decimal" TextAlign="TextAlign.Right" Width="30px">
+                <Template Context="boq">
+                    @String.Format(nfi, "{0:C}", boq.Totalcost)
+                </Template>
+            </RadzenGridColumn>*@
+            <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Offrate" Title="Offered Rate" Type="decimal" TextAlign="TextAlign.Right" Width="20px">
+                <Template Context="boq">
+                    @String.Format(nfi, "{0:C}", boq.Offrate)
+                </Template>
+            </RadzenGridColumn>
+        </Columns>
+    </RadzenGrid>
 }
