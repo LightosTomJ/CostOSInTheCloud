@@ -15,6 +15,8 @@ namespace UI.Pages.DTO.Local
         public string Title { get; set; }
         public string Value { get; set; }
         public long ProjectId { get; set; }
+        public bool HasChildren { get; set; } = false;
+        public short Level { get; set; }
 
         public ProjectEPSDto()
         { ; }
@@ -34,6 +36,10 @@ namespace UI.Pages.DTO.Local
             Title = p.Title;
             Value = p.Title;
             ProjectId = p.Projectinfoid;
+            if (p.Projectepsid != null)
+            { HasChildren = true; }
+            else
+            { HasChildren = false; }
         }
 
         public List<ProjectEPSDto> FromEPSList(List<ProjectEPS> lp)

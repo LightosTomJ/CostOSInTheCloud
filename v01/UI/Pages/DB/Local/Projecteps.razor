@@ -15,7 +15,7 @@ else
 {
     <div class="col-md-6" style="margin-bottom: 16px">
         <RadzenTree Change="@LogChange" Data="@entries" Expand="@OnExpand" Style="width: 100%; height: 300px">
-            <RadzenTreeLevel Template="@NavigateNode" TextProperty="Value" />
+            <RadzenTreeLevel TextProperty="Value" Template="@TreeOrProject" />
         </RadzenTree>
     </div>
 

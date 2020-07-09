@@ -18,8 +18,7 @@ namespace UI.Pages.DB.Local
         protected NumberFormatInfo nfi = new CultureInfo("en-GB", false).NumberFormat;
         [Inject] HelperService HelperService { get; set; }
 
-        [Parameter]
-        public string ProjectId { get; set; }
+        [Parameter] public string ProjectId { get; set; }
         protected int iProjectId = int.MinValue;
 
         protected override async Task OnInitializedAsync()
