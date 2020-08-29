@@ -71,7 +71,7 @@ namespace Helper.DB.Project
 			return returnid;
 		}
 
-		public async Task<bool> UpdateBoqItem(Models.DB.Project.BoqItem boqItem)
+		public async Task<bool> UpdateBoqItemAsync(Models.DB.Project.BoqItem boqItem)
 		{
 			try
 			{
@@ -87,7 +87,7 @@ namespace Helper.DB.Project
 			}
 			return false;
 		}
-		public async Task<bool> DeleteBoqItem(long boqItemId)
+		public async Task<bool> DeleteBoqItemAsync(long boqItemId)
 		{
 			try
 			{
@@ -95,6 +95,24 @@ namespace Helper.DB.Project
 				Models.DB.Project.BoqItem boqItem = projectContext.BoqItem.First(p => p.Boqitemid == boqItemId);
 				projectContext.BoqItem.Remove(boqItem);
 				await projectContext.SaveChangesAsync();
+				return true;
+			}
+			catch (Exception ae)
+			{
+				Log.WriteLine(ae.Message);
+				if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+			}
+			return false;
+		}
+
+		public bool CancelBoqEdit(Models.DB.Project.BoqItem boqItem)
+		{
+			try
+			{
+				if (projectContext == null) projectContext = new ProjectContext();
+				projectContext.ChangeTracker.Context.Entry(boqItem).CurrentValues
+					.SetValues(projectContext.ChangeTracker.Context.Entry(boqItem).OriginalValues);
+				projectContext.ChangeTracker.Context.Entry(boqItem).State = EntityState.Unchanged;
 				return true;
 			}
 			catch (Exception ae)

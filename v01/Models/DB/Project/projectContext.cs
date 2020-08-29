@@ -12,7 +12,14 @@ namespace Models.DB.Project
 
         public ProjectContext(DbContextOptions<ProjectContext> options)
             : base(options)
+        { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-QDVS6I6;Initial Catalog=Costos2019ProjectDatabase;Integrated Security=True;Persist Security Info=False;");
+            }
         }
 
         public virtual DbSet<Assembly> Assembly { get; set; }
@@ -84,15 +91,6 @@ namespace Models.DB.Project
         public virtual DbSet<WsRevision> WsRevision { get; set; }
         public virtual DbSet<XcellFile> XcellFile { get; set; }
         public virtual DbSet<XchangeRate> XchangeRate { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=project;Integrated Security=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

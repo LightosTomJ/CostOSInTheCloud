@@ -11,6 +11,7 @@ using UI.Pages.DTO.Local;
 using Radzen.Blazor;
 using System.IO;
 using Microsoft.AspNetCore.Blazor.RenderTree;
+using Microsoft.AspNetCore.Authentication;
 
 namespace UI.Pages.DB.Local
 {
@@ -84,74 +85,106 @@ namespace UI.Pages.DB.Local
         {
             ProjectEPSDto epsNode = null;
             if (args.Value.GetType() == typeof(ProjectEPSDto))
-            {
-                epsNode = args.Value as ProjectEPSDto;
-                List<ProjectEPSDto> subEntries = new List<ProjectEPSDto>();
-                if (epsNode.ProjectId == 0)
+                try
                 {
-                    if (projects.Count(p => p.Projectepsid == epsNode.ProjectEPSId) > 0)    //Checks for EPS projects
+                    epsNode = args.Value as ProjectEPSDto;
+                    List<ProjectEPSDto> subEntries = new List<ProjectEPSDto>();
+                    if (epsNode.ProjectId == 0)
                     {
-                        subEntries.AddRange(epsNode.FromInfoList(
-                            localContext.ProjectInfo.Where(p => p.Projectepsid == epsNode.ProjectEPSId).ToList()));
+                        if (projects.Count(p => p.Projectepsid == epsNode.ProjectEPSId) > 0)    //Checks for EPS projects
+                        {
+                            subEntries.AddRange(epsNode.FromInfoList(
+                                localContext.ProjectInfo.Where(p => p.Projectepsid == epsNode.ProjectEPSId).ToList()));
+                        }
+                        if (localContext.ProjectEPS.Count(p => p.Parentid == epsNode.ProjectEPSId) > 0)         //Checks for EPS branches
+                        {
+                            subEntries.AddRange(epsNode.FromEPSList(
+                                localContext.ProjectEPS.Where(p => p.Parentid == epsNode.ProjectEPSId).ToList()));
+                        }
                     }
-                    if (localContext.ProjectEPS.Count(p => p.Parentid == epsNode.ProjectEPSId) > 0)         //Checks for EPS branches
-                    {
-                        subEntries.AddRange(epsNode.FromEPSList(
-                            localContext.ProjectEPS.Where(p => p.Parentid == epsNode.ProjectEPSId).ToList()));
-                    }
-
                     //Determine if items have children
                     subEntries = SubChildren(epsNode, subEntries).ToList();
 
                     args.Children.Data = subEntries;
                     args.Children.TextProperty = "Value";
-                    args.Children.HasChildren = (epsNode) => false; //+/- chevron added manually in RenderFragment below
-                    args.Children.Template = TreeOrProject;
-                    LogExpand(args);
+                    args.Children.HasChildren = (epsNode) => true; //+/- chevron added manually in RenderFragment below
+                    args.Children.Template = NavigateNode;
+                    if (epsNode.HasChildren == false)
+                    {
+                        RedirectToPage("/project/" + epsNode.ProjectId.ToString() + "/Sub-Projects", true);
+                    }
+                    else
+                    { LogExpand(args); }
                 }
-                else
+                catch (Exception ae)
                 {
-                    HelperService.ChangePage("/project/" + epsNode.ProjectId.ToString(), true);
+                    Log.WriteLine(ae.Message);
+                    if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
                 }
-            }
         }
 
-        //protected RenderFragment<RadzenTreeItem> TreeOrProject(RenderTreeBuilder builder, RadzenTreeItem context)
-        protected RenderFragment<RadzenTreeItem> TreeOrProject = (context) => builder =>
+        protected RenderFragment<RadzenTreeItem> NavigateNode = (context) => builder =>
         {
             ProjectEPSDto epsNode = context.Value as ProjectEPSDto;
-            List<ProjectEPSDto> subEntries = new List<ProjectEPSDto>();
 
             builder.OpenComponent(0, typeof(RadzenIcon));
-            //builder.OpenComponent<RadzenIcon>(0);
             if (epsNode.HasChildren)
             {
-                if (epsNode.Level > 1)
-                {
-                    builder.AddAttribute(1, "Class", "ui-tree-toggler pi pi-caret-right");
-                    //builder.AddAttribute(4, "onclick", EventCallback.Factory.Create<TreeExpandEventArgs>(context, OnExpand));
-                }
+                //if (epsNode.Level > 1)
+                //{
+                //    builder.AddAttribute(1, "Class", "ui-tree-toggler pi pi-caret-right");
+                //    builder.AddAttribute(4, "onclick", EventCallback.Factory.Create<TreeExpandEventArgs>(context, OnExpand));
+                //}
                 builder.AddAttribute(2, "Icon", "folder");
-                builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18)).ToString() + "px");
+                //builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18)).ToString() + "px");
             }
             else
             {
                 builder.AddAttribute(2, "Icon", "insert_drive_file");
-                builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18) + 24).ToString() + "px");
+                //builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18) + 24).ToString() + "px");
             }
             builder.CloseComponent();
             builder.AddContent(4, context.Text);
-            //builder.AddContent(4, (RenderFragment)((builder) =>
-            //{
-            //    builder.AddContent(5, context.Text);
-            //    builder
-            //}));
-            //builder.AddAttribute(4, "ChildContent", (RenderFragment)((builder) =>
-            //{
-            //    builder.AddContent(5, context.Text);
-            //}));
-            //return (RenderFragment<RadzenTreeItem>)context;
+
+            //return (RenderFragment)context.Value;
         };
+
+        ////protected RenderFragment<RadzenTreeItem> TreeOrProject(RenderTreeBuilder builder, RadzenTreeItem context)
+        //protected RenderFragment<RadzenTreeItem> TreeOrProject = (context) => builder =>
+        //{
+        //    ProjectEPSDto epsNode = context.Value as ProjectEPSDto;
+        //    List<ProjectEPSDto> subEntries = new List<ProjectEPSDto>();
+
+        //    builder.OpenComponent(0, typeof(RadzenIcon));
+        //    //builder.OpenComponent<RadzenIcon>(0);
+        //    if (epsNode.HasChildren)
+        //    {
+        //        if (epsNode.Level > 1)
+        //        {
+        //            builder.AddAttribute(1, "Class", "ui-tree-toggler pi pi-caret-right");
+        //            //builder.AddAttribute(4, "onclick", EventCallback.Factory.Create<TreeExpandEventArgs>(context, OnExpand));
+        //        }
+        //        builder.AddAttribute(2, "Icon", "folder");
+        //        builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18)).ToString() + "px");
+        //    }
+        //    else
+        //    {
+        //        builder.AddAttribute(2, "Icon", "insert_drive_file");
+        //        builder.AddAttribute(3, "Style", "margin-left: " + (((epsNode.Level - 1) * 18) + 24).ToString() + "px");
+        //    }
+        //    builder.CloseComponent();
+        //    builder.AddContent(4, context.Text);
+        //    //builder.AddContent(4, (RenderFragment)((builder) =>
+        //    //{
+        //    //    builder.AddContent(5, context.Text);
+        //    //    builder
+        //    //}));
+        //    //builder.AddAttribute(4, "ChildContent", (RenderFragment)((builder) =>
+        //    //{
+        //    //    builder.AddContent(5, context.Text);
+        //    //}));
+        //    //return (RenderFragment<RadzenTreeItem>)context;
+        //};
 
         protected void RedirectToPage(string uri, bool force)
         {

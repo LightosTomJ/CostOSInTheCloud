@@ -5,6 +5,12 @@
 @using Models.DB.Project
 
 
+<style>
+    section {
+        background-color: darkgray;
+    }
+</style>
+
 <h3>Enterprise Project Structure</h3>
 
 @if (projectEPS == null)
@@ -15,7 +21,7 @@ else
 {
     <div class="col-md-6" style="margin-bottom: 16px">
         <RadzenTree Change="@LogChange" Data="@entries" Expand="@OnExpand" Style="width: 100%; height: 300px">
-            <RadzenTreeLevel TextProperty="Value" Template="@TreeOrProject" />
+            <RadzenTreeLevel TextProperty="Value" Template="@NavigateNode" />
         </RadzenTree>
     </div>
 

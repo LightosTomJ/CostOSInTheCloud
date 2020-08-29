@@ -1,9 +1,15 @@
-@page "/project/{ProjectId}/Sub-Project/{SubProjectId}"
+@page "/Sub-Project/{ProjectInfoId}/LineItems"
 @inherits BoqitemBase
 
 @using Models.DB.Project
 
-<h3>BoQ Items</h3>
+<style>
+    section {
+        background-color: darkgray;
+    }
+</style>
+
+<h3>Line Items</h3>
 
 @if (boqItems == null)
 {
@@ -11,20 +17,53 @@
 }
 else
 {
-    <RadzenGrid AllowFiltering="true" AllowPaging="true" PageSize="30" RowSelect="@RowSelected"
-                AllowSorting="true" Data="@boqItems" TItem="Models.DB.Project.BoqItem">
-        <Columns>
-            <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Title" Title="Title" Width="20px" />
-            @*<RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Totalcost" Title="Total Cost" Type="decimal" TextAlign="TextAlign.Right" Width="30px">
-                <Template Context="boq">
-                    @String.Format(nfi, "{0:C}", boq.Totalcost)
-                </Template>
-            </RadzenGridColumn>*@
-            <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Offrate" Title="Offered Rate" Type="decimal" TextAlign="TextAlign.Right" Width="20px">
-                <Template Context="boq">
-                    @String.Format(nfi, "{0:C}", boq.Offrate)
-                </Template>
-            </RadzenGridColumn>
-        </Columns>
-    </RadzenGrid>
+<RadzenGrid @ref="boqGrid" AllowFiltering="true" AllowPaging="true" PageSize="30" RowSelect="@RowSelected"
+            AllowSorting="true" Data="@boqItems" TItem="Models.DB.Project.BoqItem">
+    <Columns>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Title" Title="Title" Width="15px" />
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Publishedrate" Title="Published Rate" Type="decimal" TextAlign="TextAlign.Right" Width="10px">
+            <Template Context="boq">
+                @String.Format(nfi, "{0:C}", boq.Publishedrate)
+            </Template>
+            <EditTemplate Context="oBoqItem">
+                <RadzenNumeric @bind-Value="oBoqItem.Publishedrate" Style="width:100%" />
+            </EditTemplate>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="CalculatedRate" Title="Calculated Rate" Type="decimal" TextAlign="TextAlign.Right" Width="10px">
+            <Template Context="boq">
+                @String.Format(nfi, "{0:C}", boq.CalculatedRate)
+            </Template>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Unit" Title="Unit" Type="string" TextAlign="TextAlign.Right" Width="10px">
+            <EditTemplate Context="oBoqItem">
+                <RadzenTextBox @bind-Value="oBoqItem.Unit" Style="width:100%; display: block" Name="Unit" />
+                <RadzenRequiredValidator Component="Unit" Popup="true" />
+            </EditTemplate>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Property="Productivity" Title="Productivity" Type="decimal" TextAlign="TextAlign.Right" Width="10px">
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Context="sampleBlazorModelsSampleOrder" Bubble="false" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="10px">
+            <Template Context="oBoqItem">
+                <RadzenButton Icon="edit" Size="Radzen.ButtonSize.Small" Click="@(args => EditRow(oBoqItem))">
+                </RadzenButton>
+            </Template>
+            <EditTemplate Context="oBoqItem">
+                <RadzenButton Icon="save" Size="Radzen.ButtonSize.Small" Click="@((args) => SaveRow(oBoqItem))">
+                </RadzenButton>
+                <RadzenButton Icon="cancel" Size="Radzen.ButtonSize.Small" ButtonStyle="ButtonStyle.Secondary" Click="@((args) => CancelEdit(oBoqItem))">
+                </RadzenButton>
+            </EditTemplate>
+        </RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.DB.Project.BoqItem" Context="oBoqItem" Bubble="false" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="10px">
+            <Template Context="oBoqItem">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="Radzen.ButtonSize.Small" Click="@(args => DeleteRow(oBoqItem))">
+                </RadzenButton>
+            </Template>
+            <EditTemplate Context="oBoqItem">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="Radzen.ButtonSize.Small" Click="@(args => DeleteRow(oBoqItem))">
+                </RadzenButton>
+            </EditTemplate>
+        </RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
 }

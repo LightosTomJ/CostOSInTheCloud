@@ -1,25 +1,27 @@
-using Models.DB.Project;
+using Diagnostics.Logger;
+using Helper.DB.Project;
 using Microsoft.AspNetCore.Components;
+using Models.DB.Project;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Helper.DB.Project;
 using System.Globalization;
-using Diagnostics.Logger;
+using Radzen.Blazor;
 
 namespace UI.Pages.DB.Project
 {
     public class BoqitemBase : ComponentBase
     {
+        protected RadzenGrid<BoqItem> boqGrid;
         protected IList<Models.DB.Project.BoqItem> boqItems = null;
         protected static ProjectContext projectContext = new ProjectContext();
         protected BoqItemsService boqItemsService = new BoqItemsService(projectContext);
         protected NumberFormatInfo nfi = new CultureInfo("en-GB", false).NumberFormat;
         [Inject] HelperService HelperService { get; set; }
 
-        [Parameter]
-        public string ProjectId { get; set; }
-        protected int iProjectId = int.MinValue;
+        //[Parameter]
+        //public string ProjectId { get; set; }
+        //protected int iProjectId = int.MinValue;
         [Parameter]
         public string ProjectInfoId { get; set; }
         protected int iProjectInfoId = int.MinValue;
@@ -29,15 +31,20 @@ namespace UI.Pages.DB.Project
             try
             {
                 int.TryParse(ProjectInfoId, out iProjectInfoId);
-                int.TryParse(ProjectId, out iProjectId);
-                if (iProjectInfoId > int.MinValue && iProjectId > int.MinValue)
+                //int.TryParse(ProjectId, out iProjectId);
+                //if (iProjectInfoId > int.MinValue && iProjectId > int.MinValue)
+                //{
+                //    boqItems = await boqItemsService.GetAllBoqItemsAsync(iProjectId);
+                //}
+                if (iProjectInfoId > int.MinValue)
                 {
-                    boqItems = await boqItemsService.GetAllBoqItemsAsync(iProjectId);
+                    boqItems = await boqItemsService.GetAllBoqItemsAsync(iProjectInfoId);
                 }
                 else
                 {
                     boqItems = new List<Models.DB.Project.BoqItem>();
                 }
+                await base.OnInitializedAsync();
             }
             catch (Exception ae)
             {
@@ -46,16 +53,87 @@ namespace UI.Pages.DB.Project
             }
             return;
         }
-        protected void RowSelected(object oBoqItem)
+        protected void RowSelected(Models.DB.Project.BoqItem oBoqItem)
         {
             try
             {
-                if (oBoqItem.GetType() == typeof(Models.DB.Project.BoqItem))
-                {
-                    Models.DB.Local.ProjectInfo pi = (Models.DB.Local.ProjectInfo)oBoqItem;
-                    HelperService.ChangePage("/project/" + ProjectId + "/Sub-Project/" + 
-                        pi.Projectinfoid.ToString() + "/Items/", true);
-                }
+                
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
+        }
+
+        protected void EditRow(Models.DB.Project.BoqItem oBoqItem)
+        {
+            try
+            {
+                boqGrid.EditRow(oBoqItem);
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
+        }
+
+        protected async Task OnUpdateRow(Models.DB.Project.BoqItem oBoqItem)
+        {
+            try
+            {
+                await boqItemsService.UpdateBoqItemAsync(oBoqItem);
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
+        }
+
+        protected async Task SaveRow(Models.DB.Project.BoqItem oBoqItem)
+        {
+            try
+            {
+                await boqItemsService.UpdateBoqItemAsync(oBoqItem);
+                await boqGrid.UpdateRow(oBoqItem);
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
+        }
+
+        protected void CancelEdit(Models.DB.Project.BoqItem oBoqItem)
+        {
+            try
+            {
+                boqItemsService.CancelBoqEdit(oBoqItem);
+            }
+            catch (Exception ae)
+            {
+                Log.WriteLine(ae.Message);
+                if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
+            }
+            return;
+        }
+
+        protected async Task DeleteRow(Models.DB.Project.BoqItem oBoqItem)
+        {
+            try
+            {
+                if (oBoqItem.Prjid != null)
+                { await boqItemsService.DeleteBoqItemAsync((long)oBoqItem.Prjid); }
+                else
+                { }
+
+                await boqGrid.Reload();
             }
             catch (Exception ae)
             {

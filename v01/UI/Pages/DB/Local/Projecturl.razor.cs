@@ -52,8 +52,8 @@ namespace UI.Pages.DB.Local
                 if (oProject.GetType() == typeof(Models.DB.Local.ProjectURL))
                 {
                     Models.DB.Local.ProjectURL pURL = (Models.DB.Local.ProjectURL)oProject;
-                    HelperService.ChangePage("/project/" + ProjectId + "/Sub-Project/"
-                        + pURL.Projecturlid.ToString(), true);
+                    HelperService.ChangePage("/Sub-Project/"
+                        + pURL.Projecturlid.ToString() + "/LineItems", true);
                 }
             }
             catch (Exception ae)
