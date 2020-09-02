@@ -389,7 +389,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Image\" />
     <Folder Include="Pages\DTO\Project\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>
