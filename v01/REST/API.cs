@@ -8,13 +8,16 @@ namespace REST
 {
     public static class API
     {
+        public static string Server = "https://demo.nomitech.net/bimct-server";
         private static readonly HttpClient client = new HttpClient();
 
         public static HttpResponseMessage ProcessCall(Uri uri, string payload)
         {
             client.DefaultRequestHeaders.Accept.Clear();
             //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
-
+            client.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("auth_token", Authorization.Service.Token);
+            
             HttpContent httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
 
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
@@ -23,13 +26,21 @@ namespace REST
             return stringTask.Result;
         }
 
-        public static async Task<string> ProcessCall(Uri uri, string payload, Method method)
+        public static async Task<string> ProcessCallAsync(Uri uri, string payload, Method method)
         {
             client.DefaultRequestHeaders.Accept.Clear();
-            //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
+            //client.DefaultRequestHeaders.Authorization =
+            //    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Authorization.Service.Token);
+            //client.DefaultRequestHeaders.Authorization =
+            //    new System.Net.Http.Headers.AuthenticationHeaderValue("auth_token", Authorization.Service.Token);
+
+            if (Authorization.Service.Token != "")
+            {
+                uri = new Uri(uri.AbsoluteUri + "?auth_token=" + Authorization.Service.Token.ToString());
+            }
 
             HttpContent httpContent = new StringContent(payload, Encoding.UTF8, "application/json");
-
+            
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
             HttpResponseMessage resMessage = null;
             if (method == Method.Get)

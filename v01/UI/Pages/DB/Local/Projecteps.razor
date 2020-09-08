@@ -19,6 +19,12 @@
 }
 else
 {
+    <RadzenDropDown AllowClear="false" TValue="string"
+                Data="@Shared.DataSource.Sources.Select(c => c.Name)"
+                Placeholder="@Shared.DataSource.Sources.First(c => c.Id == Shared.DataSource.Current).Name"
+                TextProperty="Name" ValueProperty="Id" 
+                    Change="@(async args => await Change(args, "DropDown"))" Style="margin-bottom: 20px" />
+    
     <div class="col-md-6" style="margin-bottom: 16px">
         <RadzenTree Change="@LogChange" Data="@entries" Expand="@OnExpand" Style="width: 100%; height: 300px">
             <RadzenTreeLevel TextProperty="Value" Template="@NavigateNode" />

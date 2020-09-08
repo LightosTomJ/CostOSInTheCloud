@@ -12,6 +12,7 @@ using Radzen.Blazor;
 using System.IO;
 using Microsoft.AspNetCore.Blazor.RenderTree;
 using Microsoft.AspNetCore.Authentication;
+using System.Runtime.CompilerServices;
 
 namespace UI.Pages.DB.Local
 {
@@ -33,6 +34,7 @@ namespace UI.Pages.DB.Local
             {
                 projectEPS = await projectEPSService.GetAllProjectEPSAsync();
                 projects = await projectInfoService.GetAllProjectInfoAsync();
+
                 foreach (var p in projectEPS.Where(p => p.Parentid == null))
                 {
                     var eps = new ProjectEPSDto()
@@ -121,6 +123,24 @@ namespace UI.Pages.DB.Local
                     Log.WriteLine(ae.Message);
                     if (ae.InnerException != null) Log.WriteLine(ae.InnerException.ToString());
                 }
+        }
+
+        protected async Task Change(object value, string name)
+        {
+            if (value.ToString() == "Cloud")
+            {
+                Shared.DataSource.Current = 2;
+                var pro = await REST.Projects.Service.GetAllProjectsAsync();
+                //var pro2 = await REST.Projects.Service.GetAllProjectInfoAsync();
+            }
+            else
+            {
+                Shared.DataSource.Current = 1;
+                projectEPS = await projectEPSService.GetAllProjectEPSAsync();
+                projects = await projectInfoService.GetAllProjectInfoAsync();
+            }
+            events.Add(DateTime.Now, $"{name} value changed to " + value);
+            StateHasChanged();
         }
 
         protected RenderFragment<RadzenTreeItem> NavigateNode = (context) => builder =>
